@@ -213,6 +213,13 @@
     .exp-title { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 700; color: #ffffff; margin-bottom: 0.8rem; }
     .exp-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.8; }
 
+    /* ABOUT */
+    #about { border-top: 1px solid var(--border); }
+    .about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 5rem; align-items: start; }
+    .about-text p { font-size: 0.92rem; color: var(--muted); line-height: 1.95; margin-bottom: 1.3rem; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--text); font-weight: 500; }
+
     /* TESTIMONIALS */
     #testimonials { border-top: 1px solid var(--border); }
     .award-badge { display: inline-flex; align-items: center; gap: 0.6rem; background: rgba(199,169,127,0.1); border: 1px solid rgba(199,169,127,0.3); padding: 0.6rem 1.2rem; border-radius: 100px; margin-bottom: 3rem; }
@@ -310,7 +317,7 @@
       .photo-frame { width: 220px; height: 280px; }
       .section { padding: 4rem 1.5rem; }
       .support-grid, .services-grid, .how-grid, .testimonials-grid { grid-template-columns: 1fr; }
-      .exp-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .exp-grid, .contact-grid, .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .form-row { grid-template-columns: 1fr; }
       .cta-content { padding: 5rem 1.5rem; }
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
@@ -441,7 +448,7 @@
             <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           </div>
           <div class="service-title">Executive & Admin Support</div>
-          <div class="service-desc">Your calendar, inbox, and day-to-day — handled.</div>
+          <div class="service-desc">Your calendar, inbox, and day-to-day — handled. I take ownership of the routine work that fills your schedule, so the hours you spend go toward decisions only you can make.</div>
           <ul class="service-list"><li>Calendar management</li><li>Inbox zero management</li><li>Research and reporting</li><li>Document tracking and coordination</li></ul>
         </div>
         <div class="service-card reveal reveal-delay-2">
@@ -449,7 +456,7 @@
             <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
           <div class="service-title">Marketing & Content</div>
-          <div class="service-desc">Consistent presence. Content that represents you well.</div>
+          <div class="service-desc">A consistent presence, with content that represents you well. From planning to publishing, I keep your brand showing up — so your audience never wonders whether you're still around.</div>
           <ul class="service-list"><li>Social media content planning</li><li>Copywriting for posts and captions</li><li>Facebook Ads support</li><li>Email marketing</li></ul>
         </div>
         <div class="service-card reveal reveal-delay-3">
@@ -457,7 +464,7 @@
             <svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
           </div>
           <div class="service-title">Design & Creative</div>
-          <div class="service-desc">Visual assets that look sharp and on-brand.</div>
+          <div class="service-desc">Visual assets that look sharp and on-brand. Clean, polished design and video work that match the standard of the business behind them.</div>
           <ul class="service-list"><li>Graphic design (Canva)</li><li>Video editing</li><li>Visual content creation</li></ul>
         </div>
         <div class="service-card reveal reveal-delay-4">
@@ -465,7 +472,7 @@
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           </div>
           <div class="service-title">Websites & Funnels</div>
-          <div class="service-desc">Pages that convert. Built fast. Deployed clean.</div>
+          <div class="service-desc">Pages that convert — built fast and deployed clean. Landing pages and full websites assembled with modern AI tools, launched in days rather than months.</div>
           <ul class="service-list"><li>Landing page builds</li><li>Funnel building</li><li>Website creation using AI tools</li></ul>
         </div>
         <div class="service-card reveal reveal-delay-5">
@@ -473,7 +480,7 @@
             <svg viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-4h14v4"/><path d="M12 12V8"/></svg>
           </div>
           <div class="service-title">AI & Automation</div>
-          <div class="service-desc">Bringing the power of AI into your daily operations.</div>
+          <div class="service-desc">The power of AI, brought into your daily operations. I turn repetitive, manual work into smart, repeatable systems so your team moves faster with far less effort.</div>
           <ul class="service-list"><li>AI-powered workflow support</li><li>Task simplification using AI tools</li><li>Process improvement</li></ul>
         </div>
         <div class="service-card reveal reveal-delay-5">
@@ -481,7 +488,7 @@
             <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <div class="service-title">CRM Management</div>
-          <div class="service-desc">No lead left behind. Your pipeline, always clean.</div>
+          <div class="service-desc">No lead left behind, and a pipeline that stays clean. Every contact tracked and every follow-up sent — so opportunities convert instead of quietly going cold.</div>
           <ul class="service-list"><li>CRM data entry & cleanup</li><li>Lead tracking</li><li>Client follow-up sequences</li><li>Reporting & dashboards</li></ul>
         </div>
       </div>
@@ -542,6 +549,25 @@
   </div>
 </div>
 
+<!-- ABOUT -->
+<div id="about">
+  <div class="section">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="section-eyebrow reveal">About</div>
+        <h2 class="section-title reveal">The Person Behind<br/><em>the Work</em></h2>
+      </div>
+      <div class="about-text reveal">
+        <p>I'm Earvin — a virtual assistant who treats every business I support as if it were my own.</p>
+        <p>Over the past <strong>9+ years</strong>, my work has spanned sales, executive support, design, and digital projects. That range matters: it means I understand how the parts of a business connect — and I can step into more than one role without missing a beat.</p>
+        <p>What I've learned across all of it is simple: the best support doesn't just complete tasks, it <strong>removes weight</strong>. It gives leaders back their time, their focus, and their peace of mind. That's the standard I bring to every engagement — full ownership, proactive communication, and work delivered to a level that reflects well on the people it serves.</p>
+        <p>Based in the <strong>Philippines</strong> and working with clients worldwide, I pair that mindset with modern AI tools to move faster and deliver more — so the businesses I support don't just stay organized, they stay ahead.</p>
+        <p>It's an approach that's been recognized — I was named one of the <strong>Top 5 VAs of the Year</strong> by Phyllis Song VA Services. But the recognition I value most is simpler: teams who say the work runs better with me on it.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- EXPERIENCE -->
 <div id="experience">
   <div class="section">
@@ -573,7 +599,7 @@
         <p class="testimonial-text">We've been working with Earvin for well over a year now — he's a fantastic addition to our team. He brings joy to everybody every day, and he's one of those people who allows us to do more for everyone.</p>
         <div class="testimonial-author">
           <span class="testimonial-name">Darren</span>
-          <span class="testimonial-role">CEO, Salon Company</span>
+          <span class="testimonial-role">CEO</span>
         </div>
       </div>
       <div class="testimonial-card reveal reveal-delay-2">
@@ -581,7 +607,7 @@
         <p class="testimonial-text">Earvin makes my life easier, my boss's life easier, and our whole company's life easier — just because of how fast he picks up a task and exceeds our expectations every single time.</p>
         <div class="testimonial-author">
           <span class="testimonial-name">Jayme</span>
-          <span class="testimonial-role">Manager, Salon Company</span>
+          <span class="testimonial-role">Manager</span>
         </div>
       </div>
       <div class="testimonial-card reveal reveal-delay-3">
@@ -589,7 +615,7 @@
         <p class="testimonial-text">I'm so thankful for how prompt and helpful he is. Anytime I've asked him for anything, he's on it immediately — I messaged him super late at night, and he got back to me the same day.</p>
         <div class="testimonial-author">
           <span class="testimonial-name">Tiffany</span>
-          <span class="testimonial-role">Service Provider, Salon Company</span>
+          <span class="testimonial-role">Service Provider</span>
         </div>
       </div>
       <div class="testimonial-card reveal reveal-delay-4">
@@ -597,7 +623,7 @@
         <p class="testimonial-text">Thank you for everything you do behind the scenes — we really appreciate you.</p>
         <div class="testimonial-author">
           <span class="testimonial-name">Taylor</span>
-          <span class="testimonial-role">Service Provider, Salon Company</span>
+          <span class="testimonial-role">Service Provider</span>
         </div>
       </div>
     </div>

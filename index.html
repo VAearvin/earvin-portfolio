@@ -5,6 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Earvin Laureano — Right Hand Virtual Assistant</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c0c0c'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='700' font-size='13' fill='%23c7a97f' letter-spacing='0.5'%3EEL%3C/text%3E%3C/svg%3E"/>
+  <meta name="description" content="Earvin Laureano is a Right Hand Virtual Assistant for executives and business owners — handling operations, admin, marketing, automation, and CRM support so leaders can focus on growth. Remote worldwide, AI-powered workflow."/>
+  <meta name="author" content="Earvin Laureano"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.earvinlaureano.com/"/>
+  <meta name="theme-color" content="#0c0c0c"/>
+
+  <!-- Open Graph (LinkedIn, Facebook, iMessage previews) -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Earvin Laureano"/>
+  <meta property="og:title" content="Earvin Laureano — Right Hand Virtual Assistant"/>
+  <meta property="og:description" content="Operations, admin, marketing, and automation support for executives and business owners. Remote worldwide, AI-powered workflow."/>
+  <meta property="og:url" content="https://www.earvinlaureano.com/"/>
+  <meta property="og:image" content="https://www.earvinlaureano.com/earvin.jpeg"/>
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Earvin Laureano — Right Hand Virtual Assistant"/>
+  <meta name="twitter:description" content="Operations, admin, marketing, and automation support for executives and business owners. Remote worldwide."/>
+  <meta name="twitter:image" content="https://www.earvinlaureano.com/earvin.jpeg"/>
+
+  <!-- Structured data for Google & AI search (Perplexity, ChatGPT, AI Overviews) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Earvin Laureano",
+    "url": "https://www.earvinlaureano.com/",
+    "image": "https://www.earvinlaureano.com/earvin.jpeg",
+    "jobTitle": "Virtual Assistant",
+    "description": "Right Hand Virtual Assistant for executives and business owners — operations, admin, marketing, automation, CRM management, and funnel building.",
+    "email": "inquire@earvinlaureano.com",
+    "sameAs": ["https://www.linkedin.com/in/earvin-laureano-7b8093183"],
+    "knowsAbout": ["Executive Assistance", "Operations Management", "Marketing & Content", "AI Automation", "CRM Management", "Funnel Building", "Website Development"],
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Virtual Assistant Services",
+        "serviceType": "Executive & Operations Support"
+      }
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -19,7 +62,7 @@
       --gold2:  #E8D4B0;
       --gold3:  #a88a62;
       --text:   #E8D4B0;
-      --muted:  #6e6b66;
+      --muted:  #8d887f;
       --soft:   rgba(199,169,127,0.08);
       --r:      4px;
     }
@@ -41,6 +84,11 @@
     .nav-cta { font-family: 'Inter', sans-serif !important; font-size: 0.72rem !important; font-weight: 600 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: var(--bg) !important; background: var(--gold) !important; padding: 0.65rem 1.5rem !important; text-decoration: none; transition: all 0.25s !important; border-radius: var(--r) !important; }
     .nav-cta::after { display: none !important; }
     .nav-cta:hover { background: var(--gold2) !important; transform: translateY(-1px) !important; box-shadow: 0 4px 20px rgba(199,169,127,0.3) !important; }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; position: relative; z-index: 2; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--gold); transition: transform 0.3s, opacity 0.3s; }
+    .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* HERO */
     #hero { min-height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden; padding-top: 5rem; }
@@ -53,7 +101,7 @@
 
     .hero-badge { display: inline-flex; align-items: center; gap: 0.6rem; background: rgba(199,169,127,0.1); border: 1px solid rgba(199,169,127,0.25); padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards; }
     .hero-badge span { font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
-    .hero-badge-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+    .hero-badge-dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite; }
 
     .hero-headline { font-family: 'Inter', sans-serif; font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 800; line-height: 1.1; color: #ffffff; margin-bottom: 1.8rem; opacity: 0; animation: fadeUp 0.8s ease 0.35s forwards; }
     .hero-headline .accent { color: var(--gold); font-style: italic; font-weight: 700; }
@@ -80,14 +128,12 @@
     .photo-frame::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 50%, var(--bg) 100%); z-index: 1; border-radius: var(--r); }
     .photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; border-radius: var(--r); filter: grayscale(10%) contrast(1.05); }
 
-    .available-badge { background: var(--bg2); border: 1px solid var(--border); padding: 0.8rem 1.2rem; border-radius: var(--r); display: flex; align-items: center; gap: 0.6rem; position: absolute; bottom: -1rem; left: -2rem; z-index: 3; }
-    .avail-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite; }
-    .avail-text { font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text); }
-
     .hero-stats { display: flex; gap: 1rem; width: 100%; }
     .hero-stat { background: rgba(199,169,127,0.06); border: 1px solid rgba(199,169,127,0.12); padding: 1rem; border-radius: var(--r); text-align: center; flex: 1; }
     .hero-stat-num { font-family: 'Inter', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--gold); line-height: 1; display: block; }
     .hero-stat-label { font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; display: block; }
+    .hero-stat--text { display: flex; align-items: center; justify-content: center; }
+    .hero-stat-phrase { font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold); line-height: 1.6; }
 
     .scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; animation: fadeIn 1s ease 1.5s forwards; }
     .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s infinite; }
@@ -232,7 +278,19 @@
 
     @media (max-width: 900px) {
       nav { padding: 1.2rem 1.5rem; }
-      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: fixed; top: 0; right: 0; bottom: 0;
+        width: 78%; max-width: 300px;
+        flex-direction: column; align-items: flex-start; justify-content: flex-start;
+        gap: 1.8rem; padding: 6rem 2rem 2rem;
+        background: var(--bg2); border-left: 1px solid var(--border);
+        transform: translateX(100%); transition: transform 0.35s ease;
+        z-index: 1;
+      }
+      .nav-links.open { transform: translateX(0); }
+      .nav-links a { font-size: 0.8rem; }
+      .nav-cta { padding: 0.8rem 1.6rem !important; }
       .hero-content { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 3rem; }
       .hero-right { order: -1; }
       .photo-frame { width: 220px; height: 280px; }
@@ -251,7 +309,10 @@
 <!-- NAV -->
 <nav id="navbar">
   <a href="#hero" class="logo">Earvin <span>Laureano</span></a>
-  <ul class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#support">Services</a></li>
     <li><a href="#how">How I Work</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -288,11 +349,10 @@
     <div class="hero-right">
       <div class="photo-frame">
         <img src="earvin.jpeg" alt="Earvin Laureano — Right Hand Virtual Assistant"/>
-        
       </div>
       <div class="hero-stats">
         <div class="hero-stat"><span class="hero-stat-num">9+</span><span class="hero-stat-label">Years Experience</span></div>
-        <div class="hero-stat"><span class="hero-stat-num">✦</span><span class="hero-stat-label">Trusted by Founders</span></div>
+        <div class="hero-stat hero-stat--text"><span class="hero-stat-phrase">Trusted by<br/>Founders</span></div>
         <div class="hero-stat"><span class="hero-stat-num">AI</span><span class="hero-stat-label">Powered Workflow</span></div>
       </div>
     </div>
@@ -348,6 +408,13 @@
         </span>
         <div class="support-title">Leadership stays in its lane</div>
         <div class="support-desc">Strategy. Relationships. Results. That's where your focus belongs — and I make sure it stays there.</div>
+      </div>
+      <div class="support-card reveal reveal-delay-5">
+        <span class="support-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </span>
+        <div class="support-title">Systems replace repetition</div>
+        <div class="support-desc">Beyond one-off tasks — I build the tools and workflows that make recurring work faster and repeatable, so quality stays high without the extra effort.</div>
       </div>
     </div>
   </div>
@@ -566,8 +633,19 @@
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
 
-  // HERO BG
-  window.addEventListener('load', () => { document.getElementById('heroBg').classList.add('loaded'); });
+  // MOBILE NAV TOGGLE
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('active', open);
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
 
   // SCROLL REVEAL
   const revealObserver = new IntersectionObserver((entries) => {
@@ -575,16 +653,20 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  // PARALLAX
+  // PARALLAX (throttled with requestAnimationFrame)
   const parallaxBgs = document.querySelectorAll(".hero-bg, .services-bg, .how-bg, .cta-bg");
-  window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
+  let parallaxTicking = false;
+  function updateParallax() {
     parallaxBgs.forEach(bg => {
       const section = bg.parentElement;
       const rect = section.getBoundingClientRect();
       const offset = (rect.top + rect.height / 2) * 0.15;
       bg.style.transform = `scale(1.1) translateY(${offset}px)`;
     });
+    parallaxTicking = false;
+  }
+  window.addEventListener("scroll", () => {
+    if (!parallaxTicking) { requestAnimationFrame(updateParallax); parallaxTicking = true; }
   });
 
   // FORM

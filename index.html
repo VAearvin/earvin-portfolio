@@ -213,6 +213,20 @@
     .exp-title { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 700; color: #ffffff; margin-bottom: 0.8rem; }
     .exp-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.8; }
 
+    /* TESTIMONIALS */
+    #testimonials { border-top: 1px solid var(--border); }
+    .award-badge { display: inline-flex; align-items: center; gap: 0.6rem; background: rgba(199,169,127,0.1); border: 1px solid rgba(199,169,127,0.3); padding: 0.6rem 1.2rem; border-radius: 100px; margin-bottom: 3rem; }
+    .award-badge svg { width: 15px; height: 15px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .award-badge span { font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .testimonial-card { background: var(--bg2); border: 1px solid var(--border); padding: 2.2rem; border-radius: var(--r); transition: all 0.3s; display: flex; flex-direction: column; }
+    .testimonial-card:hover { border-color: rgba(199,169,127,0.2); transform: translateY(-3px); }
+    .testimonial-quote-mark { font-family: Georgia, serif; font-size: 2.6rem; color: rgba(199,169,127,0.35); line-height: 0.9; margin-bottom: 0.3rem; }
+    .testimonial-text { font-size: 0.9rem; color: var(--text); line-height: 1.85; margin-bottom: 1.5rem; flex: 1; }
+    .testimonial-author { border-top: 1px solid var(--border); padding-top: 1.2rem; }
+    .testimonial-name { font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 700; color: #ffffff; display: block; }
+    .testimonial-role { font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold); margin-top: 0.3rem; display: block; }
+
     /* CTA */
     #cta { position: relative; overflow: hidden; border-top: 1px solid var(--border); }
     .cta-bg { position: absolute; inset: 0; will-change: transform; background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1800&q=80'); background-size: cover; background-position: center; filter: brightness(0.07); }
@@ -295,7 +309,7 @@
       .hero-right { order: -1; }
       .photo-frame { width: 220px; height: 280px; }
       .section { padding: 4rem 1.5rem; }
-      .support-grid, .services-grid, .how-grid { grid-template-columns: 1fr; }
+      .support-grid, .services-grid, .how-grid, .testimonials-grid { grid-template-columns: 1fr; }
       .exp-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
       .form-row { grid-template-columns: 1fr; }
       .cta-content { padding: 5rem 1.5rem; }
@@ -539,6 +553,53 @@
       <div class="exp-card reveal reveal-delay-2"><span class="exp-tag">Executive Assistant</span><div class="exp-category">Executive Support</div><div class="exp-title">Right Hand to Decision Makers</div><div class="exp-desc">Worked directly with business owners and senior leadership on high-priority operations, scheduling, correspondence, and project management — always with full discretion.</div></div>
       <div class="exp-card reveal reveal-delay-3"><span class="exp-tag">Content & Graphic Design</span><div class="exp-category">Brand & Social Media</div><div class="exp-title">Visual Storytelling at Scale</div><div class="exp-desc">Created visual assets, social media content, email campaigns, and brand materials that strengthened presence and drove engagement across industries.</div></div>
       <div class="exp-card reveal reveal-delay-4"><span class="exp-tag">Website & Funnel Builder</span><div class="exp-category">Digital Projects</div><div class="exp-title">Pages That Convert</div><div class="exp-desc">Designed and launched high-converting landing pages, sales funnels, and complete websites — delivering polished, client-ready results with minimal back-and-forth.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div id="testimonials">
+  <div class="section">
+    <div class="section-eyebrow reveal">Client Voices</div>
+    <h2 class="section-title reveal">What the People I<br/><em>Support Say</em></h2>
+    <div class="award-badge reveal">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+      <span>Top 5 VA of the Year — Phyllis Song VA Services</span>
+    </div>
+    <p class="section-desc reveal">Real words from the executives, managers, and teams I work alongside every day.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-quote-mark">&ldquo;</div>
+        <p class="testimonial-text">We've been working with Earvin for well over a year now — he's a fantastic addition to our team. He brings joy to everybody every day, and he's one of those people who allows us to do more for everyone.</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Darren</span>
+          <span class="testimonial-role">CEO, Salon Company</span>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-quote-mark">&ldquo;</div>
+        <p class="testimonial-text">Earvin makes my life easier, my boss's life easier, and our whole company's life easier — just because of how fast he picks up a task and exceeds our expectations every single time.</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Jayme</span>
+          <span class="testimonial-role">Manager, Salon Company</span>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="testimonial-quote-mark">&ldquo;</div>
+        <p class="testimonial-text">I'm so thankful for how prompt and helpful he is. Anytime I've asked him for anything, he's on it immediately — I messaged him super late at night, and he got back to me the same day.</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Tiffany</span>
+          <span class="testimonial-role">Service Provider, Salon Company</span>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-4">
+        <div class="testimonial-quote-mark">&ldquo;</div>
+        <p class="testimonial-text">Thank you for everything you do behind the scenes — we really appreciate you.</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Taylor</span>
+          <span class="testimonial-role">Service Provider, Salon Company</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>

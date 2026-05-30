@@ -533,6 +533,7 @@
       note: "Automated scan",
       desc: "A quick automated scan of your site: speed, basic SEO gaps, and whether you currently appear in AI answers — plus a few quick wins you can act on right away.",
       cta: "Get my free audit",
+      link: "audit.html",
       premium: false
     },
     {
@@ -700,13 +701,16 @@
   function renderAudits() {
     document.getElementById("auditGrid").innerHTML = AUDITS.map(function (a) {
       var ctaClass = a.premium ? "btn-gold" : "btn-outline";
+      var ctaTag = a.link
+        ? "<a href='" + a.link + "' class='" + ctaClass + "'>" + a.cta + "</a>"
+        : "<a href='#' class='" + ctaClass + "' data-cta>" + a.cta + "</a>";
       return "<article class='audit-card" + (a.premium ? " paid" : "") + " reveal'>" +
         "<span class='audit-kicker'>" + a.kicker + "</span>" +
         "<h3 class='audit-name'>" + a.name + "</h3>" +
         "<div class='audit-price'>" + a.priceLabel + "</div>" +
         "<span class='audit-price-note'>" + a.note + "</span>" +
         "<p class='audit-desc'>" + a.desc + "</p>" +
-        "<a href='#' class='" + ctaClass + "' data-cta>" + a.cta + "</a>" +
+        ctaTag +
       "</article>";
     }).join("");
   }

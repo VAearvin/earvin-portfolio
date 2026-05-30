@@ -1,0 +1,12 @@
+{
+  "name": "earvin-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio site for Earvin Laureano with a serverless Free Website Audit tool.",
+  "scripts": {
+    "dev": "node dev-server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

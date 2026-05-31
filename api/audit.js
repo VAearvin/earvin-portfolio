@@ -4,11 +4,10 @@
  *
  * Environment variables (set in Vercel project settings → Environment Variables,
  * or a local .env loaded by dev-server.js). NONE are committed.
- *   PAGESPEED_API_KEY   — Google PageSpeed Insights API key (performance scores)
- *   RESEND_API_KEY      — Resend API key (sends the report + notifies Earvin)
- *   AUDIT_FROM_EMAIL    — verified Resend sender, e.g. "Earvin <audit@earvinlaureano.com>"
- *   AUDIT_NOTIFY_EMAIL  — where lead notifications go, e.g. "inquire@earvinlaureano.com"
- *   SHEETS_WEBHOOK_URL  — Google Apps Script web-app URL that appends a row (lead storage)
+ *   PAGESPEED_API_KEY   — Google PageSpeed Insights API key (performance scores) [optional]
+ *   SHEETS_WEBHOOK_URL  — Google Apps Script web-app URL. ONE call does three things:
+ *                         logs the lead to the sheet, emails the visitor their report,
+ *                         and emails Earvin a notification. No paid email service needed.
  *
  * Every check degrades gracefully: if one fails or times out it is marked
  * "couldn't check" and the rest of the audit still returns.
@@ -59,10 +58,11 @@ module.exports = async function handler(req, res) {
   var checks = { performance: performance, seo: seo, technical: technical, aiReadiness: aiReadiness };
   var topFlags = buildTopFlags(checks).slice(0, 4);
 
-  // --- Side effects (never block/break the response) ---
-  var emailed = false, leadSaved = false;
-  try { emailed = await sendReports({ url: url, firstName: firstName, email: email, checks: checks, topFlags: topFlags }); } catch (e) {}
-  try { leadSaved = await saveLead({ url: url, firstName: firstName, email: email, checks: checks, topFlags: topFlags }); } catch (e) {}
+  // --- Side effect: ONE webhook call logs the lead AND emails (visitor report + Earvin notification) ---
+  var reportHtml = buildEmailHtml({ url: url, firstName: firstName, email: email, checks: checks, topFlags: topFlags });
+  var leadSaved = false;
+  try { leadSaved = await saveLead({ url: url, firstName: firstName, email: email, checks: checks, topFlags: topFlags, reportHtml: reportHtml }); } catch (e) {}
+  var emailed = leadSaved; // the Apps Script webhook sends the visitor's report when the lead is saved
 
   return json(res, 200, { ok: true, site: url, checks: checks, topFlags: topFlags, emailed: emailed, leadSaved: leadSaved });
 };
@@ -290,42 +290,6 @@ function buildTopFlags(checks) {
   return flags;
 }
 
-/* ---- Emails via Resend (visitor report + Earvin notification) ---- */
-async function sendReports(lead) {
-  var key = process.env.RESEND_API_KEY;
-  var from = process.env.AUDIT_FROM_EMAIL;
-  var notify = process.env.AUDIT_NOTIFY_EMAIL;
-  if (!key || !from) return false;
-
-  var reportHtml = buildEmailHtml(lead);
-  var sent = false;
-
-  // 1) full report to the visitor
-  sent = await resendSend(key, { from: from, to: lead.email, subject: 'Your free website audit — ' + hostname(lead.url), html: reportHtml }) || sent;
-
-  // 2) lead notification to Earvin
-  if (notify) {
-    var note = '<p><strong>New audit lead</strong></p><ul>' +
-      '<li>Name: ' + esc(lead.firstName) + '</li>' +
-      '<li>Email: ' + esc(lead.email) + '</li>' +
-      '<li>URL: ' + esc(lead.url) + '</li>' +
-      '<li>Mobile: ' + fmt(lead.checks.performance.mobile) + ' · Desktop: ' + fmt(lead.checks.performance.desktop) + '</li>' +
-      '</ul>' + reportHtml;
-    await resendSend(key, { from: from, to: notify, subject: 'New audit lead — ' + esc(lead.firstName) + ' (' + hostname(lead.url) + ')', html: note });
-  }
-  return sent;
-}
-async function resendSend(key, payload) {
-  try {
-    var r = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
-      body: JSON.stringify(payload)
-    });
-    return r.ok;
-  } catch (e) { return false; }
-}
-
 function buildEmailHtml(lead) {
   var c = lead.checks;
   var row = function (label, val) { return '<tr><td style="padding:6px 12px;color:#8d887f">' + label + '</td><td style="padding:6px 12px;color:#111;font-weight:600">' + val + '</td></tr>'; };
@@ -364,7 +328,9 @@ function buildEmailHtml(lead) {
     '</div>';
 }
 
-/* ---- Lead storage via Google Apps Script webhook ---- */
+/* ---- Lead storage + emails via Google Apps Script webhook ----
+   One POST: the Apps Script appends the row, emails the visitor the report
+   (reportHtml), and emails Earvin a notification. No paid email service. */
 async function saveLead(lead) {
   var hook = process.env.SHEETS_WEBHOOK_URL;
   if (!hook) return false;
@@ -378,7 +344,9 @@ async function saveLead(lead) {
       perfDesktop: lead.checks.performance.desktop,
       seoScore: lead.checks.seo.score,
       technicalScore: lead.checks.technical.score,
-      flags: (lead.topFlags || []).join(' | ')
+      flags: (lead.topFlags || []).join(' | '),
+      subject: 'Your free website audit — ' + hostname(lead.url),
+      reportHtml: lead.reportHtml || ''
     };
     var r = await fetch(hook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     return r.ok;

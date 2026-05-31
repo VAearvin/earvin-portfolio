@@ -61,7 +61,17 @@ function doPost(e) {
       d.flags          || ''
     ]);
 
-    // Notify Earvin (optional — remove this block if you don't want the email)
+    // 1) Email the VISITOR their full report (HTML). Sent from this Gmail account.
+    if (d.email && d.reportHtml) {
+      GmailApp.sendEmail(
+        d.email,
+        d.subject || 'Your free website audit',
+        'Open this email in an HTML-capable client to view your audit snapshot.',
+        { htmlBody: d.reportHtml, name: 'Earvin Laureano' }
+      );
+    }
+
+    // 2) Notify Earvin (optional — remove this block if you don't want the email)
     GmailApp.sendEmail(
       NOTIFY_EMAIL,
       '🔍 New Audit Lead — ' + (d.firstName || 'Someone') + ' (' + (d.url || '') + ')',

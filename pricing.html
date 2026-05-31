@@ -454,12 +454,6 @@
     </div>
 
     <div class="terms-strip" id="termsStrip"></div>
-
-    <div style="margin-top:4rem">
-      <div class="section-eyebrow reveal">Proof</div>
-      <h2 class="section-title reveal" style="margin-bottom:0.5rem">Results,<br/><em>Not Just Promises</em></h2>
-      <div class="case-grid" id="caseGrid"></div>
-    </div>
   </div>
 </section>
 
@@ -495,7 +489,7 @@
      ========================================================= */
   const PRICING = {
     currency: "USD",
-    bookingUrl: "PLACEHOLDER_BOOKING_URL",
+    bookingUrl: "index.html#contact",
     partnership: { from: 2000, dedicatedFrom: 3500, model: "retainer" },
     audits: {
       free: { price: 0 },
@@ -648,23 +642,16 @@
       includes: ["Everything in Growth", "Active AI visibility work", "New pages / sections", "Ongoing optimization", "Fastest turnaround"] }
   ];
 
-  /* ---- Case studies (placeholders) ---- */
-  const CASE_STUDIES = [
-    { tag: "Salon", title: "PLACEHOLDER — Before / After", body: "PLACEHOLDER: short result, e.g. “Rebuilt a dated salon site; load time under 1s and now appearing in AI answers.” Swap this text." },
-    { tag: "Med Spa", title: "PLACEHOLDER — Before / After", body: "PLACEHOLDER: short result for a med spa client. Replace with a real outcome." },
-    { tag: "Studio", title: "PLACEHOLDER — Before / After", body: "PLACEHOLDER: short result for a studio/gym client. Replace with a real outcome." }
-  ];
-
-  /* ---- FAQ (placeholder answers — honest, no guarantees) ---- */
+  /* ---- FAQ ---- */
   const FAQS = [
-    { q: "What's the difference between the Partnership and a project?", a: "PLACEHOLDER: The Partnership is an ongoing monthly relationship where I run your operations as your right hand — admin, marketing, design, CRM, automation — for one scoped retainer (from " + "$2,000" + "/mo), never hourly. A project is a one-time, productized build (a website, funnel, or audit) with clear upfront pricing. Many clients start with a project, then move onto a partnership." },
-    { q: "What is AI search optimization, and why does it matter?", a: "PLACEHOLDER: Explain that people increasingly ask ChatGPT, Perplexity, and Google's AI answers for local recommendations. AI optimization (schema, answer-first content, clear entity info) makes your business readable to those engines — so you can be found there, not just in classic Google results. Edit freely." },
-    { q: "Will I be guaranteed to show up in ChatGPT or rank #1?", a: "PLACEHOLDER — keep this honest: No. Nobody can guarantee rankings or AI citations, and anyone who promises that is misleading you. What I do is build and optimize your site so it's as findable as possible — clean structure, schema, and the signals these engines reward — then monitor and adjust over time." },
-    { q: "What's the difference between Relaunch + SEO & AI and Managed Migration?", a: "PLACEHOLDER: Relaunch + SEO & AI optimizes your new site going forward but does NOT protect existing rankings — it's a fresh start. Managed Migration is for sites that already rank and bring in traffic you can't afford to lose: it adds a careful, monitored process (URL crawl, 1:1 redirects, staged launch, post-launch monitoring, rollback plan) to protect that traffic during the rebuild." },
-    { q: "Does the audit cost count toward a build?", a: "PLACEHOLDER: Yes — the Full Website Audit & Action Plan ($600) is credited toward any build or retainer if you proceed within " + PRICING.audits.full.creditWindowDays + " days." },
-    { q: "I have a small site and don't really rank — which option?", a: "PLACEHOLDER: If you don't have meaningful rankings to protect, you don't need Managed Migration. Relaunch (or Relaunch + SEO & AI if you want to start getting found) is the right, more affordable fit." },
-    { q: "How does payment work?", a: "PLACEHOLDER: " + PRICING.terms.deposit + " on builds, plus an optional monthly retainer. A one-time buyout is available at a " + PRICING.terms.buyoutPremiumPct + " premium. Prices are \"from\" — final scope varies." },
-    { q: "What happens if I ever want to leave?", a: "PLACEHOLDER: You're handoff-ready with no lock-in — you keep your domain, code, and hosting and can move on cleanly anytime." }
+    { q: "What's the difference between the Partnership and a project?", a: "The Partnership is an ongoing monthly relationship where I run your operations as your right hand — admin, marketing, design, CRM, and automation — for one scoped retainer (from $2,000/mo), never billed by the hour. A project is a one-time, productized build (a website, funnel, or audit) with clear upfront pricing. Many clients start with a project, then move onto a partnership." },
+    { q: "What is AI search optimization, and why does it matter?", a: "More and more people ask ChatGPT, Perplexity, and Google's AI answers for local recommendations instead of scrolling a results page. AI optimization — schema markup, answer-first content, and clear, consistent business information — makes your site readable to those engines, so you can be found there, not just in classic Google results." },
+    { q: "Will I be guaranteed to show up in ChatGPT or rank #1?", a: "No — and anyone who promises that isn't being straight with you. Nobody can guarantee rankings or AI citations. What I do is build and optimize your site so it's as findable as possible — clean structure, schema, and the signals these engines reward — then monitor and adjust over time." },
+    { q: "What's the difference between Relaunch + SEO & AI and Managed Migration?", a: "Relaunch + SEO & AI optimizes your new site going forward, but it's a fresh start — it does not protect your existing rankings. Managed Migration is for sites that already rank and bring in traffic you can't afford to lose: it adds a careful, monitored process — full URL crawl, 1:1 redirect mapping, staged launch, post-launch monitoring, and a rollback plan — to protect that traffic during the rebuild." },
+    { q: "Does the audit cost count toward a build?", a: "Yes — the Full Website Audit & Action Plan ($600) is credited toward any build or retainer if you proceed within " + PRICING.audits.full.creditWindowDays + " days." },
+    { q: "I have a small site and don't really rank — which option?", a: "If you don't have meaningful rankings to protect, you don't need Managed Migration. A Relaunch (or Relaunch + SEO & AI if you want to start getting found) is the right, more affordable fit." },
+    { q: "How does payment work?", a: PRICING.terms.deposit + " on builds, plus an optional monthly plan. A one-time buyout is available at a " + PRICING.terms.buyoutPremiumPct + " premium. All prices are \"from\" — final scope varies with your project." },
+    { q: "What happens if I ever want to leave?", a: "You're handoff-ready with no lock-in — you keep your domain, your code, and your hosting, and can move on cleanly anytime. No hostage situations." }
   ];
 
   /* ---- Renderers ---- */
@@ -736,11 +723,6 @@
     ];
     document.getElementById("termsStrip").innerHTML = items.map(function (i) {
       return "<div class='term-item reveal'><div class='t-h'>" + i.h + "</div><div class='t-b'>" + i.b + "</div></div>";
-    }).join("");
-  }
-  function renderCases() {
-    document.getElementById("caseGrid").innerHTML = CASE_STUDIES.map(function (c) {
-      return "<article class='case-card reveal'><span class='case-tag'>" + c.tag + "</span><h4>" + c.title + "</h4><p>" + c.body + "</p></article>";
     }).join("");
   }
   function renderFaq() {
@@ -849,7 +831,6 @@
   renderTiers();
   renderRetainers();
   renderTerms();
-  renderCases();
   renderFaq();
   injectFaqSchema();
   wireCtas();

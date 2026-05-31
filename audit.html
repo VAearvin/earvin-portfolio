@@ -92,6 +92,12 @@
     .flags li::before { content: '!'; flex-shrink: 0; width: 18px; height: 18px; background: rgba(224,185,106,0.15); color: var(--amber); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; }
     .flags li.ok::before { content: '✓'; background: rgba(74,222,128,0.12); color: var(--green); }
     .ai-note { font-size: 0.78rem; color: var(--muted); font-style: italic; line-height: 1.6; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .means { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: var(--r); padding: 1.8rem 2rem; margin-bottom: 1.5rem; }
+    .means h3 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .means p { font-size: 0.9rem; color: var(--text); line-height: 1.8; margin-bottom: 0.9rem; }
+    .means p:last-child { margin-bottom: 0; }
+    .means-honest { color: var(--muted) !important; font-size: 0.86rem !important; }
+    .means-honest strong { color: var(--text); }
     .inbox-line { text-align: center; font-size: 0.9rem; color: var(--text); margin: 1.8rem 0; }
     .inbox-line strong { color: var(--gold); }
     .upsell { background: linear-gradient(180deg, rgba(199,169,127,0.08), rgba(199,169,127,0.02)); border: 1px solid rgba(199,169,127,0.3); border-radius: var(--r); padding: 2.6rem 2.4rem; text-align: center; margin-top: 2rem; }
@@ -286,10 +292,24 @@
       aiBlock = '<div class="ai-note"><strong style="color:var(--text)">AI search readiness:</strong> <strong style="color:var(--gold)">' + badge + '</strong> — ' + ai.line + ' <span style="opacity:0.85">This is a structural snapshot of how readable your site is to AI search — not a live ranking.</span></div>';
     }
 
+    // "What this means" — translate the score, then honestly frame what it can't see
+    var pm = perf.mobile == null ? 101 : perf.mobile, pd = perf.desktop == null ? 101 : perf.desktop;
+    var worst = Math.min(pm, pd);
+    var flagN = (data.topFlags || []).length;
+    var verdict;
+    if (worst <= 49 || flagN >= 3) verdict = 'Your site has real gaps that are quietly costing you visibility and visitors right now.';
+    else if (flagN >= 1) verdict = 'Your site is mostly sound — but a few gaps are holding it back.';
+    else verdict = 'Technically, your site is in good shape.';
+    var meansHtml = '<div class="means"><h3>What this means for you</h3>' +
+      '<p>' + verdict + '</p>' +
+      '<p class="means-honest"><strong>But here’s what a score can’t tell you:</strong> this scan checks speed, search basics, and how readable your site is to Google and AI. It does <em>not</em> measure how your site looks, whether visitors trust it, or whether it actually turns them into customers. A site can pass every check here and still lose bookings every week to one that simply feels more credible — and that’s exactly what the full audit looks at.</p>' +
+      '</div>';
+
     results.innerHTML =
       '<div class="result-head"><h2>Your snapshot is ready</h2><div class="site">' + data.site + '</div></div>' +
       '<div class="score-grid">' + scoreHtml + '</div>' +
       '<div class="flags"><h3>Top things to look at</h3><ul>' + flagsHtml + '</ul>' + aiBlock + '</div>' +
+      meansHtml +
       (data.emailed
         ? '<div class="inbox-line">📨 <strong>Your full report is on its way to your inbox.</strong></div>'
         : '<div class="inbox-line">Your snapshot is above. (Email delivery isn’t configured in this preview.)</div>') +

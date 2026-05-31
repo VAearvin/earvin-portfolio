@@ -153,13 +153,13 @@ async function runSeo(url, origin, htmlResult) {
   var sitemap = await checkExists(origin + '/sitemap.xml');
 
   var issues = [];
-  if (!hasTitle) issues.push('Missing a page <title>.');
-  if (!hasMeta) issues.push('No meta description — search and AI engines have less to show.');
-  if (h1count === 0) issues.push('No H1 heading found.');
-  else if (h1count > 1) issues.push(h1count + ' H1 headings — there should usually be one.');
-  if (imgs.length && altCoverage < 80) issues.push((imgs.length - withAlt) + ' of ' + imgs.length + ' images missing alt text (' + altCoverage + '% covered).');
-  if (!robots) issues.push('No robots.txt found.');
-  if (!sitemap) issues.push('No sitemap.xml found.');
+  if (!hasTitle) issues.push('No page title — this is the headline Google and AI show for you; without it, people barely notice you in results.');
+  if (!hasMeta) issues.push('No meta description — there’s nothing to show under your name in search, so people click the competitor whose listing looks complete.');
+  if (h1count === 0) issues.push('No main heading (H1) — search engines can’t tell what this page is actually about.');
+  else if (h1count > 1) issues.push(h1count + ' competing main headings (H1) — mixed signals make it harder for Google to understand your message.');
+  if (imgs.length && altCoverage < 80) issues.push((imgs.length - withAlt) + ' of ' + imgs.length + ' images have no alt text — search engines can’t read those images, and you lose image-search traffic.');
+  if (!robots) issues.push('No robots.txt — search engines have no guidance for crawling your site.');
+  if (!sitemap) issues.push('No sitemap — search engines have no map of your pages, so new and updated pages get found slowly.');
 
   // simple score: start 100, subtract per issue weight
   var score = 100;
@@ -199,9 +199,9 @@ async function runTechnical(url, origin, htmlResult) {
   }));
 
   var issues = [];
-  if (!https) issues.push('Site isn’t served securely over HTTPS (or the certificate didn’t validate).');
-  if (!schema) issues.push('No structured data (schema markup) detected — this is key for AI search.');
-  if (broken.length) issues.push(broken.length + ' link' + (broken.length > 1 ? 's' : '') + ' returned errors.');
+  if (!https) issues.push('Your site isn’t fully secure (HTTPS) — browsers can warn visitors “Not secure,” and many leave on the spot.');
+  if (!schema) issues.push('No structured data — AI tools like ChatGPT and Google’s AI can’t read what you do or where you are, so they recommend businesses they can read instead of you.');
+  if (broken.length) issues.push(broken.length + ' link' + (broken.length > 1 ? 's' : '') + ' lead to errors — dead ends frustrate visitors and tell Google the site isn’t well maintained.');
 
   var score = 100;
   if (!https) score -= 35; if (!schema) score -= 25; score -= Math.min(30, broken.length * 10);
@@ -250,10 +250,10 @@ function runAiReadiness(htmlResult) {
   var readiness = score >= 60 ? 'good' : 'needs work';
 
   var issues = [];
-  if (!hasSchema) issues.push('No structured data — AI engines have nothing machine-readable to understand your business.');
-  else if (!localBusiness) issues.push('No LocalBusiness schema — AI can’t clearly tell what you are or where you’re located.');
-  if (!entityClarity) issues.push('Your name, location, and contact details aren’t clearly machine-readable.');
-  if (!faqContent) issues.push('No FAQ / answer-style content for AI to pull from.');
+  if (!hasSchema) issues.push('No structured data — when someone asks an AI for the best option near them, you’re not even in the running.');
+  else if (!localBusiness) issues.push('No LocalBusiness data AI can read — it can’t confirm what you are or where, so it points people to a competitor it understands.');
+  if (!entityClarity) issues.push('Your name, location, and contact details aren’t clearly machine-readable — AI won’t confidently recommend a business it can’t pin down.');
+  if (!faqContent) issues.push('No FAQ / answer-style content — AI assistants quote sites that answer questions directly; without it, they quote someone else.');
 
   var line = readiness === 'good'
     ? 'Your site gives AI search engines clear signals to understand and recommend it.'
@@ -281,8 +281,8 @@ function buildTopFlags(checks) {
       checks.performance.mobile == null ? 101 : checks.performance.mobile,
       checks.performance.desktop == null ? 101 : checks.performance.desktop
     );
-    if (worst <= 49) flags.unshift('Performance is slow (score ' + worst + ') — visitors and search engines notice.');
-    else if (worst <= 89) flags.push('Performance has room to improve (score ' + worst + ').');
+    if (worst <= 49) flags.unshift('Slow to load (score ' + worst + ') — most visitors leave before a slow page finishes, and Google ranks slow sites lower.');
+    else if (worst <= 89) flags.push('Load speed has room to improve (score ' + worst + ') — every extra second quietly costs you visitors.');
   }
   if (checks.aiReadiness && checks.aiReadiness.status === 'ok' && checks.aiReadiness.readiness === 'needs work') {
     flags.push('Not structured for AI search to understand and recommend you.');
@@ -298,6 +298,15 @@ function buildEmailHtml(lead) {
     ? '<p style="color:#555"><strong>AI search readiness:</strong> ' +
       (c.aiReadiness.readiness === 'good' ? 'Good — ' : 'Needs work — ') + esc(c.aiReadiness.line) +
       ' <em>(A structural snapshot of how readable your site is to AI — not a live ranking.)</em></p>' : '';
+  var perfE = c.performance || {};
+  var worstE = Math.min(perfE.mobile == null ? 101 : perfE.mobile, perfE.desktop == null ? 101 : perfE.desktop);
+  var flagNE = (lead.topFlags || []).length;
+  var verdictE = (worstE <= 49 || flagNE >= 3)
+    ? 'Your site has real gaps that are quietly costing you visibility and visitors.'
+    : (flagNE >= 1 ? 'Your site is mostly sound — but a few gaps are holding it back.' : 'Technically, your site is in good shape.');
+  var means = '<div style="margin-top:18px;padding-top:14px;border-top:1px solid #eee">' +
+    '<p style="color:#333"><strong>What this means:</strong> ' + verdictE + '</p>' +
+    '<p style="color:#777;font-size:13px;line-height:1.6">But here’s what a score can’t tell you: this scan checks speed, search basics, and how readable your site is to Google and AI — not how it looks, whether visitors trust it, or whether it turns them into customers. A site can pass every check and still lose bookings to one that simply feels more credible. That’s what the full audit looks at.</p></div>';
   return '' +
     '<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px">' +
     '<h2 style="color:#111">Your website audit snapshot</h2>' +
@@ -310,6 +319,7 @@ function buildEmailHtml(lead) {
     '</table>' +
     '<h3 style="color:#111;margin-top:18px">Top things to look at</h3><ul style="color:#333">' + flags + '</ul>' +
     ai +
+    means +
     '<div style="margin-top:22px;padding:20px;border:1px solid #C7A97F;border-radius:6px;background:#fdfbf7">' +
       '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#a88a62;font-weight:700;margin-bottom:6px">That was the quick scan</div>' +
       '<strong style="color:#111;font-size:16px">Want the full picture — and exactly what to fix?</strong>' +

@@ -94,9 +94,17 @@
     .ai-note { font-size: 0.78rem; color: var(--muted); font-style: italic; line-height: 1.6; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
     .inbox-line { text-align: center; font-size: 0.9rem; color: var(--text); margin: 1.8rem 0; }
     .inbox-line strong { color: var(--gold); }
-    .upsell { background: linear-gradient(180deg, rgba(199,169,127,0.08), rgba(199,169,127,0.02)); border: 1px solid rgba(199,169,127,0.3); border-radius: var(--r); padding: 2.2rem; text-align: center; margin-top: 2rem; }
-    .upsell h3 { font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 0.6rem; }
-    .upsell p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; max-width: 460px; margin: 0 auto 1.6rem; }
+    .upsell { background: linear-gradient(180deg, rgba(199,169,127,0.08), rgba(199,169,127,0.02)); border: 1px solid rgba(199,169,127,0.3); border-radius: var(--r); padding: 2.6rem 2.4rem; text-align: center; margin-top: 2rem; }
+    .upsell-eyebrow { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
+    .upsell h3 { font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 0.6rem; line-height: 1.25; }
+    .upsell-sub { font-size: 0.9rem; color: var(--muted); line-height: 1.7; max-width: 480px; margin: 0 auto; }
+    .upsell-list { list-style: none; text-align: left; max-width: 540px; margin: 1.8rem auto; display: flex; flex-direction: column; gap: 1.1rem; }
+    .upsell-list li { position: relative; padding-left: 1.6rem; display: flex; flex-direction: column; gap: 0.25rem; }
+    .upsell-list li::before { content: '→'; position: absolute; left: 0; top: 0.05rem; color: var(--gold); font-weight: 700; }
+    .upsell-list li strong { color: #fff; font-size: 0.9rem; font-weight: 700; }
+    .upsell-list li span { color: var(--muted); font-size: 0.8rem; line-height: 1.55; }
+    .upsell-price { font-size: 0.92rem; color: var(--text); margin: 0.5rem 0 1.6rem; }
+    .upsell-price strong { color: var(--gold); font-weight: 800; }
     .upsell-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
     footer { border-top: 1px solid var(--border); padding: 2.5rem 5rem; display: flex; justify-content: space-between; align-items: center; background: var(--bg); flex-wrap: wrap; gap: 1rem; }
@@ -194,7 +202,7 @@
     'Checking performance on mobile and desktop…',
     'Reviewing SEO basics and structure…',
     'Testing security and links…',
-    'Asking an AI assistant if you show up…',
+    'Checking your AI search readiness…',
     'Putting your snapshot together…'
   ];
 
@@ -255,7 +263,7 @@
     var perf = c.performance || {};
     var seo = c.seo || {};
     var tech = c.technical || {};
-    var ai = c.aiVisibility || {};
+    var ai = c.aiReadiness || {};
 
     var scores = [
       { label: 'Performance · Mobile', val: perf.mobile },
@@ -273,9 +281,9 @@
       : '<li class="ok">No major red flags in the quick scan — nice work.</li>';
 
     var aiBlock = '';
-    if (ai && ai.status !== 'skipped') {
-      var seen = ai.appeared === true ? 'Yes — your business came up.' : (ai.appeared === false ? 'Not this time.' : 'Couldn’t check.');
-      aiBlock = '<div class="ai-note"><strong style="color:var(--text)">AI search snapshot:</strong> When I asked an AI assistant &ldquo;' + (ai.query || 'best business near you') + '&rdquo;, here’s what I saw: <strong style="color:var(--gold)">' + seen + '</strong> This is a one-time snapshot, not a ranking guarantee.</div>';
+    if (ai && ai.status === 'ok') {
+      var badge = ai.readiness === 'good' ? 'Good' : 'Needs work';
+      aiBlock = '<div class="ai-note"><strong style="color:var(--text)">AI search readiness:</strong> <strong style="color:var(--gold)">' + badge + '</strong> — ' + ai.line + ' <span style="opacity:0.85">This is a structural snapshot of how readable your site is to AI search — not a live ranking.</span></div>';
     }
 
     results.innerHTML =
@@ -286,11 +294,20 @@
         ? '<div class="inbox-line">📨 <strong>Your full report is on its way to your inbox.</strong></div>'
         : '<div class="inbox-line">Your snapshot is above. (Email delivery isn’t configured in this preview.)</div>') +
       '<div class="upsell">' +
-        '<h3>Want the complete picture?</h3>' +
-        '<p>This is the quick snapshot. The <strong>Full Website Audit &amp; Action Plan</strong> (' + FULL_AUDIT_PRICE + ', credited toward any build within 30 days) is a deep diagnostic across performance, SEO, AI visibility, conversion, and content — with a prioritized plan and a walkthrough call.</p>' +
+        '<div class="upsell-eyebrow">That was the quick scan</div>' +
+        '<h3>Want the full picture — and exactly what to fix?</h3>' +
+        '<p class="upsell-sub">The free scan shows you what’s wrong. The full audit hands you the plan to fix it.</p>' +
+        '<ul class="upsell-list">' +
+          '<li><strong>Find out if AI is recommending you — or your competitor.</strong><span>Where you stand in AI search, and what it takes to be the one it recommends.</span></li>' +
+          '<li><strong>Where you’re losing customers.</strong><span>The booking and conversion gaps costing you walk-ins.</span></li>' +
+          '<li><strong>Why you’re not ranking on Google.</strong><span>The full SEO picture, not just the basics.</span></li>' +
+          '<li><strong>What to fix first.</strong><span>A prioritized plan, ranked by impact.</span></li>' +
+          '<li><strong>A 30-minute walkthrough call with me.</strong><span>I talk you through the findings and your top priorities, live.</span></li>' +
+        '</ul>' +
+        '<div class="upsell-price">Full Website Audit &amp; Action Plan — <strong>' + FULL_AUDIT_PRICE + '</strong> · credited toward any build.</div>' +
         '<div class="upsell-actions">' +
-          '<a href="pricing.html#audit" class="btn-gold">See the Full Audit</a>' +
-          '<a href="index.html#contact" class="btn-outline">Book a call</a>' +
+          '<a href="pricing.html#audit" class="btn-gold">Book my full audit</a>' +
+          '<a href="index.html#contact" class="btn-outline">or book a free call first</a>' +
         '</div>' +
       '</div>';
     results.classList.add('show');

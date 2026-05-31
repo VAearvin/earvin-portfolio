@@ -5,7 +5,6 @@
  * Environment variables (set in Vercel project settings → Environment Variables,
  * or a local .env loaded by dev-server.js). NONE are committed.
  *   PAGESPEED_API_KEY   — Google PageSpeed Insights API key (performance scores)
- *   ANTHROPIC_API_KEY   — Anthropic API key (AI-visibility snapshot)
  *   RESEND_API_KEY      — Resend API key (sends the report + notifies Earvin)
  *   AUDIT_FROM_EMAIL    — verified Resend sender, e.g. "Earvin <audit@earvinlaureano.com>"
  *   AUDIT_NOTIFY_EMAIL  — where lead notifications go, e.g. "inquire@earvinlaureano.com"
@@ -49,15 +48,15 @@ module.exports = async function handler(req, res) {
     runPerformance(url),
     runSeo(url, origin, htmlResult),
     runTechnical(url, origin, htmlResult),
-    runAiVisibility(htmlResult)
+    runAiReadiness(htmlResult)
   ]);
 
   var performance = pick(settled[0], { status: 'error', mobile: null, desktop: null });
   var seo = pick(settled[1], { status: 'error', score: null, issues: [] });
   var technical = pick(settled[2], { status: 'error', score: null, issues: [] });
-  var aiVisibility = pick(settled[3], { status: 'skipped', appeared: null });
+  var aiReadiness = pick(settled[3], { status: 'error', readiness: null });
 
-  var checks = { performance: performance, seo: seo, technical: technical, aiVisibility: aiVisibility };
+  var checks = { performance: performance, seo: seo, technical: technical, aiReadiness: aiReadiness };
   var topFlags = buildTopFlags(checks).slice(0, 4);
 
   // --- Side effects (never block/break the response) ---
@@ -211,35 +210,58 @@ async function runTechnical(url, origin, htmlResult) {
   return { status: 'ok', score: score, https: https, schema: schema, brokenLinks: broken, linksChecked: links.length, issues: issues };
 }
 
-/* ---- AI-visibility snapshot (Anthropic) ---- */
-async function runAiVisibility(htmlResult) {
-  var key = process.env.ANTHROPIC_API_KEY;
-  if (!key || !htmlResult || !htmlResult.html) return { status: 'skipped', appeared: null };
+/* ---- AI Search Readiness (free, structural — no external API) ----
+   Reads the page's own structure to judge whether AI search engines can
+   understand and recommend the business. This is a structural snapshot,
+   not a live ranking and not a guarantee. */
+function runAiReadiness(htmlResult) {
+  if (!htmlResult || !htmlResult.html) return { status: 'error', readiness: null };
   var html = htmlResult.html;
-  var title = ((html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '').trim().slice(0, 160);
-  var desc = ((html.match(/<meta[^>]+name=["']description["'][^>]*content=["']([^"']+)["']/i) || [])[1] || '').trim().slice(0, 300);
-  var prompt = 'You are evaluating whether a local business would surface in an AI assistant answer. ' +
-    'Here is the business, from its homepage:\nTitle: ' + title + '\nDescription: ' + desc + '\n\n' +
-    'Infer the business type and location. Then decide: if a typical customer asked an AI assistant ' +
-    '"best [business type] in [location]", is THIS specific business likely to be named today based only on this homepage signal? ' +
-    'Be realistic and conservative. Respond ONLY as compact JSON: ' +
-    '{"query":"best ... in ...","appeared":true|false,"reason":"one short sentence"}';
-  try {
-    var data = await withTimeout(async function (signal) {
-      var r = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST', signal: signal,
-        headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
-        body: JSON.stringify({ model: 'claude-3-5-haiku-latest', max_tokens: 200,
-          messages: [{ role: 'user', content: prompt }] })
-      });
-      return r.json();
-    }, 15000);
-    var text = data && data.content && data.content[0] && data.content[0].text || '';
-    var parsed = JSON.parse((text.match(/\{[\s\S]*\}/) || ['{}'])[0]);
-    return { status: 'ok', appeared: !!parsed.appeared, query: parsed.query || 'best business near you', reason: parsed.reason || '' };
-  } catch (e) {
-    return { status: 'error', appeared: null };
-  }
+  var lower = html.toLowerCase();
+
+  // structured data, with emphasis on the types AI engines lean on
+  var jsonld = (html.match(/<script[^>]+application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi) || []).join(' ');
+  var hasSchema = /application\/ld\+json/i.test(html) || /\bitemscope\b/i.test(html);
+  var localBusiness = /"@type"\s*:\s*"(LocalBusiness|[A-Za-z]+Business|BeautySalon|HairSalon|Dentist|MedicalBusiness|HealthAndBeautyBusiness|Restaurant|ProfessionalService|Store|Organization)"/i.test(jsonld);
+  var faqSchema = /"@type"\s*:\s*"FAQPage"/i.test(jsonld);
+
+  // entity clarity — can a machine read who/where/how to reach the business?
+  var hasPhone = /tel:\+?\d/.test(html) || /\b(\+?\d[\d\s().-]{7,}\d)\b/.test(html.replace(/<[^>]+>/g, ' '));
+  var hasEmail = /mailto:/i.test(html);
+  var hasAddressHint = /\b\d{1,5}\s+[\w.]+(\s+\w+){0,4}\s+(street|st|ave|avenue|road|rd|blvd|boulevard|lane|ln|drive|dr|suite|ste|unit|floor)\b/i.test(lower)
+    || /\b(address|location|visit us|find us)\b/i.test(lower);
+  var entityClarity = (hasPhone || hasEmail) && hasAddressHint;
+
+  // FAQ / answer-style content AI can extract
+  var faqContent = faqSchema || /frequently asked|\bfaq\b/i.test(lower);
+
+  // clean semantic structure
+  var semantic = /<(header|main|nav|footer|section|article)\b/i.test(html);
+  var singleH1 = (html.match(/<h1[\s>]/gi) || []).length === 1;
+  var goodStructure = semantic && singleH1;
+
+  var score = 0;
+  if (hasSchema) score += 30;
+  if (localBusiness) score += 25;
+  if (entityClarity) score += 20;
+  if (faqContent) score += 15;
+  if (goodStructure) score += 10;
+  score = Math.min(100, score);
+  var readiness = score >= 60 ? 'good' : 'needs work';
+
+  var issues = [];
+  if (!hasSchema) issues.push('No structured data — AI engines have nothing machine-readable to understand your business.');
+  else if (!localBusiness) issues.push('No LocalBusiness schema — AI can’t clearly tell what you are or where you’re located.');
+  if (!entityClarity) issues.push('Your name, location, and contact details aren’t clearly machine-readable.');
+  if (!faqContent) issues.push('No FAQ / answer-style content for AI to pull from.');
+
+  var line = readiness === 'good'
+    ? 'Your site gives AI search engines clear signals to understand and recommend it.'
+    : 'Your site isn’t structured for AI search engines to understand and recommend it.';
+
+  return { status: 'ok', readiness: readiness, score: score,
+           signals: { schema: hasSchema, localBusiness: localBusiness, entityClarity: entityClarity, faq: faqContent, structure: goodStructure },
+           issues: issues, line: line };
 }
 
 async function checkExists(u) {
@@ -261,6 +283,9 @@ function buildTopFlags(checks) {
     );
     if (worst <= 49) flags.unshift('Performance is slow (score ' + worst + ') — visitors and search engines notice.');
     else if (worst <= 89) flags.push('Performance has room to improve (score ' + worst + ').');
+  }
+  if (checks.aiReadiness && checks.aiReadiness.status === 'ok' && checks.aiReadiness.readiness === 'needs work') {
+    flags.push('Not structured for AI search to understand and recommend you.');
   }
   return flags;
 }
@@ -305,10 +330,10 @@ function buildEmailHtml(lead) {
   var c = lead.checks;
   var row = function (label, val) { return '<tr><td style="padding:6px 12px;color:#8d887f">' + label + '</td><td style="padding:6px 12px;color:#111;font-weight:600">' + val + '</td></tr>'; };
   var flags = (lead.topFlags || []).map(function (f) { return '<li style="margin:4px 0">' + esc(f) + '</li>'; }).join('') || '<li>No major red flags in the quick scan.</li>';
-  var ai = c.aiVisibility && c.aiVisibility.status !== 'skipped'
-    ? '<p style="color:#555"><strong>AI search snapshot:</strong> asking an AI assistant &ldquo;' + esc(c.aiVisibility.query || '') + '&rdquo; — ' +
-      (c.aiVisibility.appeared === true ? 'your business came up.' : c.aiVisibility.appeared === false ? 'it did not come up this time.' : 'couldn’t check.') +
-      ' <em>This is a one-time snapshot, not a ranking guarantee.</em></p>' : '';
+  var ai = c.aiReadiness && c.aiReadiness.status === 'ok'
+    ? '<p style="color:#555"><strong>AI search readiness:</strong> ' +
+      (c.aiReadiness.readiness === 'good' ? 'Good — ' : 'Needs work — ') + esc(c.aiReadiness.line) +
+      ' <em>(A structural snapshot of how readable your site is to AI — not a live ranking.)</em></p>' : '';
   return '' +
     '<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px">' +
     '<h2 style="color:#111">Your website audit snapshot</h2>' +

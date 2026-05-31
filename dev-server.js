@@ -70,6 +70,6 @@ server.listen(PORT, function () {
   console.log('  Home   : http://localhost:' + PORT + '/index.html');
   console.log('  Pricing: http://localhost:' + PORT + '/pricing.html');
   console.log('  Audit  : http://localhost:' + PORT + '/audit.html');
-  const keys = ['PAGESPEED_API_KEY', 'ANTHROPIC_API_KEY', 'RESEND_API_KEY', 'AUDIT_FROM_EMAIL', 'AUDIT_NOTIFY_EMAIL', 'SHEETS_WEBHOOK_URL'];
+  const keys = ['PAGESPEED_API_KEY', 'RESEND_API_KEY', 'AUDIT_FROM_EMAIL', 'AUDIT_NOTIFY_EMAIL', 'SHEETS_WEBHOOK_URL'];
   console.log('Env configured:', keys.filter(function (k) { return process.env[k]; }).join(', ') || '(none — checks that need keys will say "couldn\'t check")');
 });

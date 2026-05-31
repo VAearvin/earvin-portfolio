@@ -346,10 +346,19 @@ function buildEmailHtml(lead) {
     '</table>' +
     '<h3 style="color:#111;margin-top:18px">Top things to look at</h3><ul style="color:#333">' + flags + '</ul>' +
     ai +
-    '<div style="margin-top:22px;padding:18px;border:1px solid #C7A97F;border-radius:6px;background:#fdfbf7">' +
-      '<strong style="color:#111">Want the complete picture?</strong>' +
-      '<p style="color:#555;margin:6px 0 12px">The Full Website Audit &amp; Action Plan ($600, credited toward any build within 30 days) is a deep diagnostic with a prioritized plan and a walkthrough call.</p>' +
-      '<a href="https://www.earvinlaureano.com/pricing.html#audit" style="background:#C7A97F;color:#0c0c0c;padding:10px 18px;border-radius:4px;text-decoration:none;font-weight:700">See the Full Audit</a>' +
+    '<div style="margin-top:22px;padding:20px;border:1px solid #C7A97F;border-radius:6px;background:#fdfbf7">' +
+      '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#a88a62;font-weight:700;margin-bottom:6px">That was the quick scan</div>' +
+      '<strong style="color:#111;font-size:16px">Want the full picture — and exactly what to fix?</strong>' +
+      '<p style="color:#555;margin:6px 0 12px">The free scan shows you what’s wrong. The full audit hands you the plan to fix it:</p>' +
+      '<ul style="color:#333;padding-left:18px;margin:0 0 14px;line-height:1.7">' +
+        '<li><strong>Find out if AI is recommending you — or your competitor.</strong></li>' +
+        '<li><strong>Where you’re losing customers</strong> — the booking and conversion gaps.</li>' +
+        '<li><strong>Why you’re not ranking on Google</strong> — the full SEO picture.</li>' +
+        '<li><strong>What to fix first</strong> — a prioritized plan, ranked by impact.</li>' +
+        '<li><strong>A 30-minute walkthrough call</strong> to talk through your priorities.</li>' +
+      '</ul>' +
+      '<p style="color:#111;margin:0 0 12px"><strong>Full Website Audit &amp; Action Plan — $600</strong> · credited toward any build.</p>' +
+      '<a href="https://www.earvinlaureano.com/pricing.html#audit" style="background:#C7A97F;color:#0c0c0c;padding:10px 18px;border-radius:4px;text-decoration:none;font-weight:700">Book my full audit</a>' +
     '</div>' +
     '<p style="color:#999;font-size:12px;margin-top:18px">Automated snapshot from earvinlaureano.com · Reply to this email to reach Earvin directly.</p>' +
     '</div>';

@@ -98,6 +98,13 @@
     .means p:last-child { margin-bottom: 0; }
     .means-honest { color: var(--muted) !important; font-size: 0.86rem !important; }
     .means-honest strong { color: var(--text); }
+    .gap { background: var(--bg2); border: 1px solid rgba(199,169,127,0.25); border-radius: var(--r); padding: 2rem; margin-bottom: 1.5rem; }
+    .gap h3 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .gap-sub { font-size: 0.86rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.4rem; }
+    .gap-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 1.6rem; }
+    @media (max-width: 600px) { .gap-list { grid-template-columns: 1fr; } }
+    .gap-list li { font-size: 0.83rem; color: var(--text); line-height: 1.5; display: flex; gap: 0.6rem; align-items: flex-start; }
+    .gap-list li svg { width: 13px; height: 13px; stroke: var(--gold); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 0.2rem; opacity: 0.8; }
     .inbox-line { text-align: center; font-size: 0.9rem; color: var(--text); margin: 1.8rem 0; }
     .inbox-line strong { color: var(--gold); }
     .upsell { background: linear-gradient(180deg, rgba(199,169,127,0.08), rgba(199,169,127,0.02)); border: 1px solid rgba(199,169,127,0.3); border-radius: var(--r); padding: 2.6rem 2.4rem; text-align: center; margin-top: 2rem; }
@@ -305,25 +312,39 @@
       '<p class="means-honest"><strong>But here’s what a score can’t tell you:</strong> this scan checks speed, search basics, and how readable your site is to Google and AI. It does <em>not</em> measure how your site looks, whether visitors trust it, or whether it actually turns them into customers. A site can pass every check here and still lose bookings every week to one that simply feels more credible — and that’s exactly what the full audit looks at.</p>' +
       '</div>';
 
+    // "What the quick scan couldn't check" — the gap that creates the need for the full audit
+    var lock = '<svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
+    var gapItems = [
+      'Whether your site actually looks trustworthy &amp; professional',
+      'Where visitors drop off before they book or call',
+      'The live AI test — do <em>you</em> show up when someone asks ChatGPT or Google AI for the best in your area, or your competitor?',
+      'How you compare to the competitors winning your customers',
+      'Your real mobile experience (beyond load speed)',
+      'Whether your words actually persuade — messaging &amp; calls-to-action',
+      'Full local SEO &amp; keyword strategy (beyond the basic tags)',
+      'The questions your customers ask that your site doesn’t answer',
+      'Trust signals — reviews, proof, and credibility',
+      'Analytics &amp; tracking — are you even measuring leads?',
+      'A page-by-page review (this scan only looked at your homepage)',
+      'A prioritized action plan — up to 20 ranked, do-this-next fixes'
+    ];
+    var gapHtml = '<div class="gap"><h3>What this quick scan couldn’t check</h3>' +
+      '<p class="gap-sub">This 60-second scan only sees the technical surface. Here’s what it <em>can’t</em> see — and what the full audit digs into for you:</p>' +
+      '<ul class="gap-list">' + gapItems.map(function (g) { return '<li>' + lock + '<span>' + g + '</span></li>'; }).join('') + '</ul></div>';
+
     results.innerHTML =
       '<div class="result-head"><h2>Your snapshot is ready</h2><div class="site">' + data.site + '</div></div>' +
       '<div class="score-grid">' + scoreHtml + '</div>' +
       '<div class="flags"><h3>Top things to look at</h3><ul>' + flagsHtml + '</ul>' + aiBlock + '</div>' +
       meansHtml +
+      gapHtml +
       (data.emailed
         ? '<div class="inbox-line">📨 <strong>Your full report is on its way to your inbox.</strong></div>'
         : '<div class="inbox-line">Your snapshot is above. (Email delivery isn’t configured in this preview.)</div>') +
       '<div class="upsell">' +
         '<div class="upsell-eyebrow">That was the quick scan</div>' +
-        '<h3>Want the full picture — and exactly what to fix?</h3>' +
-        '<p class="upsell-sub">The free scan shows you what’s wrong. The full audit hands you the plan to fix it.</p>' +
-        '<ul class="upsell-list">' +
-          '<li><strong>Find out if AI is recommending you — or your competitor.</strong><span>Where you stand in AI search, and what it takes to be the one it recommends.</span></li>' +
-          '<li><strong>Where you’re losing customers.</strong><span>The booking and conversion gaps costing you walk-ins.</span></li>' +
-          '<li><strong>Why you’re not ranking on Google.</strong><span>The full SEO picture, not just the basics.</span></li>' +
-          '<li><strong>What to fix first.</strong><span>A prioritized plan, ranked by impact.</span></li>' +
-          '<li><strong>A 30-minute walkthrough call with me.</strong><span>I talk you through the findings and your top priorities, live.</span></li>' +
-        '</ul>' +
+        '<h3>The full audit covers everything above — and hands you the fixes.</h3>' +
+        '<p class="upsell-sub">A deep, human review across performance, SEO, AI visibility, design, conversion, and content — ending in <strong>up to 20 prioritized, actionable fixes</strong> and a 30-minute walkthrough call to talk through your top priorities.</p>' +
         '<div class="upsell-price">Full Website Audit &amp; Action Plan — <strong>' + FULL_AUDIT_PRICE + '</strong> · credited toward any build.</div>' +
         '<div class="upsell-actions">' +
           '<a href="/pricing#audit" class="btn-gold">Book my full audit</a>' +

@@ -307,6 +307,16 @@ function buildEmailHtml(lead) {
   var means = '<div style="margin-top:18px;padding-top:14px;border-top:1px solid #eee">' +
     '<p style="color:#333"><strong>What this means:</strong> ' + verdictE + '</p>' +
     '<p style="color:#777;font-size:13px;line-height:1.6">But here’s what a score can’t tell you: this scan checks speed, search basics, and how readable your site is to Google and AI — not how it looks, whether visitors trust it, or whether it turns them into customers. A site can pass every check and still lose bookings to one that simply feels more credible. That’s what the full audit looks at.</p></div>';
+  var gapEmail = '<div style="margin-top:18px"><p style="color:#111"><strong>What this quick scan couldn’t check</strong></p>' +
+    '<p style="color:#777;font-size:13px;margin:4px 0 8px">The free scan only sees the technical surface. The full audit also covers:</p>' +
+    '<ul style="color:#555;font-size:13px;line-height:1.7;padding-left:18px;margin:0">' +
+    '<li>Whether your site looks trustworthy &amp; professional</li>' +
+    '<li>Where visitors drop off before booking</li>' +
+    '<li>The live AI test — do you appear, or your competitor?</li>' +
+    '<li>How you compare to competitors winning your customers</li>' +
+    '<li>Messaging, mobile experience, trust signals &amp; analytics</li>' +
+    '<li>A page-by-page review + up to 20 prioritized fixes</li>' +
+    '</ul></div>';
   return '' +
     '<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px">' +
     '<h2 style="color:#111">Your website audit snapshot</h2>' +
@@ -320,6 +330,7 @@ function buildEmailHtml(lead) {
     '<h3 style="color:#111;margin-top:18px">Top things to look at</h3><ul style="color:#333">' + flags + '</ul>' +
     ai +
     means +
+    gapEmail +
     '<div style="margin-top:22px;padding:20px;border:1px solid #C7A97F;border-radius:6px;background:#fdfbf7">' +
       '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#a88a62;font-weight:700;margin-bottom:6px">That was the quick scan</div>' +
       '<strong style="color:#111;font-size:16px">Want the full picture — and exactly what to fix?</strong>' +

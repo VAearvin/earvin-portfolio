@@ -132,6 +132,18 @@
     .audit-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.6rem; flex: 1; }
     .audit-card .btn-gold, .audit-card .btn-outline { text-align: center; justify-content: center; }
 
+    /* FULL AUDIT DELIVERABLES */
+    .deliverables { max-width: 940px; margin: 2.5rem auto 0; background: var(--bg2); border: 1px solid rgba(199,169,127,0.25); border-radius: var(--r); padding: 2.6rem; text-align: left; }
+    .deliverables h3 { font-size: 1.05rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+    .deliverables .d-sub { font-size: 0.86rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.8rem; }
+    .deliverables .d-sub strong { color: var(--text); }
+    .deliverables-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem 1.8rem; list-style: none; }
+    @media (max-width: 700px) { .deliverables-grid { grid-template-columns: 1fr; } }
+    .deliverables-grid li { font-size: 0.84rem; color: var(--text); line-height: 1.5; display: flex; gap: 0.65rem; align-items: flex-start; }
+    .deliverables-grid li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .deliverables-foot { margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid var(--border); font-size: 0.86rem; color: var(--muted); line-height: 1.7; text-align: center; }
+    .deliverables-foot strong { color: var(--gold); }
+
     /* HELPER */
     #helper { border-bottom: 1px solid var(--border); background: var(--bg2); }
     .helper-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r); padding: 2.8rem; max-width: 820px; margin: 2.5rem auto 0; text-align: left; }
@@ -331,6 +343,34 @@
     <h2 class="section-title reveal">First, See Where<br/><em>You Stand</em></h2>
     <p class="section-desc reveal">Before any build, find out how your current site performs — on speed, SEO, and whether you even show up in AI answers yet.</p>
     <div class="audit-grid" id="auditGrid"></div>
+
+    <div class="deliverables reveal">
+      <h3>What's inside the Full Website Audit &amp; Action Plan</h3>
+      <p class="d-sub">A deep, human review of your entire online presence — delivered as a clear written report plus a walkthrough call. <strong>Up to 20 prioritized, actionable fixes</strong>, including:</p>
+      <ul class="deliverables-grid">
+        <li>Performance deep-dive — what's slowing each page, and how to fix it</li>
+        <li>Complete on-page SEO review — titles, meta, headings, structure</li>
+        <li>Local SEO audit — Google Business Profile, map presence, NAP consistency</li>
+        <li>Keyword &amp; search-intent analysis for your services</li>
+        <li>Live AI-visibility test — ChatGPT, Perplexity &amp; Google AI</li>
+        <li>Competitor comparison — who's winning your searches, and why</li>
+        <li>Structured-data / schema audit (LocalBusiness, Service, FAQ, Reviews)</li>
+        <li>Conversion review — booking flow, forms &amp; friction points</li>
+        <li>Mobile experience review — real UX, not just speed</li>
+        <li>Design &amp; brand-credibility review</li>
+        <li>Copy &amp; messaging review — clarity, persuasion, calls-to-action</li>
+        <li>Content-gap analysis — the questions customers ask that you don't answer</li>
+        <li>Trust &amp; social-proof audit — reviews, testimonials, credibility</li>
+        <li>Accessibility check</li>
+        <li>Analytics &amp; tracking audit — are you actually measuring leads?</li>
+        <li>Full broken-link &amp; technical-health crawl — every page, not a sample</li>
+        <li>Page-by-page recommendations</li>
+        <li>Quick wins you can act on this week</li>
+        <li>A prioritized action plan, ranked by impact</li>
+        <li>A 30-minute walkthrough call to talk it all through</li>
+      </ul>
+      <div class="deliverables-foot">You get a clear written report <strong>and</strong> a 30-minute walkthrough call — and the $600 is <strong>credited toward any build</strong> if you proceed within 30 days.</div>
+    </div>
   </div>
 </section>
 

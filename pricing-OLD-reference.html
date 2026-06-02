@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing — Websites Built for Google &amp; AI Search | Earvin Laureano</title>
+  <meta name="description" content="Custom websites for local service businesses — salons, med spas, dentists, gyms, studios — optimized to be found in Google and AI search (ChatGPT, Perplexity, AI answers). Audits, builds, and monthly care. Handoff-ready, no lock-in."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.earvinlaureano.com/pricing"/>
+  <meta name="theme-color" content="#0c0c0c"/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Earvin Laureano"/>
+  <meta property="og:title" content="Websites Built for Google &amp; AI Search — Pricing"/>
+  <meta property="og:description" content="Custom sites for local service businesses, built to be found in Google and AI answers. Built-in CMS, optional monthly care, handoff-ready."/>
+  <meta property="og:url" content="https://www.earvinlaureano.com/pricing"/>
+  <meta property="og:image" content="https://www.earvinlaureano.com/earvin.jpeg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="apple-touch-icon" href="/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <!-- ===== STRUCTURED DATA — this page is its own showcase of AI-search technique ===== -->
+  <!-- Service schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Website design and AI search optimization for local service businesses",
+    "provider": {
+      "@type": "Person",
+      "name": "Earvin Laureano",
+      "url": "https://www.earvinlaureano.com/",
+      "email": "inquire@earvinlaureano.com"
+    },
+    "areaServed": "Worldwide (remote)",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Local service businesses — salons, med spas, dentists, gyms, studios"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "lowPrice": "0",
+      "highPrice": "10000",
+      "offerCount": "7"
+    }
+  }
+  </script>
+  <!-- FAQPage schema is injected by JS from the same FAQ data the page renders (single source of truth) -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#0c0c0c; --bg2:#111111; --bg3:#181818; --border:rgba(255,255,255,0.06);
+      --gold:#C7A97F; --gold2:#E8D4B0; --gold3:#a88a62; --text:#E8D4B0; --muted:#8d887f;
+      --soft:rgba(199,169,127,0.08); --r:4px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(12,12,12,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: padding 0.3s; }
+    nav.scrolled { padding: 1rem 5rem; }
+    .logo { font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.25s; position: relative; }
+    .nav-links a.active { color: var(--gold); }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { font-size: 0.72rem !important; font-weight: 600 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: var(--bg) !important; background: var(--gold) !important; padding: 0.65rem 1.5rem !important; text-decoration: none; transition: all 0.25s !important; border-radius: var(--r) !important; }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--gold2) !important; transform: translateY(-1px) !important; box-shadow: 0 4px 20px rgba(199,169,127,0.3) !important; }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; position: relative; z-index: 2; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--gold); transition: transform 0.3s, opacity 0.3s; }
+    .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* BUTTONS */
+    .btn-gold { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: var(--gold); color: var(--bg); padding: 0.9rem 2rem; text-decoration: none; border-radius: var(--r); transition: all 0.25s; display: inline-block; border: none; cursor: pointer; }
+    .btn-gold:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(199,169,127,0.25); }
+    .btn-outline { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); border: 1px solid var(--border); padding: 0.9rem 2rem; text-decoration: none; border-radius: var(--r); transition: all 0.25s; display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; cursor: pointer; }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* SECTIONS */
+    .section { padding: 6.5rem 5rem; max-width: 1200px; margin: 0 auto; }
+    .section-eyebrow { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; justify-content: center; }
+    .section-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+    .section-title { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; line-height: 1.15; color: #fff; margin-bottom: 1rem; }
+    .section-title em { font-style: italic; color: var(--gold); font-weight: 700; }
+    .section-desc { font-size: 0.92rem; color: var(--muted); max-width: 640px; line-height: 1.85; }
+    .center { text-align: center; }
+    .center .section-desc { margin-left: auto; margin-right: auto; }
+
+    /* HERO */
+    #page-hero { min-height: 64vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; padding: 9rem 1.5rem 4rem; overflow: hidden; }
+    .page-hero-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(199,169,127,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(199,169,127,0.03) 1px, transparent 1px); background-size: 80px 80px; }
+    .page-hero-inner { position: relative; z-index: 2; max-width: 780px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.6rem; background: rgba(199,169,127,0.1); border: 1px solid rgba(199,169,127,0.25); padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 2rem; }
+    .hero-badge-dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; }
+    .hero-badge span { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+    .page-hero-inner h1 { font-size: clamp(2.4rem, 4.5vw, 3.6rem); font-weight: 800; line-height: 1.1; color: #fff; margin-bottom: 1.5rem; }
+    .page-hero-inner h1 em { font-style: italic; color: var(--gold); font-weight: 700; }
+    .page-hero-inner p { font-size: 1rem; color: var(--muted); line-height: 1.9; max-width: 580px; margin: 0 auto 2.5rem; }
+    .hero-actions { display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap; }
+
+    /* AI BANNER */
+    #ai-banner { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: linear-gradient(180deg, rgba(199,169,127,0.07), rgba(199,169,127,0.02)); }
+    .ai-banner-inner { max-width: 1000px; margin: 0 auto; padding: 2.2rem 5rem; display: flex; align-items: center; gap: 1.4rem; }
+    .ai-banner-icon { width: 46px; height: 46px; flex-shrink: 0; border-radius: var(--r); background: rgba(199,169,127,0.12); border: 1px solid rgba(199,169,127,0.35); display: flex; align-items: center; justify-content: center; }
+    .ai-banner-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .ai-banner-inner p { font-size: 0.92rem; color: var(--text); line-height: 1.75; }
+    .ai-banner-inner strong { color: var(--gold); font-weight: 600; }
+
+    /* AUDIT */
+    #audit { border-bottom: 1px solid var(--border); }
+    .audit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; max-width: 880px; margin-left: auto; margin-right: auto; }
+    .audit-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r); padding: 2.4rem 2rem; display: flex; flex-direction: column; text-align: left; transition: border-color 0.3s, transform 0.3s; }
+    .audit-card:hover { border-color: rgba(199,169,127,0.25); transform: translateY(-3px); }
+    .audit-card.paid { border-color: rgba(199,169,127,0.4); box-shadow: 0 0 0 1px rgba(199,169,127,0.12) inset; }
+    .audit-kicker { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+    .audit-name { font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+    .audit-price { font-size: 1.5rem; font-weight: 800; color: var(--gold); margin: 0.5rem 0 0.3rem; }
+    .audit-price-note { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.3rem; display: block; }
+    .audit-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.6rem; flex: 1; }
+    .audit-card .btn-gold, .audit-card .btn-outline { text-align: center; justify-content: center; }
+
+    /* FREE vs FULL AUDIT COMPARISON */
+    .compare { max-width: 880px; margin: 2.5rem auto 0; background: var(--bg2); border: 1px solid rgba(199,169,127,0.25); border-radius: var(--r); padding: 2.4rem; text-align: left; }
+    .compare h3 { font-size: 1.05rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+    .compare .c-sub { font-size: 0.86rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.6rem; }
+    .compare .c-sub strong { color: var(--text); }
+    .crow { display: grid; grid-template-columns: 1fr 84px 96px; align-items: center; gap: 0.5rem; padding: 0.62rem 0; border-bottom: 1px solid var(--border); }
+    .crow.chead { padding-bottom: 0.7rem; }
+    .chead .col { text-align: center; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .chead .col.paid { color: var(--gold); }
+    .ccat { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); padding: 1.4rem 0 0.5rem; }
+    .crow .feat { font-size: 0.83rem; color: var(--text); line-height: 1.4; }
+    .crow .cell { text-align: center; font-weight: 700; font-size: 0.95rem; }
+    .crow .cell.yes { color: var(--gold); }
+    .crow .cell.no { color: #45433f; }
+    .crow .cell.paid { background: rgba(199,169,127,0.06); border-radius: 4px; padding: 0.25rem 0; }
+    .compare-foot { margin-top: 1.7rem; padding-top: 1.4rem; border-top: 1px solid var(--border); font-size: 0.86rem; color: var(--muted); line-height: 1.7; text-align: center; }
+    .compare-foot strong { color: var(--gold); }
+    @media (max-width: 600px) { .compare { padding: 1.5rem; } .crow { grid-template-columns: 1fr 50px 56px; } .crow .feat { font-size: 0.78rem; } }
+
+    /* HELPER */
+    #helper { border-bottom: 1px solid var(--border); background: var(--bg2); }
+    .helper-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r); padding: 2.8rem; max-width: 820px; margin: 2.5rem auto 0; text-align: left; }
+    .helper-questions { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .helper-q { margin: 0; }
+    .helper-q-label { font-size: 0.8rem; font-weight: 600; color: #fff; margin-bottom: 1rem; display: block; }
+    .helper-options { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .helper-opt { font-size: 0.78rem; font-weight: 500; color: var(--text); background: transparent; border: 1px solid var(--border); padding: 0.7rem 1.6rem; border-radius: 100px; cursor: pointer; transition: all 0.2s; font-family: inherit; }
+    .helper-opt:hover { border-color: rgba(199,169,127,0.45); }
+    .helper-opt[aria-pressed="true"] { background: var(--gold); color: var(--bg); border-color: var(--gold); }
+    .helper-opt:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .helper-result { margin-top: 2.4rem; padding-top: 1.8rem; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--muted); line-height: 1.8; text-align: center; }
+    .helper-result strong { color: var(--gold); font-weight: 600; }
+
+    /* TIERS */
+    #builds { border-bottom: 1px solid var(--border); }
+    .group-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 3.5rem 0 1.5rem; text-align: left; display: flex; align-items: center; gap: 1rem; }
+    .group-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .tier-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .tier-grid.three { grid-template-columns: repeat(3, 1fr); }
+    .tier-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r); padding: 2.4rem 2rem; display: flex; flex-direction: column; text-align: left; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; position: relative; scroll-margin-top: 120px; }
+    .tier-card:hover { border-color: rgba(199,169,127,0.25); transform: translateY(-4px); }
+    .tier-card.premium { border-color: rgba(199,169,127,0.4); box-shadow: 0 0 0 1px rgba(199,169,127,0.15) inset; }
+    .tier-card.highlighted { border-color: var(--gold); box-shadow: 0 0 30px rgba(199,169,127,0.18); }
+    .tier-badge { position: absolute; top: -10px; left: 1.5rem; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bg); background: var(--gold); padding: 0.35rem 0.9rem; border-radius: 100px; }
+    .tier-name { font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 0.6rem; }
+    .tier-for { font-size: 0.84rem; font-style: italic; color: var(--gold); line-height: 1.6; margin-bottom: 1.1rem; }
+    .tier-headline { font-size: 0.9rem; font-weight: 600; color: var(--text); line-height: 1.6; margin-bottom: 1.4rem; }
+    .tier-price-wrap { padding: 1.1rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 1.4rem; }
+    .tier-price { font-size: 1.5rem; font-weight: 800; color: var(--gold); line-height: 1; display: block; }
+    .tier-price-note { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.07em; text-transform: uppercase; margin-top: 0.5rem; display: block; }
+    .tier-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.7rem; flex: 1; }
+    .tier-list li { font-size: 0.81rem; color: var(--muted); line-height: 1.6; display: flex; gap: 0.7rem; }
+    .tier-list li::before { content: ''; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 0.55rem; }
+    .tier-list li.exclude { color: #6e6b66; }
+    .tier-list li.exclude::before { background: #555; }
+    .tier-card .btn-gold, .tier-card .btn-outline { text-align: center; justify-content: center; }
+
+    /* PARTNERSHIP CALLOUT + FUNNEL */
+    #partnership-callout { border-bottom: 1px solid var(--border); background: var(--bg2); }
+    .pc-card, .funnel-card { max-width: 940px; margin: 0 auto; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r); padding: 2.4rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: space-between; text-align: left; }
+    .pc-card { border-color: rgba(199,169,127,0.35); box-shadow: 0 0 0 1px rgba(199,169,127,0.1) inset; }
+    .funnel-card { margin-top: 3rem; background: var(--bg2); }
+    .funnel-card:hover { border-color: rgba(199,169,127,0.25); }
+    .pc-left { flex: 1; min-width: 260px; }
+    .pc-kicker { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .pc-title { font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+    .pc-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+    .pc-right { text-align: right; }
+    .pc-price { font-size: 1.4rem; font-weight: 800; color: var(--gold); line-height: 1; }
+    .pc-price-note { font-size: 0.66rem; color: var(--muted); letter-spacing: 0.07em; text-transform: uppercase; margin: 0.4rem 0 1rem; display: block; }
+    @media (max-width: 900px) { .pc-card, .funnel-card { flex-direction: column; align-items: flex-start; } .pc-right { text-align: left; } }
+
+    /* WHAT AI-OPTIMIZED MEANS */
+    #ai-explainer { border-bottom: 1px solid var(--border); background: var(--bg2); }
+    .ai-feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; text-align: left; }
+    .ai-feat { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r); padding: 1.8rem; }
+    .ai-feat h3 { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 0.6rem; }
+    .ai-feat p { font-size: 0.8rem; color: var(--muted); line-height: 1.7; }
+
+    /* RETAINER */
+    #retainer { border-bottom: 1px solid var(--border); }
+    .retainer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .retainer-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r); padding: 2.2rem 2rem; display: flex; flex-direction: column; text-align: left; transition: border-color 0.3s, transform 0.3s; }
+    .retainer-card:hover { border-color: rgba(199,169,127,0.25); transform: translateY(-3px); }
+    .retainer-name { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.8rem; }
+    .retainer-price { font-size: 1.4rem; font-weight: 800; color: var(--gold); line-height: 1; }
+    .retainer-price-note { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin: 0.5rem 0 1.5rem; display: block; }
+    .retainer-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .retainer-list li { font-size: 0.8rem; color: var(--muted); line-height: 1.6; display: flex; gap: 0.7rem; }
+    .retainer-list li::before { content: ''; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 0.5rem; }
+    .retainer-note { max-width: 740px; margin: 2.5rem auto 0; text-align: center; font-size: 0.85rem; color: var(--muted); line-height: 1.85; padding: 1.4rem 1.6rem; border: 1px dashed rgba(199,169,127,0.25); border-radius: var(--r); }
+    .retainer-note strong { color: var(--text); font-weight: 500; }
+
+    /* TRUST + TERMS + CASES */
+    #trust { border-bottom: 1px solid var(--border); }
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; text-align: left; }
+    .trust-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r); padding: 2rem; }
+    .trust-card h3 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.7rem; }
+    .trust-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.75; }
+    .trust-icon { width: 44px; height: 44px; border-radius: var(--r); background: rgba(199,169,127,0.1); border: 1px solid rgba(199,169,127,0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; }
+    .trust-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .terms-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.5rem; }
+    .term-item { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r); padding: 1.3rem; text-align: center; }
+    .term-item .t-h { font-size: 0.78rem; font-weight: 700; color: var(--gold); margin-bottom: 0.4rem; }
+    .term-item .t-b { font-size: 0.74rem; color: var(--muted); line-height: 1.5; }
+    .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; text-align: left; }
+    .case-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r); padding: 2rem; }
+    .case-tag { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bg); background: var(--gold); padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem; }
+    .case-card h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.7rem; }
+    .case-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.75; }
+
+    /* FAQ */
+    #faq { border-bottom: 1px solid var(--border); background: var(--bg2); }
+    .faq-list { max-width: 820px; margin: 3rem auto 0; text-align: left; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; cursor: pointer; padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; font-family: inherit; font-size: 0.95rem; font-weight: 600; color: #fff; }
+    .faq-q:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+    .faq-q .faq-plus { color: var(--gold); font-size: 1.3rem; line-height: 1; flex-shrink: 0; transition: transform 0.3s; }
+    .faq-q[aria-expanded="true"] .faq-plus { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-a-inner { padding: 0 0 1.4rem; font-size: 0.86rem; color: var(--muted); line-height: 1.85; }
+
+    /* BOTTOM CTA */
+    #cta-end { text-align: center; }
+    #cta-end .section-title { margin-bottom: 1.2rem; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 2.5rem 5rem; display: flex; justify-content: space-between; align-items: center; background: var(--bg); }
+    .footer-logo { font-size: 0.9rem; font-weight: 700; color: var(--muted); letter-spacing: 0.05em; }
+    .footer-logo span { color: var(--gold); }
+    .footer-copy { font-size: 0.62rem; letter-spacing: 0.14em; color: var(--muted); }
+    .footer-sub { font-size: 0.62rem; letter-spacing: 0.1em; color: var(--muted); text-align: right; }
+    .footer-sub span { color: var(--gold); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-toggle { display: flex; }
+      .nav-links { position: fixed; top: 0; right: 0; bottom: 0; width: 78%; max-width: 300px; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 1.8rem; padding: 6rem 2rem 2rem; background: var(--bg2); border-left: 1px solid var(--border); transform: translateX(100%); transition: transform 0.35s ease; z-index: 1; }
+      .nav-links.open { transform: translateX(0); }
+      .nav-links a { font-size: 0.8rem; }
+      .section { padding: 4rem 1.5rem; }
+      .ai-banner-inner { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+      .audit-grid, .tier-grid, .tier-grid.three, .retainer-grid, .trust-grid, .ai-feat-grid, .case-grid { grid-template-columns: 1fr; }
+      .terms-strip { grid-template-columns: repeat(2, 1fr); }
+      .helper-card { padding: 1.8rem; }
+      .helper-questions { grid-template-columns: 1fr; gap: 1.8rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+      .footer-sub { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="/" class="logo">Earvin <span>Laureano</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/#support">Services</a></li>
+    <li><a href="/#how">How I Work</a></li>
+    <li><a href="/#experience">Experience</a></li>
+    <li><a href="/pricing" class="active">Pricing</a></li>
+    <li><a href="/#contact">Contact</a></li>
+    <li><a href="#" class="nav-cta" data-cta>Get In Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header id="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner">
+    <div class="hero-badge"><span class="hero-badge-dot"></span><span>Websites for Local Service Businesses</span></div>
+    <h1>A website built to be found —<br/><em>on Google and in AI search.</em></h1>
+    <p>Custom sites for salons, med spas, dentists, gyms, and studios — fast, modern, with a built-in CMS so you can edit your own content. Start with an audit, pick a build, add monthly care, and own everything from day one.</p>
+    <div class="hero-actions">
+      <a href="#audit" class="btn-gold">Start with an audit</a>
+      <a href="#builds" class="btn-outline">See the tiers →</a>
+    </div>
+  </div>
+</header>
+
+<!-- AI SEARCH BANNER -->
+<section id="ai-banner">
+  <div class="ai-banner-inner">
+    <div class="ai-banner-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v6M8 11h6"/></svg></div>
+    <p><strong>Optimized for AI search</strong> — built to be found in ChatGPT, Perplexity, and Google AI answers, not just Google. The edge most local competitors don't have yet.</p>
+  </div>
+</section>
+
+<!-- PARTNERSHIP CALLOUT (ongoing side; this page covers one-time Projects) -->
+<section id="partnership-callout">
+  <div class="section center">
+    <div class="pc-card reveal">
+      <div class="pc-left">
+        <div class="pc-kicker">Ongoing · Monthly Partnership</div>
+        <div class="pc-title">Prefer a right hand who runs it all?</div>
+        <p class="pc-desc">The Partnership is the ongoing side — I run your operations (admin, marketing, design, CRM, automation) as one scoped relationship, never hourly. Everything below is one-time <strong>Projects &amp; Builds</strong>.</p>
+      </div>
+      <div class="pc-right">
+        <span class="pc-price" id="pcPrice"></span>
+        <span class="pc-price-note">Scoped to you · retainer</span>
+        <a href="#" class="btn-gold" data-cta>Book a call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIT (funnel entry) -->
+<section id="audit">
+  <div class="section center">
+    <div class="section-eyebrow reveal">Start Here</div>
+    <h2 class="section-title reveal">First, See Where<br/><em>You Stand</em></h2>
+    <p class="section-desc reveal">Before any build, find out how your current site performs — on speed, SEO, and whether you even show up in AI answers yet.</p>
+    <div class="audit-grid" id="auditGrid"></div>
+
+    <div class="compare reveal">
+      <h3>Free Scan vs the Full Website Audit</h3>
+      <p class="c-sub">The free scan checks the technical surface in 60 seconds. The <strong>Full Audit</strong> is a deep, human review of your entire online presence — here's exactly what each one covers:</p>
+
+      <div class="crow chead"><div></div><div class="col">Free Scan</div><div class="col paid">Full Audit · $600</div></div>
+
+      <div class="ccat">Performance</div>
+      <div class="crow"><div class="feat">Mobile &amp; desktop speed scores</div><div class="cell yes">✓</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">What’s slowing each page — and how to fix it</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+
+      <div class="ccat">Search (SEO)</div>
+      <div class="crow"><div class="feat">Title, meta &amp; heading basics</div><div class="cell yes">✓</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">robots.txt &amp; sitemap check</div><div class="cell yes">✓</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Full on-page SEO review — every page</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Local SEO — Google Business Profile &amp; consistency</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Keyword &amp; search-intent strategy</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+
+      <div class="ccat">AI Search</div>
+      <div class="crow"><div class="feat">AI-readiness (site structure)</div><div class="cell yes">✓</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Live AI-visibility test — ChatGPT, Perplexity, Google AI</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Competitor comparison in AI search</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+
+      <div class="ccat">Technical</div>
+      <div class="crow"><div class="feat">HTTPS / security check</div><div class="cell yes">✓</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Structured-data (schema) check</div><div class="cell yes">✓</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Broken links — full crawl vs quick sample</div><div class="cell yes">✓</div><div class="cell yes paid">✓</div></div>
+
+      <div class="ccat">Design &amp; Conversion</div>
+      <div class="crow"><div class="feat">Design &amp; brand-credibility review</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Conversion &amp; booking-flow review</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Mobile experience review (beyond speed)</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Copy &amp; messaging review</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Trust &amp; social-proof audit</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+
+      <div class="ccat">Content</div>
+      <div class="crow"><div class="feat">Content-gap analysis</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Page-by-page review (vs homepage only)</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+
+      <div class="ccat">Reporting &amp; Next Steps</div>
+      <div class="crow"><div class="feat">Analytics &amp; tracking audit</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Prioritized action plan — up to 20 fixes</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">Full written report</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+      <div class="crow"><div class="feat">30-minute walkthrough call</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+
+      <div class="compare-foot">The free scan covers the surface. The <strong>Full Audit</strong> covers everything — and the <strong>$600 is credited toward any build</strong> if you proceed within 30 days.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HELPER -->
+<section id="helper">
+  <div class="section center">
+    <div class="section-eyebrow reveal">Find Your Fit</div>
+    <h2 class="section-title reveal">Which Build Is Right<br/><em>for You?</em></h2>
+    <p class="section-desc reveal">Two quick questions and I'll point you to the tier that matches your situation.</p>
+    <div class="helper-card reveal">
+      <div class="helper-questions">
+        <div class="helper-q">
+          <span class="helper-q-label">1. Do you already have a website?</span>
+          <div class="helper-options" role="group" aria-label="Do you already have a website?">
+            <button class="helper-opt" data-q="hasSite" data-val="no" aria-pressed="false">No, I need one</button>
+            <button class="helper-opt" data-q="hasSite" data-val="yes" aria-pressed="false">Yes, I have one</button>
+          </div>
+        </div>
+        <div class="helper-q">
+          <span class="helper-q-label">2. Do you want to be found on Google &amp; AI search?</span>
+          <div class="helper-options" role="group" aria-label="Do you want to be found on Google and AI search?">
+            <button class="helper-opt" data-q="seo" data-val="yes" aria-pressed="false">Yes, getting found matters</button>
+            <button class="helper-opt" data-q="seo" data-val="no" aria-pressed="false">Not a priority</button>
+          </div>
+        </div>
+      </div>
+      <div class="helper-result" id="helperResult" aria-live="polite">Pick an answer above and your recommended tier will appear here.</div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILD TIERS -->
+<section id="builds">
+  <div class="section center">
+    <div class="section-eyebrow reveal">Build Tiers</div>
+    <h2 class="section-title reveal">One-Time Builds,<br/><em>Grouped by Situation</em></h2>
+    <p class="section-desc reveal">Every build ships with a built-in CMS so you can edit text, prices, and photos yourself — and every build is handoff-ready, with no lock-in.</p>
+
+    <div class="group-label reveal">Starting fresh</div>
+    <div class="tier-grid" id="tierGridFresh"></div>
+
+    <div class="group-label reveal">You already have a site</div>
+    <div class="tier-grid three" id="tierGridExisting"></div>
+  </div>
+</section>
+
+<!-- LEAD-GEN FUNNEL -->
+<section id="funnel">
+  <div class="section center">
+    <div class="section-eyebrow reveal">Conversion</div>
+    <h2 class="section-title reveal">Lead-Gen<br/><em>Funnel</em></h2>
+    <p class="section-desc reveal">A multi-page conversion funnel — opt-in, thank-you, and lead capture — built to turn traffic into booked leads. AI-search optimized, like every build.</p>
+    <div class="funnel-card reveal">
+      <div class="pc-left">
+        <div class="tier-name" style="margin-bottom:0.7rem;">Lead-Gen Funnel</div>
+        <ul class="tier-list" style="margin-bottom:0;">
+          <li>Opt-in / landing page</li>
+          <li>Thank-you + delivery page</li>
+          <li>Lead capture wired to your CRM or sheet</li>
+          <li>AI-search optimized structure &amp; schema</li>
+        </ul>
+      </div>
+      <div class="pc-right">
+        <span class="pc-price" id="funnelPrice"></span>
+        <span class="pc-price-note">USD · one-time build</span>
+        <a href="#" class="btn-gold" data-cta>Get started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT AI-OPTIMIZED MEANS -->
+<section id="ai-explainer">
+  <div class="section center">
+    <div class="section-eyebrow reveal">Under the Hood</div>
+    <h2 class="section-title reveal">What "AI Search<br/><em>Optimized" Means</em></h2>
+    <p class="section-desc reveal">Concrete technique, not buzzwords — and this very page is built using it.</p>
+    <div class="ai-feat-grid">
+      <div class="ai-feat reveal"><h3>Structured data / schema</h3><p>LocalBusiness, Service, and FAQPage markup so AI engines can read exactly what your business is, does, and answers.</p></div>
+      <div class="ai-feat reveal"><h3>Answer-first content</h3><p>Pages structured to answer real questions directly — the format AI assistants pull from when they cite a source.</p></div>
+      <div class="ai-feat reveal"><h3>FAQ blocks</h3><p>Clear question-and-answer sections that map to how people actually ask AI tools about local services.</p></div>
+      <div class="ai-feat reveal"><h3>Clean semantic HTML</h3><p>Proper headings and structure so crawlers and AI models parse your site accurately and quickly.</p></div>
+      <div class="ai-feat reveal"><h3>Clear entity &amp; business info</h3><p>Consistent name, location, services, and contact details — the signals that establish who you are across the web.</p></div>
+      <div class="ai-feat reveal"><h3>A living example</h3><p>This page itself uses schema, answer-first copy, and FAQ markup — you're looking at the technique in action.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RETAINER -->
+<section id="retainer">
+  <div class="section center">
+    <div class="section-eyebrow reveal">Website Maintenance</div>
+    <h2 class="section-title reveal">Keep Your Site<br/><em>Healthy &amp; Growing</em></h2>
+    <p class="section-desc reveal">A monthly plan that keeps your site fast, secure, and visible — attaches to any build. This is website maintenance, separate from the operations Partnership.</p>
+    <div class="retainer-grid" id="retainerGrid"></div>
+    <p class="retainer-note reveal">Your built-in CMS handles small edits yourself. The monthly plan covers what it can't — <strong>hosting, security, new features, structural changes, SEO, and ongoing AI search visibility.</strong> AI search visibility isn't one-and-done: Growth and Partner keep you visible as AI search evolves.</p>
+  </div>
+</section>
+
+<!-- TRUST + TERMS + CASES -->
+<section id="trust">
+  <div class="section center">
+    <div class="section-eyebrow reveal">Why Work This Way</div>
+    <h2 class="section-title reveal">Yours to Keep —<br/><em>and Cheaper to Run</em></h2>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Handoff-ready, no lock-in</h3>
+        <p>You fully own your domain, your code, and your hosting. If you ever want to leave, you walk away cleanly with everything — no hostage situations.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Costs less to run</h3>
+        <p>A modern, lightweight stack instead of a bloated page-builder platform — so your site loads faster and your ongoing maintenance cost stays far lower.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <h3>A direct partner, not an agency</h3>
+        <p>You work with me directly — no account managers, no ticket queues, no faceless hand-offs. Just clear communication and work that gets done.</p>
+      </div>
+    </div>
+
+    <div class="terms-strip" id="termsStrip"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section center">
+    <div class="section-eyebrow reveal">Questions</div>
+    <h2 class="section-title reveal">Good to<br/><em>Know</em></h2>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section id="cta-end">
+  <div class="section">
+    <h2 class="section-title reveal">Let's build something<br/><em>you'll be proud to own.</em></h2>
+    <p class="section-desc reveal" style="margin:0 auto 2.5rem">Start with a free audit, or tell me about your business and I'll recommend the right path.</p>
+    <a href="#" class="btn-gold reveal" data-cta>Tell me about your project</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Earvin <span>Laureano</span></div>
+  <div class="footer-copy">© 2026 Earvin Laureano. All rights reserved.</div>
+  <div class="footer-sub">Operations &amp; Web Partner<br/><span>Remote Worldwide</span></div>
+</footer>
+
+<script>
+  /* =========================================================
+     PRICING CONFIG — single source of truth (real values).
+     Edit prices/limits/booking URL here only.
+     ========================================================= */
+  const PRICING = {
+    currency: "USD",
+    bookingUrl: "/#contact",
+    partnership: { from: 2000, dedicatedFrom: 3500, model: "retainer" },
+    audits: {
+      free: { price: 0 },
+      full: { price: 600, credited: true, creditWindowDays: 30 }
+    },
+    builds: {
+      foundation:       { from: 1800 },
+      foundationSeoAi:  { from: 3800 },
+      relaunch:         { from: 2400 },
+      relaunchSeoAi:    { from: 4400 },
+      managedMigration: { from: 10000, customQuote: true }
+    },
+    funnel: { from: 1500 },
+    websiteCare: {
+      care:   { monthly: 99 },
+      growth: { monthly: 299 },
+      pro:    { monthly: 599 }
+    },
+    terms: {
+      deposit: "50% deposit, 50% on launch",
+      pricingNote: "\"From\" pricing — final scope varies",
+      firstMonthFree: true,
+      buyoutPremiumPct: "30–40%"
+    }
+  };
+
+  const money = function (n) { return "$" + Number(n).toLocaleString("en-US"); };
+
+  /* ---- Audits ---- */
+  const AUDITS = [
+    {
+      kicker: "Free · lead magnet",
+      name: "Website Audit",
+      priceLabel: "Free",
+      note: "Automated scan",
+      desc: "A quick automated scan of your site: speed, basic SEO gaps, and whether you currently appear in AI answers — plus a few quick wins you can act on right away.",
+      cta: "Get my free audit",
+      link: "/audit",
+      premium: false
+    },
+    {
+      kicker: "Credited toward your build",
+      name: "Full Website Audit & Action Plan",
+      priceLabel: "from " + money(PRICING.audits.full.price),
+      note: "Credited within " + PRICING.audits.full.creditWindowDays + " days if you proceed",
+      desc: "A deep diagnostic across performance, SEO, AI search visibility, conversion, and content — ending in a prioritized action plan and a walkthrough call. This is also the scoping step for Managed Migration.",
+      cta: "Book a full audit",
+      premium: true
+    }
+  ];
+
+  /* ---- Build tiers ---- */
+  const BUILD_TIERS = [
+    {
+      id: "foundation", group: "fresh",
+      name: "Foundation",
+      for: "“I don't have a website yet — or mine is so old I'm starting fresh.”",
+      headline: "A beautiful, fast site that's genuinely yours.",
+      priceKey: "foundation",
+      includes: [
+        "Custom multi-page site (Home, Services, About, Gallery, Contact)",
+        "Mobile-first responsive design",
+        "Modern, fast-loading stack",
+        "Contact form",
+        "Built-in CMS — edit text, prices, and photos yourself",
+        "Basic on-page setup (page titles + descriptions)"
+      ],
+      excludes: ["SEO / AI search optimization"]
+    },
+    {
+      id: "foundationSeoAi", group: "fresh",
+      name: "Foundation + SEO & AI",
+      for: "“New site, and I want to actually get found — on Google and in AI answers.”",
+      headline: "Built to be found, not just to look good.",
+      priceKey: "foundationSeoAi",
+      includes: [
+        "Everything in Foundation",
+        "Local + on-page SEO setup",
+        "AI search optimization: schema, answer-first structure, entity clarity",
+        "LocalBusiness, Service & FAQPage schema markup",
+        "XML sitemap + Search Console setup & submission",
+        "Analytics install",
+        "Google Business Profile alignment"
+      ],
+      excludes: []
+    },
+    {
+      id: "relaunch", group: "existing",
+      name: "Relaunch",
+      for: "“I already have a site — slow, dated, or costly to maintain — and I want it rebuilt.”",
+      headline: "Same business, dramatically better site — without the maintenance headaches.",
+      priceKey: "relaunch",
+      includes: [
+        "Full rebuild of your existing site on a modern stack",
+        "Content and asset transfer",
+        "Built-in CMS",
+        "Basic on-page setup",
+        "Reconnect your existing domain"
+      ],
+      excludes: ["SEO / AI search optimization"]
+    },
+    {
+      id: "relaunchSeoAi", group: "existing",
+      name: "Relaunch + SEO & AI",
+      for: "“Rebuild my site and optimize it to be found going forward.”",
+      headline: "A better site, optimized for Google and AI search from launch.",
+      priceKey: "relaunchSeoAi",
+      includes: [
+        "Everything in Relaunch",
+        "Local + on-page SEO setup",
+        "AI search optimization: schema, answer-first structure, entity clarity",
+        "LocalBusiness, Service & FAQPage schema markup",
+        "Search Console setup + analytics"
+      ],
+      excludes: [
+        "Does NOT preserve your existing rankings — this is a fresh start. If you have rankings you can't afford to lose, see Managed Migration."
+      ]
+    },
+    {
+      id: "managedMigration", group: "existing", premium: true,
+      badge: "Premium · protects rankings",
+      name: "Managed Migration",
+      for: "“I have a site with rankings I can't afford to lose.”",
+      headline: "A careful, monitored rebuild for sites with rankings on the line.",
+      priceKey: "managedMigration",
+      includes: [
+        "Everything in Relaunch + SEO & AI, plus a careful migration process:",
+        "Complete URL crawl + inventory",
+        "1:1 301 redirect mapping",
+        "Metadata and schema preservation",
+        "Content parity check",
+        "Staged launch",
+        "Regenerated XML sitemap + Search Console resubmission",
+        "Post-launch ranking & traffic monitoring",
+        "A documented rollback plan"
+      ],
+      excludes: [
+        "Sells the process and care, not a promised ranking outcome. Scoped via the Full Audit."
+      ]
+    }
+  ];
+
+  /* ---- Retainers ---- */
+  const RETAINERS = [
+    { id: "care", name: "Care", priceKey: "care",
+      includes: ["Hosting management", "Uptime monitoring", "SSL / security", "Small monthly content edits", "Email support"] },
+    { id: "growth", name: "Growth", priceKey: "growth",
+      includes: ["Everything in Care", "SEO + AI search monitoring", "Monthly content refresh", "Monthly performance report", "Priority support"] },
+    { id: "pro", name: "Pro", priceKey: "pro",
+      includes: ["Everything in Growth", "Active AI visibility work", "New pages / sections", "Ongoing optimization", "Fastest turnaround"] }
+  ];
+
+  /* ---- FAQ ---- */
+  const FAQS = [
+    { q: "What's the difference between the Partnership and a project?", a: "The Partnership is an ongoing monthly relationship where I run your operations as your right hand — admin, marketing, design, CRM, and automation — for one scoped retainer (from $2,000/mo), never billed by the hour. A project is a one-time, productized build (a website, funnel, or audit) with clear upfront pricing. Many clients start with a project, then move onto a partnership." },
+    { q: "What is AI search optimization, and why does it matter?", a: "More and more people ask ChatGPT, Perplexity, and Google's AI answers for local recommendations instead of scrolling a results page. AI optimization — schema markup, answer-first content, and clear, consistent business information — makes your site readable to those engines, so you can be found there, not just in classic Google results." },
+    { q: "Will I be guaranteed to show up in ChatGPT or rank #1?", a: "No — and anyone who promises that isn't being straight with you. Nobody can guarantee rankings or AI citations. What I do is build and optimize your site so it's as findable as possible — clean structure, schema, and the signals these engines reward — then monitor and adjust over time." },
+    { q: "What's the difference between Relaunch + SEO & AI and Managed Migration?", a: "Relaunch + SEO & AI optimizes your new site going forward, but it's a fresh start — it does not protect your existing rankings. Managed Migration is for sites that already rank and bring in traffic you can't afford to lose: it adds a careful, monitored process — full URL crawl, 1:1 redirect mapping, staged launch, post-launch monitoring, and a rollback plan — to protect that traffic during the rebuild." },
+    { q: "Does the audit cost count toward a build?", a: "Yes — the Full Website Audit & Action Plan ($600) is credited toward any build or retainer if you proceed within " + PRICING.audits.full.creditWindowDays + " days." },
+    { q: "I have a small site and don't really rank — which option?", a: "If you don't have meaningful rankings to protect, you don't need Managed Migration. A Relaunch (or Relaunch + SEO & AI if you want to start getting found) is the right, more affordable fit." },
+    { q: "How does payment work?", a: PRICING.terms.deposit + " on builds, plus an optional monthly plan. A one-time buyout is available at a " + PRICING.terms.buyoutPremiumPct + " premium. All prices are \"from\" — final scope varies with your project." },
+    { q: "What happens if I ever want to leave?", a: "You're handoff-ready with no lock-in — you keep your domain, your code, and your hosting, and can move on cleanly anytime. No hostage situations." }
+  ];
+
+  /* ---- Renderers ---- */
+  function priceBlock(priceKey) {
+    var p = PRICING.builds[priceKey] || {};
+    if (p.customQuote) {
+      return "<div class='tier-price-wrap'><span class='tier-price'>Starts at " + money(p.from) + "</span><span class='tier-price-note'>" + PRICING.currency + " · custom quote</span></div>";
+    }
+    return "<div class='tier-price-wrap'><span class='tier-price'>From " + money(p.from) + "</span><span class='tier-price-note'>" + PRICING.currency + " · one-time build</span></div>";
+  }
+  function tierCardHTML(t) {
+    var p = PRICING.builds[t.priceKey] || {};
+    var includes = t.includes.map(function (i) { return "<li>" + i + "</li>"; }).join("");
+    var excludes = (t.excludes || []).map(function (e) { return "<li class='exclude'>" + e + "</li>"; }).join("");
+    var badge = t.badge ? "<span class='tier-badge'>" + t.badge + "</span>" : "";
+    var ctaLabel = p.customQuote ? "Book a call" : "Get started";
+    var ctaClass = t.premium ? "btn-gold" : "btn-outline";
+    return "<article class='tier-card reveal" + (t.premium ? " premium" : "") + "' id='tier-" + t.id + "' data-tier='" + t.id + "'>" +
+      badge +
+      "<h3 class='tier-name'>" + t.name + "</h3>" +
+      "<p class='tier-for'>" + t.for + "</p>" +
+      "<p class='tier-headline'>" + t.headline + "</p>" +
+      priceBlock(t.priceKey) +
+      "<ul class='tier-list'>" + includes + excludes + "</ul>" +
+      "<a href='#' class='" + ctaClass + "' data-cta>" + ctaLabel + "</a>" +
+    "</article>";
+  }
+  function renderTiers() {
+    document.getElementById("tierGridFresh").innerHTML =
+      BUILD_TIERS.filter(function (t) { return t.group === "fresh"; }).map(tierCardHTML).join("");
+    document.getElementById("tierGridExisting").innerHTML =
+      BUILD_TIERS.filter(function (t) { return t.group === "existing"; }).map(tierCardHTML).join("");
+  }
+  function renderAudits() {
+    document.getElementById("auditGrid").innerHTML = AUDITS.map(function (a) {
+      var ctaClass = a.premium ? "btn-gold" : "btn-outline";
+      var ctaTag = a.link
+        ? "<a href='" + a.link + "' class='" + ctaClass + "'>" + a.cta + "</a>"
+        : "<a href='#' class='" + ctaClass + "' data-cta>" + a.cta + "</a>";
+      return "<article class='audit-card" + (a.premium ? " paid" : "") + " reveal'>" +
+        "<span class='audit-kicker'>" + a.kicker + "</span>" +
+        "<h3 class='audit-name'>" + a.name + "</h3>" +
+        "<div class='audit-price'>" + a.priceLabel + "</div>" +
+        "<span class='audit-price-note'>" + a.note + "</span>" +
+        "<p class='audit-desc'>" + a.desc + "</p>" +
+        ctaTag +
+      "</article>";
+    }).join("");
+  }
+  function renderRetainers() {
+    document.getElementById("retainerGrid").innerHTML = RETAINERS.map(function (r) {
+      var p = PRICING.websiteCare[r.priceKey] || {};
+      var includes = r.includes.map(function (i) { return "<li>" + i + "</li>"; }).join("");
+      return "<article class='retainer-card reveal'>" +
+        "<h3 class='retainer-name'>" + r.name + "</h3>" +
+        "<span class='retainer-price'>" + money(p.monthly) + "</span>" +
+        "<span class='retainer-price-note'>" + PRICING.currency + " / month</span>" +
+        "<ul class='retainer-list'>" + includes + "</ul>" +
+      "</article>";
+    }).join("");
+  }
+  function renderTerms() {
+    var t = PRICING.terms;
+    var items = [
+      { h: "Payment", b: t.deposit },
+      { h: "Pricing", b: t.pricingNote },
+      { h: "First month", b: t.firstMonthFree ? "First care month free" : "Standard from month one" },
+      { h: "Buyout option", b: "One-time buyout at +" + t.buyoutPremiumPct }
+    ];
+    document.getElementById("termsStrip").innerHTML = items.map(function (i) {
+      return "<div class='term-item reveal'><div class='t-h'>" + i.h + "</div><div class='t-b'>" + i.b + "</div></div>";
+    }).join("");
+  }
+  function renderFaq() {
+    document.getElementById("faqList").innerHTML = FAQS.map(function (f, i) {
+      return "<div class='faq-item'>" +
+        "<button class='faq-q' aria-expanded='false' aria-controls='faq-a-" + i + "' id='faq-q-" + i + "'>" +
+          "<span>" + f.q + "</span><span class='faq-plus' aria-hidden='true'>+</span></button>" +
+        "<div class='faq-a' id='faq-a-" + i + "' role='region' aria-labelledby='faq-q-" + i + "'>" +
+          "<div class='faq-a-inner'>" + f.a + "</div></div>" +
+      "</div>";
+    }).join("");
+  }
+
+  /* ---- FAQPage JSON-LD injected from the same FAQ data (single source of truth) ---- */
+  function injectFaqSchema() {
+    var data = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": FAQS.map(function (f) {
+        return { "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } };
+      })
+    };
+    var s = document.createElement("script");
+    s.type = "application/ld+json";
+    s.textContent = JSON.stringify(data);
+    document.head.appendChild(s);
+  }
+
+  /* ---- CTAs ---- */
+  function wireCtas() {
+    document.querySelectorAll("[data-cta]").forEach(function (el) { el.setAttribute("href", PRICING.bookingUrl); });
+  }
+
+  /* ---- Helper logic ---- */
+  var choice = { hasSite: null, seo: null };
+  var RECO = {
+    "no|yes":  { tiers: ["foundationSeoAi"], text: "Go with <strong>Foundation + SEO &amp; AI</strong> — a brand-new site built to be found on Google and in AI answers." },
+    "no|no":   { tiers: ["foundation"],      text: "<strong>Foundation</strong> is your fit — a clean, fast new site you fully control." },
+    "yes|yes": { tiers: ["relaunchSeoAi"],   text: "<strong>Relaunch + SEO &amp; AI</strong> rebuilds your site and optimizes it going forward. If you already rank and can't afford to lose that traffic, look at <strong>Managed Migration</strong> instead." },
+    "yes|no":  { tiers: ["relaunch"],        text: "<strong>Relaunch</strong> is the move — rebuild your existing site on a modern stack without the maintenance headaches." }
+  };
+  function updateHelper() {
+    var result = document.getElementById("helperResult");
+    document.querySelectorAll(".tier-card").forEach(function (c) { c.classList.remove("highlighted"); });
+    if (!choice.hasSite || !choice.seo) { result.innerHTML = "Pick an answer above and your recommended tier will appear here."; return; }
+    var reco = RECO[choice.hasSite + "|" + choice.seo];
+    if (!reco) return;
+    result.innerHTML = reco.text + " <a href='#tier-" + reco.tiers[0] + "' style='color:var(--gold);text-decoration:underline;'>Jump to it ↓</a>";
+    reco.tiers.forEach(function (id) { var c = document.getElementById("tier-" + id); if (c) c.classList.add("highlighted"); });
+  }
+  function wireHelper() {
+    document.querySelectorAll(".helper-opt").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var q = btn.getAttribute("data-q");
+        choice[q] = btn.getAttribute("data-val");
+        document.querySelectorAll(".helper-opt[data-q='" + q + "']").forEach(function (b) { b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+        updateHelper();
+      });
+    });
+  }
+
+  /* ---- FAQ accordion ---- */
+  function wireFaq() {
+    document.querySelectorAll(".faq-q").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!expanded));
+        var panel = document.getElementById(btn.getAttribute("aria-controls"));
+        panel.style.maxHeight = expanded ? null : panel.scrollHeight + "px";
+      });
+    });
+  }
+
+  /* ---- Nav + reveal ---- */
+  function wireNav() {
+    var toggle = document.getElementById("navToggle"), links = document.getElementById("navLinks");
+    toggle.addEventListener("click", function () {
+      var open = links.classList.toggle("open");
+      toggle.classList.toggle("active", open);
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+    links.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () { links.classList.remove("open"); toggle.classList.remove("active"); toggle.setAttribute("aria-expanded", "false"); });
+    });
+    var navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", function () { navbar.classList.toggle("scrolled", window.scrollY > 50); });
+  }
+  function wireReveal() {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (el) { if (el.isIntersecting) el.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".reveal").forEach(function (el) { obs.observe(el); });
+  }
+
+  /* ---- Extra prices (Partnership callout + Funnel) ---- */
+  function renderExtras() {
+    var pc = document.getElementById("pcPrice");
+    if (pc) pc.textContent = "From " + money(PRICING.partnership.from) + "/mo";
+    var fn = document.getElementById("funnelPrice");
+    if (fn) fn.textContent = "From " + money(PRICING.funnel.from);
+  }
+
+  /* ---- Init ---- */
+  renderExtras();
+  renderAudits();
+  renderTiers();
+  renderRetainers();
+  renderTerms();
+  renderFaq();
+  injectFaqSchema();
+  wireCtas();
+  wireHelper();
+  wireFaq();
+  wireNav();
+  wireReveal();
+</script>
+</body>
+</html>

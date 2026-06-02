@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The First-Time Buyer's Playbook — Harbor & Vale Realty</title>
+<meta name="description" content="Free guide: the 7-step playbook to buying your first home without overpaying. Trusted by 2,000+ first-time buyers."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#1e1b4b"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --indigo:#4f46e5; --indigo-d:#3730a3; --night:#1e1b4b; --lime:#a3e635; --lime-d:#84cc16;
+    --paper:#f5f5ff; --line:#e4e2f5; --ink:#1a1830; --slate:#5b5778; --white:#fff;
+    --shadow:0 24px 60px rgba(30,27,75,.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--night);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.head{font-family:'Sora',sans-serif;font-weight:700;line-height:1.08;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--lime);color:var(--night);font-family:'Sora';font-weight:700;padding:1.05rem 2rem;border-radius:12px;font-size:1.02rem;transition:.18s;border:none;cursor:pointer;width:100%}
+  .btn:hover{background:var(--lime-d);transform:translateY(-2px)}
+  .pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(163,230,53,.14);color:var(--lime);border:1px solid rgba(163,230,53,.3);font-size:.8rem;font-weight:600;padding:.4rem 1rem;border-radius:100px;letter-spacing:.03em}
+
+  .demo-bar{background:#100e2e;color:#c7c3f0;font-size:.82rem;text-align:center;padding:.55rem 1rem;font-weight:500}
+  .demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:'Sora';font-weight:700;font-size:1.2rem;color:#fff;padding:1.5rem 0}
+  .brand .m{width:34px;height:34px;border-radius:9px;background:var(--lime);color:var(--night);display:grid;place-items:center;font-size:1.1rem}
+
+  /* hero opt-in */
+  .hero{padding:1rem 0 5rem;background:radial-gradient(1200px 500px at 70% -10%,rgba(79,70,229,.5),transparent 60%)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center}
+  .hero h1{font-size:clamp(2.3rem,4.8vw,3.6rem);color:#fff}
+  .hero h1 em{font-style:normal;color:var(--lime)}
+  .hero .sub{color:#c7c3f0;font-size:1.15rem;margin:1.4rem 0 2rem;max-width:32rem}
+  .ticks{display:grid;gap:.8rem;margin:1.8rem 0}
+  .ticks li{list-style:none;display:flex;gap:.7rem;color:#e0def5;font-weight:500}
+  .ticks .c{flex:none;width:24px;height:24px;border-radius:50%;background:var(--lime);color:var(--night);display:grid;place-items:center;font-weight:800;font-size:.8rem}
+  .social{display:flex;align-items:center;gap:.8rem;margin-top:2rem;color:#a9a4d6;font-size:.9rem}
+  .avs{display:flex}
+  .avs span{width:34px;height:34px;border-radius:50%;border:2px solid var(--night);margin-left:-10px;display:grid;place-items:center;font-size:.75rem;font-weight:700;color:#fff}
+
+  /* form card */
+  .form-card{background:#fff;border-radius:20px;box-shadow:var(--shadow);padding:2.4rem;color:var(--ink)}
+  .form-card .cover{display:flex;gap:1rem;align-items:center;margin-bottom:1.5rem}
+  .form-card .book{width:74px;height:94px;border-radius:8px;background:linear-gradient(150deg,var(--indigo),var(--indigo-d));box-shadow:0 10px 24px rgba(79,70,229,.4);flex:none;display:grid;place-items:center;color:#fff;font-size:1.6rem;text-align:center;font-family:'Sora';font-weight:700;padding:.4rem;line-height:1.1}
+  .form-card h3{font-size:1.3rem}
+  .form-card .free{color:var(--indigo);font-weight:700;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
+  label{display:block;font-size:.82rem;font-weight:600;color:var(--slate);margin:1rem 0 .35rem}
+  input{width:100%;padding:.85rem 1rem;border:1.5px solid var(--line);border-radius:10px;font-size:1rem;font-family:'Inter';transition:.15s}
+  input:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px rgba(79,70,229,.12)}
+  .form-card .fine{font-size:.76rem;color:#9893bb;text-align:center;margin-top:.9rem}
+  .form-card .btn{margin-top:1.3rem}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:2.5rem}}
+
+  /* thank you state */
+  #thanks{display:none}
+  .ty-card{background:#fff;border-radius:20px;box-shadow:var(--shadow);padding:2.6rem;text-align:center;color:var(--ink);max-width:34rem;margin:0 auto}
+  .ty-ic{width:74px;height:74px;border-radius:50%;background:var(--lime);color:var(--night);display:grid;place-items:center;font-size:2.2rem;margin:0 auto 1.2rem}
+  .ty-card h2{font-size:1.8rem;margin-bottom:.6rem}
+  .ty-card p{color:var(--slate);margin-bottom:1.6rem}
+  .ty-card .btn{max-width:18rem;margin:0 auto}
+  .next{margin-top:1.6rem;font-size:.9rem;color:var(--slate)}
+
+  /* proof band */
+  .band{background:#fff;color:var(--ink);padding:4.5rem 0}
+  .band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+  .band .stat{font-family:'Sora';font-size:2.4rem;font-weight:800;color:var(--indigo)}
+  .band .lbl{color:var(--slate);font-size:.92rem}
+  @media(max-width:680px){.band .wrap{grid-template-columns:1fr 1fr;gap:2rem}}
+
+  /* steps */
+  .steps{padding:5rem 0;background:var(--paper);color:var(--ink)}
+  .steps .h{text-align:center;max-width:38rem;margin:0 auto 3rem}
+  .steps h2{font-size:clamp(1.8rem,3.4vw,2.5rem)}
+  .steps p.s{color:var(--slate);margin-top:.8rem}
+  .slist{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+  .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.8rem}
+  .step .n{width:38px;height:38px;border-radius:10px;background:var(--indigo);color:#fff;font-family:'Sora';font-weight:700;display:grid;place-items:center;margin-bottom:1rem}
+  .step h3{font-size:1.12rem;margin-bottom:.4rem}
+  .step p{color:var(--slate);font-size:.92rem}
+  @media(max-width:860px){.slist{grid-template-columns:1fr}}
+
+  /* testimonial */
+  .quote{background:var(--night);padding:5rem 0;text-align:center}
+  .quote blockquote{font-family:'Sora';font-weight:600;font-size:clamp(1.4rem,3vw,2rem);color:#fff;max-width:44rem;margin:0 auto;line-height:1.3}
+  .quote .by{color:var(--lime);margin-top:1.4rem;font-weight:600}
+
+  /* final cta */
+  .fin{padding:5rem 0;text-align:center;background:linear-gradient(160deg,var(--indigo),var(--indigo-d))}
+  .fin h2{color:#fff;font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:1rem}
+  .fin p{color:#d8d6f5;margin-bottom:2rem;max-width:32rem;margin-left:auto;margin-right:auto}
+  .fin .btn{max-width:22rem;margin:0 auto}
+
+  footer{background:#100e2e;color:#8a85b8;text-align:center;padding:2.5rem 0;font-size:.85rem}
+  footer a{color:#fff;text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">🎯 This is a <strong>demo lead-gen funnel</strong> built by Earvin Laureano. &nbsp;<a href="/work">← Back to portfolio</a> &nbsp;·&nbsp; <a href="/funnel">Get a funnel like this</a></div>
+
+<div class="wrap">
+  <div class="brand"><span class="m">⌂</span> Harbor &amp; Vale Realty</div>
+</div>
+
+<!-- OPT-IN -->
+<section class="hero" id="optin">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="pill">★ Free 24-page guide</span>
+        <h1 style="margin-top:1.2rem">Buy your first home <em>without overpaying.</em></h1>
+        <p class="sub">The exact 7-step playbook our agents use to help first-time buyers win the right home — and avoid the costly mistakes nobody warns you about.</p>
+        <ul class="ticks">
+          <li><span class="c">✓</span> How much home you can <i>really</i> afford (beyond the bank's number)</li>
+          <li><span class="c">✓</span> The 5 red flags that should kill a deal instantly</li>
+          <li><span class="c">✓</span> Scripts to negotiate thousands off the asking price</li>
+        </ul>
+        <div class="social">
+          <div class="avs">
+            <span style="background:#6366f1">JM</span><span style="background:#8b5cf6">AK</span><span style="background:#ec4899">RT</span><span style="background:#14b8a6">LO</span>
+          </div>
+          Downloaded by <b style="color:#fff">2,000+</b> first-time buyers
+        </div>
+      </div>
+
+      <div class="form-card" id="formCard">
+        <div class="cover">
+          <div class="book">Buyer's Play&shy;book</div>
+          <div>
+            <div class="free">Instant free download</div>
+            <h3>Get the playbook</h3>
+            <p style="color:var(--slate);font-size:.9rem;margin-top:.2rem">Enter your details — it'll hit your inbox in seconds.</p>
+          </div>
+        </div>
+        <form id="leadForm" onsubmit="return submitLead(event)">
+          <label for="fn">First name</label>
+          <input id="fn" type="text" placeholder="Jordan" required/>
+          <label for="em">Email address</label>
+          <input id="em" type="email" placeholder="you@email.com" required/>
+          <button class="btn" type="submit">Send me the free guide →</button>
+          <p class="fine">🔒 No spam. Unsubscribe anytime. We never share your info.</p>
+        </form>
+      </div>
+
+      <!-- THANK YOU (revealed after submit) -->
+      <div class="ty-card" id="thanks">
+        <div class="ty-ic">✓</div>
+        <h2 id="tyName">You're all set!</h2>
+        <p>Your <b>First-Time Buyer's Playbook</b> is on its way to your inbox. Can't wait? Grab it right now:</p>
+        <a href="#" class="btn" onclick="return false">⬇ Download the Playbook (PDF)</a>
+        <div class="next">📅 Want a free 15-min buying-readiness call? <a href="#" style="color:var(--indigo);font-weight:600">Book a time →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <div><div class="stat">2,000+</div><div class="lbl">Buyers helped</div></div>
+    <div><div class="stat">$18k</div><div class="lbl">Avg. saved at closing</div></div>
+    <div><div class="stat">4.9★</div><div class="lbl">Client rating</div></div>
+    <div><div class="stat">11 days</div><div class="lbl">Avg. to accepted offer</div></div>
+  </div>
+</div>
+
+<div class="steps">
+  <div class="wrap">
+    <div class="h">
+      <h2>What's inside the playbook</h2>
+      <p class="s">Seven plain-English steps that take you from "where do I even start?" to keys in hand.</p>
+    </div>
+    <div class="slist">
+      <div class="step"><div class="n">1</div><h3>Know your real budget</h3><p>Build a number that includes the costs lenders conveniently leave out.</p></div>
+      <div class="step"><div class="n">2</div><h3>Get truly pre-approved</h3><p>The difference between pre-qualified and pre-approved — and why it wins offers.</p></div>
+      <div class="step"><div class="n">3</div><h3>Shortlist the right homes</h3><p>A scoring system so you stop wasting weekends on the wrong showings.</p></div>
+      <div class="step"><div class="n">4</div><h3>Spot the red flags</h3><p>The five deal-breakers our agents walk away from every single time.</p></div>
+      <div class="step"><div class="n">5</div><h3>Make a winning offer</h3><p>Negotiation scripts that save thousands without losing the home.</p></div>
+      <div class="step"><div class="n">6</div><h3>Survive inspection</h3><p>What to fix, what to credit, and what to ignore.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="quote">
+  <div class="wrap">
+    <blockquote>"We thought we were priced out. This guide showed us we weren't — and we closed $22k under asking. Wish we'd found Harbor &amp; Vale sooner."</blockquote>
+    <div class="by">— Maya &amp; Chris T., first-time buyers</div>
+  </div>
+</div>
+
+<div class="fin">
+  <div class="wrap">
+    <h2>Your first home is closer than you think</h2>
+    <p>Grab the free playbook and take the guesswork out of the biggest purchase of your life.</p>
+    <a href="#optin" class="btn">Get the Free Playbook →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    Demo lead-gen funnel by <a href="/">Earvin Laureano</a> · Not a real business · <a href="/work">See more work</a>
+  </div>
+</footer>
+
+<script>
+function submitLead(e){
+  e.preventDefault();
+  var fn = document.getElementById('fn').value.trim() || 'there';
+  document.getElementById('formCard').style.display = 'none';
+  var t = document.getElementById('thanks');
+  document.getElementById('tyName').textContent = "You're all set, " + fn + "!";
+  t.style.display = 'block';
+  t.scrollIntoView({behavior:'smooth', block:'center'});
+  return false;
+}
+</script>
+</body>
+</html>

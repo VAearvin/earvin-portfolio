@@ -118,6 +118,8 @@
     .upsell-list li span { color: var(--muted); font-size: 0.8rem; line-height: 1.55; }
     .upsell-price { font-size: 0.92rem; color: var(--text); margin: 0.5rem 0 1.6rem; }
     .upsell-price strong { color: var(--gold); font-weight: 800; }
+    .upsell-price a, .compare-foot a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+    .upsell-price a:hover, .compare-foot a:hover { color: #fff; }
     .upsell-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
     footer { border-top: 1px solid var(--border); padding: 2.5rem 5rem; display: flex; justify-content: space-between; align-items: center; background: var(--bg); flex-wrap: wrap; gap: 1rem; }
@@ -211,7 +213,7 @@
   <div class="compare">
     <div class="compare-eyebrow">Free vs Full</div>
     <h2 class="compare-title">The Free Scan vs the<br/><em>Full Website Audit</em></h2>
-    <p class="compare-sub">The free scan checks the technical surface in 60 seconds. The <strong>Full Audit</strong> is a deep, human review of your entire online presence — here's exactly what each one covers:</p>
+    <p class="compare-sub">The free scan checks the technical surface in 60 seconds. The <strong>Full Audit</strong> is a deep, hands-on review I do personally — ending in a clear, prioritized action plan you can run yourself or hand to a developer. Here's exactly what each one covers:</p>
 
     <div class="crow chead"><div></div><div class="col">Free Scan</div><div class="col paid">Full Audit · $600</div></div>
 
@@ -248,7 +250,7 @@
     <div class="crow"><div class="feat">Full written report</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
     <div class="crow"><div class="feat">30-minute walkthrough call</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
 
-    <div class="compare-foot">The free scan covers the surface. The <strong>Full Audit</strong> covers everything — and the <strong>$600 is credited toward any build</strong> if you proceed within 30 days.</div>
+    <div class="compare-foot">The free scan covers the surface. The <strong>Full Audit</strong> covers everything — and the <strong>$600 is credited toward any <a href="/pricing">build</a></strong> if you proceed within 30 days.</div>
     <div class="compare-cta"><a href="/#contact" class="btn-gold">Book my full audit</a></div>
   </div>
 </section>
@@ -412,8 +414,8 @@
       '<div class="upsell">' +
         '<div class="upsell-eyebrow">That was the quick scan</div>' +
         '<h3>The full audit covers everything above — and hands you the fixes.</h3>' +
-        '<p class="upsell-sub">A deep, human review across performance, SEO, AI visibility, design, conversion, and content — ending in <strong>up to 20 prioritized, actionable fixes</strong> and a 30-minute walkthrough call to talk through your top priorities.</p>' +
-        '<div class="upsell-price">Full Website Audit &amp; Action Plan — <strong>' + FULL_AUDIT_PRICE + '</strong> · credited toward any build.</div>' +
+        '<p class="upsell-sub">A deep, hands-on review I do personally across performance, SEO, AI visibility, design, conversion, and content — ending in <strong>up to 20 prioritized, actionable fixes you can run yourself or hand to a developer</strong>, plus a 30-minute walkthrough call to talk through your top priorities.</p>' +
+        '<div class="upsell-price">Full Website Audit &amp; Action Plan — <strong>' + FULL_AUDIT_PRICE + '</strong> · credited toward any <a href="/pricing">build</a>.</div>' +
         '<div class="upsell-actions">' +
           '<a href="/#contact" class="btn-gold">Book my full audit</a>' +
           '<a href="/#contact" class="btn-outline">or book a free call first</a>' +

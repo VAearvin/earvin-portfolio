@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Redesign Showcase — The Copper Fork</title>
+<meta name="description" content="Before & after: a dated restaurant website rebuilt into a modern, mobile-first experience. Drag to compare."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#1c1917"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{--char:#1c1917;--ember:#ea580c;--ember-d:#c2410c;--cream:#faf6f0;--sand:#e7ddd0;--ink:#2b2521;--slate:#6b6058;--white:#fff;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:var(--char);color:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Playfair Display',serif;line-height:1.1}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .demo-bar{background:#0d0b0a;color:#e7c9b3;font-size:.82rem;text-align:center;padding:.55rem 1rem}
+  .demo-bar a{color:#fff;text-decoration:underline;font-weight:600}
+
+  .top{text-align:center;padding:3.5rem 0 1.5rem}
+  .top .pill{display:inline-block;background:rgba(234,88,12,.16);color:var(--ember);border:1px solid rgba(234,88,12,.35);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px}
+  .top h1{font-size:clamp(2.1rem,4.5vw,3.2rem);color:#fff;margin:1.2rem 0 .6rem}
+  .top h1 em{color:var(--ember);font-style:italic}
+  .top p{color:#b8a89c;max-width:34rem;margin:0 auto;font-size:1.05rem}
+
+  /* compare slider */
+  .compare{position:relative;max-width:980px;margin:2.5rem auto 0;border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid #33302c;user-select:none}
+  .frame-bar{background:#211d1a;display:flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-bottom:1px solid #33302c}
+  .frame-bar i{width:11px;height:11px;border-radius:50%;display:block}
+  .frame-bar .u{flex:1;text-align:center;font-size:.78rem;color:#8a7d72;background:#161311;border-radius:6px;padding:.25rem;margin:0 1rem}
+  .stage{position:relative;aspect-ratio:16/10;background:#fff;overflow:hidden}
+  .pane{position:absolute;inset:0;width:100%;height:100%;overflow:hidden}
+  .pane .inner{position:absolute;inset:0;width:980px;height:100%}
+  .after-pane{z-index:1}
+  .before-pane{z-index:2;width:50%;border-right:3px solid var(--ember)}
+  .tag{position:absolute;top:14px;z-index:5;font-size:.7rem;font-weight:800;letter-spacing:.12em;padding:.3rem .7rem;border-radius:6px;color:#fff}
+  .tag-before{left:14px;background:#78716c}
+  .tag-after{right:14px;background:var(--ember)}
+  .handle{position:absolute;top:0;bottom:0;left:50%;width:44px;transform:translateX(-50%);z-index:6;cursor:ew-resize;display:flex;align-items:center;justify-content:center}
+  .handle .grip{width:44px;height:44px;border-radius:50%;background:var(--ember);color:#fff;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.4);font-size:1.1rem}
+  .hint{text-align:center;color:#8a7d72;font-size:.85rem;margin-top:1rem}
+
+  /* ---- BEFORE (deliberately dated) ---- */
+  .old{font-family:'Times New Roman',Times,serif;background:#fffbe6;color:#000;height:100%;overflow:hidden}
+  .old .oban{background:#660000;color:#ffcc00;text-align:center;padding:6px;font-weight:bold;font-size:13px;border-bottom:3px ridge #ffcc00}
+  .old .ohead{background:#003366;color:#fff;text-align:center;padding:10px}
+  .old .ohead h3{font-family:'Times New Roman',serif;font-size:30px;color:#ffcc00;text-shadow:2px 2px #000}
+  .old .onav{background:#cccccc;border-top:2px solid #fff;border-bottom:2px solid #888;text-align:center;font-size:12px;padding:4px}
+  .old .onav a{color:#0000ee;text-decoration:underline;margin:0 6px}
+  .old .obody{padding:12px;font-size:13px}
+  .old .obody marquee{color:#cc0000;font-weight:bold}
+  .old .ohit{color:#008000;font-size:11px;margin-top:8px}
+  .old img.ph{border:3px outset #999;display:inline-block;width:120px;height:70px;background:repeating-linear-gradient(45deg,#ddd,#ddd 8px,#ccc 8px,#ccc 16px);vertical-align:middle;margin-right:8px}
+  .old .obtn{background:#ffcc00;border:2px outset #aa8800;font-weight:bold;padding:3px 8px;font-size:12px;display:inline-block;margin-top:8px}
+
+  /* ---- AFTER (modern) ---- */
+  .new{height:100%;background:var(--cream);color:var(--ink);overflow:hidden;font-family:'Inter',sans-serif}
+  .new .nnav{display:flex;align-items:center;justify-content:space-between;padding:14px 26px;background:rgba(250,246,240,.9)}
+  .new .nlogo{font-family:'Playfair Display',serif;font-weight:700;font-size:20px;color:var(--char)}
+  .new .nlogo span{color:var(--ember)}
+  .new .nlinks{display:flex;gap:18px;font-size:13px;font-weight:500;color:var(--slate)}
+  .new .nbtn{background:var(--ember);color:#fff;font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px}
+  .new .nhero{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;padding:26px}
+  .new .nhero .eye{color:var(--ember);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .new .nhero h2{font-size:34px;color:var(--char);margin:8px 0;line-height:1.05}
+  .new .nhero p{color:var(--slate);font-size:14px;margin-bottom:14px}
+  .new .nhero .row{display:flex;gap:10px}
+  .new .nhero .b1{background:var(--ember);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:9px}
+  .new .nhero .b2{border:1.5px solid var(--sand);color:var(--char);font-weight:600;font-size:13px;padding:10px 18px;border-radius:9px}
+  .new .nimg{aspect-ratio:4/3;border-radius:14px;background:linear-gradient(150deg,#3b2f28,#1c1917);box-shadow:0 16px 40px rgba(0,0,0,.3);position:relative;overflow:hidden}
+  .new .nimg:after{content:"🍽️";position:absolute;inset:0;display:grid;place-items:center;font-size:54px;opacity:.85}
+  .new .nstrip{display:flex;gap:14px;padding:0 26px 24px}
+  .new .nstrip div{flex:1;background:#fff;border:1px solid var(--sand);border-radius:12px;padding:12px;text-align:center}
+  .new .nstrip b{font-family:'Playfair Display',serif;font-size:20px;color:var(--ember);display:block}
+  .new .nstrip small{font-size:11px;color:var(--slate)}
+
+  .feat{padding:5rem 0;background:var(--char)}
+  .feat .g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .feat .c{background:#211d1a;border:1px solid #332f2b;border-radius:14px;padding:1.6rem}
+  .feat .c .n{color:var(--ember);font-family:'Playfair Display';font-size:1.5rem}
+  .feat .c h3{color:#fff;font-family:'Inter';font-size:1.05rem;margin:.5rem 0 .3rem}
+  .feat .c p{color:#a99c90;font-size:.9rem}
+  .feat .sec-h{text-align:center;margin-bottom:2.6rem}
+  .feat .sec-h h2{color:#fff;font-size:2rem}
+  .feat .sec-h p{color:#a99c90;margin-top:.5rem}
+  @media(max-width:780px){.feat .g{grid-template-columns:1fr}.new .nhero,.new .nlinks{font-size:11px}}
+
+  .cta{padding:4.5rem 0;text-align:center;background:linear-gradient(160deg,var(--ember),var(--ember-d))}
+  .cta h2{color:#fff;font-size:clamp(1.8rem,3.6vw,2.5rem);margin-bottom:.8rem}
+  .cta p{color:#ffe6d5;margin-bottom:1.8rem}
+  .cta a{background:#fff;color:var(--ember-d);font-weight:700;padding:.95rem 2rem;border-radius:10px;display:inline-block}
+  footer{background:#0d0b0a;color:#8a7d72;text-align:center;padding:2.4rem 0;font-size:.85rem}
+  footer a{color:#fff;text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">🔄 <strong>Before / After redesign demo</strong> by Earvin Laureano — drag the slider to compare. &nbsp;<a href="/work">← Portfolio</a> &nbsp;·&nbsp; <a href="/rebrand">Rebuild my site</a></div>
+
+<div class="top">
+  <span class="pill">Website Redesign</span>
+  <h1>From <em>dated</em> to <em>delicious.</em></h1>
+  <p>Same restaurant, same menu — a website that finally matches the food. Drag the handle to see the transformation.</p>
+</div>
+
+<div class="wrap">
+  <div class="compare" id="cmp">
+    <div class="frame-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="u">www.thecopperfork.com</span></div>
+    <div class="stage" id="stage">
+      <span class="tag tag-after">AFTER</span>
+
+      <!-- AFTER pane (full width, underneath) -->
+      <div class="pane after-pane">
+        <div class="inner">
+          <div class="new">
+            <div class="nnav">
+              <div class="nlogo">The Copper <span>Fork</span></div>
+              <div class="nlinks"><span>Menu</span><span>Our Story</span><span>Private Events</span><span>Visit</span></div>
+              <div class="nbtn">Reserve a Table</div>
+            </div>
+            <div class="nhero">
+              <div>
+                <div class="eye">Wood-Fired · Est. 1998</div>
+                <h2>Steakhouse classics, reimagined.</h2>
+                <p>Prime cuts, a cellar worth lingering over, and a room built for the kind of night you remember.</p>
+                <div class="row"><span class="b1">Book a Table</span><span class="b2">View Menu</span></div>
+              </div>
+              <div class="nimg"></div>
+            </div>
+            <div class="nstrip">
+              <div><b>4.8★</b><small>1,200+ reviews</small></div>
+              <div><b>#1</b><small>Steakhouse in town</small></div>
+              <div><b>Nightly</b><small>Live jazz, Fri–Sat</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BEFORE pane (clipped on top) -->
+      <div class="pane before-pane" id="beforePane">
+        <span class="tag tag-before">BEFORE</span>
+        <div class="inner">
+          <div class="old">
+            <div class="oban">★★★ WELCOME TO OUR HOMEPAGE — BEST VIEWED IN 1024x768 ★★★</div>
+            <div class="ohead"><h3>~* The Copper Fork *~</h3><div style="font-size:12px">A Family Steakhouse &amp; Bar</div></div>
+            <div class="onav"><a href="#">Home</a>|<a href="#">Menu.html</a>|<a href="#">Specials</a>|<a href="#">Directions</a>|<a href="#">Guestbook</a></div>
+            <div class="obody">
+              <marquee>*** NOW SERVING LUNCH! Click HERE for our DINNER SPECIALS!!! ***</marquee>
+              <p style="margin-top:8px"><img class="ph"/>Welcome to the Copper Fork website!!! We are a family owned steakhouse serving the BEST steaks in town since 1998. Please sign our guestbook and tell your friends!</p>
+              <div class="obtn">&gt;&gt; CLICK HERE TO SEE MENU &lt;&lt;</div>
+              <p class="ohit">You are visitor number: 0042871 &nbsp;|&nbsp; Last updated: 04/12/2009</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="handle" id="handle"><div class="grip">⇄</div></div>
+    </div>
+  </div>
+  <div class="hint">← drag to compare →</div>
+</div>
+
+<div class="feat">
+  <div class="wrap">
+    <div class="sec-h"><h2>What changed</h2><p>Not just prettier — built to actually win reservations.</p></div>
+    <div class="g">
+      <div class="c"><div class="n">01</div><h3>Mobile-first</h3><p>70% of diners book on their phone. The old site was unusable there — the new one is built for it.</p></div>
+      <div class="c"><div class="n">02</div><h3>Reservations in 2 taps</h3><p>A clear, always-visible "Reserve" button replaced a buried phone number and a broken contact form.</p></div>
+      <div class="c"><div class="n">03</div><h3>Found on Google &amp; AI</h3><p>Proper structure and schema so the restaurant shows up in search and AI answers — not just word of mouth.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="cta">
+  <div class="wrap">
+    <h2>Is your site stuck in 2009?</h2>
+    <p>Let's give your business the website it deserves.</p>
+    <a href="/rebrand">See how a redesign works →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">Before/after redesign demo by <a href="/">Earvin Laureano</a> · Illustrative example · <a href="/work">See more work</a></div>
+</footer>
+
+<script>
+(function(){
+  var stage=document.getElementById('stage'), before=document.getElementById('beforePane'), handle=document.getElementById('handle');
+  var dragging=false;
+  function setPct(px){
+    var r=stage.getBoundingClientRect();
+    var pct=Math.max(4,Math.min(96,((px-r.left)/r.width)*100));
+    before.style.width=pct+'%';
+    handle.style.left=pct+'%';
+  }
+  function start(e){dragging=true;move(e);}
+  function end(){dragging=false;}
+  function move(e){if(!dragging)return;var x=e.touches?e.touches[0].clientX:e.clientX;setPct(x);e.preventDefault();}
+  handle.addEventListener('mousedown',start); stage.addEventListener('mousedown',start);
+  window.addEventListener('mousemove',move); window.addEventListener('mouseup',end);
+  handle.addEventListener('touchstart',start,{passive:false}); window.addEventListener('touchmove',move,{passive:false}); window.addEventListener('touchend',end);
+})();
+</script>
+</body>
+</html>

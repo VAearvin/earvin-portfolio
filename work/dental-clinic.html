@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Northgate Dental Studio — Modern Family & Cosmetic Dentistry</title>
+<meta name="description" content="Northgate Dental Studio — gentle, modern dentistry for the whole family. Same-week appointments, transparent pricing, and a calm, spa-like experience."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#0d9488"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --teal:#0d9488; --teal-d:#0f766e; --ink:#0f2724; --slate:#4b5d5a;
+    --mist:#f3f7f6; --line:#e2ece9; --amber:#f59e0b; --coral:#fb7185; --white:#fff;
+    --r:18px; --shadow:0 18px 50px rgba(15,118,110,0.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:600;line-height:1.1}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal);color:#fff;font-weight:600;padding:.95rem 1.7rem;border-radius:100px;font-size:.95rem;transition:.2s;border:none;cursor:pointer}
+  .btn:hover{background:var(--teal-d);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--teal);border:1.5px solid var(--line)}
+  .btn-ghost:hover{background:var(--mist);border-color:var(--teal)}
+  .eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+
+  /* demo ribbon */
+  .demo-bar{background:#0f2724;color:#cdeae5;font-size:.82rem;text-align:center;padding:.55rem 1rem;font-weight:500}
+  .demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:1rem 24px;max-width:1180px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:.6rem;font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem}
+  .logo .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--teal),#34d399);display:grid;place-items:center;color:#fff;font-size:1.1rem}
+  .nav-links{display:flex;gap:2rem;align-items:center;font-size:.92rem;font-weight:500;color:var(--slate)}
+  .nav-links a:hover{color:var(--teal)}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  @media(max-width:860px){.nav-links{display:none}}
+
+  /* hero */
+  .hero{background:linear-gradient(160deg,#f3f7f6 0%,#e6f4f1 100%);overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:4.5rem 0 5rem}
+  .hero h1{font-size:clamp(2.4rem,5vw,3.7rem);letter-spacing:-.02em}
+  .hero h1 em{font-style:italic;color:var(--teal)}
+  .hero p.lede{font-size:1.13rem;color:var(--slate);margin:1.4rem 0 2rem;max-width:30rem}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .trust{display:flex;gap:1.8rem;margin-top:2.4rem;flex-wrap:wrap}
+  .trust div{font-size:.86rem;color:var(--slate)}
+  .trust strong{display:block;font-family:'Fraunces',serif;font-size:1.7rem;color:var(--ink)}
+  .hero-card{position:relative;background:#fff;border-radius:24px;box-shadow:var(--shadow);padding:2rem;border:1px solid var(--line)}
+  .hero-card img{width:100%;border-radius:16px;display:block;aspect-ratio:4/3.4;object-fit:cover}
+  .badge-float{position:absolute;background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:.8rem 1rem;display:flex;align-items:center;gap:.6rem;font-size:.85rem;font-weight:600}
+  .badge-float .dot{width:34px;height:34px;border-radius:50%;background:#e6f4f1;display:grid;place-items:center;color:var(--teal)}
+  .bf-1{bottom:-18px;left:-18px}
+  .bf-2{top:-18px;right:-18px}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;padding:3rem 0}.bf-1,.bf-2{display:none}}
+
+  /* logos strip */
+  .strip{padding:1.8rem 0;border-bottom:1px solid var(--line)}
+  .strip-in{display:flex;align-items:center;justify-content:center;gap:2.6rem;flex-wrap:wrap;color:#9fb3ae;font-size:.82rem;font-weight:600;letter-spacing:.04em}
+  .strip-in span:first-child{color:var(--slate);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem}
+
+  section{padding:5.5rem 0}
+  .sec-head{text-align:center;max-width:42rem;margin:0 auto 3.2rem}
+  .sec-head h2{font-size:clamp(1.9rem,3.5vw,2.7rem);letter-spacing:-.01em}
+  .sec-head p{color:var(--slate);margin-top:1rem;font-size:1.05rem}
+
+  /* services */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:2rem;transition:.2s}
+  .svc:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:transparent}
+  .svc .ic{width:52px;height:52px;border-radius:13px;background:#e6f4f1;display:grid;place-items:center;color:var(--teal);margin-bottom:1.2rem;font-size:1.5rem}
+  .svc h3{font-size:1.25rem;margin-bottom:.5rem}
+  .svc p{color:var(--slate);font-size:.95rem}
+  @media(max-width:860px){.svc-grid{grid-template-columns:1fr}}
+
+  /* feature split */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .split img{width:100%;border-radius:20px;box-shadow:var(--shadow);aspect-ratio:5/4;object-fit:cover}
+  .split ul{list-style:none;margin-top:1.6rem;display:grid;gap:1rem}
+  .split li{display:flex;gap:.8rem;align-items:flex-start;color:var(--slate)}
+  .split li b{color:var(--ink)}
+  .check{flex:none;width:24px;height:24px;border-radius:50%;background:#e6f4f1;color:var(--teal);display:grid;place-items:center;font-size:.8rem;font-weight:800;margin-top:.15rem}
+  @media(max-width:860px){.split{grid-template-columns:1fr;gap:2rem}.split.rev .img-col{order:-1}}
+
+  /* testimonials */
+  .tmint{background:var(--mist)}
+  .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .tm{background:#fff;border-radius:var(--r);padding:1.9rem;border:1px solid var(--line)}
+  .stars{color:var(--amber);margin-bottom:.8rem;letter-spacing:.1em}
+  .tm p{font-size:.97rem;color:var(--ink)}
+  .tm .who{display:flex;align-items:center;gap:.7rem;margin-top:1.2rem}
+  .tm .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--teal),#34d399);color:#fff;display:grid;place-items:center;font-weight:700}
+  .tm .who small{display:block;color:var(--slate)}
+  @media(max-width:860px){.tm-grid{grid-template-columns:1fr}}
+
+  /* pricing */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .price{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:2.2rem}
+  .price.feat{background:linear-gradient(160deg,var(--teal),var(--teal-d));color:#fff;border-color:transparent;position:relative;box-shadow:var(--shadow)}
+  .price.feat .amt,.price.feat h3{color:#fff}
+  .price .tag{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+  .price.feat .tag{color:#d1fae5}
+  .price h3{font-size:1.3rem;margin:.4rem 0 1rem}
+  .price .amt{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--ink)}
+  .price .amt span{font-size:1rem;color:var(--slate);font-family:'Inter'}
+  .price ul{list-style:none;margin:1.4rem 0;display:grid;gap:.7rem;font-size:.93rem;color:var(--slate)}
+  .price.feat ul{color:#bcd}
+  .price ul li:before{content:"✓";color:var(--teal);font-weight:800;margin-right:.5rem}
+  .price.feat ul li:before{color:#6ee7b7}
+  @media(max-width:860px){.price-grid{grid-template-columns:1fr}}
+
+  /* cta */
+  .cta{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;text-align:center;border-radius:28px;padding:4rem 2rem;margin:0 auto}
+  .cta h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:1rem}
+  .cta p{opacity:.92;max-width:34rem;margin:0 auto 2rem;font-size:1.08rem}
+  .cta .btn{background:#fff;color:var(--teal-d)}
+  .cta .btn:hover{background:var(--mist)}
+
+  /* footer */
+  footer{background:var(--ink);color:#a7c4bf;padding:3.5rem 0 2rem;margin-top:5rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+  footer h4{color:#fff;font-family:'Inter';font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
+  footer a{display:block;color:#a7c4bf;font-size:.92rem;margin-bottom:.6rem}
+  footer a:hover{color:#fff}
+  .foot-bottom{text-align:center;padding-top:1.8rem;font-size:.82rem;color:#6f8e89}
+  .foot-logo{color:#fff;font-family:'Fraunces',serif;font-size:1.3rem;margin-bottom:.8rem}
+  @media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">🎨 This is a <strong>demo site</strong> built by Earvin Laureano to showcase web design. &nbsp;<a href="/work">← Back to portfolio</a> &nbsp;·&nbsp; <a href="/pricing">Get a site like this</a></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="#" class="logo"><span class="mark">✦</span> Northgate Dental</a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#book" class="btn">Book a Visit</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Family &amp; Cosmetic Dentistry</span>
+        <h1>Dentistry that feels<br/><em>calm, not clinical.</em></h1>
+        <p class="lede">Gentle, modern care for the whole family — with same-week appointments, honest pricing, and a team that actually remembers your name.</p>
+        <div class="hero-actions">
+          <a href="#book" class="btn">Book Your First Visit →</a>
+          <a href="tel:+10000000000" class="btn btn-ghost">📞 (000) 000-0000</a>
+        </div>
+        <div class="trust">
+          <div><strong>4.9★</strong> 600+ Google reviews</div>
+          <div><strong>15k+</strong> happy patients</div>
+          <div><strong>Same-week</strong> appointments</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80&auto=format&fit=crop" alt="Modern dental office reception"/>
+        <div class="badge-float bf-1"><span class="dot">😁</span> Painless cleanings</div>
+        <div class="badge-float bf-2"><span class="dot">⏱️</span> 5-min booking</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-in">
+    <span>As trusted by families across</span>
+    <span>NORTHGATE</span><span>RIVERSIDE</span><span>OAK PARK</span><span>WESTON</span><span>FAIRVIEW</span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Everything your smile needs, under one roof</h2>
+      <p>From routine cleanings to full smile makeovers — comfortable, modern, and tailored to you.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="ic">🪥</div><h3>General Dentistry</h3><p>Checkups, cleanings, fillings, and preventive care that keeps small issues from becoming big ones.</p></div>
+      <div class="svc"><div class="ic">✨</div><h3>Cosmetic &amp; Whitening</h3><p>Veneers, bonding, and professional whitening that brighten your smile in a single visit.</p></div>
+      <div class="svc"><div class="ic">🦷</div><h3>Implants &amp; Crowns</h3><p>Natural-looking, permanent replacements that restore your bite and your confidence.</p></div>
+      <div class="svc"><div class="ic">🧒</div><h3>Kids' Dentistry</h3><p>Gentle, friendly visits that help your little ones build healthy habits — and zero fear.</p></div>
+      <div class="svc"><div class="ic">😬</div><h3>Invisible Aligners</h3><p>Straighten your teeth discreetly with clear aligners, custom-fit and monitored every step.</p></div>
+      <div class="svc"><div class="ic">🚑</div><h3>Emergency Care</h3><p>Sudden pain or a broken tooth? We keep same-day slots open so you're never left waiting.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="tmint" style="background:#fff">
+  <div class="wrap">
+    <div class="split">
+      <div class="img-col"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80&auto=format&fit=crop" alt="Dentist with patient"/></div>
+      <div>
+        <span class="eyebrow">Why Northgate</span>
+        <h2 style="font-size:2.2rem">Care that's gentle, honest, and on your schedule</h2>
+        <p style="color:var(--slate);margin-top:1rem">We built Northgate around the things people dread about the dentist — and fixed every one of them.</p>
+        <ul>
+          <li><span class="check">✓</span><span><b>No surprise bills.</b> You see the price before we start. Always.</span></li>
+          <li><span class="check">✓</span><span><b>Same-week appointments.</b> Real availability, not a three-week wait.</span></li>
+          <li><span class="check">✓</span><span><b>Anxiety-friendly.</b> Sedation options and a calm, spa-like space.</span></li>
+          <li><span class="check">✓</span><span><b>One team, every visit.</b> Familiar faces who know your history.</span></li>
+        </ul>
+        <a href="#book" class="btn" style="margin-top:1.8rem">Meet the Team →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="tmint">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Patient Stories</span>
+      <h2>Loved by 15,000+ smiles</h2>
+    </div>
+    <div class="tm-grid">
+      <div class="tm"><div class="stars">★★★★★</div><p>"I've never said this about a dentist before, but I actually look forward to my visits. The whole team is so warm and the office is beautiful."</p><div class="who"><div class="av">SM</div><div>Sarah M.<small>Patient since 2021</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"They quoted me the exact price upfront — no games. My kids aren't scared anymore either. Genuinely the best dental experience we've had."</p><div class="who"><div class="av">DR</div><div>David R.<small>Family of four</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"Chipped my tooth on a Friday and they saw me that afternoon. Painless, fast, and friendly. Can't recommend Northgate enough."</p><div class="who"><div class="av">AL</div><div>Amara L.<small>Emergency patient</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Simple Pricing</span>
+      <h2>Honest prices, no surprises</h2>
+      <p>Membership plans that make great dental care affordable — with or without insurance.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price">
+        <span class="tag">Essential</span>
+        <h3>Healthy Smile</h3>
+        <div class="amt">$29<span>/mo</span></div>
+        <ul><li>2 cleanings a year</li><li>Annual exam &amp; X-rays</li><li>20% off all treatments</li><li>No insurance needed</li></ul>
+        <a href="#book" class="btn btn-ghost" style="width:100%;justify-content:center">Choose Plan</a>
+      </div>
+      <div class="price feat">
+        <span class="tag">Most Popular</span>
+        <h3>Family Care</h3>
+        <div class="amt">$79<span>/mo</span></div>
+        <ul><li>Covers up to 4 family members</li><li>4 cleanings a year</li><li>25% off all treatments</li><li>Free whitening yearly</li></ul>
+        <a href="#book" class="btn" style="width:100%;justify-content:center;background:#fff;color:var(--ink)">Choose Plan</a>
+      </div>
+      <div class="price">
+        <span class="tag">Premium</span>
+        <h3>Bright &amp; Bold</h3>
+        <div class="amt">$59<span>/mo</span></div>
+        <ul><li>Everything in Healthy Smile</li><li>Cosmetic consult included</li><li>30% off whitening &amp; veneers</li><li>Priority booking</li></ul>
+        <a href="#book" class="btn btn-ghost" style="width:100%;justify-content:center">Choose Plan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Your best smile starts here</h2>
+      <p>Book your first visit in under 60 seconds. New patients get a free exam &amp; consultation.</p>
+      <a href="#" class="btn">Book Your Free Consultation →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">✦ Northgate Dental</div>
+        <p style="font-size:.9rem;max-width:18rem">Modern, gentle dentistry for the whole family. Calm space, honest prices, same-week care.</p>
+      </div>
+      <div><h4>Services</h4><a href="#services">General Dentistry</a><a href="#services">Cosmetic</a><a href="#services">Implants</a><a href="#services">Aligners</a></div>
+      <div><h4>Clinic</h4><a href="#why">Why Northgate</a><a href="#reviews">Reviews</a><a href="#pricing">Pricing</a><a href="#book">Book Now</a></div>
+      <div><h4>Visit</h4><a href="#">123 Northgate Ave</a><a href="#">Mon–Sat · 8–6</a><a href="tel:#">(000) 000-0000</a></div>
+    </div>
+    <div class="foot-bottom">
+      Demo site designed &amp; built by <a href="/" style="color:#fff;text-decoration:underline;display:inline">Earvin Laureano</a> · Not a real business · <a href="/work" style="color:#fff;text-decoration:underline;display:inline">See more work</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

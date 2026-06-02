@@ -88,6 +88,7 @@ nav#navbar.scrolled { padding: 1rem 5rem; }
 .cat-hero .who { font-size: 0.92rem; font-style: italic; color: var(--gold); margin-bottom: 1.3rem; line-height: 1.6; }
 .cat-hero .lede { font-size: 1rem; color: var(--muted); line-height: 1.9; max-width: 560px; margin: 0 auto 2.5rem; }
 .cat-hero-actions { display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap; }
+.cap-note { margin: 4.5rem auto 0; max-width: 520px; font-size: 0.82rem; line-height: 1.55; color: var(--muted); text-align: center; }
 .cat-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; background: rgba(199,169,127,0.1); border: 1px solid rgba(199,169,127,0.25); padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 1.8rem; }
 .cat-eyebrow span { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
 

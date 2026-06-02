@@ -18,7 +18,7 @@
         '<li><a href="/#support">Services</a></li>' +
         '<li><a href="/#how">How I Work</a></li>' +
         '<li><a href="/#experience">Experience</a></li>' +
-        '<li><a href="/work"' + isActive('work') + '>Work</a></li>' +
+        '<li><a href="/work"' + isActive('work') + '>Portfolio</a></li>' +
         '<li><a href="/pricing"' + isActive('hub') + '>Work With Me</a></li>' +
         '<li><a href="/#contact">Contact</a></li>' +
         '<li><a href="/#contact" class="nav-cta">Get In Touch</a></li>' +

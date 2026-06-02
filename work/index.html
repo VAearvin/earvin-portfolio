@@ -39,6 +39,21 @@
     .wlink{font-size:.9rem;font-weight:600;color:var(--gold);display:inline-flex;align-items:center;gap:.4rem;margin-top:.4rem}
     .wcard:hover .wlink{gap:.7rem}
     .group-label{margin-top:1rem}
+    .wfeature{display:grid;grid-template-columns:1.05fr 1fr;background:var(--card,#141414);border:1px solid rgba(199,169,127,.45);border-radius:var(--r);overflow:hidden;text-decoration:none;color:inherit;margin-bottom:1.4rem;transition:.2s;text-align:left}
+    .wfeature:hover{border-color:var(--gold);box-shadow:0 26px 60px rgba(0,0,0,.5);transform:translateY(-4px)}
+    .wfeature *{text-decoration:none}
+    .wfeature .fimg{position:relative;min-height:320px}
+    .wfeature .fimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .wfeature .fimg .fbadge{position:absolute;top:1rem;left:1rem;z-index:2;background:var(--gold);color:#0c0c0c;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .9rem;border-radius:100px}
+    .wfeature .fbody{padding:2.6rem;display:flex;flex-direction:column;justify-content:center}
+    .wfeature .fkind{font-size:.78rem;color:var(--gold);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.6rem}
+    .wfeature h3{font-size:1.9rem;font-weight:800;margin-bottom:.6rem;line-height:1.1}
+    .wfeature p{color:var(--muted);font-size:.96rem;margin-bottom:1rem}
+    .wfeature .fflow{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
+    .wfeature .fflow span{font-size:.74rem;color:var(--text);background:rgba(199,169,127,.1);border:1px solid rgba(199,169,127,.25);padding:.3rem .7rem;border-radius:100px}
+    .wfeature .flink{font-size:.95rem;font-weight:700;color:var(--gold);display:inline-flex;align-items:center;gap:.45rem}
+    .wfeature:hover .flink{gap:.75rem}
+    @media(max-width:820px){.wfeature{grid-template-columns:1fr}.wfeature .fimg{min-height:200px}}
   </style>
   <script type="application/ld+json">
   { "@context":"https://schema.org","@type":"CollectionPage","name":"Work & Demos — Earvin Laureano","url":"https://www.earvinlaureano.com/work","about":"Websites, funnels, and operations builds for local and service businesses.","author":{"@type":"Person","name":"Earvin Laureano","url":"https://www.earvinlaureano.com/"} }
@@ -90,12 +105,23 @@
     </a>
   </div>
 
-  <div class="group-label reveal" style="margin-top:2.8rem">Funnels · 3 types</div>
+  <div class="group-label reveal" style="margin-top:2.8rem">Funnels</div>
+  <a href="/work/wellness" class="wfeature reveal">
+    <div class="fimg"><span class="fbadge">★ Flagship · full sales funnel</span><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop" alt="Wellness coaching funnel"/></div>
+    <div class="fbody">
+      <div class="fkind">Coaching &amp; wellness · complete sales funnel</div>
+      <h3>The Vitality Reset</h3>
+      <p>A no-stone-unturned, high-ticket sales funnel — every element built to close: hook, story, the R.E.S.E.T.™ method, offer stack, bonuses, guarantee, scarcity countdown, and FAQ — flowing into a qualifying application and thank-you.</p>
+      <div class="fflow"><span>Sales page</span><span>→ Application</span><span>→ Thank-you</span><span>Offer stack</span><span>Countdown</span><span>Guarantee</span></div>
+      <span class="flink">Open the full funnel →</span>
+    </div>
+  </a>
+  <div class="group-label reveal" style="margin-top:1.8rem;font-size:.72rem;opacity:.7">More funnel types</div>
   <div class="work-grid">
     <a href="/work/funnel" class="wcard reveal">
       <div class="wthumb" style="background:linear-gradient(160deg,#4f46e5,#1e1b4b)"><span class="wbadge live">● Live demo</span><img class="cover" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80&auto=format&fit=crop" alt="Real estate"/></div>
       <div class="wbody">
-        <div class="wkind">Type 1 · Lead-gen guide</div>
+        <div class="wkind">Lead-gen guide</div>
         <h3>First-Time Buyer's Playbook</h3>
         <p>A real-estate opt-in funnel — free guide in exchange for a lead. Submit the form and watch the thank-you + download flow work.</p>
         <div class="wtags"><span class="wtag">Lead capture</span><span class="wtag">Opt-in</span><span class="wtag">Copywriting</span></div>
@@ -106,7 +132,7 @@
     <a href="/work/dental-booking" class="wcard reveal">
       <div class="wthumb" style="background:linear-gradient(160deg,#0d9488,#0f2724)"><span class="wbadge live">● Live demo</span><img class="cover" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80&auto=format&fit=crop" alt="Appointment booking"/></div>
       <div class="wbody">
-        <div class="wkind">Type 2 · Appointment booking</div>
+        <div class="wkind">Appointment booking</div>
         <h3>Dental Booking Funnel</h3>
         <p>A single-focus booking page — name, service, date — with a sample form and an instant confirmation recap. Built to turn clicks into appointments.</p>
         <div class="wtags"><span class="wtag">Booking</span><span class="wtag">Forms</span><span class="wtag">Conversion</span></div>
@@ -117,7 +143,7 @@
     <a href="/work/sales-funnel" class="wcard reveal">
       <div class="wthumb" style="background:linear-gradient(160deg,#6d28d9,#160d1f)"><span class="wbadge live">● Live demo</span><img class="cover" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80&auto=format&fit=crop" alt="Sales funnel"/></div>
       <div class="wbody">
-        <div class="wkind">Type 3 · Sales / VSL page</div>
+        <div class="wkind">Sales / VSL page</div>
         <h3>Booked &amp; Busy</h3>
         <p>A long-form video sales funnel for a high-ticket offer — hook, story, offer stack, guarantee, and a checkout-style CTA.</p>
         <div class="wtags"><span class="wtag">VSL</span><span class="wtag">High-ticket</span><span class="wtag">Checkout</span></div>

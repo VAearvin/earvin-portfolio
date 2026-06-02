@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Apply — The Vitality Reset</title>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#4a6350"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/work/wellness/style.css"/>
+</head>
+<body>
+<div class="topbar">🌿 <strong>Demo application page</strong> — a sample close step by Earvin Laureano. Submitting won't enroll you. &nbsp;<a href="/work/wellness">← Back to sales page</a></div>
+
+<div class="lp">
+  <!-- ASIDE -->
+  <div class="aside">
+    <img class="bg" src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=900&q=80&auto=format&fit=crop" alt="Wellness"/>
+    <a href="/work/wellness" class="logo" style="color:#fff"><span class="m">VR</span> The Vitality Reset</a>
+    <div>
+      <span class="kicker" style="background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.3)">You're one step away</span>
+      <h1 style="color:#fff;font-size:clamp(2rem,3.4vw,2.8rem);margin:1.1rem 0">Apply for the next <em style="color:#f0d3b3;font-style:italic">cohort.</em></h1>
+      <p style="color:#dce7de;max-width:24rem">We keep cohorts small so every client gets real coaching. Tell us a little about you and we'll confirm your spot &amp; onboarding call.</p>
+      <ul class="alist">
+        <li><span class="c">✓</span> A reply within 1 business day</li>
+        <li><span class="c">✓</span> A short call to map your reset</li>
+        <li><span class="c">✓</span> No pressure — just clarity</li>
+      </ul>
+    </div>
+    <div class="astat">
+      <div><strong>300+</strong><span>clients coached</span></div>
+      <div><strong>4.9★</strong><span>average rating</span></div>
+      <div><strong>14-day</strong><span>money-back</span></div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="panel">
+    <div class="form-card">
+      <div class="steps"><span class="on">1. Apply</span> → <span>2. Onboarding call</span> → <span>3. Start</span></div>
+
+      <form id="applyForm">
+        <span class="eyebrow">Your application</span>
+        <h2 style="font-size:2rem;color:var(--forest);margin:.3rem 0 .2rem">Let's get you started</h2>
+        <p style="color:var(--slate);font-size:.95rem;margin-bottom:.5rem">Takes about 90 seconds.</p>
+
+        <div class="row2">
+          <div><label for="fn">First name</label><input id="fn" type="text" placeholder="Jordan" required/></div>
+          <div><label for="ln">Last name</label><input id="ln" type="text" placeholder="Avery" required/></div>
+        </div>
+        <label for="em">Email</label>
+        <input id="em" type="email" placeholder="you@email.com" required/>
+        <label for="ph">Phone</label>
+        <input id="ph" type="tel" placeholder="(000) 000-0000" required/>
+
+        <label for="ch">What's draining you most right now?</label>
+        <select id="ch">
+          <option>Low energy &amp; constant fatigue</option>
+          <option>Stress &amp; anxiety that won't switch off</option>
+          <option>Poor sleep</option>
+          <option>No time for myself</option>
+          <option>All of the above, honestly</option>
+        </select>
+
+        <label for="rd">How ready are you to start?</label>
+        <select id="rd">
+          <option>I'm ready now — let's go</option>
+          <option>Ready within the next month</option>
+          <option>Exploring, gathering info</option>
+        </select>
+
+        <label for="goal">In a sentence, what would a successful reset look like for you? <span style="font-weight:500;color:var(--muted)">(optional)</span></label>
+        <textarea id="goal" placeholder="e.g. Wake up rested and stop crashing at 3pm…"></textarea>
+
+        <button class="btn full lg" type="submit" style="margin-top:1.3rem">Submit My Application →</button>
+        <p class="fine">🔒 Your information is private and never shared.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/work/wellness/script.js"></script>
+</body>
+</html>

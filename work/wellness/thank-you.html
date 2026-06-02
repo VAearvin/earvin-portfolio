@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Application Received — The Vitality Reset</title>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#4a6350"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/work/wellness/style.css"/>
+<style>
+  .ty{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2.5rem 1.2rem;background:linear-gradient(170deg,#f7f3ec,#e8efe6)}
+  .ty-card{background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);max-width:600px;width:100%;padding:3rem;text-align:center}
+  .ty-ic{width:84px;height:84px;border-radius:50%;background:radial-gradient(circle at 50% 40%,var(--sage),var(--sage-d));color:#fff;display:grid;place-items:center;font-size:2.6rem;margin:0 auto 1.4rem;box-shadow:0 12px 30px rgba(74,99,80,.4)}
+  .ty-card h1{font-size:2.4rem;color:var(--forest)}
+  .ty-card .lede{color:var(--slate);margin:.8rem auto 2rem;max-width:30rem}
+  .next{text-align:left;display:grid;gap:1rem;margin:0 auto 2rem;max-width:30rem}
+  .next .row{display:flex;gap:1rem;align-items:flex-start;background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem}
+  .next .num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--sage);color:#fff;font-family:'Mulish';font-weight:800;display:grid;place-items:center}
+  .next h4{font-family:'Mulish';font-weight:800;font-size:.98rem;color:var(--ink)}
+  .next p{font-size:.9rem;color:var(--slate)}
+  .demo-flag{background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:12px;padding:.85rem 1rem;font-family:'Mulish';font-size:.84rem;margin-top:1.6rem}
+</style>
+</head>
+<body>
+<div class="topbar">🌿 <strong>Demo thank-you page</strong> by Earvin Laureano — the final step of the funnel. &nbsp;<a href="/work">← Portfolio</a></div>
+
+<div class="ty">
+  <div class="ty-card">
+    <div class="ty-ic">✓</div>
+    <h1 id="tyHead">Application received!</h1>
+    <p class="lede">We're so glad you're here. Here's exactly what happens next on your way into The Vitality Reset.</p>
+
+    <div class="next">
+      <div class="row"><span class="num">1</span><div><h4>We review your application</h4><p>A coach personally reads every one — usually within one business day.</p></div></div>
+      <div class="row"><span class="num">2</span><div><h4>Book your onboarding call</h4><p>Grab a time below. We'll map your reset and confirm your cohort spot.</p></div></div>
+      <div class="row"><span class="num">3</span><div><h4>Start Monday</h4><p>You'll get your login, workbook, and first module — and we begin together.</p></div></div>
+    </div>
+
+    <a href="#" class="btn lg" onclick="return false">📅 Book My Onboarding Call</a>
+    <p class="fine" style="margin-top:1rem">A confirmation is on its way to your inbox.</p>
+
+    <div class="demo-flag">💡 This is a <strong>sample funnel</strong> built by Earvin Laureano. In a real build, this step would book a live call (Calendly) and trigger confirmation emails + CRM entry automatically.</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var p=new URLSearchParams(location.search).get('name');
+  if(p){var h=document.getElementById('tyHead');h.textContent='Application received, '+p+'!';}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Book Your Visit — Northgate Dental Studio</title>
+<meta name="description" content="Book your first visit at Northgate Dental Studio — new patients get a free exam & consultation."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#0d9488"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{--teal:#0d9488;--teal-d:#0f766e;--ink:#0f2724;--slate:#4b5d5a;--mist:#f3f7f6;--line:#e2ece9;--white:#fff;--r:18px;--shadow:0 24px 60px rgba(15,118,110,.28)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--mist);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;line-height:1.1}
+  a{color:inherit;text-decoration:none}
+  .demo-bar{background:#0f2724;color:#cdeae5;font-size:.82rem;text-align:center;padding:.6rem 1rem;font-weight:500}
+  .demo-bar strong{color:#fff}
+  .demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+
+  .stage{display:grid;grid-template-columns:1.05fr .95fr;min-height:calc(100vh - 42px)}
+  @media(max-width:900px){.stage{grid-template-columns:1fr}}
+
+  /* LEFT — visual */
+  .visual{position:relative;padding:3rem;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden}
+  .visual img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .visual:after{content:"";position:absolute;inset:0;background:linear-gradient(155deg,rgba(13,148,136,.86),rgba(15,39,36,.92));z-index:1}
+  .visual > *{position:relative;z-index:2}
+  .vlogo{display:flex;align-items:center;gap:.6rem;font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem}
+  .vlogo .m{width:36px;height:36px;border-radius:9px;background:#fff;color:var(--teal);display:grid;place-items:center;font-size:1.15rem}
+  .vmid h1{font-size:clamp(2.1rem,3.6vw,3rem);margin-bottom:1rem}
+  .vmid h1 em{font-style:italic;color:#a7f3d0}
+  .vmid p{font-size:1.08rem;opacity:.95;max-width:26rem}
+  .vlist{list-style:none;margin-top:1.8rem;display:grid;gap:.8rem}
+  .vlist li{display:flex;gap:.7rem;align-items:center;font-weight:500}
+  .vlist .c{flex:none;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;font-weight:800;font-size:.8rem}
+  .vstats{display:flex;gap:2rem;border-top:1px solid rgba(255,255,255,.25);padding-top:1.5rem}
+  .vstats strong{display:block;font-family:'Fraunces',serif;font-size:1.7rem}
+  .vstats span{font-size:.84rem;opacity:.9}
+
+  /* RIGHT — form */
+  .panel{background:var(--white);padding:3rem;display:flex;align-items:center;justify-content:center}
+  .form-wrap{width:100%;max-width:30rem}
+  .eyebrow{color:var(--teal);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+  .form-wrap h2{font-size:1.9rem;margin:.5rem 0 .3rem}
+  .form-wrap .lede{color:var(--slate);font-size:.97rem;margin-bottom:1.6rem}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+  label{display:block;font-size:.8rem;font-weight:600;color:var(--slate);margin:.9rem 0 .35rem}
+  input,select{width:100%;padding:.85rem 1rem;border:1.5px solid var(--line);border-radius:10px;font-size:1rem;font-family:'Inter';color:var(--ink);background:var(--white);transition:.15s}
+  input:focus,select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,148,136,.13)}
+  .btn{width:100%;margin-top:1.4rem;background:var(--teal);color:#fff;font-weight:700;font-size:1.02rem;padding:1rem;border:none;border-radius:11px;cursor:pointer;transition:.18s}
+  .btn:hover{background:var(--teal-d);transform:translateY(-2px)}
+  .fine{font-size:.78rem;color:#9bb0ab;text-align:center;margin-top:.9rem}
+  .backlink{display:inline-flex;align-items:center;gap:.4rem;color:var(--slate);font-size:.86rem;margin-bottom:1.4rem;font-weight:500}
+  .backlink:hover{color:var(--teal)}
+
+  /* success */
+  #done{display:none;text-align:center}
+  #done .ic{width:78px;height:78px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:2.3rem;margin:0 auto 1.3rem}
+  #done h2{font-size:1.9rem;margin-bottom:.5rem}
+  #done p{color:var(--slate);margin-bottom:1.4rem}
+  .recap{background:var(--mist);border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.3rem;text-align:left;font-size:.92rem}
+  .recap div{display:flex;justify-content:space-between;padding:.25rem 0;color:var(--slate)}
+  .recap b{color:var(--ink)}
+
+  .sample-note{background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:11px;padding:.85rem 1rem;font-size:.84rem;margin-bottom:1.6rem;display:flex;gap:.6rem;align-items:flex-start}
+  .sample-note b{color:#78350f}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">🎨 This is a <strong>demo booking page</strong> — a sample of work by Earvin Laureano. &nbsp;<a href="/work">← Portfolio</a> &nbsp;·&nbsp; <a href="/work/dental-clinic">Back to the demo site</a></div>
+
+<div class="stage">
+  <!-- LEFT VISUAL -->
+  <div class="visual">
+    <img class="bg" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1000&q=80&auto=format&fit=crop" alt="Modern dental studio"/>
+    <div class="vlogo"><span class="m">✦</span> Northgate Dental</div>
+    <div class="vmid">
+      <h1>Your first visit is <em>free.</em></h1>
+      <p>New patients get a complimentary exam &amp; consultation — no pressure, no surprise bills. Just a clear look at your smile.</p>
+      <ul class="vlist">
+        <li><span class="c">✓</span> Same-week appointments</li>
+        <li><span class="c">✓</span> Gentle, anxiety-friendly care</li>
+        <li><span class="c">✓</span> Transparent pricing, always</li>
+      </ul>
+    </div>
+    <div class="vstats">
+      <div><strong>4.9★</strong><span>600+ reviews</span></div>
+      <div><strong>15k+</strong><span>happy patients</span></div>
+      <div><strong>Free</strong><span>first exam</span></div>
+    </div>
+  </div>
+
+  <!-- RIGHT FORM -->
+  <div class="panel">
+    <div class="form-wrap">
+      <a href="/work/dental-clinic" class="backlink">← Back to site</a>
+
+      <div class="sample-note">
+        <span>💡</span>
+        <span><b>Heads up:</b> this is a <b>sample booking page</b> built by Earvin Laureano to demonstrate a real appointment funnel. Submitting won't book anything — it just shows how the flow works.</span>
+      </div>
+
+      <form id="bookForm" onsubmit="return book(event)">
+        <span class="eyebrow">Book Your Visit</span>
+        <h2>Reserve your free exam</h2>
+        <p class="lede">Takes under a minute. We'll confirm your time by text within the hour.</p>
+
+        <div class="row">
+          <div><label for="fn">First name</label><input id="fn" type="text" placeholder="Jamie" required/></div>
+          <div><label for="ln">Last name</label><input id="ln" type="text" placeholder="Reyes" required/></div>
+        </div>
+        <label for="ph">Phone</label>
+        <input id="ph" type="tel" placeholder="(000) 000-0000" required/>
+        <label for="em">Email</label>
+        <input id="em" type="email" placeholder="you@email.com" required/>
+        <div class="row">
+          <div>
+            <label for="svc">What do you need?</label>
+            <select id="svc">
+              <option>New patient exam</option>
+              <option>Cleaning</option>
+              <option>Cosmetic / whitening</option>
+              <option>Implants or crowns</option>
+              <option>Kids' dentistry</option>
+              <option>Something hurts (urgent)</option>
+            </select>
+          </div>
+          <div><label for="dt">Preferred date</label><input id="dt" type="date" required/></div>
+        </div>
+        <button class="btn" type="submit">Request My Appointment →</button>
+        <p class="fine">🔒 Your info is private and never shared.</p>
+      </form>
+
+      <div id="done">
+        <div class="ic">✓</div>
+        <h2 id="doneName">You're booked!</h2>
+        <p>We've got your request — here's what you sent. (In a real build, this would hit the clinic's calendar and text you a confirmation.)</p>
+        <div class="recap" id="recap"></div>
+        <button class="btn" onclick="reset()">← Send another</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function esc(s){return String(s||'').replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));}
+function book(e){
+  e.preventDefault();
+  var fn=document.getElementById('fn').value.trim()||'there';
+  var data={
+    Name: fn+' '+document.getElementById('ln').value.trim(),
+    Phone: document.getElementById('ph').value.trim(),
+    Email: document.getElementById('em').value.trim(),
+    Reason: document.getElementById('svc').value,
+    Date: document.getElementById('dt').value || '—'
+  };
+  document.getElementById('bookForm').style.display='none';
+  document.getElementById('doneName').textContent="You're booked, "+fn+"!";
+  document.getElementById('recap').innerHTML = Object.keys(data).map(k=>'<div><span>'+k+'</span><b>'+esc(data[k])+'</b></div>').join('');
+  document.getElementById('done').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  return false;
+}
+function reset(){document.getElementById('done').style.display='none';document.getElementById('bookForm').style.display='block';document.getElementById('bookForm').reset();}
+</script>
+</body>
+</html>

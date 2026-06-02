@@ -6,19 +6,19 @@
 window.PRICING = {
   currency: "USD",
   bookingUrl: "/#contact",
-  partnership: { from: 2000, dedicatedFrom: 3500, model: "retainer" },
+  partnership: { from: 1997, dedicatedFrom: 3497, model: "retainer" },
   audits: {
     free: { price: 0 },
-    full: { price: 600, credited: true, creditWindowDays: 30 }
+    full: { price: 597, credited: true, creditWindowDays: 30 }
   },
   builds: {
-    foundation:       { from: 1800 },
-    foundationSeoAi:  { from: 3800 },
-    relaunch:         { from: 2400 },
-    relaunchSeoAi:    { from: 4400 },
-    managedMigration: { from: 10000, customQuote: true }
+    foundation:       { from: 1797 },
+    foundationSeoAi:  { from: 3797 },
+    relaunch:         { from: 2397 },
+    relaunchSeoAi:    { from: 4397 },
+    managedMigration: { from: 9997, customQuote: true }
   },
-  funnel: { from: 1500 },
+  funnel: { from: 1497 },
   websiteCare: {
     care:   { monthly: 99 },
     growth: { monthly: 299 },

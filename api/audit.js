@@ -342,7 +342,7 @@ function buildEmailHtml(lead) {
         '<li><strong>What to fix first</strong> — a prioritized plan, ranked by impact.</li>' +
         '<li><strong>A 30-minute walkthrough call</strong> to talk through your priorities.</li>' +
       '</ul>' +
-      '<p style="color:#111;margin:0 0 12px"><strong>Full Website Audit &amp; Action Plan — $600</strong> · credited toward any build.</p>' +
+      '<p style="color:#111;margin:0 0 12px"><strong>Full Website Audit &amp; Action Plan — $597</strong> · credited toward any build.</p>' +
       '<a href="https://www.earvinlaureano.com/pricing.html#audit" style="background:#C7A97F;color:#0c0c0c;padding:10px 18px;border-radius:4px;text-decoration:none;font-weight:700">Book my full audit</a>' +
     '</div>' +
     '<p style="color:#999;font-size:12px;margin-top:18px">Automated snapshot from earvinlaureano.com · Reply to this email to reach Earvin directly.</p>' +

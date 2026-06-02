@@ -125,6 +125,28 @@
     .footer-logo span { color: var(--gold); }
     .footer-copy { font-size: 0.62rem; letter-spacing: 0.14em; color: var(--muted); }
     @media (max-width: 760px) { footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; } }
+    /* FREE vs FULL AUDIT COMPARISON */
+    .compare-section { padding: 4.5rem 1.5rem 5rem; border-top: 1px solid var(--border); }
+    .compare { max-width: 860px; margin: 0 auto; }
+    .compare-eyebrow { text-align: center; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
+    .compare-title { text-align: center; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #fff; margin-bottom: 0.6rem; line-height: 1.2; }
+    .compare-title em { font-style: italic; color: var(--gold); font-weight: 700; }
+    .compare-sub { text-align: center; font-size: 0.86rem; color: var(--muted); line-height: 1.7; max-width: 600px; margin: 0 auto 2.4rem; }
+    .compare-sub strong { color: var(--text); }
+    .crow { display: grid; grid-template-columns: 1fr 84px 96px; align-items: center; gap: 0.5rem; padding: 0.62rem 0; border-bottom: 1px solid var(--border); }
+    .crow.chead { padding-bottom: 0.7rem; }
+    .chead .col { text-align: center; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .chead .col.paid { color: var(--gold); }
+    .ccat { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); padding: 1.4rem 0 0.5rem; }
+    .crow .feat { font-size: 0.83rem; color: var(--text); line-height: 1.4; }
+    .crow .cell { text-align: center; font-weight: 700; font-size: 0.95rem; }
+    .crow .cell.yes { color: var(--gold); }
+    .crow .cell.no { color: #45433f; }
+    .crow .cell.paid { background: rgba(199,169,127,0.06); border-radius: 4px; padding: 0.25rem 0; }
+    .compare-foot { margin-top: 1.7rem; padding-top: 1.4rem; border-top: 1px solid var(--border); font-size: 0.86rem; color: var(--muted); line-height: 1.7; text-align: center; }
+    .compare-foot strong { color: var(--gold); }
+    .compare-cta { text-align: center; margin-top: 1.8rem; }
+    @media (max-width: 600px) { .crow { grid-template-columns: 1fr 50px 56px; } .crow .feat { font-size: 0.78rem; } }
   </style>
 </head>
 <body>
@@ -184,6 +206,52 @@
   <!-- RESULTS -->
   <div id="results"></div>
 </main>
+
+<section class="compare-section">
+  <div class="compare">
+    <div class="compare-eyebrow">Free vs Full</div>
+    <h2 class="compare-title">The Free Scan vs the<br/><em>Full Website Audit</em></h2>
+    <p class="compare-sub">The free scan checks the technical surface in 60 seconds. The <strong>Full Audit</strong> is a deep, human review of your entire online presence — here's exactly what each one covers:</p>
+
+    <div class="crow chead"><div></div><div class="col">Free Scan</div><div class="col paid">Full Audit · $600</div></div>
+
+    <div class="ccat">Performance</div>
+    <div class="crow"><div class="feat">Mobile &amp; desktop speed scores</div><div class="cell yes">✓</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">What’s slowing each page — and how to fix it</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+
+    <div class="ccat">Search (SEO)</div>
+    <div class="crow"><div class="feat">Title, meta &amp; heading basics</div><div class="cell yes">✓</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">robots.txt &amp; sitemap check</div><div class="cell yes">✓</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">Full on-page SEO review — every page</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">Local SEO — Google Business Profile &amp; consistency</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">Keyword &amp; search-intent strategy</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+
+    <div class="ccat">AI Search</div>
+    <div class="crow"><div class="feat">AI-readiness (site structure)</div><div class="cell yes">✓</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">Live AI-visibility test — ChatGPT, Perplexity, Google AI</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">Competitor comparison in AI search</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+
+    <div class="ccat">Design &amp; Conversion</div>
+    <div class="crow"><div class="feat">Design &amp; brand-credibility review</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">Conversion &amp; booking-flow review</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">Mobile experience review (beyond speed)</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">Copy &amp; messaging review</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">Trust &amp; social-proof audit</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+
+    <div class="ccat">Content</div>
+    <div class="crow"><div class="feat">Content-gap analysis</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">Page-by-page review (vs homepage only)</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+
+    <div class="ccat">Reporting &amp; Next Steps</div>
+    <div class="crow"><div class="feat">Analytics &amp; tracking audit</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">Prioritized action plan — up to 20 fixes</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">Full written report</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+    <div class="crow"><div class="feat">30-minute walkthrough call</div><div class="cell no">—</div><div class="cell yes paid">✓</div></div>
+
+    <div class="compare-foot">The free scan covers the surface. The <strong>Full Audit</strong> covers everything — and the <strong>$600 is credited toward any build</strong> if you proceed within 30 days.</div>
+    <div class="compare-cta"><a href="/#contact" class="btn-gold">Book my full audit</a></div>
+  </div>
+</section>
 
 <footer>
   <div class="footer-logo">Earvin <span>Laureano</span></div>

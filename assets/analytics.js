@@ -1,34 +1,69 @@
 /* ============================================================
-   Earvin Laureano — site analytics (Vercel Web Analytics)
-   Excludes Earvin's own visits via localStorage opt-out flag.
+   Earvin Laureano — site analytics + copy "canary"
+   Loaded on every page. Two independent jobs:
 
-   How to exclude yourself from your own stats:
-     Visit any page with ?me=1 once on each device/browser
-     e.g. https://www.earvinlaureano.com/?me=1
-     A flag is stored in localStorage; future visits never load
-     the analytics script on that browser.
+   1) CANARY — if this exact code ends up running on a domain
+      that ISN'T yours (i.e. someone copied your files and put
+      them on their own site / funnel-builder preview), it quietly
+      pings your endpoint with the offending domain so you find out.
+      Does nothing on your own domains. Catches lazy copy-paste.
 
-   To clear the opt-out (re-enable tracking on a device):
-     localStorage.removeItem('va_internal') in DevTools console
+   2) ANALYTICS — loads Vercel Web Analytics, unless you've opted
+      your own browser out (visit any page with ?me=1 once).
    ============================================================ */
 (function () {
+
+  /* ---------- 1) CANARY: detect unauthorized copies ---------- */
+  try {
+    var host = (location.hostname || '').toLowerCase();
+
+    // Your own domains — the canary stays silent on these.
+    var OWN = ['earvinlaureano.com', 'www.earvinlaureano.com', 'localhost', '127.0.0.1', '0.0.0.0'];
+    // Your own Vercel preview deployments (adjust the prefix if your
+    // Vercel project slug isn't "earvin-portfolio").
+    var ownPreview = host.indexOf('earvin-portfolio') === 0 && host.lastIndexOf('.vercel.app') === host.length - 11;
+
+    if (OWN.indexOf(host) === -1 && !ownPreview) {
+      // Report once per browser session, so we don't spam.
+      if (!sessionStorage.getItem('cnry')) {
+        sessionStorage.setItem('cnry', '1');
+
+        // PASTE your deployed Canary Apps Script web-app URL here:
+        var CANARY_ENDPOINT = 'PASTE_YOUR_CANARY_WEBHOOK_URL_HERE';
+
+        if (CANARY_ENDPOINT.indexOf('PASTE_') !== 0) {
+          var body = JSON.stringify({
+            host: host,
+            fullUrl: location.href,
+            referrer: document.referrer || '',
+            ua: navigator.userAgent || '',
+            ts: new Date().toISOString()
+          });
+          // sendBeacon = fire-and-forget, survives navigation, no CORS needed.
+          if (navigator.sendBeacon) {
+            navigator.sendBeacon(CANARY_ENDPOINT, body);
+          } else {
+            fetch(CANARY_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, body: body });
+          }
+        }
+      }
+    }
+  } catch (e) { /* never break the page */ }
+
+  /* ---------- 2) ANALYTICS: Vercel Web Analytics + self opt-out ---------- */
   try {
     var params = new URLSearchParams(location.search);
-    // 1) Visiting with ?me=1 sets the opt-out flag and skips loading.
+    // Visiting ?me=1 marks this browser as internal (your own) and stops tracking.
     if (params.get('me') === '1') {
       localStorage.setItem('va_internal', '1');
       return;
     }
-    // 2) If the opt-out flag is set, never load analytics on this browser.
     if (localStorage.getItem('va_internal') === '1') return;
 
-    // 3) Otherwise, load Vercel Web Analytics.
     var s = document.createElement('script');
     s.defer = true;
     s.src = '/_vercel/insights/script.js';
     s.setAttribute('data-endpoint', '/_vercel/insights');
     document.head.appendChild(s);
-  } catch (e) {
-    // localStorage / URL may be unavailable in some embeds; fail silently.
-  }
+  } catch (e) { /* fail silently */ }
 })();

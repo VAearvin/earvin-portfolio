@@ -29,7 +29,7 @@
         sessionStorage.setItem('cnry', '1');
 
         // PASTE your deployed Canary Apps Script web-app URL here:
-        var CANARY_ENDPOINT = 'PASTE_YOUR_CANARY_WEBHOOK_URL_HERE';
+        var CANARY_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwguiSNP1H4pxSaqt8h5lKto_XwGpYZHHi47wOOXuxaDvmFmvOKW7XLaJoH1y5eFmLtww/exec';
 
         if (CANARY_ENDPOINT.indexOf('PASTE_') !== 0) {
           var body = JSON.stringify({

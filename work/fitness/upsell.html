@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Wait — one-time offer · VOLT 21</title>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#0d0e11"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/work/fitness/style.css"/>
+<script defer src="/assets/analytics.js"></script>
+<style>
+  .vid{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9;max-width:620px;margin:1.4rem auto 0;background:#000}
+  .vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6}
+  .vid .play{position:absolute;inset:0;display:grid;place-items:center}
+  .vid .play button{width:74px;height:74px;border-radius:50%;background:var(--volt);border:none;color:#0d0e11;font-size:1.6rem;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div class="oto-warn">⚠️ WAIT — your order isn't finished. Add this before you go (you'll never see this price again).</div>
+<div class="demo-bar">⚡ <strong>Demo upsell (OTO) page</strong> by Earvin Laureano. &nbsp;<a href="/work">← Portfolio</a></div>
+
+<section class="oto-hero">
+  <div class="narrow">
+    <span class="pill">🎉 Your VOLT 21 is locked in</span>
+    <h1 style="margin-top:1rem">Want your results <em>twice as fast?</em></h1>
+    <p>Workouts burn the fat — but what you eat decides how fast you see it. Add the <b style="color:#fff">VOLT Nutrition Blueprint + 12 weeks of coaching</b> at a one-time member price.</p>
+    <div class="vid">
+      <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=900&q=80&auto=format&fit=crop" alt="Healthy nutrition"/>
+      <div class="play"><button onclick="this.innerHTML='❚❚'">▶</button></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:1rem">
+  <div class="wrap">
+    <div class="oto-box">
+      <div class="otop">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=300&q=80&auto=format&fit=crop" alt="Nutrition Blueprint"/>
+        <div>
+          <div class="eyebrow">One-time offer</div>
+          <h2>VOLT Nutrition Blueprint</h2>
+          <p style="color:var(--muted);font-size:.92rem">+ 12 weeks of group coaching</p>
+        </div>
+      </div>
+      <ul class="oto-list">
+        <li><span class="c">✓</span> 12-week meal framework that fits real life (no bland chicken &amp; rice)</li>
+        <li><span class="c">✓</span> Done-for-you grocery lists &amp; swaps</li>
+        <li><span class="c">✓</span> Weekly group coaching calls for accountability</li>
+        <li><span class="c">✓</span> Macro cheat-sheet so you never count again</li>
+      </ul>
+      <div class="oto-price"><s>$197</s> <span class="now">$97</span> <span style="color:var(--muted);font-size:.9rem">one-time</span></div>
+      <button class="btn full lg" id="addBtn" onclick="voltUpsell(true)">⚡ Yes — Upgrade My Order</button>
+      <span class="decline" onclick="voltUpsell(false)">No thanks — I don't want faster results. Complete my order →</span>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">Demo upsell page by <a href="/">Earvin Laureano</a> · Not a real product · <a href="/work">See more work</a></div>
+</footer>
+
+<script src="/work/fitness/script.js"></script>
+</body>
+</html>

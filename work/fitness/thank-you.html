@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Order confirmed — VOLT 21</title>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#0d0e11"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/work/fitness/style.css"/>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+<div class="demo-bar">⚡ <strong>Demo confirmation page</strong> by Earvin Laureano — the final step of the funnel. &nbsp;<a href="/work">← Portfolio</a></div>
+
+<div class="conf">
+  <div class="conf-card">
+    <div class="conf-ic">✓</div>
+    <h1 id="head">You're in!</h1>
+    <p class="lede">Your order is confirmed and your login is on its way to your inbox. Time to press play.</p>
+
+    <div class="recap" id="recap"></div>
+
+    <div class="next">
+      <div class="rw"><span class="num">1</span><div><h4>Check your email</h4><p>Your login + Day 1 workout are landing in your inbox right now.</p></div></div>
+      <div class="rw"><span class="num">2</span><div><h4>Press play today</h4><p>Don't wait for Monday. Day 1 is 20 minutes — do it tonight.</p></div></div>
+      <div class="rw"><span class="num">3</span><div><h4>Join the community</h4><p>Your invite is in the email. Accountability is half the battle.</p></div></div>
+    </div>
+
+    <a href="/work/fitness" class="btn full">Go to my workouts →</a>
+
+    <div class="demo-flag">💡 This is a <strong>sample funnel</strong> built by Earvin Laureano. In a real build, this would charge the card via Stripe, deliver the product, and trigger the welcome emails automatically.</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var name=p.get('name'), bump=p.get('bump')==='1', up=p.get('upsell')==='1';
+  if(name){ document.getElementById('head').textContent="You're in, "+name.replace(/[<>]/g,'')+"!"; }
+  var rows=[['VOLT 21 — 21-Day Home Shred','$27.00']];
+  if(bump) rows.push(['7-Day Kickstart Meal Plan','$9.00']);
+  if(up) rows.push(['Nutrition Blueprint + 12-wk coaching','$97.00']);
+  var total=27+(bump?9:0)+(up?97:0);
+  var html=rows.map(function(r){return '<div class="l"><span>'+r[0]+'</span><b>'+r[1]+'</b></div>';}).join('');
+  html+='<div class="t"><span>Total paid</span><span>$'+total+'.00</span></div>';
+  document.getElementById('recap').innerHTML=html;
+})();
+</script>
+</body>
+</html>

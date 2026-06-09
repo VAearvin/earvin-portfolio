@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Book your free quote — SunPath Solar</title>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#0a6ce0"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/work/solar/style.css"/>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+<div class="demo-bar">☀️ <strong>Demo booking page</strong> by Earvin Laureano — submitting won't book anything. &nbsp;<a href="/work/solar/invitation.html">← Back</a></div>
+
+<div class="lp">
+  <!-- ASIDE -->
+  <div class="aside">
+    <img class="bg" src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=900&q=80&auto=format&fit=crop" alt="Home with solar"/>
+    <a href="/work/solar" class="logo" style="color:#fff"><span class="m">☀</span> Sun<span style="color:#fff">Path</span> Solar</a>
+    <div>
+      <span class="pill" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.3)">One step left</span>
+      <h1 style="color:#fff;font-size:clamp(2rem,3.4vw,2.7rem);margin:1.1rem 0">Claim your free <em style="color:var(--sun);font-style:normal">Fit Report</em> call.</h1>
+      <p style="color:#dbe8f5;max-width:24rem">Pick a time that works. We'll walk you through your roof fit, savings estimate, and $0-down options — no pressure.</p>
+      <ul class="alist">
+        <li><span class="c">✓</span> ~15 minutes, by phone</li>
+        <li><span class="c">✓</span> Your custom 3-Check Fit Report</li>
+        <li><span class="c">✓</span> Zero obligation to move forward</li>
+      </ul>
+    </div>
+    <div class="astat">
+      <div><strong>2,300+</strong><span>homes powered</span></div>
+      <div><strong>$1,840</strong><span>avg. yearly savings</span></div>
+      <div><strong>4.9★</strong><span>1,200+ reviews</span></div>
+    </div>
+  </div>
+
+  <!-- BOOKING PANEL -->
+  <div class="panel">
+    <div class="bk">
+      <div class="steps-mini"><span>1. Eligibility</span> → <span class="on">2. Book</span> → <span>3. Confirmed</span></div>
+      <form id="bookForm" onsubmit="return solarBook(event)">
+        <span class="eyebrow">Pick your slot</span>
+        <h2 style="font-size:1.9rem;color:var(--night);margin:.3rem 0 1rem">Your free Fit Report call</h2>
+
+        <div class="day-label">Choose a day &amp; time</div>
+        <div class="slots" id="slots">
+          <div class="slot" data-slot="Tue 10:00 AM">Tue<br/>10:00 AM</div>
+          <div class="slot" data-slot="Tue 2:00 PM">Tue<br/>2:00 PM</div>
+          <div class="slot" data-slot="Wed 11:00 AM">Wed<br/>11:00 AM</div>
+          <div class="slot" data-slot="Wed 4:00 PM">Wed<br/>4:00 PM</div>
+          <div class="slot" data-slot="Thu 9:00 AM">Thu<br/>9:00 AM</div>
+          <div class="slot" data-slot="Thu 1:00 PM">Thu<br/>1:00 PM</div>
+        </div>
+        <input type="hidden" id="slot" required/>
+
+        <div class="row2">
+          <div><label for="fn">First name</label><input id="fn" type="text" placeholder="Jordan" required/></div>
+          <div><label for="ph">Phone</label><input id="ph" type="tel" placeholder="(000) 000-0000" required/></div>
+        </div>
+        <label for="em">Email</label>
+        <input id="em" type="email" placeholder="you@email.com" required/>
+
+        <button class="btn full lg" type="submit" style="margin-top:1.3rem">Confirm My Free Call →</button>
+        <p class="fine">🔒 Private. We only call about your Fit Report.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/work/solar/script.js"></script>
+</body>
+</html>

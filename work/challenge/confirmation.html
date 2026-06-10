@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>You're in! — Wealthwise Challenge</title>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#0e3d31"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/work/challenge/style.css"/>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+<div class="demo-bar">🌱 <strong>Demo confirmation</strong> (page 4 of 9) by Earvin Laureano. &nbsp;<a href="/work">← Portfolio</a></div>
+
+<div class="conf">
+  <div class="conf-card">
+    <div class="conf-ic">✓</div>
+    <h1 id="head">You're in!</h1>
+    <p class="lede">Your spot in the 5-Day Money Makeover is saved. The challenge starts Monday — here's how to get ready.</p>
+
+    <div class="badge-vip" id="vipBadge" style="display:none">⭐ VIP unlocked — workbook &amp; replays included</div>
+
+    <div class="next">
+      <div class="rw"><span class="num">1</span><div><h4>Join the live rooms</h4><p>We go live each day on YouTube &amp; Facebook — set your reminders on the next page.</p></div></div>
+      <div class="rw"><span class="num">2</span><div><h4>Check your email</h4><p>Day 1 instructions (and your workbook, if VIP) are landing now.</p></div></div>
+      <div class="rw"><span class="num">3</span><div><h4>Tell a friend</h4><p>You're 2× more likely to finish with an accountability buddy. Bring one!</p></div></div>
+    </div>
+
+    <a href="/work/challenge/bridge.html" class="btn full">Set My Reminders →</a>
+
+    <div class="demo-flag">💡 This is a <strong>sample funnel</strong> (page 4 of a 9-page Challenge) built by Earvin Laureano. In a real build, this registers the lead, sends the welcome + workbook emails, and tags VIPs automatically.</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var name=p.get('name');
+  if(name){ document.getElementById('head').textContent="You're in, "+name.replace(/[<>]/g,'')+"!"; }
+  if(p.get('vip')==='1'){ document.getElementById('vipBadge').style.display='inline-block'; }
+})();
+</script>
+</body>
+</html>

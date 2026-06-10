@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VIP Checkout — Wealthwise Challenge</title>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#0e3d31"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/work/challenge/style.css"/>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body class="checkout">
+
+<div class="demo-bar">🌱 <strong>Demo VIP checkout</strong> (page 3 of 9) by Earvin Laureano — no real payment is taken. &nbsp;<a href="/work/challenge/vip.html">← Back</a></div>
+
+<div class="co-top">
+  <span class="pill">🔒 Secure checkout</span>
+  <h1>Unlock your VIP Experience</h1>
+</div>
+
+<form id="orderForm" onsubmit="return chOrder(event)">
+  <div class="co-grid">
+    <div>
+      <div class="co-card">
+        <h3><span class="step">1</span> Your details</h3>
+        <div class="row2">
+          <div><label for="fn">First name</label><input id="fn" type="text" placeholder="Sam" required/></div>
+          <div><label for="ln">Last name</label><input id="ln" type="text" placeholder="Rivera" required/></div>
+        </div>
+        <label for="em">Email</label>
+        <input id="em" type="email" placeholder="you@email.com" required/>
+        <h3 style="margin-top:1.4rem"><span class="step">2</span> Payment</h3>
+        <label for="cc">Card number</label>
+        <input id="cc" inputmode="numeric" placeholder="1234 1234 1234 1234" required/>
+        <div class="row3">
+          <div><label for="exp">Expiry</label><input id="exp" placeholder="MM / YY" required/></div>
+          <div><label for="cvc">CVC</label><input id="cvc" inputmode="numeric" placeholder="CVC" required/></div>
+          <div><label for="zip">ZIP</label><input id="zip" inputmode="numeric" placeholder="ZIP" required/></div>
+        </div>
+        <button class="btn full lg" type="submit">Complete My VIP Upgrade →</button>
+        <div class="trust-badges">🔒 256-bit secure · 💳 Stripe · 🛡️ 30-day guarantee</div>
+      </div>
+    </div>
+    <div>
+      <div class="co-card summary">
+        <h3>Your upgrade</h3>
+        <div class="item">
+          <img src="https://images.unsplash.com/photo-1593510987185-1ec2256148a3?w=200&q=80&auto=format&fit=crop" alt="VIP"/>
+          <div><b>VIP Experience</b><span>Workbook · live Q&amp;A · replays · community</span></div>
+        </div>
+        <div class="line"><span>VIP Experience</span><span>$27.00</span></div>
+        <div class="line"><span>Free challenge access</span><span>$0.00</span></div>
+        <div class="total"><span>Total today</span><span>$27.00</span></div>
+        <div style="text-align:center;color:var(--tangerine-d);font-weight:600;margin-top:.8rem;font-size:.86rem">★★★★★ "The workbook made it stick." — VIP members</div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script src="/work/challenge/script.js"></script>
+</body>
+</html>

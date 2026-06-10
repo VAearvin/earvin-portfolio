@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>You're booked — Booked &amp; Busy</title>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#160d1f"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/work/masterclass/style.css"/>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+<div class="demo-bar">🎬 <strong>Demo confirmation page</strong> by Earvin Laureano — the final step of the funnel. &nbsp;<a href="/work">← Portfolio</a></div>
+
+<div class="conf">
+  <div class="conf-card">
+    <div class="conf-ic">✓</div>
+    <h1 id="head">You're booked!</h1>
+    <p class="lede">Your free strategy call is locked in. Here's what happens next on your way to a booked-out salon.</p>
+
+    <div class="booked" id="bookedLine">📅 Your call is confirmed.</div>
+
+    <div class="next">
+      <div class="rw"><span class="num">1</span><div><h4>Check your inbox</h4><p>A confirmation + calendar invite are on the way. Add it so you don't miss the call.</p></div></div>
+      <div class="rw"><span class="num">2</span><div><h4>Rewatch the masterclass</h4><p>Come to the call with questions — we'll go deeper, faster.</p></div></div>
+      <div class="rw"><span class="num">3</span><div><h4>Show up ready</h4><p>Bring your biggest "stuck" — we'll map the fastest fix for your salon.</p></div></div>
+    </div>
+
+    <a href="/work/masterclass/vsl.html" class="btn full">← Back to the masterclass</a>
+
+    <div class="demo-flag">💡 This is a <strong>sample funnel</strong> built by Earvin Laureano. In a real build, this would book a live call (Calendly), tag the lead in a CRM, and trigger reminder emails automatically.</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var name=p.get('name'), slot=p.get('slot');
+  if(name){ document.getElementById('head').textContent="You're booked, "+name.replace(/[<>]/g,'')+"!"; }
+  if(slot){ document.getElementById('bookedLine').innerHTML='📅 Your call: <span style="color:#fff">'+slot.replace(/[<>]/g,'')+'</span>'; }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Book your free strategy call — Booked &amp; Busy</title>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#160d1f"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/work/masterclass/style.css"/>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+<div class="demo-bar">🎬 <strong>Demo booking page</strong> by Earvin Laureano — submitting won't book anything. &nbsp;<a href="/work/masterclass/vsl.html">← Back</a></div>
+
+<div class="lp">
+  <div class="aside">
+    <img class="bg" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=900&q=80&auto=format&fit=crop" alt="Salon"/>
+    <div class="brand" style="color:#fff;padding-top:0"><span class="m">B</span> Booked &amp; Busy</div>
+    <div>
+      <span class="pill" style="background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.3)">One step left</span>
+      <h1 style="color:#fff;font-size:clamp(2rem,3.4vw,2.7rem);margin:1.1rem 0">Book your free <em style="color:var(--coral);font-style:normal">strategy call.</em></h1>
+      <p style="color:#dccaec;max-width:24rem">Pick a time and we'll map the fastest path to a booked-out salon — tailored to you. No pressure, no pitch-fest.</p>
+      <ul class="alist">
+        <li><span class="c">✓</span> ~20 minutes, by phone or Zoom</li>
+        <li><span class="c">✓</span> A clear plan for your salon</li>
+        <li><span class="c">✓</span> Zero obligation</li>
+      </ul>
+    </div>
+    <div class="astat">
+      <div><strong>2,400+</strong><span>owners trained</span></div>
+      <div><strong>2.3×</strong><span>avg. revenue</span></div>
+      <div><strong>4.9★</strong><span>rating</span></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="bk">
+      <div class="steps-mini"><span>1. Register</span> → <span>2. Watch</span> → <span class="on">3. Book</span></div>
+      <form id="bookForm" onsubmit="return mcBook(event)">
+        <span class="eyebrow">Pick your slot</span>
+        <h2 style="font-size:1.9rem;color:#fff;margin:.3rem 0 1rem;font-family:'Sora';font-weight:800">Your free strategy call</h2>
+        <div class="day-label">Choose a day &amp; time</div>
+        <div class="slots" id="slots">
+          <div class="slot" data-slot="Tue 10:00 AM">Tue<br/>10:00 AM</div>
+          <div class="slot" data-slot="Tue 3:00 PM">Tue<br/>3:00 PM</div>
+          <div class="slot" data-slot="Wed 11:00 AM">Wed<br/>11:00 AM</div>
+          <div class="slot" data-slot="Wed 5:00 PM">Wed<br/>5:00 PM</div>
+          <div class="slot" data-slot="Fri 9:00 AM">Fri<br/>9:00 AM</div>
+          <div class="slot" data-slot="Fri 1:00 PM">Fri<br/>1:00 PM</div>
+        </div>
+        <input type="hidden" id="slot" required/>
+        <div class="row2" style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem">
+          <div><label for="fn">First name</label><input id="fn" type="text" placeholder="Jamie" required/></div>
+          <div><label for="ph">Phone</label><input id="ph" type="tel" placeholder="(000) 000-0000" required/></div>
+        </div>
+        <label for="em">Email</label>
+        <input id="em" type="email" placeholder="you@email.com" required/>
+        <button class="btn full lg" type="submit" style="margin-top:1.2rem">Confirm My Free Call →</button>
+        <p class="fine">🔒 Private. We only call about your strategy session.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/work/masterclass/script.js"></script>
+</body>
+</html>

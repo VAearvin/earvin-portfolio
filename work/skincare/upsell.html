@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Wait — complete your routine · LUMÉ</title>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#c2704f"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/work/skincare/style.css"/>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<div class="oto-warn">⚠️ WAIT — your order isn't finished. Add this one-time offer before you go.</div>
+<div class="demo-bar">🧴 <strong>Demo upsell (OTO) page</strong> by Earvin Laureano. &nbsp;<a href="/work">← Portfolio</a></div>
+
+<section class="oto-hero">
+  <div class="narrow">
+    <span class="pill">🎉 Your serum is reserved</span>
+    <h1 style="margin-top:1rem">Complete the glow routine &amp; save 35%</h1>
+    <p style="color:var(--mocha);max-width:34rem;margin:1rem auto 0">Your serum works even better with the full ritual. Add the <b style="color:var(--espresso)">Complete Glow Set</b> — cleanser + night cream — at a one-time member price you won't see again.</p>
+  </div>
+</section>
+
+<section style="padding-top:1rem">
+  <div class="wrap">
+    <div class="oto-box">
+      <div class="otop">
+        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&q=80&auto=format&fit=crop" alt="Complete Glow Set"/>
+        <div>
+          <div class="eyebrow">One-time offer</div>
+          <h2>The Complete Glow Set</h2>
+          <p style="color:var(--mocha);font-size:.92rem">Gentle Cleanser + Overnight Glow Cream</p>
+        </div>
+      </div>
+      <ul class="oto-list">
+        <li><span class="c">✓</span> Gentle gel cleanser that preps skin without stripping it</li>
+        <li><span class="c">✓</span> Overnight glow cream to lock in your serum while you sleep</li>
+        <li><span class="c">✓</span> The exact 3-step ritual our 5-star reviewers use</li>
+        <li><span class="c">✓</span> Ships free with your serum — one box, one delivery</li>
+      </ul>
+      <div class="oto-price"><s>$78</s> <span class="now">$49</span> <span style="color:var(--mocha);font-size:.9rem">one-time</span></div>
+      <button class="btn full lg" id="addBtn" onclick="lumeUpsell(true)">✨ Yes — Add the Glow Set</button>
+      <span class="decline" onclick="lumeUpsell(false)">No thanks — I'll just take the serum →</span>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">Demo upsell page by <a href="/">Earvin Laureano</a> · Not a real brand · <a href="/work">See more work</a></div>
+</footer>
+
+<script src="/work/skincare/script.js"></script>
+</body>
+</html>

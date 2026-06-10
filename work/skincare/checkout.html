@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Checkout — LUMÉ</title>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#c2704f"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/work/skincare/style.css"/>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body class="checkout">
+
+<div class="demo-bar">🧴 <strong>Demo checkout page</strong> by Earvin Laureano — no real payment is taken. &nbsp;<a href="/work/skincare">← Back to product</a></div>
+
+<div class="co-top">
+  <span class="pill">🔒 Secure checkout · step 1 of 2</span>
+  <h1>Almost glowing — just your details</h1>
+</div>
+
+<form id="coForm" onsubmit="return lumeCheckout(event)">
+  <div class="co-grid">
+    <!-- LEFT -->
+    <div>
+      <div class="co-card">
+        <h3><span class="step">1</span> Contact</h3>
+        <div class="row2">
+          <div><label for="fn">First name</label><input id="fn" type="text" placeholder="Maya" required/></div>
+          <div><label for="ln">Last name</label><input id="ln" type="text" placeholder="Cruz" required/></div>
+        </div>
+        <label for="em">Email</label>
+        <input id="em" type="email" placeholder="you@email.com" required/>
+
+        <h3 style="margin-top:1.4rem"><span class="step">2</span> Shipping address</h3>
+        <label for="addr">Address</label>
+        <input id="addr" placeholder="123 Glow Ave" required/>
+        <div class="row3">
+          <div><label for="city">City</label><input id="city" placeholder="City" required/></div>
+          <div><label for="state">State</label><input id="state" placeholder="ST" required/></div>
+          <div><label for="zip">ZIP</label><input id="zip" inputmode="numeric" placeholder="ZIP" required/></div>
+        </div>
+
+        <h3 style="margin-top:1.4rem"><span class="step">3</span> Payment</h3>
+        <label for="cc">Card number</label>
+        <input id="cc" inputmode="numeric" placeholder="1234 1234 1234 1234" required/>
+        <div class="row3">
+          <div><label for="exp">Expiry</label><input id="exp" placeholder="MM / YY" required/></div>
+          <div><label for="cvc">CVC</label><input id="cvc" inputmode="numeric" placeholder="CVC" required/></div>
+          <div><label for="z2">ZIP</label><input id="z2" inputmode="numeric" placeholder="ZIP" required/></div>
+        </div>
+
+        <!-- order bump -->
+        <div class="bump">
+          <input type="checkbox" id="bump"/>
+          <label for="bump" style="margin:0;cursor:pointer;font-weight:600;color:var(--ink)">
+            <b>Add the LUMÉ Daily Moisturizer for $19 (reg. $32)</b>
+            <span style="display:block;font-weight:500;margin-top:.2rem">Seal in your serum &amp; double the glow. One-time add-on at member price.</span>
+          </label>
+        </div>
+
+        <button class="btn full lg" type="submit">Place My Order →</button>
+        <div class="trust-badges">🔒 256-bit secure · 💳 Stripe · 🛡️ 60-day guarantee</div>
+      </div>
+    </div>
+
+    <!-- RIGHT summary -->
+    <div>
+      <div class="co-card summary">
+        <h3>Your order</h3>
+        <div class="item">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=200&q=80&auto=format&fit=crop" alt="LUMÉ serum"/>
+          <div><b>Vitamin C Glow Serum</b><span id="sumPlan">Subscribe &amp; Save · 25% off</span></div>
+        </div>
+        <div class="line"><span id="sumLine">Serum × 1</span><span id="sumSubtotal">$29.00</span></div>
+        <div class="line" id="bumpLine" style="display:none"><span>Daily Moisturizer</span><span>$19.00</span></div>
+        <div class="line"><span>Shipping</span><span>Free</span></div>
+        <div class="total"><span>Total</span><span id="orderTotal">$29.00</span></div>
+        <div style="text-align:center;color:var(--clay);font-weight:600;margin-top:.8rem;font-size:.86rem">★★★★★ "Worth every penny." — 2,140 reviews</div>
+        <p style="font-size:.8rem;color:var(--mocha);text-align:center;margin-top:.8rem">🔒 Encrypted &amp; never shared · cancel anytime</p>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script src="/work/skincare/script.js"></script>
+</body>
+</html>

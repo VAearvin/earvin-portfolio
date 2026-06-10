@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Order confirmed — LUMÉ</title>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#c2704f"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/work/skincare/style.css"/>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+<div class="demo-bar">🧴 <strong>Demo confirmation page</strong> by Earvin Laureano — the final step of the funnel. &nbsp;<a href="/work">← Portfolio</a></div>
+
+<div class="conf">
+  <div class="conf-card">
+    <div class="conf-ic">✓</div>
+    <h1 id="head">Order confirmed!</h1>
+    <p class="lede">Your glow is on the way. We've emailed your receipt and tracking details.</p>
+
+    <div class="ordernum" id="ordernum">Order #LUME-00000</div>
+
+    <div class="recap" id="recap"></div>
+
+    <div class="ship">
+      <span class="ic">📦</span>
+      <div><b>Arriving in 3–5 business days</b><span>Free standard shipping · tracking sent to your email</span></div>
+    </div>
+
+    <a href="/work/skincare" class="btn full">Continue shopping →</a>
+
+    <div class="demo-flag">💡 This is a <strong>sample funnel</strong> built by Earvin Laureano. In a real store, this would charge the card via Stripe, create the order + subscription, and trigger fulfillment + email automatically.</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var name=p.get('name'), plan=p.get('plan')||'sub', qty=parseInt(p.get('qty')||'1',10);
+  var bump=p.get('bump')==='1', up=p.get('upsell')==='1';
+  if(name){ document.getElementById('head').textContent="You're glowing, "+name.replace(/[<>]/g,'')+"!"; }
+  document.getElementById('ordernum').textContent='Order #LUME-'+String(Math.floor(1000+Math.random()*8999));
+  var unit=plan==='once'?39:29;
+  var planLabel=plan==='once'?'One-time':'Subscribe & Save';
+  var rows=[['Vitamin C Glow Serum ('+planLabel+') × '+qty, '$'+(unit*qty)+'.00']];
+  var total=unit*qty;
+  if(bump){ rows.push(['Daily Moisturizer','$19.00']); total+=19; }
+  if(up){ rows.push(['Complete Glow Set','$49.00']); total+=49; }
+  var html=rows.map(function(r){return '<div class="l"><span>'+r[0]+'</span><b>'+r[1]+'</b></div>';}).join('');
+  html+='<div class="l"><span>Shipping</span><b>Free</b></div>';
+  html+='<div class="t"><span>Total paid</span><span>$'+total+'.00</span></div>';
+  document.getElementById('recap').innerHTML=html;
+})();
+</script>
+</body>
+</html>

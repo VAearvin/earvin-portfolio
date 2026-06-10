@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LUMÉ — Vitamin C Glow Serum</title>
+<meta name="description" content="LUMÉ Vitamin C Glow Serum — brighter, firmer, glowing skin in 4 weeks. Clean ingredients, dermatologist-tested. Subscribe & save."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#c2704f"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/work/skincare/style.css"/>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<div class="demo-bar">🧴 This is a <strong>demo e-commerce funnel</strong> built by Earvin Laureano. &nbsp;<a href="/work">← Portfolio</a> &nbsp;·&nbsp; <a href="/funnel">Get a funnel like this</a></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="#" class="logo">LUMÉ</a>
+    <nav class="nav-links"><a href="#benefits">Benefits</a><a href="#ingredients">Ingredients</a><a href="#reviews">Reviews</a></nav>
+    <div class="nav-cart">🛒 Cart (0)</div>
+  </div>
+</header>
+
+<!-- PRODUCT (Sales) -->
+<section class="prod">
+  <div class="wrap">
+    <div class="prod-grid">
+      <!-- gallery -->
+      <div class="gallery">
+        <img class="main" id="mainImg" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=900&q=80&auto=format&fit=crop" alt="LUMÉ Vitamin C Glow Serum"/>
+        <div class="thumbs">
+          <img class="sel" data-src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=900&q=80&auto=format&fit=crop" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=160&q=80&auto=format&fit=crop" alt=""/>
+          <img data-src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=900&q=80&auto=format&fit=crop" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=160&q=80&auto=format&fit=crop" alt=""/>
+          <img data-src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?w=900&q=80&auto=format&fit=crop" src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?w=160&q=80&auto=format&fit=crop" alt=""/>
+          <img data-src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=900&q=80&auto=format&fit=crop" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=160&q=80&auto=format&fit=crop" alt=""/>
+        </div>
+      </div>
+
+      <!-- buy box -->
+      <div class="buy">
+        <span class="pill">Bestseller · 12,000+ sold</span>
+        <h1>Vitamin C Glow Serum</h1>
+        <div class="rating"><span class="stars">★★★★★</span> 4.8 · 2,140 reviews</div>
+        <p class="lede">Brighter, firmer, dewy skin in 4 weeks. A lightweight serum with 15% Vitamin C, hyaluronic acid, and vitamin E — clean, vegan, and dermatologist-tested.</p>
+
+        <form id="buyForm" onsubmit="return lumeAdd(event)">
+          <div class="opt sel" data-plan="sub" data-price="29">
+            <div class="radio"></div>
+            <div class="o-main"><b>Subscribe &amp; Save</b><span class="tag">Most popular</span><span>Delivered every 30 days · cancel anytime · 25% off</span></div>
+            <div class="o-price">$29</div>
+          </div>
+          <div class="opt" data-plan="once" data-price="39">
+            <div class="radio"></div>
+            <div class="o-main"><b>One-time purchase</b><span>Single bottle (30-day supply)</span></div>
+            <div class="o-price">$39</div>
+          </div>
+
+          <div class="qty">
+            <span style="font-size:.84rem;font-weight:600;color:var(--mocha)">Quantity</span>
+            <button type="button" onclick="lumeQty(-1)">−</button>
+            <b id="qty">1</b>
+            <button type="button" onclick="lumeQty(1)">+</button>
+          </div>
+
+          <button class="btn full lg" type="submit">Add to Cart — <span id="ctaPrice">$29</span> →</button>
+          <div class="reassure">
+            <span>✓ Free shipping</span><span>✓ 60-day money-back</span><span>✓ Cancel anytime</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="sand" id="benefits">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Why you'll love it</span><h2>One drop. Visible glow.</h2></div>
+    <div class="bens">
+      <div class="ben"><div class="ic">✨</div><h3>Brightens</h3><p>15% Vitamin C fades dark spots and evens tone.</p></div>
+      <div class="ben"><div class="ic">💧</div><h3>Hydrates</h3><p>Hyaluronic acid plumps and locks in moisture.</p></div>
+      <div class="ben"><div class="ic">🌿</div><h3>Clean</h3><p>Vegan, cruelty-free, no parabens or sulfates.</p></div>
+      <div class="ben"><div class="ic">🔬</div><h3>Proven</h3><p>Dermatologist-tested. Results in 4 weeks.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS / split -->
+<section id="ingredients">
+  <div class="wrap">
+    <div class="split">
+      <div class="img-col"><img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?w=800&q=80&auto=format&fit=crop" alt="Serum with botanicals"/></div>
+      <div>
+        <span class="eyebrow">What's inside</span>
+        <h2>Just the actives that work — nothing that doesn't.</h2>
+        <ul>
+          <li><span class="c">✓</span><span><b>15% Vitamin C</b> — brightens and defends against dullness.</span></li>
+          <li><span class="c">✓</span><span><b>Hyaluronic acid</b> — deep, lasting hydration.</span></li>
+          <li><span class="c">✓</span><span><b>Vitamin E + ferulic acid</b> — antioxidant glow boost.</span></li>
+          <li><span class="c">✓</span><span><b>No</b> parabens, sulfates, fragrance, or fillers.</span></li>
+        </ul>
+        <a href="#top" class="btn" style="margin-top:1.5rem" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Shop the Serum →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sand" id="reviews">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">★★★★★ 4.8 / 5</span><h2>Loved by 12,000+ glowing faces</h2></div>
+    <div class="rev-grid">
+      <div class="rev"><div class="stars">★★★★★</div><p>"Three weeks in and my dark spots are noticeably lighter. My skin actually glows now — I get compliments."</p><div class="who"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=120&q=80&auto=format&fit=crop" alt=""/><div><b>Sofia M.</b><span class="verified">✓ Verified buyer</span></div></div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>"Lightweight, no sticky feel, and it layers perfectly under makeup. The subscription means I never run out."</p><div class="who"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80&auto=format&fit=crop" alt=""/><div><b>Priya N.</b><span class="verified">✓ Verified buyer</span></div></div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>"I've tried $90 serums that did less. This is clean, it works, and the price is honestly a steal."</p><div class="who"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=120&q=80&auto=format&fit=crop" alt=""/><div><b>Elena R.</b><span class="verified">✓ Verified buyer</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section>
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="seal"><div><b>60</b><span>DAY GLOW</span></div></div>
+      <div>
+        <h3>Glow, guaranteed.</h3>
+        <p>Use it for 60 days. If your skin doesn't look brighter and feel softer, send it back — even the empty bottle — for a full refund. The only risk is staying dull.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sand">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Questions</span><h2>Good to know</h2></div>
+    <div class="faq" id="faq">
+      <div class="q"><button>How soon will I see results?<span class="plus">+</span></button><div class="ans"><p>Most people notice brighter, dewier skin within 1–2 weeks, with dark spots fading by week 4 with daily use.</p></div></div>
+      <div class="q"><button>How does the subscription work?<span class="plus">+</span></button><div class="ans"><p>You save 25% and a fresh bottle ships every 30 days. Skip, pause, or cancel anytime in one click — no commitment.</p></div></div>
+      <div class="q"><button>Is it good for sensitive skin?<span class="plus">+</span></button><div class="ans"><p>Yes — it's fragrance-free and dermatologist-tested. We recommend a quick patch test if you're very sensitive.</p></div></div>
+      <div class="q"><button>What's your return policy?<span class="plus">+</span></button><div class="ans"><p>A 60-day money-back guarantee, even on opened bottles. If you're not glowing, you're refunded.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">Demo e-commerce funnel by <a href="/">Earvin Laureano</a> · LUMÉ is not a real brand · <a href="/work">See more work</a></div>
+</footer>
+
+<script src="/work/skincare/script.js"></script>
+</body>
+</html>

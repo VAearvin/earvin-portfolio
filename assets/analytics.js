@@ -18,7 +18,11 @@
     var host = (location.hostname || '').toLowerCase();
 
     // Your own domains — the canary stays silent on these.
-    var OWN = ['earvinlaureano.com', 'www.earvinlaureano.com', 'localhost', '127.0.0.1', '0.0.0.0'];
+    var OWN = [
+      'earvinlaureano.com', 'www.earvinlaureano.com',
+      'websites.earvinlaureano.com', 'funnels.earvinlaureano.com', 'services.earvinlaureano.com',
+      'localhost', '127.0.0.1', '0.0.0.0'
+    ];
     // Your own Vercel preview deployments (adjust the prefix if your
     // Vercel project slug isn't "earvin-portfolio").
     var ownPreview = host.indexOf('earvin-portfolio') === 0 && host.lastIndexOf('.vercel.app') === host.length - 11;

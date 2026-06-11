@@ -62,12 +62,26 @@
     .focus-tier ul{list-style:none;display:grid;gap:.6rem;flex:1}
     .focus-tier li{color:var(--muted);font-size:.92rem;display:flex;gap:.5rem}
     .focus-tier li:before{content:"✓";color:var(--gold);font-weight:800}
-    /* Audit single block */
-    .audit-block{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:2.4rem;text-align:left;max-width:680px;margin:2.4rem auto 0;display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center}
-    @media (max-width:680px){ .audit-block{grid-template-columns:1fr;text-align:center} }
-    .audit-block h3{font-size:1.3rem;color:var(--text);margin-bottom:.4rem}
-    .audit-block p{color:var(--muted);font-size:.94rem}
-    .audit-block .price{font-size:1.7rem;font-weight:800;color:var(--gold);white-space:nowrap}
+    /* Audit expanded block with Free vs Full mini-table */
+    .audit-expanded{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:2.6rem;text-align:left;max-width:980px;margin:2.4rem auto 0}
+    .audit-expanded .ax-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:1.6rem;padding-bottom:1.4rem;border-bottom:1px solid var(--border)}
+    .audit-expanded .ax-top h3{font-size:1.35rem;color:var(--text);margin-bottom:.3rem}
+    .audit-expanded .ax-top p{color:var(--muted);font-size:.92rem;max-width:42rem}
+    .audit-expanded .ax-top .price{font-size:1.9rem;font-weight:800;color:var(--gold);white-space:nowrap}
+    .audit-expanded .ax-top .price small{display:block;font-size:.74rem;font-weight:500;color:var(--muted);margin-top:.2rem}
+    .audit-expanded .ax-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+    @media (max-width:900px){ .audit-expanded .ax-grid{grid-template-columns:1fr 1fr} }
+    @media (max-width:640px){ .audit-expanded .ax-grid{grid-template-columns:1fr} .audit-expanded{padding:1.8rem} }
+    .audit-expanded .ax-cat{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:6px;padding:1.1rem 1.2rem}
+    .audit-expanded .ax-cat h4{font-size:.96rem;color:var(--text);margin-bottom:.6rem;font-weight:600}
+    .audit-expanded .ax-cat .row{display:flex;gap:.55rem;align-items:flex-start;font-size:.85rem;color:var(--muted);margin-bottom:.4rem;line-height:1.45}
+    .audit-expanded .ax-cat .row:last-child{margin-bottom:0}
+    .audit-expanded .ax-cat .row .y{color:var(--green);font-weight:800;flex:none}
+    .audit-expanded .ax-cat .row .n{color:#5a5750;font-weight:800;flex:none}
+    .audit-expanded .ax-cat .row .s{color:var(--gold);font-weight:800;flex:none}
+    .audit-expanded .ax-foot{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--border);font-size:.88rem;color:var(--muted);text-align:center}
+    .audit-expanded .ax-foot a{color:var(--gold);font-weight:600;text-decoration:none}
+    .audit-expanded .ax-foot a:hover{color:var(--gold2)}
     /* Contact card */
     .contact-card{max-width:520px;margin:2.4rem auto 0;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:2rem;text-align:left}
     .contact-card label{display:block;font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:.9rem 0 .35rem}
@@ -255,12 +269,35 @@
   <div class="section-eyebrow">One-Off Clarity</div>
   <h2 class="section-title">Not sure yet?<br/>Start with the <em>Full Audit</em></h2>
   <p class="section-desc">A deep, hands-on review I do personally — ending in a clear, prioritized action plan you can run yourself or hand to a developer. Credited toward any build.</p>
-  <div class="audit-block">
-    <div>
-      <h3>Full Website Audit &amp; Action Plan</h3>
-      <p>Performance, SEO, AI visibility, conversion, content — up to 20 prioritized fixes + a 30-minute walkthrough call.</p>
+  <div class="audit-expanded">
+    <div class="ax-top">
+      <div>
+        <h3>Full Website Audit &amp; Action Plan</h3>
+        <p>A deep, hands-on review I do personally across 6 areas — ending in up to 20 prioritized fixes and a 30-minute walkthrough call.</p>
+      </div>
+      <div class="price"><span data-price="audits.full.price"></span><small>credited toward any build</small></div>
     </div>
-    <div class="price"><span data-price="audits.full.price"></span></div>
+    <div class="ax-grid">
+      <div class="ax-cat"><h4>Performance</h4>
+        <div class="row"><span class="y">✓</span><span>Free: mobile + desktop speed scores</span></div>
+        <div class="row"><span class="s">★</span><span>Full: page-by-page diagnostics + exact fixes</span></div></div>
+      <div class="ax-cat"><h4>Search (SEO)</h4>
+        <div class="row"><span class="y">✓</span><span>Free: title, meta &amp; heading basics</span></div>
+        <div class="row"><span class="s">★</span><span>Full: complete on-page review, local SEO &amp; keyword strategy</span></div></div>
+      <div class="ax-cat"><h4>AI Search</h4>
+        <div class="row"><span class="n">—</span><span>Free: not included</span></div>
+        <div class="row"><span class="s">★</span><span>Full: ChatGPT, Perplexity &amp; AI Overviews visibility audit</span></div></div>
+      <div class="ax-cat"><h4>Design &amp; Conversion</h4>
+        <div class="row"><span class="n">—</span><span>Free: not included</span></div>
+        <div class="row"><span class="s">★</span><span>Full: page-by-page booking &amp; conversion gap review</span></div></div>
+      <div class="ax-cat"><h4>Content</h4>
+        <div class="row"><span class="n">—</span><span>Free: not included</span></div>
+        <div class="row"><span class="s">★</span><span>Full: competitive content-gap analysis</span></div></div>
+      <div class="ax-cat"><h4>Reporting &amp; Next Steps</h4>
+        <div class="row"><span class="y">✓</span><span>Free: overall score snapshot</span></div>
+        <div class="row"><span class="s">★</span><span>Full: prioritized action plan + 30-min walkthrough call</span></div></div>
+    </div>
+    <div class="ax-foot">See the full side-by-side comparison on the <a href="/audit">audit page →</a></div>
   </div>
 </section>
 

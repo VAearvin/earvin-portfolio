@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Audit Report · Earvin Laureano</title>
+  <!--
+    INTERNAL DELIVERY TEMPLATE. Not deployed, not linked.
+    HOW TO USE:
+    1. Run delivery/audit-playbook.md with Claude to produce the audit content.
+    2. Replace every [[ ... ]] placeholder below with the real content.
+    3. Open this file in a browser → Print → Save as PDF (A4, default margins,
+       enable "Background graphics" so the dark theme renders).
+    4. Send the PDF to the client + book the 30-min call.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#0c0c0c; --bg2:#141414; --bg3:#1a1a1a; --border:rgba(255,255,255,0.08);
+      --gold:#C7A97F; --gold2:#E8D4B0; --text:#E8D4B0; --muted:#8d887f; --r:6px;
+      --green:#4ade80; --amber:#e0b96a; --red:#f87171; --white:#fff;
+    }
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.7; }
+    .page { max-width: 820px; margin: 0 auto; padding: 3.5rem 3rem 4rem; }
+
+    /* COVER / HEADER */
+    .rpt-head { border-bottom: 1px solid var(--border); padding-bottom: 2rem; margin-bottom: 2.5rem; }
+    .brandline { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.4rem; }
+    .logo { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); }
+    .logo span { color: var(--gold); }
+    .brandline .kind { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .rpt-head h1 { font-size: 2.2rem; font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: 1.1rem; letter-spacing: -0.01em; }
+    .rpt-head h1 em { font-style: italic; color: var(--gold); font-weight: 700; }
+    .meta-row { display: flex; flex-wrap: wrap; gap: 1.6rem; font-size: 0.82rem; color: var(--muted); }
+    .meta-row b { color: var(--text); font-weight: 600; }
+    .meta-row a { color: var(--gold); text-decoration: none; }
+
+    section.block { margin-bottom: 2.4rem; page-break-inside: avoid; }
+    .block-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.7rem; }
+    .block-label::before { content: ''; width: 22px; height: 1px; background: var(--gold); }
+    h2 { font-size: 1.4rem; font-weight: 800; color: var(--white); margin-bottom: 0.9rem; line-height: 1.2; }
+    p { font-size: 0.95rem; color: var(--text); line-height: 1.8; margin-bottom: 0.9rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* SNAPSHOT callout */
+    .snapshot { background: linear-gradient(180deg, rgba(199,169,127,0.08), rgba(199,169,127,0.02)); border: 1px solid rgba(199,169,127,0.3); border-left: 3px solid var(--gold); border-radius: var(--r); padding: 1.6rem 1.8rem; }
+
+    /* SCORES */
+    .scores { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+    .score { display: grid; grid-template-columns: 180px 96px 1fr; gap: 1rem; align-items: center; padding: 0.85rem 1.2rem; border-bottom: 1px solid var(--border); }
+    .score:last-child { border-bottom: none; }
+    .score .area { font-size: 0.86rem; font-weight: 600; color: var(--white); }
+    .score .rating { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; padding: 0.25rem 0; border-radius: 100px; }
+    .rating.good { color: var(--green); background: rgba(74,222,128,0.12); }
+    .rating.mid  { color: var(--amber); background: rgba(224,185,106,0.12); }
+    .rating.poor { color: var(--red); background: rgba(248,113,113,0.12); }
+    .score .why { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+    ul.clean { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    ul.clean li { font-size: 0.92rem; color: var(--text); line-height: 1.6; display: flex; gap: 0.7rem; align-items: flex-start; }
+    ul.clean li::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 0.6rem; }
+
+    /* COSTING-YOU items */
+    .cost-item { border: 1px solid var(--border); border-radius: var(--r); padding: 1.2rem 1.4rem; margin-bottom: 0.9rem; page-break-inside: avoid; }
+    .cost-item h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
+    .cost-item p { font-size: 0.88rem; margin-bottom: 0; }
+    .cost-item .where { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+
+    /* FIX PLAN */
+    ol.fixes { list-style: none; counter-reset: fix; display: flex; flex-direction: column; gap: 0.8rem; }
+    ol.fixes li { counter-increment: fix; padding: 1rem 1.2rem 1rem 3.2rem; position: relative; border: 1px solid var(--border); border-radius: var(--r); page-break-inside: avoid; }
+    ol.fixes li::before { content: counter(fix); position: absolute; left: 1rem; top: 1rem; width: 26px; height: 26px; border-radius: 50%; background: rgba(199,169,127,0.12); border: 1px solid rgba(199,169,127,0.35); color: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 0.74rem; font-weight: 700; }
+    ol.fixes li.first { border-color: rgba(199,169,127,0.45); background: rgba(199,169,127,0.04); }
+    ol.fixes li .what { font-size: 0.92rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem; }
+    ol.fixes li .why { font-size: 0.84rem; color: var(--muted); line-height: 1.55; }
+    .first-tag { display: inline-block; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bg); background: var(--gold); padding: 0.15rem 0.5rem; border-radius: 100px; margin-left: 0.5rem; vertical-align: middle; }
+
+    /* THE ONE THING */
+    .onething { background: var(--bg2); border: 1px solid rgba(199,169,127,0.3); border-radius: var(--r); padding: 1.8rem 2rem; }
+    .onething h2 { font-size: 1.2rem; }
+    .onething p { font-size: 0.95rem; }
+
+    /* FOOTER / NEXT STEP */
+    .rpt-foot { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); page-break-inside: avoid; }
+    .nextstep { background: linear-gradient(180deg, rgba(199,169,127,0.1), rgba(199,169,127,0.02)); border: 1px solid rgba(199,169,127,0.3); border-radius: var(--r); padding: 1.8rem 2rem; text-align: center; }
+    .nextstep h3 { font-size: 1.15rem; font-weight: 800; color: var(--white); margin-bottom: 0.6rem; }
+    .nextstep p { font-size: 0.88rem; color: var(--muted); max-width: 460px; margin: 0 auto 0.4rem; }
+    .nextstep .credit { color: var(--gold); font-weight: 600; }
+    .sig { margin-top: 2rem; font-size: 0.82rem; color: var(--muted); text-align: center; }
+    .sig b { color: var(--text); }
+    .sig span { color: var(--gold); }
+
+    @page { size: A4; margin: 14mm; }
+    @media print { body { background: var(--bg); } .page { padding: 0; max-width: none; } }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="rpt-head">
+    <div class="brandline">
+      <div class="logo">Earvin <span>Laureano</span></div>
+      <div class="kind">[[WEBSITE | FUNNEL]] Audit &amp; Action Plan</div>
+    </div>
+    <h1>Audit for <em>[[Client / business name]]</em></h1>
+    <div class="meta-row">
+      <div><b>Prepared for</b> [[First name]]</div>
+      <div><b>Site</b> <a href="[[url]]">[[url]]</a></div>
+      <div><b>Date</b> [[Month DD, YYYY]]</div>
+    </div>
+  </header>
+
+  <!-- 1. SNAPSHOT -->
+  <section class="block">
+    <div class="block-label">Snapshot</div>
+    <div class="snapshot">
+      <p>[[3–4 sentences: what is working, what is quietly costing them, and the single biggest opportunity. The honest headline.]]</p>
+    </div>
+  </section>
+
+  <!-- 2. SCORES -->
+  <section class="block">
+    <div class="block-label">Where you stand</div>
+    <div class="scores">
+      <!-- Repeat one .score row per area. rating class = good | mid | poor -->
+      <div class="score"><div class="area">[[Area]]</div><div class="rating good">Good</div><div class="why">[[one-sentence why]]</div></div>
+      <div class="score"><div class="area">[[Area]]</div><div class="rating mid">Needs work</div><div class="why">[[one-sentence why]]</div></div>
+      <div class="score"><div class="area">[[Area]]</div><div class="rating poor">Poor</div><div class="why">[[one-sentence why]]</div></div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT IS WORKING -->
+  <section class="block">
+    <div class="block-label">What is working</div>
+    <ul class="clean">
+      <li>[[Specific, genuine strength]]</li>
+      <li>[[Specific, genuine strength]]</li>
+      <li>[[Specific, genuine strength]]</li>
+    </ul>
+  </section>
+
+  <!-- 4. WHAT IS COSTING YOU -->
+  <section class="block">
+    <div class="block-label">What is costing you</div>
+    <div class="cost-item">
+      <div class="where">[[Where: name the section]]</div>
+      <h3>[[The problem in one line]]</h3>
+      <p>[[What it is, why it costs them leads or money, and roughly how much it matters.]]</p>
+    </div>
+    <div class="cost-item">
+      <div class="where">[[Where: name the section]]</div>
+      <h3>[[The problem in one line]]</h3>
+      <p>[[What it is, why it costs them leads or money, and roughly how much it matters.]]</p>
+    </div>
+  </section>
+
+  <!-- 5. THE FIX PLAN -->
+  <section class="block">
+    <div class="block-label">The fix plan · do-this-next</div>
+    <ol class="fixes">
+      <li class="first"><div class="what">[[Fix]] <span class="first-tag">Do first</span></div><div class="why">[[Why it works, in plain terms.]]</div></li>
+      <li class="first"><div class="what">[[Fix]] <span class="first-tag">Do first</span></div><div class="why">[[Why it works.]]</div></li>
+      <li class="first"><div class="what">[[Fix]] <span class="first-tag">Do first</span></div><div class="why">[[Why it works.]]</div></li>
+      <li><div class="what">[[Fix]]</div><div class="why">[[Why it works.]]</div></li>
+      <li><div class="what">[[Fix]]</div><div class="why">[[Why it works.]]</div></li>
+      <!-- add up to 20 total. Do not pad. Quality over count. -->
+    </ol>
+  </section>
+
+  <!-- 6. THE ONE THING -->
+  <section class="block">
+    <div class="onething">
+      <h2>If you only do one thing this month</h2>
+      <p>[[The single highest-leverage move and why.]]</p>
+    </div>
+  </section>
+
+  <!-- FOOTER / NEXT STEP -->
+  <footer class="rpt-foot">
+    <div class="nextstep">
+      <h3>Want this handled, not just listed?</h3>
+      <p>This plan is yours to run, or hand to a developer. If you would rather I build it, your <span class="credit">$57 credits in full toward the build</span> if you proceed within 30 days.</p>
+      <p>Reply to the email this came in on, or book your 30-minute walkthrough call.</p>
+    </div>
+    <div class="sig">
+      <b>Earvin Laureano</b><br/>
+      <span>Websites · Funnels · Digital Systems · Remote Worldwide</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

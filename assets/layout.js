@@ -10,18 +10,35 @@
   var active = document.body.getAttribute('data-active') || '';
   var isActive = function (key) { return active === key ? ' class="active"' : ''; };
 
+  var workWithMeActive = ['hub','wwm','new-website','rebrand','migration','funnel','partnership','care','websites','funnels','services'].indexOf(active) >= 0 ? ' class="active"' : '';
+  var aboutActive = ['about'].indexOf(active) >= 0 ? ' class="active"' : '';
+
   var nav =
     '<nav id="navbar">' +
       '<a href="/" class="logo">Earvin <span>Laureano</span></a>' +
       '<button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
       '<ul class="nav-links" id="navLinks">' +
-        '<li><a href="/#support">Services</a></li>' +
-        '<li><a href="/#how">How I Work</a></li>' +
-        '<li><a href="/#experience">Experience</a></li>' +
+        '<li class="nav-dd">' +
+          '<a href="/#about"' + aboutActive + ' aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>' +
+          '<ul class="nav-dd-menu">' +
+            '<li><a href="/#about">The Person</a></li>' +
+            '<li><a href="/#what-you-get">What You Get</a></li>' +
+            '<li><a href="/#how">How It Works</a></li>' +
+            '<li><a href="/#experience">Background</a></li>' +
+            '<li><a href="/#testimonials">Reviews</a></li>' +
+          '</ul>' +
+        '</li>' +
+        '<li class="nav-dd">' +
+          '<a href="/work-with-me"' + workWithMeActive + ' aria-haspopup="true" aria-expanded="false">Work With Me <span class="caret"></span></a>' +
+          '<ul class="nav-dd-menu">' +
+            '<li><a href="/websites">Websites</a></li>' +
+            '<li><a href="/funnels">Funnels</a></li>' +
+            '<li><a href="/services">Partnership</a></li>' +
+          '</ul>' +
+        '</li>' +
         '<li><a href="/work"' + isActive('work') + '>Portfolio</a></li>' +
-        '<li><a href="/pricing"' + isActive('hub') + '>Work With Me</a></li>' +
         '<li><a href="/#contact">Contact</a></li>' +
-        '<li><a href="/#contact" class="nav-cta">Get In Touch</a></li>' +
+        '<li><a href="/#contact" class="nav-cta">Start a Conversation</a></li>' +
       '</ul>' +
     '</nav>';
 
@@ -29,7 +46,7 @@
     '<footer>' +
       '<div class="footer-logo">Earvin <span>Laureano</span></div>' +
       '<div class="footer-copy">© 2026 Earvin Laureano. All rights reserved.</div>' +
-      '<div class="footer-sub">Operations &amp; Web Partner<br/><span>Remote Worldwide</span></div>' +
+      '<div class="footer-sub">Websites · Funnels · Digital Systems<br/><span>Remote Worldwide</span></div>' +
     '</footer>';
 
   var navMount = document.getElementById('nav');

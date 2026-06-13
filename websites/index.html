@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Custom Websites Built to Convert · Earvin Laureano</title>
-  <meta name="description" content="Custom, AI-built websites for service businesses — lightning fast, AI-search ready, and built to convert. Foundation, Relaunch, and Managed Migration."/>
+  <meta name="description" content="Custom, AI-built websites for service businesses, lightning fast, AI-search ready, and built to convert. Foundation, Relaunch, and Managed Migration."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://websites.earvinlaureano.com/"/>
   <meta name="theme-color" content="#0c0c0c"/>
@@ -34,7 +34,8 @@
     .outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.8rem}
     @media (max-width:900px){ .outcomes{grid-template-columns:1fr} }
     .outcome{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem}
-    .outcome .ic{width:42px;height:42px;border-radius:11px;background:rgba(199,169,127,.13);color:var(--gold);display:grid;place-items:center;font-weight:800;margin-bottom:1.1rem}
+    .outcome .ic{width:42px;height:42px;border-radius:11px;background:rgba(199,169,127,.13);border:1px solid rgba(199,169,127,.3);color:var(--gold);display:grid;place-items:center;font-weight:800;margin-bottom:1.1rem}
+    .outcome .ic svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
     .outcome h3{font-size:1.1rem;color:var(--text);margin-bottom:.4rem}
     .outcome p{color:var(--muted);font-size:.92rem}
     /* Demo strip */
@@ -101,7 +102,10 @@
 <!-- Focused minimal nav -->
 <nav class="focus-nav">
   <a href="#top" class="logo">Earvin <span>Laureano</span><small>· Websites</small></a>
-  <a href="#contact" class="btn-gold">Book a Call</a>
+  <div style="display:flex;align-items:center;gap:1.4rem;">
+    <a href="/work-with-me" style="font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">← Choose a service</a>
+    <a href="#contact" class="btn-gold">Book a Call</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -111,7 +115,7 @@
     <div class="cat-eyebrow"><span>Custom Websites · AI-Search Ready</span></div>
     <h1>Lightning-fast custom websites,<br/><em>built to convert.</em></h1>
     <p class="who">"My current site looks dated, loads slow, and nobody books from it."</p>
-    <p class="lede">A custom, AI-built website for your service business — fast, mobile-first, and optimized to be found on Google <em>and</em> in AI search (ChatGPT, Perplexity, Google AI Overviews). Designed to actually book clients, not just look pretty.</p>
+    <p class="lede">A custom, AI-built website for your service business, fast, mobile-first, and optimized to be found on Google <em>and</em> in AI search (ChatGPT, Perplexity, Google AI Overviews). Designed to actually book clients, not just look pretty.</p>
     <div class="cat-hero-actions">
       <a href="#contact" class="btn-gold">Book a Call</a>
       <a href="#demos" class="btn-outline">See live demos ↓</a>
@@ -123,11 +127,11 @@
 <section class="section center">
   <div class="section-eyebrow">What You Get</div>
   <h2 class="section-title">A site that <em>actually pays you back</em></h2>
-  <p class="section-desc">Not just a redesign — a sales asset that loads instantly, ranks, and converts.</p>
+  <p class="section-desc">Not just a redesign, a sales asset that loads instantly, ranks, and converts.</p>
   <div class="outcomes">
-    <div class="outcome"><div class="ic">⚡</div><h3>Loads in under 1 second</h3><p>Edge-hosted, no plugin bloat. Core Web Vitals you'll be proud of — and that Google rewards.</p></div>
-    <div class="outcome"><div class="ic">🔍</div><h3>Found by AI search</h3><p>Built with clean schema and semantic HTML so ChatGPT, Perplexity, and Google AI Overviews can quote you — not just index you.</p></div>
-    <div class="outcome"><div class="ic">📲</div><h3>Booked-out, mobile-first</h3><p>70% of your visitors are on a phone. Every page is designed for thumb-friendly conversion, not desktop vanity.</p></div>
+    <div class="outcome"><div class="ic"><svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3>Loads in under 1 second</h3><p>Edge-hosted, no plugin bloat. Core Web Vitals you'll be proud of, and that Google rewards.</p></div>
+    <div class="outcome"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>Found by AI search</h3><p>Built with clean schema and semantic HTML so ChatGPT, Perplexity, and Google AI Overviews can quote you, not just index you.</p></div>
+    <div class="outcome"><div class="ic"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg></div><h3>Booked-out, mobile-first</h3><p>70% of your visitors are on a phone. Every page is designed for thumb-friendly conversion, not desktop vanity.</p></div>
   </div>
 </section>
 
@@ -135,14 +139,14 @@
 <section class="section center" id="demos" style="border-top:1px solid var(--border);">
   <div class="section-eyebrow">Live Demos</div>
   <h2 class="section-title">See the work,<br/><em>click through it</em></h2>
-  <p class="section-desc">Fully built, interactive websites you can open and explore. Each one a distinct brand — because great design serves <em>your</em> business, not mine.</p>
+  <p class="section-desc">Fully built, interactive websites you can open and explore. Each one a distinct brand, because great design serves <em>your</em> business, not mine.</p>
   <div class="demos2">
     <a href="/work/dental-clinic" class="demo-card">
       <div class="thumb"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80&auto=format&fit=crop" alt="Dental clinic website"/></div>
       <div class="body">
         <div class="kind">Local service business</div>
         <h3>Northgate Dental Studio</h3>
-        <p>A premium clinic site — services, membership pricing, reviews, and a booking-focused layout built to win new patients.</p>
+        <p>A premium clinic site, services, membership pricing, reviews, and a booking-focused layout built to win new patients.</p>
         <span class="open">Open demo →</span>
       </div>
     </a>
@@ -151,7 +155,7 @@
       <div class="body">
         <div class="kind">Redesign · before &amp; after</div>
         <h3>The Copper Fork</h3>
-        <p>Drag a slider to see a dated 2009 restaurant site rebuilt into a modern, mobile-first experience — same business, completely different result.</p>
+        <p>Drag a slider to see a dated 2009 restaurant site rebuilt into a modern, mobile-first experience, same business, completely different result.</p>
         <span class="open">Open demo →</span>
       </div>
     </a>
@@ -164,7 +168,7 @@
   <h2 class="section-title">Three calls.<br/><em>One launched site.</em></h2>
   <div class="outcomes">
     <div class="outcome"><div class="ic">1</div><h3>Scope call</h3><p>We get clear on your goals, pages, and what success looks like. You'll get a tier recommendation and a clear timeline.</p></div>
-    <div class="outcome"><div class="ic">2</div><h3>Design &amp; build</h3><p>I design and build a custom site for your brand — not a template. You review and approve before anything goes live.</p></div>
+    <div class="outcome"><div class="ic">2</div><h3>Design &amp; build</h3><p>I design and build a custom site for your brand, not a template. You review and approve before anything goes live.</p></div>
     <div class="outcome"><div class="ic">3</div><h3>Launch &amp; handoff</h3><p>We go live, set up analytics, and walk you through the built-in CMS so you can edit content yourself.</p></div>
   </div>
 </section>
@@ -173,7 +177,7 @@
 <section class="section center" style="border-top:1px solid var(--border);">
   <div class="section-eyebrow">Pricing</div>
   <h2 class="section-title">Honest, upfront<br/><em>pricing</em></h2>
-  <p class="section-desc">"From" pricing — final scope depends on pages and complexity. 50% deposit, 50% on launch.</p>
+  <p class="section-desc">"From" pricing, final scope depends on pages and complexity. 50% deposit, 50% on launch.</p>
   <div class="focus-tiers">
     <article class="focus-tier">
       <div class="name">Foundation</div>
@@ -182,7 +186,7 @@
       <ul>
         <li>Custom design (no templates)</li>
         <li>Up to 5 core pages</li>
-        <li>Built-in CMS — edit it yourself</li>
+        <li>Built-in CMS, edit it yourself</li>
         <li>Mobile-first, edge-hosted</li>
         <li>Analytics + Google Search Console setup</li>
       </ul>
@@ -208,13 +212,13 @@
         <li>Custom design from scratch</li>
         <li>Content migration (you keep your domain)</li>
         <li>Mobile-first, edge-hosted</li>
-        <li>Built-in CMS — handoff-ready, no lock-in</li>
+        <li>Built-in CMS, handoff-ready, no lock-in</li>
       </ul>
     </article>
   </div>
   <p class="section-desc reveal" style="margin-top:2rem; font-size:0.86rem;">
     Need to <strong style="color:var(--text)">keep your existing rankings</strong>?
-    Managed Migration starts at <span data-price="builds.managedMigration.from"></span> — custom-quoted, scoped via a Full Audit (<span data-price="audits.full.price"></span>).
+    Managed Migration starts at <span data-price="builds.managedMigration.from"></span>, custom-quoted, scoped via a Full Audit (<span data-price="audits.full.price"></span>).
     Ask on your call.
   </p>
 </section>
@@ -223,7 +227,7 @@
 <section class="section center" id="care" style="border-top:1px solid var(--border);">
   <div class="section-eyebrow">After Launch</div>
   <h2 class="section-title">Keep your site<br/><em>healthy &amp; visible</em></h2>
-  <p class="section-desc">Optional monthly plans that keep your site fast, secure, and found — as both Google and AI search keep evolving. First month free.</p>
+  <p class="section-desc">Optional monthly plans that keep your site fast, secure, and found, as both Google and AI search keep evolving. First month free.</p>
   <div class="focus-tiers">
     <article class="focus-tier">
       <div class="name">Care</div>
@@ -267,45 +271,16 @@
 <!-- AUDIT (one-off clarity) -->
 <section class="section center" id="audit" style="border-top:1px solid var(--border);">
   <div class="section-eyebrow">One-Off Clarity</div>
-  <h2 class="section-title">Not sure yet?<br/>Start with the <em>Full Audit</em></h2>
-  <p class="section-desc">A deep, hands-on review I do personally — ending in a clear, prioritized action plan you can run yourself or hand to a developer. Credited toward any build.</p>
-  <div class="audit-expanded">
-    <div class="ax-top">
-      <div>
-        <h3>Full Website Audit &amp; Action Plan</h3>
-        <p>A deep, hands-on review I do personally across 6 areas — ending in up to 20 prioritized fixes and a 30-minute walkthrough call.</p>
-      </div>
-      <div class="price"><span data-price="audits.full.price"></span><small>credited toward any build</small></div>
-    </div>
-    <div class="ax-grid">
-      <div class="ax-cat"><h4>Performance</h4>
-        <div class="row"><span class="y">✓</span><span>Free: mobile + desktop speed scores</span></div>
-        <div class="row"><span class="s">★</span><span>Full: page-by-page diagnostics + exact fixes</span></div></div>
-      <div class="ax-cat"><h4>Search (SEO)</h4>
-        <div class="row"><span class="y">✓</span><span>Free: title, meta &amp; heading basics</span></div>
-        <div class="row"><span class="s">★</span><span>Full: complete on-page review, local SEO &amp; keyword strategy</span></div></div>
-      <div class="ax-cat"><h4>AI Search</h4>
-        <div class="row"><span class="n">—</span><span>Free: not included</span></div>
-        <div class="row"><span class="s">★</span><span>Full: ChatGPT, Perplexity &amp; AI Overviews visibility audit</span></div></div>
-      <div class="ax-cat"><h4>Design &amp; Conversion</h4>
-        <div class="row"><span class="n">—</span><span>Free: not included</span></div>
-        <div class="row"><span class="s">★</span><span>Full: page-by-page booking &amp; conversion gap review</span></div></div>
-      <div class="ax-cat"><h4>Content</h4>
-        <div class="row"><span class="n">—</span><span>Free: not included</span></div>
-        <div class="row"><span class="s">★</span><span>Full: competitive content-gap analysis</span></div></div>
-      <div class="ax-cat"><h4>Reporting &amp; Next Steps</h4>
-        <div class="row"><span class="y">✓</span><span>Free: overall score snapshot</span></div>
-        <div class="row"><span class="s">★</span><span>Full: prioritized action plan + 30-min walkthrough call</span></div></div>
-    </div>
-    <div class="ax-foot">See the full side-by-side comparison on the <a href="/audit">audit page →</a></div>
-  </div>
+  <h2 class="section-title">Not sure yet?<br/>Start with an <em>Audit</em></h2>
+  <p class="section-desc">Run a free 60-second scan of your site, or get the comprehensive audit with a prioritized, actionable fix plan. Normally $597, available now at <strong style="color:var(--gold)">$57</strong>, and the $57 credits in full toward any build.</p>
+  <div style="margin-top:2.2rem;"><a href="/audit" class="btn-gold">See the audit options →</a></div>
 </section>
 
 <!-- CONTACT -->
 <section class="section center" id="contact" style="border-top:1px solid var(--border);">
   <div class="section-eyebrow">Book a Call</div>
   <h2 class="section-title">Let's build something<br/><em>you're proud to own.</em></h2>
-  <p class="section-desc">Tell me about your business in a sentence or two — I'll reply within one business day with a recommended tier and the next step.</p>
+  <p class="section-desc">Tell me about your business in a sentence or two, I'll reply within one business day with a recommended tier and the next step.</p>
   <form class="contact-card" id="contactForm" onsubmit="return submitLead(event)">
     <label for="name">Name</label>
     <input id="name" type="text" placeholder="Your full name" required/>
@@ -361,7 +336,7 @@
     };
     fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
       .then(function () {
-        msg.textContent = "✓ Thanks — I'll reply within one business day."; msg.className = 'form-msg success';
+        msg.textContent = "✓ Thanks, I'll reply within one business day."; msg.className = 'form-msg success';
         document.getElementById('contactForm').reset();
         localStorage.setItem('lastFormSubmit', Date.now().toString());
       })

@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>High-Converting Funnels Built End-to-End · Earvin Laureano</title>
-  <meta name="description" content="Custom-built lead-gen, sales, webinar, and e-commerce funnels, designed to actually convert. Strategy, copy, design, and deployment in one place."/>
+  <title>Sales Funnels Built to Convert · Earvin Laureano</title>
+  <meta name="description" content="Custom-built sales funnels that turn clicks into clients. Lead-gen, webinar, application, and e-commerce funnels, strategy to launch, designed to convert."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://funnels.earvinlaureano.com/"/>
   <meta name="theme-color" content="#0c0c0c"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="High-Converting Funnels Built End-to-End · Earvin Laureano"/>
-  <meta property="og:description" content="Lead-gen, sales, webinar, e-commerce, funnels designed to convert. Built end-to-end."/>
+  <meta property="og:title" content="Sales Funnels Built to Convert · Earvin Laureano"/>
+  <meta property="og:description" content="Custom sales funnels that turn clicks into clients. Strategy, copy, design, and build in one place."/>
   <meta property="og:url" content="https://funnels.earvinlaureano.com/"/>
   <meta property="og:image" content="https://www.earvinlaureano.com/earvin.jpeg"/>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
@@ -21,14 +21,16 @@
   <link rel="stylesheet" href="/assets/site.css"/>
   <script defer src="/assets/analytics.js"></script>
   <script type="application/ld+json">
-  { "@context":"https://schema.org","@type":"Service","name":"Conversion Funnel Build","provider":{"@type":"Person","name":"Earvin Laureano","url":"https://www.earvinlaureano.com/"},"areaServed":"Worldwide (remote)","serviceType":"Multi-page sales, lead, and e-commerce funnels","offers":{"@type":"Offer","priceCurrency":"USD","price":"1497","description":"From $1,497, custom-built conversion funnel"} }
+  { "@context":"https://schema.org","@type":"Service","name":"Sales Funnel Design & Build","provider":{"@type":"Person","name":"Earvin Laureano","url":"https://www.earvinlaureano.com/"},"areaServed":"Worldwide (remote)","serviceType":"Custom sales, lead-gen, webinar, and e-commerce funnels","offers":{"@type":"Offer","priceCurrency":"USD","price":"1497"} }
   </script>
   <style>
+    /* Focused-lander nav (overrides shared nav for this page only) */
     .focus-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5rem;background:rgba(12,12,12,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
     .focus-nav .logo{font-size:1rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text)}
     .focus-nav .logo span{color:var(--gold)}
     .focus-nav .logo small{display:block;font-size:.6rem;letter-spacing:.18em;color:var(--muted);margin-top:.15rem;font-weight:500}
     @media (max-width: 768px){ .focus-nav{padding:1rem 1.4rem} }
+    /* Outcomes grid */
     .outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.8rem}
     @media (max-width:900px){ .outcomes{grid-template-columns:1fr} }
     .outcome{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem}
@@ -36,32 +38,29 @@
     .outcome .ic svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
     .outcome h3{font-size:1.1rem;color:var(--text);margin-bottom:.4rem}
     .outcome p{color:var(--muted);font-size:.92rem}
-    /* Funnel-type pills */
-    .types{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.6rem;max-width:48rem;margin-left:auto;margin-right:auto}
-    .types span{display:inline-flex;align-items:center;background:var(--bg2);border:1px solid var(--border);color:var(--text);font-size:.78rem;font-weight:500;padding:.4rem .9rem;border-radius:100px}
-    .types span b{color:var(--gold);font-weight:700;margin-right:.4rem}
-    /* Demo grid */
-    .demos3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.4rem}
-    @media (max-width:980px){ .demos3{grid-template-columns:1fr 1fr} }
-    @media (max-width:680px){ .demos3{grid-template-columns:1fr} }
+    /* Demo strip */
+    .demos2{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2.4rem}
+    @media (max-width:820px){ .demos2{grid-template-columns:1fr} }
     .demo-card{display:flex;flex-direction:column;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;text-decoration:none;color:inherit;transition:.2s}
     .demo-card *{text-decoration:none}
     .demo-card:hover{transform:translateY(-4px);border-color:rgba(199,169,127,.5)}
     .demo-card .thumb{aspect-ratio:16/10;position:relative}
     .demo-card .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
     .demo-card .thumb:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,12,.1),rgba(8,12,12,.65))}
-    .demo-card .body{padding:1.4rem}
-    .demo-card .kind{font-size:.72rem;color:var(--gold);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.3rem}
-    .demo-card h3{font-size:1.1rem;color:var(--text);margin-bottom:.3rem}
-    .demo-card p{color:var(--muted);font-size:.88rem;margin-bottom:.7rem}
-    .demo-card .open{font-size:.84rem;font-weight:600;color:var(--gold)}
-    /* Pricing single tier */
-    .focus-tiers{display:grid;grid-template-columns:1fr;gap:1.3rem;margin-top:2.4rem;text-align:left;max-width:520px;margin-left:auto;margin-right:auto}
-    .focus-tier{background:var(--bg2);border:1px solid rgba(199,169,127,.45);border-radius:var(--r);padding:2.2rem;display:flex;flex-direction:column}
-    .focus-tier .name{font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:.2rem}
+    .demo-card .body{padding:1.6rem}
+    .demo-card .kind{font-size:.78rem;color:var(--gold);font-weight:600;letter-spacing:.04em;margin-bottom:.4rem}
+    .demo-card h3{font-size:1.25rem;color:var(--text);margin-bottom:.4rem}
+    .demo-card p{color:var(--muted);font-size:.92rem;margin-bottom:.9rem}
+    .demo-card .open{font-size:.86rem;font-weight:600;color:var(--gold)}
+    /* Tier grid override for this page only */
+    .focus-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:2.4rem;text-align:left}
+    @media (max-width:1000px){ .focus-tiers{grid-template-columns:1fr} }
+    .focus-tier{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:2rem;display:flex;flex-direction:column}
+    .focus-tier.premium{border-color:rgba(199,169,127,.45)}
+    .focus-tier .name{font-size:1.15rem;font-weight:700;color:var(--text);margin-bottom:.2rem}
     .focus-tier .for{color:var(--muted);font-size:.86rem;margin-bottom:1rem;font-style:italic}
-    .focus-tier .price{font-family:'Inter';font-size:2.2rem;font-weight:800;color:var(--gold);margin-bottom:.8rem}
-    .focus-tier ul{list-style:none;display:grid;gap:.6rem}
+    .focus-tier .price{font-family:'Inter';font-size:1.9rem;font-weight:800;color:var(--gold);margin-bottom:.8rem}
+    .focus-tier ul{list-style:none;display:grid;gap:.6rem;flex:1}
     .focus-tier li{color:var(--muted);font-size:.92rem;display:flex;gap:.5rem}
     .focus-tier li:before{content:"✓";color:var(--gold);font-weight:800}
     /* Audit expanded block with Free vs Full mini-table */
@@ -96,162 +95,266 @@
     .focus-foot{padding:2.4rem 5rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.84rem}
     .focus-foot a{color:var(--gold);text-decoration:none}
     @media (max-width:768px){ .focus-foot{padding:2rem 1.4rem} }
+    /* Qualifier form (book a call) */
+    .contact-card select{width:100%;padding:.9rem 1rem;border:1px solid var(--border);border-radius:var(--r);font-size:.95rem;font-family:inherit;color:var(--text);background:rgba(255,255,255,.03);cursor:pointer;-webkit-appearance:none;appearance:none}
+    .contact-card select:focus{outline:none;border-color:var(--gold)}
+    .contact-card select option{background:var(--bg2);color:var(--text)}
+    .form-row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    @media (max-width:560px){ .form-row2{grid-template-columns:1fr} }
+    /* Big promise hero tweak */
+    .promise-line{font-size:.95rem;color:var(--gold);font-style:italic;margin:0 auto 1.3rem;max-width:520px}
+    /* Who it's for / not for */
+    .fit-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;max-width:820px;margin:2.6rem auto 0;text-align:left}
+    @media (max-width:680px){ .fit-cols{grid-template-columns:1fr} }
+    .fit-col{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem}
+    .fit-col.no{opacity:.85}
+    .fit-col h3{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+    .fit-col.yes h3{color:var(--gold)}
+    .fit-col.no h3{color:var(--muted)}
+    .fit-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+    .fit-col li{font-size:.9rem;color:var(--text);line-height:1.5;display:flex;gap:.6rem;align-items:flex-start}
+    .fit-col li::before{flex-shrink:0;font-weight:800}
+    .fit-col.yes li::before{content:"✓";color:var(--gold)}
+    .fit-col.no li::before{content:"×";color:#6e6b66}
+    /* FAQ */
+    .faq{max-width:720px;margin:2.4rem auto 0;text-align:left}
+    .faq details{border-bottom:1px solid var(--border)}
+    .faq summary{cursor:pointer;list-style:none;padding:1.3rem 0;font-size:.98rem;font-weight:600;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";color:var(--gold);font-size:1.3rem;flex-shrink:0;transition:transform .2s}
+    .faq details[open] summary::after{content:"−"}
+    .faq .faq-a{padding:0 0 1.3rem;font-size:.9rem;color:var(--muted);line-height:1.8}
+    /* Price anchor */
+    .anchor{max-width:520px;margin:2.4rem auto 0;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.6rem 1.8rem;text-align:center}
+    .anchor .amt{font-size:1.5rem;font-weight:800;color:var(--gold)}
+    .anchor p{font-size:.86rem;color:var(--muted);margin-top:.4rem;line-height:1.6}
+    /* Secondary audit option */
+    .secondary-opt{max-width:620px;margin:2.2rem auto 0;text-align:center;font-size:.9rem;color:var(--muted);line-height:1.7}
+    .secondary-opt a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+    /* Social-proof bar */
+    .proofbar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
+    .proofbar-inner{max-width:1000px;margin:0 auto;padding:1.1rem 2rem;display:flex;align-items:center;justify-content:center;gap:2.4rem;flex-wrap:wrap;text-align:center}
+    .proofbar .stars{color:var(--gold);letter-spacing:.15em;font-size:.95rem}
+    .proofbar .pb{font-size:.8rem;color:var(--muted);letter-spacing:.04em}
+    .proofbar .pb strong{color:var(--text);font-weight:600}
+    .proofbar .dot{color:var(--border)}
+    @media (max-width:680px){ .proofbar-inner{gap:1rem;padding:1rem 1.4rem} .proofbar .dot{display:none} }
+    /* Photo-led feature */
+    .feature{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1040px;margin:0 auto;text-align:left}
+    @media (max-width:820px){ .feature{grid-template-columns:1fr;gap:2rem} }
+    .feature-img{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);aspect-ratio:4/3}
+    .feature-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .feature-body .eyebrow{font-size:.62rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+    .feature-body h2{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:1rem}
+    .feature-body h2 em{font-style:italic;color:var(--gold)}
+    .feature-body>p{font-size:.95rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem}
+    .feature-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-bottom:1.8rem}
+    .feature-list li{display:flex;gap:.8rem;align-items:flex-start}
+    .feature-list li .fk{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(199,169,127,.14);border:1px solid rgba(199,169,127,.4);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;margin-top:.1rem}
+    .feature-list li div{font-size:.92rem;color:var(--text);line-height:1.55}
+    .feature-list li div strong{color:#fff;font-weight:700}
+    /* Testimonial strip */
+    .quote-strip{max-width:760px;margin:0 auto;text-align:center}
+    .quote-strip .qm{font-family:Georgia,serif;font-size:3rem;color:rgba(199,169,127,.4);line-height:.6}
+    .quote-strip p{font-size:clamp(1.1rem,2vw,1.4rem);font-style:italic;color:#fff;line-height:1.6;margin:1rem auto 1.4rem;max-width:680px}
+    .quote-strip .who{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+    .quote-strip .award{margin-top:1.6rem;display:inline-flex;align-items:center;gap:.6rem;background:rgba(199,169,127,.1);border:1px solid rgba(199,169,127,.3);padding:.5rem 1.1rem;border-radius:100px;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+    /* Risk reversal */
+    .risk{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:1.8rem;background:var(--bg2);border:1px solid rgba(199,169,127,.3);border-radius:var(--r);padding:1.8rem 2rem;text-align:left}
+    @media (max-width:600px){ .risk{flex-direction:column;text-align:center;gap:1.2rem} }
+    .risk-badge{flex-shrink:0;width:84px;height:84px;border-radius:50%;border:2px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gold)}
+    .risk-badge b{font-size:1.5rem;font-weight:800;line-height:1}
+    .risk-badge span{font-size:.55rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-top:.15rem}
+    .risk-body h3{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:.4rem}
+    .risk-body p{font-size:.9rem;color:var(--muted);line-height:1.7}
   </style>
 </head>
 <body>
 
+<!-- Focused minimal nav -->
 <nav class="focus-nav">
   <a href="#top" class="logo">Earvin <span>Laureano</span><small>· Funnels</small></a>
   <div style="display:flex;align-items:center;gap:1.4rem;">
     <a href="/work-with-me" style="font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">← Choose a service</a>
-    <a href="#contact" class="btn-gold">Book a Call</a>
+    <a href="/funnels/apply" class="btn-gold">Book a Call</a>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO (Promise) -->
 <header class="cat-hero" id="top">
   <div class="cat-hero-bg"></div>
   <div class="cat-hero-inner">
-    <div class="cat-eyebrow"><span>Conversion Funnels · Built End-to-End</span></div>
-    <h1>Funnels that take traffic<br/><em>to paying clients.</em></h1>
-    <p class="who">"I have an offer but no system that actually converts."</p>
-    <p class="lede">Custom-built lead, sales, webinar, and e-commerce funnels, strategy, copy, design, and deployment in one place. Designed to convert, not just look good. Every page built on a proven conversion framework.</p>
+    <div class="cat-eyebrow"><span>Sales Funnels · Built to Convert</span></div>
+    <h1>A funnel that turns clicks<br/><em>into paying clients.</em></h1>
+    <p class="lede">Custom-built funnels, strategy, copy, design, and launch in one place. Every page engineered to move the visitor from "just looking" to "let's go." Not just to look good.</p>
     <div class="cat-hero-actions">
-      <a href="#contact" class="btn-gold">Book a Call</a>
+      <a href="/funnels/apply" class="btn-gold">Book a Call</a>
       <a href="#demos" class="btn-outline">See live demos ↓</a>
     </div>
   </div>
 </header>
 
-<!-- WHAT YOU GET -->
-<section class="section center">
-  <div class="section-eyebrow">What You Get</div>
-  <h2 class="section-title">A funnel that <em>does the selling</em></h2>
-  <p class="section-desc">Not a single landing page, a complete, sequenced flow built on conversion psychology.</p>
-  <div class="outcomes">
-    <div class="outcome"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h3>Strategy + funnel mapping</h3><p>I pick the funnel type, lay out the page sequence, and map every CTA before I touch a pixel.</p></div>
-    <div class="outcome"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div><h3>Copy that converts</h3><p>Direct-response copy built on AIDA. Pain in their words, specific proof, one clear CTA per section.</p></div>
-    <div class="outcome"><div class="ic"><svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3>Built &amp; deployed</h3><p>Custom-coded, edge-hosted pages. Forms wired to your sheet/CRM. Live in 2 to 4 weeks.</p></div>
+<!-- SOCIAL PROOF BAR -->
+<div class="proofbar">
+  <div class="proofbar-inner">
+    <span class="stars">★★★★★</span>
+    <span class="pb"><strong>Top 5 VA of the Year</strong> · Phyllis Song VA Services</span>
+    <span class="dot">·</span>
+    <span class="pb"><strong>9+ years</strong> building for founders</span>
+    <span class="dot">·</span>
+    <span class="pb">Trusted by founders <strong>worldwide</strong></span>
   </div>
+</div>
+
+<!-- PAIN -->
+<section class="section center">
+  <div class="section-eyebrow">The Real Problem</div>
+  <h2 class="section-title">You have a great offer.<br/><em>Your funnel is leaking the sales.</em></h2>
+  <p class="section-desc">Traffic comes in and nothing happens. People click, get confused, and leave. A scattered page, a weak offer, too many steps. Every leak is money you already paid for, walking out the door.</p>
 </section>
 
-<!-- FUNNEL TYPES -->
-<section class="section center" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">Funnel Types</div>
-  <h2 class="section-title">Whatever your offer needs,<br/><em>I've already built it.</em></h2>
-  <p class="section-desc">10 wireframed funnel types, recombined per offer. From free guides to webinar sequences to full e-commerce flows.</p>
-  <div class="types">
-    <span><b>1.</b> Lead</span>
-    <span><b>2.</b> Application / High-ticket</span>
-    <span><b>3.</b> Low Ticket / Checkout</span>
-    <span><b>4.</b> E-commerce</span>
-    <span><b>5.</b> Webinar / VSL</span>
-    <span><b>6.</b> Challenge</span>
-    <span><b>7.</b> Tripwire</span>
-    <span><b>8.</b> Course</span>
-    <span><b>9.</b> SaaS / Free Trial</span>
-    <span><b>10.</b> Event</span>
+<!-- THE FIX (photo-led feature) -->
+<section class="section">
+  <div class="feature">
+    <div class="feature-img">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80&auto=format&fit=crop" alt="A conversion funnel and analytics on screen"/>
+    </div>
+    <div class="feature-body">
+      <div class="eyebrow">What You Get</div>
+      <h2>Not a landing page.<br/><em>A path that sells.</em></h2>
+      <p>A complete, sequenced flow built on conversion psychology. Every page earns its place and points to the next step, so a visitor moves toward the sale instead of drifting off.</p>
+      <ul class="feature-list">
+        <li><span class="fk">✓</span><div><strong>Strategy first.</strong> I pick the funnel type and map every page and CTA before a single pixel.</div></li>
+        <li><span class="fk">✓</span><div><strong>Copy that converts.</strong> Direct-response writing in your buyer's words, one clear action per section.</div></li>
+        <li><span class="fk">✓</span><div><strong>Built and wired to launch.</strong> Pages, forms, and follow-up connected and tested, live in weeks not months.</div></li>
+      </ul>
+      <a href="/funnels/apply" class="btn-gold">Book a Call</a>
+    </div>
   </div>
 </section>
 
 <!-- DEMOS -->
 <section class="section center" id="demos" style="border-top:1px solid var(--border);">
   <div class="section-eyebrow">Live Demos</div>
-  <h2 class="section-title">Click through<br/><em>real working funnels</em></h2>
-  <p class="section-desc">Six complete, multi-page funnels you can open, submit, and walk end to end. Each one a distinct brand for a distinct buyer.</p>
-  <div class="demos3">
+  <h2 class="section-title">See the work,<br/><em>click through it</em></h2>
+  <p class="section-desc">Fully built, multi-page funnels you can open and walk through, page by page. Real funnel types, each a distinct brand, built end to end.</p>
+  <div class="demos2">
     <a href="/work/solar" class="demo-card">
-      <div class="thumb"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80&auto=format&fit=crop" alt="Solar lead funnel"/></div>
-      <div class="body"><div class="kind">Lead funnel · 4 pages</div><h3>SunPath Solar</h3><p>Opt-in → invitation → booking → confirmation. Turns cold homeowners into booked quote calls.</p><span class="open">Open demo →</span></div>
-    </a>
-    <a href="/work/wellness" class="demo-card">
-      <div class="thumb"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop" alt="Wellness sales funnel"/></div>
-      <div class="body"><div class="kind">Sales / Application · 3 pages</div><h3>The Vitality Reset</h3><p>Long-form sales → qualifying application → thank-you. High-ticket close with every element.</p><span class="open">Open demo →</span></div>
-    </a>
-    <a href="/work/fitness" class="demo-card">
-      <div class="thumb"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop" alt="Low ticket checkout funnel"/></div>
-      <div class="body"><div class="kind">Low Ticket / Checkout · 4 pages</div><h3>VOLT 21</h3><p>Sales → checkout with order bump → one-time upsell → confirmation. Takes payment + grows AOV.</p><span class="open">Open demo →</span></div>
-    </a>
-    <a href="/work/skincare" class="demo-card">
-      <div class="thumb"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=80&auto=format&fit=crop" alt="E-commerce funnel"/></div>
-      <div class="body"><div class="kind">E-commerce · 4 pages</div><h3>LUMÉ Skincare</h3><p>Product page (subscribe &amp; save) → checkout + shipping → upsell → order confirmation.</p><span class="open">Open demo →</span></div>
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80&auto=format&fit=crop" alt="Solar lead-gen funnel"/></div>
+      <div class="body">
+        <div class="kind">Lead-gen funnel · 4 pages</div>
+        <h3>SunPath Solar</h3>
+        <p>Opt-in to invitation to booked consultation, a complete lead funnel that turns cold traffic into booked appointments.</p>
+        <span class="open">Open demo →</span>
+      </div>
     </a>
     <a href="/work/masterclass" class="demo-card">
-      <div class="thumb"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80&auto=format&fit=crop" alt="Webinar VSL funnel"/></div>
-      <div class="body"><div class="kind">Webinar / VSL · 4 pages</div><h3>Booked &amp; Busy Masterclass</h3><p>Register → VSL watch page → strategy-call booking → confirmation. The coach/info-product flow.</p><span class="open">Open demo →</span></div>
-    </a>
-    <a href="/work/challenge" class="demo-card">
-      <div class="thumb"><img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=80&auto=format&fit=crop" alt="9-page challenge funnel"/></div>
-      <div class="body"><div class="kind">Challenge · 9 pages</div><h3>Wealthwise Challenge</h3><p>Register → VIP upsell → checkout → bridge → replays → paid offer → checkout → confirmation. The big one.</p><span class="open">Open demo →</span></div>
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&q=80&auto=format&fit=crop" alt="Webinar funnel"/></div>
+      <div class="body">
+        <div class="kind">Webinar / VSL · 4 pages</div>
+        <h3>Booked &amp; Busy Masterclass</h3>
+        <p>Registration to video to application, a webinar funnel that warms a stranger up and drives them to book a call.</p>
+        <span class="open">Open demo →</span>
+      </div>
     </a>
   </div>
+  <p style="font-size:.86rem;color:var(--muted);margin-top:1.6rem;">Plus lead, e-commerce, low-ticket, and a 9-page challenge funnel in the <a href="/work" style="color:var(--gold);text-decoration:none;">full portfolio</a>.</p>
 </section>
 
 <!-- HOW IT WORKS -->
 <section class="section center" style="border-top:1px solid var(--border);">
   <div class="section-eyebrow">How It Works</div>
-  <h2 class="section-title">From offer to live funnel<br/><em>in 4 phases</em></h2>
-  <div class="outcomes" style="grid-template-columns:repeat(2,1fr);max-width:880px;margin-left:auto;margin-right:auto">
-    <div class="outcome"><div class="ic">1</div><h3>Discovery</h3><p>We map your offer, audience, and conversion goal. I lock in the funnel type and page sequence before anything else.</p></div>
-    <div class="outcome"><div class="ic">2</div><h3>Strategy &amp; design</h3><p>3 hero variants for your approval, then I design the full sequence. Desktop reviewed first, then mobile.</p></div>
-    <div class="outcome"><div class="ic">3</div><h3>Build &amp; integrate</h3><p>Pages built and connected. Forms wired to your sheet/CRM, email sequences set up, domains pointed.</p></div>
-    <div class="outcome"><div class="ic">4</div><h3>Test &amp; launch</h3><p>End-to-end QA on desktop + mobile, then we go live. I watch the data closely for the first 2–3 days post-launch.</p></div>
+  <h2 class="section-title">Three calls.<br/><em>One funnel that sells.</em></h2>
+  <div class="outcomes">
+    <div class="outcome"><div class="ic">1</div><h3>Strategy call</h3><p>We map your offer, your audience, and the conversion goal. I pick the funnel type and the page sequence before anything is built.</p></div>
+    <div class="outcome"><div class="ic">2</div><h3>Copy &amp; build</h3><p>I write the direct-response copy and build every page on a proven framework. You review and approve before it goes live.</p></div>
+    <div class="outcome"><div class="ic">3</div><h3>Launch &amp; optimize</h3><p>We wire the forms, test end to end, and go live. Then I watch the data and tune what needs tuning.</p></div>
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- TESTIMONIAL STRIP -->
 <section class="section center" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">Pricing</div>
-  <h2 class="section-title">Honest, upfront<br/><em>pricing</em></h2>
-  <p class="section-desc">"From" pricing, final scope depends on funnel type and number of pages. 50% deposit, 50% on launch.</p>
-  <div class="focus-tiers">
-    <article class="focus-tier">
-      <div class="name">Custom Conversion Funnel</div>
-      <div class="for">"Build me a funnel that actually converts."</div>
-      <div class="price">From <span data-price="funnel.from"></span></div>
-      <ul>
-        <li>Funnel-type strategy + page sequence</li>
-        <li>Direct-response copy (AIDA framework)</li>
-        <li>Custom design, your brand, not a template</li>
-        <li>Built &amp; deployed end-to-end</li>
-        <li>Form → Sheets / CRM webhook</li>
-        <li>Email follow-up sequence (3–5 emails)</li>
-        <li>Mobile-first, edge-hosted, fast</li>
-        <li>50% deposit, 50% on launch · 2–4 week turnaround</li>
-      </ul>
-    </article>
+  <div class="quote-strip">
+    <div class="qm">&ldquo;</div>
+    <p>He's done nothing but add to our company. We are so thankful for everything he has done, because I know I couldn't do half the things he does.</p>
+    <div class="who">Jayme · Manager</div>
+    <div class="award">★ Top 5 VA of the Year · Phyllis Song VA Services</div>
   </div>
-  <p class="section-desc" style="margin-top:2rem; font-size:0.86rem;">
-    Pricing scales with funnel complexity, a 4-page Lead funnel and a 9-page Challenge sit at very different ends. We'll lock the exact scope on the call.
-  </p>
 </section>
 
-<!-- AUDIT (one-off clarity for funnel buyers too) -->
-<section class="section center" id="audit" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">One-Off Clarity</div>
-  <h2 class="section-title">Not sure where your funnel<br/>is <em>leaking conversions?</em></h2>
-  <p class="section-desc">Send me the link. I will run a comprehensive funnel audit and hand you a prioritized, actionable plan for exactly what to fix and in what order. Normally $597, available now at <strong style="color:var(--gold)">$57</strong>, and the $57 credits in full toward any build.</p>
-  <div style="margin-top:2.2rem;"><a href="/funnel-audit" class="btn-gold">Get the $57 funnel audit →</a></div>
+<!-- CTA BAND -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <h2 class="section-title">Ready for a funnel that<br/><em>actually converts?</em></h2>
+  <div style="margin-top:1.8rem;"><a href="/funnels/apply" class="btn-gold">Book a Call</a></div>
 </section>
 
-<!-- CONTACT -->
-<section class="section center" id="contact" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">Book a Call</div>
-  <h2 class="section-title">Let's build the funnel<br/><em>your offer deserves.</em></h2>
-  <p class="section-desc">Tell me about your offer in a sentence or two, I'll reply within one business day with a funnel-type recommendation and the next step.</p>
-  <form class="contact-card" id="contactForm" onsubmit="return submitLead(event)">
-    <label for="name">Name</label>
-    <input id="name" type="text" placeholder="Your full name" required/>
-    <label for="email">Email</label>
-    <input id="email" type="email" placeholder="you@email.com" required/>
-    <label for="business">Your offer (1 sentence)</label>
-    <input id="business" type="text" placeholder="e.g. $497 fitness program for busy moms"/>
-    <label for="message">Where are you stuck?</label>
-    <textarea id="message" placeholder="No funnel yet, or one that's not converting…"></textarea>
-    <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true"><label for="website-hp">Leave empty</label><input id="website-hp" type="text" name="website" autocomplete="off" tabindex="-1"/></div>
-    <button type="submit" class="btn-gold" id="submitBtn">Send →</button>
-    <div class="form-msg" id="formMsg"></div>
-  </form>
+<!-- WHO IT'S FOR -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">Is This For You?</div>
+  <h2 class="section-title">Built for the right fit,<br/><em>honest about the wrong one.</em></h2>
+  <div class="fit-cols">
+    <div class="fit-col yes">
+      <h3>This is for you if</h3>
+      <ul>
+        <li>You have a real offer that already sells.</li>
+        <li>You run traffic and it is not converting like it should.</li>
+        <li>You want fewer steps between visitor and sale.</li>
+        <li>You want one person owning strategy, copy, and build.</li>
+      </ul>
+    </div>
+    <div class="fit-col no">
+      <h3>Not for you if</h3>
+      <ul>
+        <li>You do not have an offer or any traffic yet.</li>
+        <li>You want a cheap one-page template, no strategy.</li>
+        <li>You expect a funnel to fix a product nobody wants.</li>
+        <li>You would rather manage five freelancers yourself.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE ANCHOR -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">Investment</div>
+  <h2 class="section-title">Straight about <em>price</em></h2>
+  <div class="anchor">
+    <div class="amt">From <span data-price="builds.funnel.from"></span></div>
+    <p>Final scope depends on the funnel type and number of pages, a 4-page lead funnel and a 9-page challenge sit at different ends. We lock the exact number on the call. 50% to start, 50% on launch.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">Questions</div>
+  <h2 class="section-title">Before you <em>book</em></h2>
+  <div class="faq">
+    <details><summary>How long does a funnel take to build?</summary><div class="faq-a">Most funnels go live in two to four weeks, depending on the number of pages and how fast we lock the offer and copy. You get a clear timeline after the strategy call.</div></details>
+    <details><summary>Do you write the copy too?</summary><div class="faq-a">Yes. Strategy, direct-response copy, design, and build are all included. You are not handing me text to drop in, the words are part of the work.</div></details>
+    <details><summary>Which funnel type do I need?</summary><div class="faq-a">That is what the strategy call is for. Based on your offer and traffic, I recommend the right type, lead, webinar, application, low-ticket, or e-commerce, and map the pages.</div></details>
+    <details><summary>Do I own the funnel and can I edit it?</summary><div class="faq-a">Yes. It is yours, on your domain, built to hand off cleanly. No lock-in, no holding it hostage.</div></details>
+    <details><summary>What happens on the call?</summary><div class="faq-a">We get clear on your offer and goal, I recommend the funnel type and a price, and you decide. No pressure, no hard sell.</div></details>
+  </div>
+</section>
+
+<!-- RISK REVERSAL -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="risk">
+    <div class="risk-badge"><b>$0</b><span>The call</span></div>
+    <div class="risk-body">
+      <h3>No risk in talking.</h3>
+      <p>The strategy call costs you nothing and commits you to nothing. Worst case, you walk away with a clearer plan and a real number. Best case, you finally get the funnel that sells for you while you sleep.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA (-> Application page) -->
+<section class="section center" id="book" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">Next Step</div>
+  <h2 class="section-title">Let's build something<br/><em>you're proud to own.</em></h2>
+  <p class="section-desc">One short step: tell me what you need, and I'll set up the call with a plan already in hand.</p>
+  <div style="margin-top:2rem;"><a href="/funnels/apply" class="btn-gold">Book a Call →</a></div>
+  <p class="secondary-opt">Not ready to book a call? <a href="/funnel-audit?from=funnels">Start with a $57 funnel audit</a> instead, it credits toward your build.</p>
 </section>
 
 <footer class="focus-foot">
@@ -260,6 +363,7 @@
 
 <script src="/assets/pricing.js"></script>
 <script>
+  // Fill every [data-price] element from window.PRICING via dotted path
   (function () {
     document.querySelectorAll('[data-price]').forEach(function (el) {
       var path = el.getAttribute('data-price').split('.');
@@ -267,38 +371,6 @@
       if (typeof v === 'number') el.textContent = window.money(v);
     });
   })();
-  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyRiyyVAEoAH1uuj3DLfxKgTF4psZ2qKUm7FtuuXNSHwwc70TVUHorHMAx8uj8cRkit/exec';
-  var COOLDOWN_MS = 15 * 60 * 1000;
-  function submitLead(e) {
-    e.preventDefault();
-    if (document.getElementById('website-hp').value) return false;
-    var last = localStorage.getItem('lastFormSubmit');
-    var msg = document.getElementById('formMsg'), btn = document.getElementById('submitBtn');
-    if (last && Date.now() - parseInt(last) < COOLDOWN_MS) {
-      var rem = Math.ceil((COOLDOWN_MS - (Date.now() - parseInt(last))) / 60000);
-      msg.textContent = '✗ Please wait ' + rem + ' more minute' + (rem !== 1 ? 's' : '') + ' before submitting again.';
-      msg.className = 'form-msg error'; return false;
-    }
-    btn.disabled = true; btn.textContent = 'Sending…'; msg.className = 'form-msg';
-    var data = {
-      source: 'funnels-lander',
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      company: document.getElementById('business').value,
-      service: 'Funnels',
-      message: document.getElementById('message').value,
-      timestamp: new Date().toLocaleString()
-    };
-    fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-      .then(function () {
-        msg.textContent = "✓ Thanks, I'll reply within one business day."; msg.className = 'form-msg success';
-        document.getElementById('contactForm').reset();
-        localStorage.setItem('lastFormSubmit', Date.now().toString());
-      })
-      .catch(function () { msg.textContent = '✗ Something went wrong. Email me directly at inquire@earvinlaureano.com'; msg.className = 'form-msg error'; });
-    btn.disabled = false; btn.textContent = 'Send →';
-    return false;
-  }
 </script>
 </body>
 </html>

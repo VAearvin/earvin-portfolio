@@ -28,7 +28,7 @@
 
 var SPREADSHEET_ID = 'PASTE_YOUR_SHEET_ID_HERE';
 var TAB_NAME       = 'Leads';
-var NOTIFY_EMAIL   = 'inquire@earvinlaureano.com';
+var NOTIFY_EMAIL   = 'services.elaureano@gmail.com';
 
 // Map a lead Source to the file it should email out. Add more as you build more guides.
 var GUIDES = {
@@ -70,6 +70,16 @@ function doPost(e) {
       );
     }
 
+    // 2b) For every other lead (book-a-call, audit, contact): auto-reply confirmation.
+    else if (d.Email) {
+      GmailApp.sendEmail(
+        d.Email,
+        "Got it, I'll be in touch soon",
+        confirmText(d.Name),
+        { htmlBody: confirmHtml(d.Name), name: 'Earvin Laureano', replyTo: NOTIFY_EMAIL }
+      );
+    }
+
     // 3) Notify you of any new lead
     GmailApp.sendEmail(
       NOTIFY_EMAIL,
@@ -97,6 +107,33 @@ function doPost(e) {
       .createTextOutput(JSON.stringify({ result: 'error', error: err.toString() }))
       .setMimeType(ContentService.MimeType.JSON);
   }
+}
+
+function confirmText(name) {
+  return [
+    'Hi ' + (name || 'there') + ',',
+    '',
+    'Thanks for reaching out. I have your request, and I will get back to you',
+    'within one business day, usually sooner.',
+    '',
+    'If anything is urgent in the meantime, just reply to this email.',
+    '',
+    'Talk soon,',
+    'Earvin Laureano',
+    'Websites · Funnels · Digital Systems'
+  ].join('\n');
+}
+
+function confirmHtml(name) {
+  return [
+    '<div style="font-family:Inter,Arial,sans-serif;max-width:520px;margin:0 auto;color:#1a1a1a;line-height:1.65;">',
+      '<p style="font-size:15px;">Hi ' + escapeHtml(name || 'there') + ',</p>',
+      '<p style="font-size:15px;">Thanks for reaching out. I have your request, and I will get back to you <strong>within one business day</strong>, usually sooner.</p>',
+      '<p style="font-size:14px;color:#555;">If anything is urgent in the meantime, just reply to this email.</p>',
+      '<p style="font-size:14px;margin-top:24px;">Talk soon,<br/>Earvin Laureano<br/>',
+        '<span style="color:#8a6a3f;">Websites · Funnels · Digital Systems</span></p>',
+    '</div>'
+  ].join('');
 }
 
 function guideEmailText(name, guide) {

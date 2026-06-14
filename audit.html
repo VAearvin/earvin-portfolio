@@ -208,6 +208,7 @@
 <nav>
   <a href="/" class="logo">Earvin <span>Laureano</span></a>
   <ul class="nav-links">
+    <li><a href="#" id="auditBack" style="display:none;">← Back</a></li>
     <li><a href="/#about">About</a></li>
     <li><a href="/work-with-me">Work With Me</a></li>
     <li><a href="/work">Portfolio</a></li>
@@ -215,6 +216,16 @@
     <li><a href="/#contact">Contact</a></li>
   </ul>
 </nav>
+<script>
+  // Back link returns the visitor to wherever they came from (?from=websites|funnels).
+  (function () {
+    var from = new URLSearchParams(location.search).get('from');
+    var map = { websites: ['/websites', '← Back to Websites'], funnels: ['/funnels', '← Back to Funnels'] };
+    var dest = map[from];
+    var el = document.getElementById('auditBack');
+    if (el && dest) { el.href = dest[0]; el.textContent = dest[1]; el.style.display = ''; }
+  })();
+</script>
 
 <main class="wrap">
   <div class="eyebrow">Comprehensive Website Audit</div>

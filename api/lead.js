@@ -68,7 +68,7 @@ module.exports = async function handler(req, res) {
 
   var airtablePromise = writeToAirtable(record).catch(function (err) {
     console.error('airtable error', err && err.message);
-    return { ok: false, error: (err && err.message) || 'airtable' };
+    return { ok: false, error: 'airtable' };
   });
 
   var sheetsPromise = process.env.LEADS_WEBHOOK_URL
@@ -86,7 +86,7 @@ module.exports = async function handler(req, res) {
     return json(res, 500, { ok: false, error: 'Lead capture failed. Please email inquire@earvinlaureano.com directly.' });
   }
 
-  return json(res, 200, { ok: true, airtable: atOk, sheets: shOk, airtableError: atOk ? undefined : (results[0] && results[0].error) });
+  return json(res, 200, { ok: true, airtable: atOk, sheets: shOk });
 };
 
 async function writeToAirtable(record) {

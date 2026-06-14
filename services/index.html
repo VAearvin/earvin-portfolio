@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Right Hand · Ongoing Operations & Web Partner · Earvin Laureano</title>
-  <meta name="description" content="An ongoing partner who runs your operations, admin, marketing, design, CRM, and automation. Plus maintenance plans and full website audits. One retainer, not hourly."/>
+  <title>The Partnership · Your Right Hand · Earvin Laureano</title>
+  <meta name="description" content="An ongoing operations and digital partnership. One right hand who runs the day-to-day so you can run the business. Monthly retainer, never billed by the hour."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://services.earvinlaureano.com/"/>
   <meta name="theme-color" content="#0c0c0c"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Your Right Hand · Ongoing Operations &amp; Web Partner"/>
-  <meta property="og:description" content="An ongoing partner running your ops, admin, marketing, design, CRM, automation. One retainer, never hourly."/>
+  <meta property="og:title" content="The Partnership · Your Right Hand · Earvin Laureano"/>
+  <meta property="og:description" content="One right hand who runs your operations and the digital side. Monthly retainer, never hourly."/>
   <meta property="og:url" content="https://services.earvinlaureano.com/"/>
   <meta property="og:image" content="https://www.earvinlaureano.com/earvin.jpeg"/>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
@@ -21,14 +21,16 @@
   <link rel="stylesheet" href="/assets/site.css"/>
   <script defer src="/assets/analytics.js"></script>
   <script type="application/ld+json">
-  { "@context":"https://schema.org","@type":"Service","name":"Operations Partnership & Web Care","provider":{"@type":"Person","name":"Earvin Laureano","url":"https://www.earvinlaureano.com/"},"areaServed":"Worldwide (remote)","serviceType":"Ongoing operations, website care, and audits","offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"99","highPrice":"1997","offerCount":"5"} }
+  { "@context":"https://schema.org","@type":"Service","name":"Operations & Digital Partnership","provider":{"@type":"Person","name":"Earvin Laureano","url":"https://www.earvinlaureano.com/"},"areaServed":"Worldwide (remote)","serviceType":"Ongoing operations and digital partnership (monthly retainer)","offers":{"@type":"Offer","priceCurrency":"USD","price":"1997"} }
   </script>
   <style>
+    /* Focused-lander nav (overrides shared nav for this page only) */
     .focus-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5rem;background:rgba(12,12,12,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
     .focus-nav .logo{font-size:1rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text)}
     .focus-nav .logo span{color:var(--gold)}
     .focus-nav .logo small{display:block;font-size:.6rem;letter-spacing:.18em;color:var(--muted);margin-top:.15rem;font-weight:500}
     @media (max-width: 768px){ .focus-nav{padding:1rem 1.4rem} }
+    /* Outcomes grid */
     .outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.8rem}
     @media (max-width:900px){ .outcomes{grid-template-columns:1fr} }
     .outcome{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem}
@@ -36,28 +38,28 @@
     .outcome .ic svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
     .outcome h3{font-size:1.1rem;color:var(--text);margin-bottom:.4rem}
     .outcome p{color:var(--muted);font-size:.92rem}
-    /* Partnership feature card */
-    .feature{background:var(--bg2);border:1px solid rgba(199,169,127,.45);border-radius:var(--r);padding:3rem;margin-top:2.6rem;text-align:left;position:relative}
-    .feature .badge{position:absolute;top:1.4rem;right:1.4rem;background:var(--gold);color:var(--bg);font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .8rem;border-radius:100px}
-    .feature .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
-    .feature h3{font-size:1.8rem;color:var(--text);margin-bottom:.6rem}
-    .feature .for{color:var(--muted);font-style:italic;margin-bottom:1.2rem;font-size:1.02rem}
-    .feature .price{font-size:1.7rem;font-weight:800;color:var(--gold);margin:1rem 0}
-    .feature .price .note{color:var(--muted);font-size:.85rem;font-weight:500;margin-left:.4rem}
-    .feature ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.7rem 1.5rem;margin:1.2rem 0}
-    @media (max-width:760px){ .feature ul{grid-template-columns:1fr} .feature{padding:2rem} }
-    .feature li{color:var(--text);font-size:.95rem;display:flex;gap:.5rem}
-    .feature li:before{content:"✓";color:var(--gold);font-weight:800}
-    /* Care tier grid */
+    /* Demo strip */
+    .demos2{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2.4rem}
+    @media (max-width:820px){ .demos2{grid-template-columns:1fr} }
+    .demo-card{display:flex;flex-direction:column;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;text-decoration:none;color:inherit;transition:.2s}
+    .demo-card *{text-decoration:none}
+    .demo-card:hover{transform:translateY(-4px);border-color:rgba(199,169,127,.5)}
+    .demo-card .thumb{aspect-ratio:16/10;position:relative}
+    .demo-card .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .demo-card .thumb:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,12,.1),rgba(8,12,12,.65))}
+    .demo-card .body{padding:1.6rem}
+    .demo-card .kind{font-size:.78rem;color:var(--gold);font-weight:600;letter-spacing:.04em;margin-bottom:.4rem}
+    .demo-card h3{font-size:1.25rem;color:var(--text);margin-bottom:.4rem}
+    .demo-card p{color:var(--muted);font-size:.92rem;margin-bottom:.9rem}
+    .demo-card .open{font-size:.86rem;font-weight:600;color:var(--gold)}
+    /* Tier grid override for this page only */
     .focus-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:2.4rem;text-align:left}
     @media (max-width:1000px){ .focus-tiers{grid-template-columns:1fr} }
-    .focus-tier{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:2rem;display:flex;flex-direction:column;position:relative}
+    .focus-tier{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:2rem;display:flex;flex-direction:column}
     .focus-tier.premium{border-color:rgba(199,169,127,.45)}
-    .focus-tier.premium .pop{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--bg);font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .8rem;border-radius:100px}
     .focus-tier .name{font-size:1.15rem;font-weight:700;color:var(--text);margin-bottom:.2rem}
     .focus-tier .for{color:var(--muted);font-size:.86rem;margin-bottom:1rem;font-style:italic}
     .focus-tier .price{font-family:'Inter';font-size:1.9rem;font-weight:800;color:var(--gold);margin-bottom:.8rem}
-    .focus-tier .price .note{font-size:.8rem;color:var(--muted);font-weight:500;margin-left:.3rem}
     .focus-tier ul{list-style:none;display:grid;gap:.6rem;flex:1}
     .focus-tier li{color:var(--muted);font-size:.92rem;display:flex;gap:.5rem}
     .focus-tier li:before{content:"✓";color:var(--gold);font-weight:800}
@@ -84,8 +86,8 @@
     /* Contact card */
     .contact-card{max-width:520px;margin:2.4rem auto 0;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:2rem;text-align:left}
     .contact-card label{display:block;font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:.9rem 0 .35rem}
-    .contact-card input,.contact-card textarea,.contact-card select{width:100%;padding:.9rem 1rem;border:1px solid var(--border);border-radius:var(--r);font-size:.95rem;font-family:inherit;color:var(--text);background:rgba(255,255,255,.03)}
-    .contact-card input:focus,.contact-card textarea:focus,.contact-card select:focus{outline:none;border-color:var(--gold)}
+    .contact-card input,.contact-card textarea{width:100%;padding:.9rem 1rem;border:1px solid var(--border);border-radius:var(--r);font-size:.95rem;font-family:inherit;color:var(--text);background:rgba(255,255,255,.03)}
+    .contact-card input:focus,.contact-card textarea:focus{outline:none;border-color:var(--gold)}
     .contact-card textarea{resize:vertical;min-height:90px}
     .contact-card .btn-gold{margin-top:1.1rem;width:100%;text-align:center}
     .form-msg{margin-top:.9rem;font-size:.88rem;color:var(--muted);text-align:center;min-height:1.2em}
@@ -93,203 +95,253 @@
     .focus-foot{padding:2.4rem 5rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.84rem}
     .focus-foot a{color:var(--gold);text-decoration:none}
     @media (max-width:768px){ .focus-foot{padding:2rem 1.4rem} }
-    /* Free-guide band */
-    .guide-band{display:flex;align-items:center;gap:1.4rem;max-width:760px;margin:2.6rem auto 0;text-align:left;background:linear-gradient(180deg,rgba(199,169,127,.1),rgba(199,169,127,.02));border:1px solid rgba(199,169,127,.35);border-radius:var(--r);padding:1.6rem 1.8rem;text-decoration:none;color:inherit;transition:border-color .25s,transform .25s,box-shadow .25s}
-    .guide-band:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 16px 34px rgba(199,169,127,.18)}
-    .guide-band-icon{width:46px;height:46px;flex-shrink:0;border-radius:var(--r);background:rgba(199,169,127,.15);border:1px solid rgba(199,169,127,.35);color:var(--gold);display:flex;align-items:center;justify-content:center}
-    .guide-band-icon svg{width:22px;height:22px}
-    .guide-band-text{display:flex;flex-direction:column;gap:.3rem;flex:1;min-width:0}
-    .guide-band-text strong{color:#fff;font-size:1rem;font-weight:700;line-height:1.35}
-    .guide-band-text span{color:var(--muted);font-size:.84rem;line-height:1.55}
-    .guide-band-arrow{flex-shrink:0;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);transition:transform .25s}
-    .guide-band:hover .guide-band-arrow{transform:translateX(3px)}
-    @media (max-width:680px){ .guide-band{flex-wrap:wrap} .guide-band-arrow{width:100%;text-align:right} }
+    /* Qualifier form (book a call) */
+    .contact-card select{width:100%;padding:.9rem 1rem;border:1px solid var(--border);border-radius:var(--r);font-size:.95rem;font-family:inherit;color:var(--text);background:rgba(255,255,255,.03);cursor:pointer;-webkit-appearance:none;appearance:none}
+    .contact-card select:focus{outline:none;border-color:var(--gold)}
+    .contact-card select option{background:var(--bg2);color:var(--text)}
+    .form-row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    @media (max-width:560px){ .form-row2{grid-template-columns:1fr} }
+    /* Big promise hero tweak */
+    .promise-line{font-size:.95rem;color:var(--gold);font-style:italic;margin:0 auto 1.3rem;max-width:520px}
+    /* Who it's for / not for */
+    .fit-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;max-width:820px;margin:2.6rem auto 0;text-align:left}
+    @media (max-width:680px){ .fit-cols{grid-template-columns:1fr} }
+    .fit-col{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem}
+    .fit-col.no{opacity:.85}
+    .fit-col h3{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+    .fit-col.yes h3{color:var(--gold)}
+    .fit-col.no h3{color:var(--muted)}
+    .fit-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+    .fit-col li{font-size:.9rem;color:var(--text);line-height:1.5;display:flex;gap:.6rem;align-items:flex-start}
+    .fit-col li::before{flex-shrink:0;font-weight:800}
+    .fit-col.yes li::before{content:"✓";color:var(--gold)}
+    .fit-col.no li::before{content:"×";color:#6e6b66}
+    /* FAQ */
+    .faq{max-width:720px;margin:2.4rem auto 0;text-align:left}
+    .faq details{border-bottom:1px solid var(--border)}
+    .faq summary{cursor:pointer;list-style:none;padding:1.3rem 0;font-size:.98rem;font-weight:600;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";color:var(--gold);font-size:1.3rem;flex-shrink:0;transition:transform .2s}
+    .faq details[open] summary::after{content:"−"}
+    .faq .faq-a{padding:0 0 1.3rem;font-size:.9rem;color:var(--muted);line-height:1.8}
+    /* Price anchor */
+    .anchor{max-width:520px;margin:2.4rem auto 0;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.6rem 1.8rem;text-align:center}
+    .anchor .amt{font-size:1.5rem;font-weight:800;color:var(--gold)}
+    .anchor p{font-size:.86rem;color:var(--muted);margin-top:.4rem;line-height:1.6}
+    /* Secondary audit option */
+    .secondary-opt{max-width:620px;margin:2.2rem auto 0;text-align:center;font-size:.9rem;color:var(--muted);line-height:1.7}
+    .secondary-opt a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+    /* Social-proof bar */
+    .proofbar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
+    .proofbar-inner{max-width:1000px;margin:0 auto;padding:1.1rem 2rem;display:flex;align-items:center;justify-content:center;gap:2.4rem;flex-wrap:wrap;text-align:center}
+    .proofbar .stars{color:var(--gold);letter-spacing:.15em;font-size:.95rem}
+    .proofbar .pb{font-size:.8rem;color:var(--muted);letter-spacing:.04em}
+    .proofbar .pb strong{color:var(--text);font-weight:600}
+    .proofbar .dot{color:var(--border)}
+    @media (max-width:680px){ .proofbar-inner{gap:1rem;padding:1rem 1.4rem} .proofbar .dot{display:none} }
+    /* Photo-led feature */
+    .feature{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1040px;margin:0 auto;text-align:left}
+    @media (max-width:820px){ .feature{grid-template-columns:1fr;gap:2rem} }
+    .feature-img{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);aspect-ratio:4/3}
+    .feature-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .feature-body .eyebrow{font-size:.62rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+    .feature-body h2{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:1rem}
+    .feature-body h2 em{font-style:italic;color:var(--gold)}
+    .feature-body>p{font-size:.95rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem}
+    .feature-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-bottom:1.8rem}
+    .feature-list li{display:flex;gap:.8rem;align-items:flex-start}
+    .feature-list li .fk{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(199,169,127,.14);border:1px solid rgba(199,169,127,.4);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;margin-top:.1rem}
+    .feature-list li div{font-size:.92rem;color:var(--text);line-height:1.55}
+    .feature-list li div strong{color:#fff;font-weight:700}
+    /* Testimonial strip */
+    .quote-strip{max-width:760px;margin:0 auto;text-align:center}
+    .quote-strip .qm{font-family:Georgia,serif;font-size:3rem;color:rgba(199,169,127,.4);line-height:.6}
+    .quote-strip p{font-size:clamp(1.1rem,2vw,1.4rem);font-style:italic;color:#fff;line-height:1.6;margin:1rem auto 1.4rem;max-width:680px}
+    .quote-strip .who{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+    .quote-strip .award{margin-top:1.6rem;display:inline-flex;align-items:center;gap:.6rem;background:rgba(199,169,127,.1);border:1px solid rgba(199,169,127,.3);padding:.5rem 1.1rem;border-radius:100px;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+    /* Risk reversal */
+    .risk{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:1.8rem;background:var(--bg2);border:1px solid rgba(199,169,127,.3);border-radius:var(--r);padding:1.8rem 2rem;text-align:left}
+    @media (max-width:600px){ .risk{flex-direction:column;text-align:center;gap:1.2rem} }
+    .risk-badge{flex-shrink:0;width:84px;height:84px;border-radius:50%;border:2px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gold)}
+    .risk-badge b{font-size:1.5rem;font-weight:800;line-height:1}
+    .risk-badge span{font-size:.55rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-top:.15rem}
+    .risk-body h3{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:.4rem}
+    .risk-body p{font-size:.9rem;color:var(--muted);line-height:1.7}
   </style>
 </head>
 <body>
 
+<!-- Focused minimal nav -->
 <nav class="focus-nav">
   <a href="#top" class="logo">Earvin <span>Laureano</span><small>· Partnership</small></a>
   <div style="display:flex;align-items:center;gap:1.4rem;">
     <a href="/work-with-me" style="font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">← Choose a service</a>
-    <a href="#contact" class="btn-gold">Book a Call</a>
+    <a href="/services/apply" class="btn-gold">Book a Call</a>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO (Promise) -->
 <header class="cat-hero" id="top">
   <div class="cat-hero-bg"></div>
   <div class="cat-hero-inner">
-    <div class="cat-eyebrow"><span>Ongoing Operations · Web Care · Audits</span></div>
-    <h1>Your right hand,<br/><em>so you can run the business, not chase it.</em></h1>
-    <p class="who">"I don't need another project. I need someone I trust to just run it."</p>
-    <p class="lede">An ongoing partner who runs your day-to-day operations: admin, marketing, design, CRM, and automation. All for one scoped retainer, never hourly. Plus monthly web care and full audits when you need clarity.</p>
+    <div class="cat-eyebrow"><span>Ongoing Partnership · Monthly Retainer</span></div>
+    <h1>Your right hand,<br/><em>so you run the business, not chase it.</em></h1>
+    <p class="lede">One person who runs your operations and the digital side, handled together. Executive support, marketing, design, CRM, automation. A monthly retainer, never billed by the hour.</p>
     <div class="cat-hero-actions">
-      <a href="#contact" class="btn-gold">Book a Call</a>
-      <a href="#partnership" class="btn-outline">See the Partnership ↓</a>
+      <a href="/services/apply" class="btn-gold">Book a Call</a>
+      <a href="#demos" class="btn-outline">See what I handle ↓</a>
     </div>
   </div>
 </header>
 
-<!-- WHO THIS IS FOR -->
+<!-- SOCIAL PROOF BAR -->
+<div class="proofbar">
+  <div class="proofbar-inner">
+    <span class="stars">★★★★★</span>
+    <span class="pb"><strong>Top 5 VA of the Year</strong> · Phyllis Song VA Services</span>
+    <span class="dot">·</span>
+    <span class="pb"><strong>9+ years</strong> building for founders</span>
+    <span class="dot">·</span>
+    <span class="pb">Trusted by founders <strong>worldwide</strong></span>
+  </div>
+</div>
+
+<!-- PAIN -->
 <section class="section center">
-  <div class="section-eyebrow">Who This Is For</div>
-  <h2 class="section-title">You're great at the business.<br/><em>You just need someone running it with you.</em></h2>
-  <div class="outcomes">
-    <div class="outcome"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><polyline points="12 9 12 13 15 15"/><line x1="9" y1="2" x2="15" y2="2"/></svg></div><h3>Your time is the bottleneck</h3><p>You're doing $5/hr work because nobody else will. You need someone to take 60% of it off your plate, quietly.</p></div>
-    <div class="outcome"><div class="ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>One person, not a circus</h3><p>You don't want to manage 5 specialists. You want one trusted operator who handles it, and pulls in others when needed.</p></div>
-    <div class="outcome"><div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><h3>Outcome-based, not clock-based</h3><p>You're done with hourly billing creep. You want one scoped retainer with someone who's incentivized on results.</p></div>
-  </div>
+  <div class="section-eyebrow">The Real Problem</div>
+  <h2 class="section-title">You're great at the business.<br/><em>You're drowning in everything else.</em></h2>
+  <p class="section-desc">Answering emails at midnight. Chasing five freelancers. Doing the $5/hr work because nobody else will. The business needs you on strategy and relationships, not buried in the day-to-day that anyone could run with the right person.</p>
 </section>
 
-<!-- PARTNERSHIP FEATURE -->
-<section class="section center" id="partnership" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">★ Flagship Offering</div>
-  <h2 class="section-title">The <em>Partnership</em></h2>
-  <p class="section-desc">One ongoing relationship, never billed by the hour.</p>
+<!-- THE FIX (photo-led feature) -->
+<section class="section">
   <div class="feature">
-    <div class="badge">Flagship</div>
-    <div class="eyebrow">Operations Partnership</div>
-    <h3>I become your right hand.</h3>
-    <p class="for">"Be my right hand and keep things running."</p>
-    <div class="price">From <span data-price="partnership.from"></span><span class="note">USD / month · scoped to you · retainer, never hourly</span></div>
-    <ul>
-      <li>Executive &amp; admin support</li>
-      <li>Marketing &amp; content</li>
-      <li>Design &amp; creative</li>
-      <li>CRM &amp; pipeline</li>
-      <li>AI &amp; automation</li>
-      <li>Proactive comms, no hand-holding</li>
-    </ul>
-    <p style="color:var(--muted);font-size:.88rem">A heavier <strong style="color:var(--text)">Dedicated</strong> engagement is available for businesses that need more hands, quoted on the call.</p>
-  </div>
-</section>
-
-<!-- FREE GUIDE -->
-<section class="section center" id="guide" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">Free Guide</div>
-  <h2 class="section-title">Not ready to talk?<br/><em>Read the guide first.</em></h2>
-  <p class="section-desc">If you are weighing whether to hire someone like me, I wrote the guide I wish founders had before they did. Honest, specific, and not a sales pitch.</p>
-  <a href="/guides/hire-executive-partner-philippines/get" class="guide-band">
-    <span class="guide-band-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-    </span>
-    <span class="guide-band-text">
-      <strong>How to Hire an Executive Partner from the Philippines</strong>
-      <span>A free 5-part guide. What the role is, why the Philippines, what to pay, how to onboard, and the red flags to avoid. Delivered to your inbox as a PDF.</span>
-    </span>
-    <span class="guide-band-arrow">Get the guide →</span>
-  </a>
-</section>
-
-<!-- WEB CARE -->
-<section class="section center" id="care" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">Web Care</div>
-  <h2 class="section-title">Keep your site<br/><em>healthy &amp; visible</em></h2>
-  <p class="section-desc">Monthly plans that keep your site fast, secure, and found, as both Google and AI search keep evolving. First month free.</p>
-  <div class="focus-tiers">
-    <article class="focus-tier">
-      <div class="name">Care</div>
-      <div class="for">"Keep the lights on."</div>
-      <div class="price"><span data-price="websiteCare.care.monthly"></span><span class="note">/ month</span></div>
-      <ul>
-        <li>Hosting management</li>
-        <li>Uptime monitoring</li>
-        <li>SSL / security</li>
-        <li>Small monthly edits</li>
-        <li>Email support</li>
-      </ul>
-    </article>
-    <article class="focus-tier premium">
-      <div class="pop">Most popular</div>
-      <div class="name">Growth</div>
-      <div class="for">"Keep me visible as search evolves."</div>
-      <div class="price"><span data-price="websiteCare.growth.monthly"></span><span class="note">/ month</span></div>
-      <ul>
-        <li>Everything in Care</li>
-        <li>SEO + AI-search monitoring</li>
-        <li>Monthly content refresh</li>
-        <li>Monthly performance report</li>
-        <li>Priority support</li>
-      </ul>
-    </article>
-    <article class="focus-tier">
-      <div class="name">Pro</div>
-      <div class="for">"Actively grow my visibility."</div>
-      <div class="price"><span data-price="websiteCare.pro.monthly"></span><span class="note">/ month</span></div>
-      <ul>
-        <li>Everything in Growth</li>
-        <li>Active AI-visibility work</li>
-        <li>New pages / sections monthly</li>
-        <li>Ongoing optimization</li>
-        <li>Fastest turnaround</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-<!-- AUDIT -->
-<section class="section center" id="audit" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">One-Off Clarity</div>
-  <h2 class="section-title">Full <em>Website Audit</em></h2>
-  <p class="section-desc">A deep, hands-on review I do personally, ending in a clear, prioritized action plan you can run yourself or hand to a developer.</p>
-  <div class="audit-expanded">
-    <div class="ax-top">
-      <div>
-        <h3>Full Website Audit &amp; Action Plan</h3>
-        <p>A deep, hands-on review I do personally across 6 areas, ending in up to 20 prioritized fixes and a 30-minute walkthrough call.</p>
-      </div>
-      <div class="price"><span data-price="audits.full.price"></span><small>credited toward any build</small></div>
+    <div class="feature-img">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=900&q=80&auto=format&fit=crop" alt="One trusted operator running the day-to-day"/>
     </div>
-    <div class="ax-grid">
-      <div class="ax-cat"><h4>Performance</h4>
-        <div class="row"><span class="y">✓</span><span>Free: mobile + desktop speed scores</span></div>
-        <div class="row"><span class="s">★</span><span>Full: page-by-page diagnostics + exact fixes</span></div></div>
-      <div class="ax-cat"><h4>Search (SEO)</h4>
-        <div class="row"><span class="y">✓</span><span>Free: title, meta &amp; heading basics</span></div>
-        <div class="row"><span class="s">★</span><span>Full: complete on-page review, local SEO &amp; keyword strategy</span></div></div>
-      <div class="ax-cat"><h4>AI Search</h4>
-        <div class="row"><span class="n">×</span><span>Free: not included</span></div>
-        <div class="row"><span class="s">★</span><span>Full: ChatGPT, Perplexity &amp; AI Overviews visibility audit</span></div></div>
-      <div class="ax-cat"><h4>Design &amp; Conversion</h4>
-        <div class="row"><span class="n">×</span><span>Free: not included</span></div>
-        <div class="row"><span class="s">★</span><span>Full: page-by-page booking &amp; conversion gap review</span></div></div>
-      <div class="ax-cat"><h4>Content</h4>
-        <div class="row"><span class="n">×</span><span>Free: not included</span></div>
-        <div class="row"><span class="s">★</span><span>Full: competitive content-gap analysis</span></div></div>
-      <div class="ax-cat"><h4>Reporting &amp; Next Steps</h4>
-        <div class="row"><span class="y">✓</span><span>Free: overall score snapshot</span></div>
-        <div class="row"><span class="s">★</span><span>Full: prioritized action plan + 30-min walkthrough call</span></div></div>
+    <div class="feature-body">
+      <div class="eyebrow">What You Get</div>
+      <h2>Not another freelancer.<br/><em>One right hand.</em></h2>
+      <p>Someone who treats the business like their own, takes the weight off your plate, and runs it quietly at a high standard. One relationship, not a team to manage.</p>
+      <ul class="feature-list">
+        <li><span class="fk">✓</span><div><strong>One relationship, not five.</strong> One trusted operator who handles it, and pulls in others when needed.</div></li>
+        <li><span class="fk">✓</span><div><strong>Proactive, not reactive.</strong> I bring you decisions with a recommendation, not a pile of questions.</div></li>
+        <li><span class="fk">✓</span><div><strong>Never billed by the hour.</strong> One scoped retainer, focused on outcomes, not the clock.</div></li>
+      </ul>
+      <a href="/services/apply" class="btn-gold">Book a Call</a>
     </div>
-    <div class="ax-foot">See the full side-by-side comparison on the <a href="/audit">audit page →</a></div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section center" id="contact" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">Book a Call</div>
+<!-- WHAT I HANDLE -->
+<section class="section center" id="demos" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">What Gets Off Your Plate</div>
+  <h2 class="section-title">The day-to-day,<br/><em>handled.</em></h2>
+  <p class="section-desc">One person across all of it, so the seams between these never become your problem.</p>
+  <div class="outcomes">
+    <div class="outcome"><div class="ic">✦</div><h3>Executive &amp; admin</h3><p>Inbox, calendar, follow-ups, correspondence, and the meeting prep that keeps you ready.</p></div>
+    <div class="outcome"><div class="ic">✦</div><h3>Marketing &amp; content</h3><p>Social calendars, newsletters, content QA, and the steady presence that keeps you visible.</p></div>
+    <div class="outcome"><div class="ic">✦</div><h3>Design &amp; creative</h3><p>Brand assets, graphics, and the polished materials that make the business look the part.</p></div>
+    <div class="outcome"><div class="ic">✦</div><h3>CRM &amp; pipeline</h3><p>Clean records, followed-up leads, and a pipeline that does not leak in the background.</p></div>
+    <div class="outcome"><div class="ic">✦</div><h3>AI &amp; automation</h3><p>The workflows and tools that make the repetitive work run on its own.</p></div>
+    <div class="outcome"><div class="ic">✦</div><h3>Systems &amp; SOPs</h3><p>The documented processes so nothing lives only in your head, or only in mine.</p></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">How It Works</div>
+  <h2 class="section-title">How we<br/><em>start.</em></h2>
+  <div class="outcomes">
+    <div class="outcome"><div class="ic">1</div><h3>Discovery call</h3><p>We map what is eating your time and what to hand off first. You get an honest read on whether we are a fit.</p></div>
+    <div class="outcome"><div class="ic">2</div><h3>Onboarding</h3><p>I learn your tools, your preferences, and your standards. Light at first, then I take more as trust builds.</p></div>
+    <div class="outcome"><div class="ic">3</div><h3>I run it</h3><p>Proactive updates, full ownership, no hand-holding. You stop being the bottleneck and get your focus back.</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL STRIP -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="quote-strip">
+    <div class="qm">&ldquo;</div>
+    <p>He's done nothing but add to our company. We are so thankful for everything he has done, because I know I couldn't do half the things he does.</p>
+    <div class="who">Jayme · Manager</div>
+    <div class="award">★ Top 5 VA of the Year · Phyllis Song VA Services</div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <h2 class="section-title">Ready to hand it over<br/><em>to one right hand?</em></h2>
+  <div style="margin-top:1.8rem;"><a href="/services/apply" class="btn-gold">Book a Call</a></div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">Is This For You?</div>
+  <h2 class="section-title">Built for the right fit,<br/><em>honest about the wrong one.</em></h2>
+  <div class="fit-cols">
+    <div class="fit-col yes">
+      <h3>This is for you if</h3>
+      <ul>
+        <li>You are the bottleneck and you know it.</li>
+        <li>You want one person owning the day-to-day.</li>
+        <li>You would rather hand it over than hire a team.</li>
+        <li>You want a long-term partner, not a quick gig.</li>
+      </ul>
+    </div>
+    <div class="fit-col no">
+      <h3>Not for you if</h3>
+      <ul>
+        <li>You want to pay by the hour and watch the clock.</li>
+        <li>You need a one-off task, not an ongoing partner.</li>
+        <li>You are not ready to let someone own real work.</li>
+        <li>You want the cheapest VA you can find.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE ANCHOR -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">Investment</div>
+  <h2 class="section-title">Straight about <em>price</em></h2>
+  <div class="anchor">
+    <div class="amt">From <span data-price="partnership.from"></span><span style="font-size:.9rem;color:var(--muted);font-weight:500"> / month</span></div>
+    <p>Scoped to you, based on how much comes off your plate. One monthly retainer, never billed by the hour. We set the exact number on the call.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">Questions</div>
+  <h2 class="section-title">Before you <em>book</em></h2>
+  <div class="faq">
+    <details><summary>Is this full-time or part-time?</summary><div class="faq-a">It is a scoped monthly retainer, not hours. We agree on what comes off your plate, and I own those outcomes. A heavier dedicated engagement is available if you need more hands.</div></details>
+    <details><summary>What if I need more than one person can do?</summary><div class="faq-a">I stay your single point of contact and pull in trusted specialists when a job needs it, so you still manage one relationship, not five.</div></details>
+    <details><summary>How fast can you start?</summary><div class="faq-a">Usually within a week or two of the call, once we have agreed on scope and I have access to your tools. Onboarding is light at first, then I take on more.</div></details>
+    <details><summary>What if it is not working out?</summary><div class="faq-a">We start with a 30-day window, either side, no penalty. If the fit is not there, we part ways cleanly. No long lock-in.</div></details>
+    <details><summary>What happens on the call?</summary><div class="faq-a">We map what is eating your time, I recommend what to hand off first and a retainer, and you decide. No pressure, no hard sell.</div></details>
+  </div>
+</section>
+
+<!-- RISK REVERSAL -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="risk">
+    <div class="risk-badge"><b>30</b><span>Day</span></div>
+    <div class="risk-body">
+      <h3>Start without the lock-in.</h3>
+      <p>We begin with a 30-day window, either side, no penalty. If the fit is not there, we part ways cleanly. The call itself costs you nothing and commits you to nothing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA (-> Application page) -->
+<section class="section center" id="book" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">Next Step</div>
   <h2 class="section-title">Let's take the day-to-day<br/><em>off your plate.</em></h2>
-  <p class="section-desc">Tell me what's eating your time, I'll reply within one business day with a recommended fit and the next step.</p>
-  <form class="contact-card" id="contactForm" onsubmit="return submitLead(event)">
-    <label for="name">Name</label>
-    <input id="name" type="text" placeholder="Your full name" required/>
-    <label for="email">Email</label>
-    <input id="email" type="email" placeholder="you@email.com" required/>
-    <label for="business">Your business (1 sentence)</label>
-    <input id="business" type="text" placeholder="e.g. Founder of a 2-person agency"/>
-    <label for="interest">What you're after</label>
-    <select id="interest">
-      <option>The Partnership</option>
-      <option>Web care plan</option>
-      <option>Full audit</option>
-      <option>Not sure, let's talk</option>
-    </select>
-    <label for="message">What's eating your time?</label>
-    <textarea id="message" placeholder="Anything you'd love off your plate…"></textarea>
-    <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true"><label for="website-hp">Leave empty</label><input id="website-hp" type="text" name="website" autocomplete="off" tabindex="-1"/></div>
-    <button type="submit" class="btn-gold" id="submitBtn">Send →</button>
-    <div class="form-msg" id="formMsg"></div>
-  </form>
+  <p class="section-desc">One short step: tell me what is eating your time, and I'll set up the call with a plan already in hand.</p>
+  <div style="margin-top:2rem;"><a href="/services/apply" class="btn-gold">Book a Call →</a></div>
+  <p class="secondary-opt">Not ready to talk? <a href="/guides/hire-executive-partner-philippines/get">Read the free guide on hiring an executive partner</a> first.</p>
 </section>
 
 <footer class="focus-foot">
@@ -298,6 +350,7 @@
 
 <script src="/assets/pricing.js"></script>
 <script>
+  // Fill every [data-price] element from window.PRICING via dotted path
   (function () {
     document.querySelectorAll('[data-price]').forEach(function (el) {
       var path = el.getAttribute('data-price').split('.');
@@ -305,38 +358,6 @@
       if (typeof v === 'number') el.textContent = window.money(v);
     });
   })();
-  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyRiyyVAEoAH1uuj3DLfxKgTF4psZ2qKUm7FtuuXNSHwwc70TVUHorHMAx8uj8cRkit/exec';
-  var COOLDOWN_MS = 15 * 60 * 1000;
-  function submitLead(e) {
-    e.preventDefault();
-    if (document.getElementById('website-hp').value) return false;
-    var last = localStorage.getItem('lastFormSubmit');
-    var msg = document.getElementById('formMsg'), btn = document.getElementById('submitBtn');
-    if (last && Date.now() - parseInt(last) < COOLDOWN_MS) {
-      var rem = Math.ceil((COOLDOWN_MS - (Date.now() - parseInt(last))) / 60000);
-      msg.textContent = '✗ Please wait ' + rem + ' more minute' + (rem !== 1 ? 's' : '') + ' before submitting again.';
-      msg.className = 'form-msg error'; return false;
-    }
-    btn.disabled = true; btn.textContent = 'Sending…'; msg.className = 'form-msg';
-    var data = {
-      source: 'services-lander',
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      company: document.getElementById('business').value,
-      service: document.getElementById('interest').value,
-      message: document.getElementById('message').value,
-      timestamp: new Date().toLocaleString()
-    };
-    fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-      .then(function () {
-        msg.textContent = "✓ Thanks, I'll reply within one business day."; msg.className = 'form-msg success';
-        document.getElementById('contactForm').reset();
-        localStorage.setItem('lastFormSubmit', Date.now().toString());
-      })
-      .catch(function () { msg.textContent = '✗ Something went wrong. Email me directly at inquire@earvinlaureano.com'; msg.className = 'form-msg error'; });
-    btn.disabled = false; btn.textContent = 'Send →';
-    return false;
-  }
 </script>
 </body>
 </html>

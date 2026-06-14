@@ -140,7 +140,7 @@
   <a href="#top" class="logo">Earvin <span>Laureano</span><small>· Websites</small></a>
   <div style="display:flex;align-items:center;gap:1.4rem;">
     <a href="/work-with-me" style="font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">← Choose a service</a>
-    <a href="#book" class="btn-gold">Book a Call</a>
+    <a href="/websites/apply" class="btn-gold">Book a Call</a>
   </div>
 </nav>
 
@@ -152,7 +152,7 @@
     <h1>A website that books clients,<br/><em>without the agency runaround.</em></h1>
     <p class="lede">Custom-built, lightning fast, and optimized to be found on Google and in AI search. Designed to turn visitors into booked clients, not just to look pretty.</p>
     <div class="cat-hero-actions">
-      <a href="#book" class="btn-gold">Book a Call</a>
+      <a href="/websites/apply" class="btn-gold">Book a Call</a>
       <a href="#demos" class="btn-outline">See live demos ↓</a>
     </div>
   </div>
@@ -218,7 +218,7 @@
 <!-- CTA BAND -->
 <section class="section center" style="border-top:1px solid var(--border);">
   <h2 class="section-title">Ready for a site that<br/><em>earns its keep?</em></h2>
-  <div style="margin-top:1.8rem;"><a href="#book" class="btn-gold">Book a Call</a></div>
+  <div style="margin-top:1.8rem;"><a href="/websites/apply" class="btn-gold">Book a Call</a></div>
 </section>
 
 <!-- WHO IT'S FOR -->
@@ -270,54 +270,12 @@
   </div>
 </section>
 
-<!-- BOOK A CALL (qualifier) -->
+<!-- FINAL CTA (-> Application page) -->
 <section class="section center" id="book" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">Book a Call</div>
-  <h2 class="section-title">Tell me what you need.<br/><em>I'll bring the plan.</em></h2>
-  <p class="section-desc">A few quick questions so our call is useful from minute one. I read every one personally and reply within one business day with times.</p>
-  <form class="contact-card" id="bookForm" onsubmit="return submitLead(event)">
-    <label for="name">Your name</label>
-    <input id="name" type="text" placeholder="Full name" required/>
-    <label for="email">Email</label>
-    <input id="email" type="email" placeholder="you@email.com" required/>
-    <label for="business">Your business or website</label>
-    <input id="business" type="text" placeholder="e.g. Solo dentist in Phoenix, or yoursite.com"/>
-    <div class="form-row2">
-      <div>
-        <label for="need">What do you need?</label>
-        <select id="need" required>
-          <option value="" disabled selected>Select one</option>
-          <option>A brand-new website</option>
-          <option>Redesign / rebuild my site</option>
-          <option>Migration (keep my rankings)</option>
-          <option>Not sure yet</option>
-        </select>
-      </div>
-      <div>
-        <label for="budget">Budget range</label>
-        <select id="budget" required>
-          <option value="" disabled selected>Select one</option>
-          <option>Under $2,000</option>
-          <option>$2,000 – $5,000</option>
-          <option>$5,000 – $10,000</option>
-          <option>$10,000+</option>
-          <option>Not sure yet</option>
-        </select>
-      </div>
-    </div>
-    <label for="timeline">Timeline</label>
-    <select id="timeline">
-      <option value="" disabled selected>Select one</option>
-      <option>As soon as possible</option>
-      <option>In 1 – 3 months</option>
-      <option>Just exploring for now</option>
-    </select>
-    <label for="message">Anything else? (optional)</label>
-    <textarea id="message" placeholder="What is the site supposed to do for you?"></textarea>
-    <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true"><label for="hp">Leave empty</label><input id="hp" type="text" name="company_website" autocomplete="off" tabindex="-1"/></div>
-    <button type="submit" class="btn-gold" id="submitBtn">Book My Call →</button>
-    <div class="form-msg" id="formMsg"></div>
-  </form>
+  <div class="section-eyebrow">Next Step</div>
+  <h2 class="section-title">Let's build something<br/><em>you're proud to own.</em></h2>
+  <p class="section-desc">One short step: tell me what you need, and I'll set up the call with a plan already in hand.</p>
+  <div style="margin-top:2rem;"><a href="/websites/apply" class="btn-gold">Book a Call →</a></div>
   <p class="secondary-opt">Not ready to book a call? <a href="/audit?from=websites">Start with a $57 website audit</a> instead, it credits toward your build.</p>
 </section>
 
@@ -335,43 +293,6 @@
       if (typeof v === 'number') el.textContent = window.money(v);
     });
   })();
-  // Book-a-call qualifier -> /api/lead (Airtable). Best-effort: never hard-error on the visitor.
-  var COOLDOWN_MS = 15 * 60 * 1000;
-  async function submitLead(e) {
-    e.preventDefault();
-    var msg = document.getElementById('formMsg'), btn = document.getElementById('submitBtn');
-    if (document.getElementById('hp').value) return false; // honeypot
-    var last = localStorage.getItem('lastFormSubmit');
-    if (last && Date.now() - parseInt(last) < COOLDOWN_MS) {
-      var rem = Math.ceil((COOLDOWN_MS - (Date.now() - parseInt(last))) / 60000);
-      msg.textContent = '✗ Please wait ' + rem + ' more minute' + (rem !== 1 ? 's' : '') + ' before submitting again.';
-      msg.className = 'form-msg error'; return false;
-    }
-    btn.disabled = true; btn.textContent = 'Booking…'; msg.className = 'form-msg';
-    var need = document.getElementById('need').value;
-    var budget = document.getElementById('budget').value;
-    var timeline = document.getElementById('timeline').value;
-    var extra = document.getElementById('message').value;
-    var note = 'Budget: ' + budget + ' | Timeline: ' + (timeline || 'n/a') + (extra ? ' | ' + extra : '');
-    try {
-      await fetch('/api/lead', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          source: 'book-call-websites',
-          name: document.getElementById('name').value,
-          email: document.getElementById('email').value,
-          company: document.getElementById('business').value,
-          service: need, note: note, company_website: ''
-        })
-      });
-    } catch (err) { /* best-effort, never block the visitor */ }
-    msg.textContent = "✓ Got it. I'll review and email you call times within one business day.";
-    msg.className = 'form-msg success';
-    document.getElementById('bookForm').reset();
-    localStorage.setItem('lastFormSubmit', Date.now().toString());
-    btn.disabled = false; btn.textContent = 'Book My Call →';
-    return false;
-  }
 </script>
 </body>
 </html>

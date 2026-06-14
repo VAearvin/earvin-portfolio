@@ -95,6 +95,42 @@
     .focus-foot{padding:2.4rem 5rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.84rem}
     .focus-foot a{color:var(--gold);text-decoration:none}
     @media (max-width:768px){ .focus-foot{padding:2rem 1.4rem} }
+    /* Qualifier form (book a call) */
+    .contact-card select{width:100%;padding:.9rem 1rem;border:1px solid var(--border);border-radius:var(--r);font-size:.95rem;font-family:inherit;color:var(--text);background:rgba(255,255,255,.03);cursor:pointer;-webkit-appearance:none;appearance:none}
+    .contact-card select:focus{outline:none;border-color:var(--gold)}
+    .contact-card select option{background:var(--bg2);color:var(--text)}
+    .form-row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    @media (max-width:560px){ .form-row2{grid-template-columns:1fr} }
+    /* Big promise hero tweak */
+    .promise-line{font-size:.95rem;color:var(--gold);font-style:italic;margin:0 auto 1.3rem;max-width:520px}
+    /* Who it's for / not for */
+    .fit-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;max-width:820px;margin:2.6rem auto 0;text-align:left}
+    @media (max-width:680px){ .fit-cols{grid-template-columns:1fr} }
+    .fit-col{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem}
+    .fit-col.no{opacity:.85}
+    .fit-col h3{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+    .fit-col.yes h3{color:var(--gold)}
+    .fit-col.no h3{color:var(--muted)}
+    .fit-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+    .fit-col li{font-size:.9rem;color:var(--text);line-height:1.5;display:flex;gap:.6rem;align-items:flex-start}
+    .fit-col li::before{flex-shrink:0;font-weight:800}
+    .fit-col.yes li::before{content:"✓";color:var(--gold)}
+    .fit-col.no li::before{content:"×";color:#6e6b66}
+    /* FAQ */
+    .faq{max-width:720px;margin:2.4rem auto 0;text-align:left}
+    .faq details{border-bottom:1px solid var(--border)}
+    .faq summary{cursor:pointer;list-style:none;padding:1.3rem 0;font-size:.98rem;font-weight:600;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";color:var(--gold);font-size:1.3rem;flex-shrink:0;transition:transform .2s}
+    .faq details[open] summary::after{content:"−"}
+    .faq .faq-a{padding:0 0 1.3rem;font-size:.9rem;color:var(--muted);line-height:1.8}
+    /* Price anchor */
+    .anchor{max-width:520px;margin:2.4rem auto 0;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.6rem 1.8rem;text-align:center}
+    .anchor .amt{font-size:1.5rem;font-weight:800;color:var(--gold)}
+    .anchor p{font-size:.86rem;color:var(--muted);margin-top:.4rem;line-height:1.6}
+    /* Secondary audit option */
+    .secondary-opt{max-width:620px;margin:2.2rem auto 0;text-align:center;font-size:.9rem;color:var(--muted);line-height:1.7}
+    .secondary-opt a{color:#fff;text-decoration:underline;text-underline-offset:2px}
   </style>
 </head>
 <body>
@@ -104,24 +140,30 @@
   <a href="#top" class="logo">Earvin <span>Laureano</span><small>· Websites</small></a>
   <div style="display:flex;align-items:center;gap:1.4rem;">
     <a href="/work-with-me" style="font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">← Choose a service</a>
-    <a href="#contact" class="btn-gold">Book a Call</a>
+    <a href="#book" class="btn-gold">Book a Call</a>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO (Promise) -->
 <header class="cat-hero" id="top">
   <div class="cat-hero-bg"></div>
   <div class="cat-hero-inner">
     <div class="cat-eyebrow"><span>Custom Websites · AI-Search Ready</span></div>
-    <h1>Lightning-fast custom websites,<br/><em>built to convert.</em></h1>
-    <p class="who">"My current site looks dated, loads slow, and nobody books from it."</p>
-    <p class="lede">A custom, AI-built website for your service business, fast, mobile-first, and optimized to be found on Google <em>and</em> in AI search (ChatGPT, Perplexity, Google AI Overviews). Designed to actually book clients, not just look pretty.</p>
+    <h1>A website that books clients,<br/><em>without the agency runaround.</em></h1>
+    <p class="lede">Custom-built, lightning fast, and optimized to be found on Google and in AI search. Designed to turn visitors into booked clients, not just to look pretty.</p>
     <div class="cat-hero-actions">
-      <a href="#contact" class="btn-gold">Book a Call</a>
+      <a href="#book" class="btn-gold">Book a Call</a>
       <a href="#demos" class="btn-outline">See live demos ↓</a>
     </div>
   </div>
 </header>
+
+<!-- PAIN -->
+<section class="section center">
+  <div class="section-eyebrow">The Real Problem</div>
+  <h2 class="section-title">You're great at your work.<br/><em>Your website is not pulling its weight.</em></h2>
+  <p class="section-desc">It loads slow, looks like it is from another decade, and books nobody. Every day it stays that way, you quietly lose clients to someone whose site simply looks more trustworthy.</p>
+</section>
 
 <!-- OUTCOMES -->
 <section class="section center">
@@ -173,128 +215,110 @@
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- CTA BAND -->
 <section class="section center" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">Pricing</div>
-  <h2 class="section-title">Honest, upfront<br/><em>pricing</em></h2>
-  <p class="section-desc">"From" pricing, final scope depends on pages and complexity. 50% deposit, 50% on launch.</p>
-  <div class="focus-tiers">
-    <article class="focus-tier">
-      <div class="name">Foundation</div>
-      <div class="for">"I'm starting fresh and want a real site."</div>
-      <div class="price">From <span data-price="builds.foundation.from"></span></div>
-      <ul>
-        <li>Custom design (no templates)</li>
-        <li>Up to 5 core pages</li>
-        <li>Built-in CMS, edit it yourself</li>
-        <li>Mobile-first, edge-hosted</li>
-        <li>Analytics + Google Search Console setup</li>
-      </ul>
-    </article>
-    <article class="focus-tier premium">
-      <div class="name">Foundation + SEO &amp; AI</div>
-      <div class="for">"I want to be found from day one."</div>
-      <div class="price">From <span data-price="builds.foundationSeoAi.from"></span></div>
-      <ul>
-        <li>Everything in Foundation</li>
-        <li>Full schema markup (Service, FAQ, LocalBusiness)</li>
-        <li>AI-search optimization (ChatGPT, Perplexity, AI Overviews)</li>
-        <li>Sitemap, robots, OG/Twitter cards</li>
-        <li>30 days of post-launch monitoring</li>
-      </ul>
-    </article>
-    <article class="focus-tier">
-      <div class="name">Rebrand (Relaunch)</div>
-      <div class="for">"I have a site but it's dragging me down."</div>
-      <div class="price">From <span data-price="builds.relaunch.from"></span></div>
-      <ul>
-        <li>Full rebuild on a modern stack</li>
-        <li>Custom design from scratch</li>
-        <li>Content migration (you keep your domain)</li>
-        <li>Mobile-first, edge-hosted</li>
-        <li>Built-in CMS, handoff-ready, no lock-in</li>
-      </ul>
-    </article>
-  </div>
-  <p class="section-desc reveal" style="margin-top:2rem; font-size:0.86rem;">
-    Need to <strong style="color:var(--text)">keep your existing rankings</strong>?
-    Managed Migration starts at <span data-price="builds.managedMigration.from"></span>, custom-quoted, scoped via a Full Audit (<span data-price="audits.full.price"></span>).
-    Ask on your call.
-  </p>
+  <h2 class="section-title">Ready for a site that<br/><em>earns its keep?</em></h2>
+  <div style="margin-top:1.8rem;"><a href="#book" class="btn-gold">Book a Call</a></div>
 </section>
 
-<!-- WEB CARE (after-launch maintenance) -->
-<section class="section center" id="care" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">After Launch</div>
-  <h2 class="section-title">Keep your site<br/><em>healthy &amp; visible</em></h2>
-  <p class="section-desc">Optional monthly plans that keep your site fast, secure, and found, as both Google and AI search keep evolving. First month free.</p>
-  <div class="focus-tiers">
-    <article class="focus-tier">
-      <div class="name">Care</div>
-      <div class="for">"Keep the lights on."</div>
-      <div class="price"><span data-price="websiteCare.care.monthly"></span><span style="font-size:.8rem;color:var(--muted);font-weight:500;margin-left:.3rem">/ month</span></div>
+<!-- WHO IT'S FOR -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">Is This For You?</div>
+  <h2 class="section-title">Built for the right fit,<br/><em>honest about the wrong one.</em></h2>
+  <div class="fit-cols">
+    <div class="fit-col yes">
+      <h3>This is for you if</h3>
       <ul>
-        <li>Hosting management</li>
-        <li>Uptime monitoring</li>
-        <li>SSL / security</li>
-        <li>Small monthly edits</li>
-        <li>Email support</li>
+        <li>You run a real business with real clients to win.</li>
+        <li>Your site is dated, slow, or booking nobody.</li>
+        <li>You want to be found on Google and in AI search.</li>
+        <li>You want one person who owns it end to end.</li>
       </ul>
-    </article>
-    <article class="focus-tier premium">
-      <div class="name">Growth</div>
-      <div class="for">"Keep me visible as search evolves."</div>
-      <div class="price"><span data-price="websiteCare.growth.monthly"></span><span style="font-size:.8rem;color:var(--muted);font-weight:500;margin-left:.3rem">/ month</span></div>
+    </div>
+    <div class="fit-col no">
+      <h3>Not for you if</h3>
       <ul>
-        <li>Everything in Care</li>
-        <li>SEO + AI-search monitoring</li>
-        <li>Monthly content refresh</li>
-        <li>Monthly performance report</li>
-        <li>Priority support</li>
+        <li>You want the cheapest template you can find.</li>
+        <li>You need it live tomorrow, with no scoping.</li>
+        <li>You are not sure what your business does yet.</li>
+        <li>You would rather manage five freelancers yourself.</li>
       </ul>
-    </article>
-    <article class="focus-tier">
-      <div class="name">Pro</div>
-      <div class="for">"Actively grow my visibility."</div>
-      <div class="price"><span data-price="websiteCare.pro.monthly"></span><span style="font-size:.8rem;color:var(--muted);font-weight:500;margin-left:.3rem">/ month</span></div>
-      <ul>
-        <li>Everything in Growth</li>
-        <li>Active AI-visibility work</li>
-        <li>New pages / sections monthly</li>
-        <li>Ongoing optimization</li>
-        <li>Fastest turnaround</li>
-      </ul>
-    </article>
+    </div>
   </div>
 </section>
 
-<!-- AUDIT (one-off clarity) -->
-<section class="section center" id="audit" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">One-Off Clarity</div>
-  <h2 class="section-title">Not sure yet?<br/>Start with an <em>Audit</em></h2>
-  <p class="section-desc">Run a free 60-second scan of your site, or get the comprehensive audit with a prioritized, actionable fix plan. Normally $597, available now at <strong style="color:var(--gold)">$57</strong>, and the $57 credits in full toward any build.</p>
-  <div style="margin-top:2.2rem;"><a href="/audit" class="btn-gold">See the audit options →</a></div>
+<!-- PRICE ANCHOR -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">Investment</div>
+  <h2 class="section-title">Straight about <em>price</em></h2>
+  <div class="anchor">
+    <div class="amt">From <span data-price="builds.foundation.from"></span></div>
+    <p>Final scope depends on your pages and goals. We lock the exact number on the call, no surprises. 50% to start, 50% on launch.</p>
+  </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section center" id="contact" style="border-top:1px solid var(--border);">
+<!-- FAQ -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">Questions</div>
+  <h2 class="section-title">Before you <em>book</em></h2>
+  <div class="faq">
+    <details><summary>How long does a build take?</summary><div class="faq-a">Most sites launch in two to four weeks, depending on pages and how fast we get content. You get a clear timeline after the scope call.</div></details>
+    <details><summary>Do I own the site and can I edit it?</summary><div class="faq-a">Yes. It is yours, on your domain, with a built-in CMS so you can edit content yourself. No lock-in, no holding your site hostage.</div></details>
+    <details><summary>What if I already have a site?</summary><div class="faq-a">I rebuild it on a modern, fast stack and migrate your content so you keep your domain and your rankings. We cover that on the call.</div></details>
+    <details><summary>What does "found by AI search" mean?</summary><div class="faq-a">Your site is built so ChatGPT, Perplexity, and Google AI Overviews can read and quote it, not just list it. That is where more buyers are starting their search.</div></details>
+    <details><summary>What happens on the call?</summary><div class="faq-a">We get clear on your goals and pages, I recommend the right scope and a price, and you decide. No pressure, no hard sell.</div></details>
+  </div>
+</section>
+
+<!-- BOOK A CALL (qualifier) -->
+<section class="section center" id="book" style="border-top:1px solid var(--border);">
   <div class="section-eyebrow">Book a Call</div>
-  <h2 class="section-title">Let's build something<br/><em>you're proud to own.</em></h2>
-  <p class="section-desc">Tell me about your business in a sentence or two, I'll reply within one business day with a recommended tier and the next step.</p>
-  <form class="contact-card" id="contactForm" onsubmit="return submitLead(event)">
-    <label for="name">Name</label>
-    <input id="name" type="text" placeholder="Your full name" required/>
+  <h2 class="section-title">Tell me what you need.<br/><em>I'll bring the plan.</em></h2>
+  <p class="section-desc">A few quick questions so our call is useful from minute one. I read every one personally and reply within one business day with times.</p>
+  <form class="contact-card" id="bookForm" onsubmit="return submitLead(event)">
+    <label for="name">Your name</label>
+    <input id="name" type="text" placeholder="Full name" required/>
     <label for="email">Email</label>
     <input id="email" type="email" placeholder="you@email.com" required/>
-    <label for="business">Your business (1 sentence)</label>
-    <input id="business" type="text" placeholder="e.g. Solo dentist in Phoenix"/>
-    <label for="message">What do you need?</label>
-    <textarea id="message" placeholder="A new site, rebuild what I have, etc."></textarea>
-    <!-- Honeypot -->
-    <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true"><label for="website-hp">Leave empty</label><input id="website-hp" type="text" name="website" autocomplete="off" tabindex="-1"/></div>
-    <button type="submit" class="btn-gold" id="submitBtn">Send →</button>
+    <label for="business">Your business or website</label>
+    <input id="business" type="text" placeholder="e.g. Solo dentist in Phoenix, or yoursite.com"/>
+    <div class="form-row2">
+      <div>
+        <label for="need">What do you need?</label>
+        <select id="need" required>
+          <option value="" disabled selected>Select one</option>
+          <option>A brand-new website</option>
+          <option>Redesign / rebuild my site</option>
+          <option>Migration (keep my rankings)</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div>
+        <label for="budget">Budget range</label>
+        <select id="budget" required>
+          <option value="" disabled selected>Select one</option>
+          <option>Under $2,000</option>
+          <option>$2,000 – $5,000</option>
+          <option>$5,000 – $10,000</option>
+          <option>$10,000+</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+    </div>
+    <label for="timeline">Timeline</label>
+    <select id="timeline">
+      <option value="" disabled selected>Select one</option>
+      <option>As soon as possible</option>
+      <option>In 1 – 3 months</option>
+      <option>Just exploring for now</option>
+    </select>
+    <label for="message">Anything else? (optional)</label>
+    <textarea id="message" placeholder="What is the site supposed to do for you?"></textarea>
+    <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true"><label for="hp">Leave empty</label><input id="hp" type="text" name="company_website" autocomplete="off" tabindex="-1"/></div>
+    <button type="submit" class="btn-gold" id="submitBtn">Book My Call →</button>
     <div class="form-msg" id="formMsg"></div>
   </form>
+  <p class="secondary-opt">Not ready to book a call? <a href="/audit?from=websites">Start with a $57 website audit</a> instead, it credits toward your build.</p>
 </section>
 
 <footer class="focus-foot">
@@ -311,37 +335,41 @@
       if (typeof v === 'number') el.textContent = window.money(v);
     });
   })();
-  // Contact form -> Apps Script webhook (same one used for audit/canary; tagged source)
-  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyRiyyVAEoAH1uuj3DLfxKgTF4psZ2qKUm7FtuuXNSHwwc70TVUHorHMAx8uj8cRkit/exec';
+  // Book-a-call qualifier -> /api/lead (Airtable). Best-effort: never hard-error on the visitor.
   var COOLDOWN_MS = 15 * 60 * 1000;
-  function submitLead(e) {
+  async function submitLead(e) {
     e.preventDefault();
-    if (document.getElementById('website-hp').value) return false; // honeypot
-    var last = localStorage.getItem('lastFormSubmit');
     var msg = document.getElementById('formMsg'), btn = document.getElementById('submitBtn');
+    if (document.getElementById('hp').value) return false; // honeypot
+    var last = localStorage.getItem('lastFormSubmit');
     if (last && Date.now() - parseInt(last) < COOLDOWN_MS) {
       var rem = Math.ceil((COOLDOWN_MS - (Date.now() - parseInt(last))) / 60000);
       msg.textContent = '✗ Please wait ' + rem + ' more minute' + (rem !== 1 ? 's' : '') + ' before submitting again.';
       msg.className = 'form-msg error'; return false;
     }
-    btn.disabled = true; btn.textContent = 'Sending…'; msg.className = 'form-msg';
-    var data = {
-      source: 'websites-lander',
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      company: document.getElementById('business').value,
-      service: 'Websites',
-      message: document.getElementById('message').value,
-      timestamp: new Date().toLocaleString()
-    };
-    fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-      .then(function () {
-        msg.textContent = "✓ Thanks, I'll reply within one business day."; msg.className = 'form-msg success';
-        document.getElementById('contactForm').reset();
-        localStorage.setItem('lastFormSubmit', Date.now().toString());
-      })
-      .catch(function () { msg.textContent = '✗ Something went wrong. Email me directly at inquire@earvinlaureano.com'; msg.className = 'form-msg error'; });
-    btn.disabled = false; btn.textContent = 'Send →';
+    btn.disabled = true; btn.textContent = 'Booking…'; msg.className = 'form-msg';
+    var need = document.getElementById('need').value;
+    var budget = document.getElementById('budget').value;
+    var timeline = document.getElementById('timeline').value;
+    var extra = document.getElementById('message').value;
+    var note = 'Budget: ' + budget + ' | Timeline: ' + (timeline || 'n/a') + (extra ? ' | ' + extra : '');
+    try {
+      await fetch('/api/lead', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'book-call-websites',
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          company: document.getElementById('business').value,
+          service: need, note: note, company_website: ''
+        })
+      });
+    } catch (err) { /* best-effort, never block the visitor */ }
+    msg.textContent = "✓ Got it. I'll review and email you call times within one business day.";
+    msg.className = 'form-msg success';
+    document.getElementById('bookForm').reset();
+    localStorage.setItem('lastFormSubmit', Date.now().toString());
+    btn.disabled = false; btn.textContent = 'Book My Call →';
     return false;
   }
 </script>

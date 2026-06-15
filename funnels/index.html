@@ -167,6 +167,51 @@
     .risk-badge span{font-size:.55rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-top:.15rem}
     .risk-body h3{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:.4rem}
     .risk-body p{font-size:.9rem;color:var(--muted);line-height:1.7}
+    /* Reviews treadmill */
+    .rev-wrap{overflow:hidden;position:relative;margin-top:2.8rem}
+    .rev-wrap::before,.rev-wrap::after{content:'';position:absolute;top:0;bottom:0;width:110px;z-index:2;pointer-events:none}
+    .rev-wrap::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+    .rev-wrap::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
+    .rev-track{display:flex;width:max-content;animation:rev-scroll 90s linear infinite}
+    .rev-track:hover{animation-play-state:paused}
+    @keyframes rev-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .rev-card{width:360px;flex-shrink:0;margin-right:1.4rem;background:var(--bg2);border:1px solid var(--border);padding:1.8rem;border-radius:var(--r);text-align:left;display:flex;flex-direction:column}
+    .rev-qm{font-family:Georgia,serif;font-size:2.4rem;color:rgba(199,169,127,.35);line-height:.7;margin-bottom:.3rem}
+    .rev-text{font-size:.86rem;font-style:italic;color:var(--text);line-height:1.75;margin-bottom:1.3rem;flex:1}
+    .rev-auth{border-top:1px solid var(--border);padding-top:1rem}
+    .rev-name{font-size:.88rem;font-weight:700;color:#fff;display:block}
+    .rev-role{font-size:.6rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;display:block}
+    @media (max-width:560px){ .rev-card{width:278px} }
+    /* Value / offer stack */
+    .vstack{max-width:680px;margin:2.6rem auto 0;text-align:left}
+    .vstack-card{background:var(--bg2);border:1px solid rgba(199,169,127,.32);border-radius:var(--r);padding:2.2rem 2.2rem 0;overflow:hidden}
+    .vstack-h{font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 .4rem}
+    .vstack-h.second{margin-top:1.6rem;padding-top:1.4rem;border-top:1px dashed rgba(199,169,127,.25)}
+    .vrow{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;padding:.8rem 0;border-bottom:1px solid var(--border)}
+    .vrow .vl{display:flex;gap:.7rem;align-items:flex-start}
+    .vrow .vk{flex-shrink:0;color:var(--gold);font-weight:800;line-height:1.45}
+    .vrow .vt{font-size:.92rem;color:var(--text);line-height:1.45}
+    .vrow .vt small{display:block;color:var(--muted);font-size:.8rem;margin-top:.15rem}
+    .vrow .vv{flex-shrink:0;font-size:.84rem;color:var(--muted);white-space:nowrap;font-weight:600;line-height:1.45}
+    .vrow.bonus .vk{color:#fff}
+    .vtotal{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 0 1.5rem}
+    .vtotal .vl{font-size:1rem;font-weight:700;color:#fff}
+    .vtotal .vv{font-size:1.25rem;font-weight:800;color:var(--muted)}
+    .vprice{background:rgba(199,169,127,.08);border-top:1px solid rgba(199,169,127,.32);margin:0 -2.2rem;padding:1.9rem 2.2rem;text-align:center}
+    .vprice .vlabel{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+    .vprice .vwas{font-size:1.05rem;color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(255,255,255,.35);margin-right:.7rem}
+    .vprice .vnow{font-size:2.7rem;font-weight:800;color:var(--gold);line-height:1;letter-spacing:-.01em}
+    .vprice .vsave{display:inline-block;margin-left:.6rem;background:var(--gold);color:#0c0c0c;font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .6rem;border-radius:5px;vertical-align:middle}
+    .vprice .vterms{font-size:.82rem;color:var(--muted);margin-top:.8rem;line-height:1.6}
+    /* Urgency + scarcity */
+    .us-strip{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:680px;margin:1.4rem auto 0}
+    @media (max-width:560px){ .us-strip{grid-template-columns:1fr} }
+    .us-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.1rem 1.3rem;display:flex;gap:.8rem;align-items:flex-start;text-align:left}
+    .us-item .us-ic{flex-shrink:0;color:var(--gold);font-weight:800;font-size:1rem;line-height:1.4}
+    .us-item .us-tx{font-size:.84rem;color:var(--muted);line-height:1.55}
+    .us-item .us-tx strong{color:#fff;font-weight:700}
+    .vcta{text-align:center;margin-top:1.9rem}
+    .vcta .secondary-opt{margin-top:1.3rem}
   </style>
 </head>
 <body>
@@ -261,25 +306,43 @@
   <p style="font-size:.86rem;color:var(--muted);margin-top:1.6rem;">Plus lead, e-commerce, low-ticket, and a 9-page challenge funnel in the <a href="/work" style="color:var(--gold);text-decoration:none;">full portfolio</a>.</p>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- WHAT YOU GET -->
 <section class="section center" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">How It Works</div>
+  <div class="section-eyebrow">What You Get</div>
   <h2 class="section-title">Three calls.<br/><em>One funnel that sells.</em></h2>
+  <p class="section-desc">Three short conversations on your side. A complete funnel that does the selling on mine, so you stop losing buyers you already paid to reach.</p>
   <div class="outcomes">
-    <div class="outcome"><div class="ic">1</div><h3>Strategy call</h3><p>We map your offer, your audience, and the conversion goal. I pick the funnel type and the page sequence before anything is built.</p></div>
-    <div class="outcome"><div class="ic">2</div><h3>Copy &amp; build</h3><p>I write the direct-response copy and build every page on a proven framework. You review and approve before it goes live.</p></div>
-    <div class="outcome"><div class="ic">3</div><h3>Launch &amp; optimize</h3><p>We wire the forms, test end to end, and go live. Then I watch the data and tune what needs tuning.</p></div>
+    <div class="outcome"><div class="ic">1</div><h3>A funnel with one job</h3><p>No more scattered pages and crossed fingers. We map your offer, your audience, and the single goal first, so every page is built to move people one clear step closer to buying.</p></div>
+    <div class="outcome"><div class="ic">2</div><h3>Words that sell while you sleep</h3><p>You stop wrestling with what to write. I write the direct-response copy and build every page on a proven framework, so visitors feel understood and reach for their wallet instead of the back button.</p></div>
+    <div class="outcome"><div class="ic">3</div><h3>Live, tested, and tuned</h3><p>No launching into silence and hoping. We wire the forms, test end to end, go live, then I watch the numbers and fix what is leaking, so the funnel keeps getting better after launch.</p></div>
   </div>
 </section>
 
-<!-- TESTIMONIAL STRIP -->
+<!-- REVIEWS TREADMILL -->
 <section class="section center" style="border-top:1px solid var(--border);">
-  <div class="quote-strip">
-    <div class="qm">&ldquo;</div>
-    <p>He's done nothing but add to our company. We are so thankful for everything he has done, because I know I couldn't do half the things he does.</p>
-    <div class="who">Jayme · Manager</div>
-    <div class="award">★ Top 5 VA of the Year · Phyllis Song VA Services</div>
+  <div class="section-eyebrow">Real Words, Real People</div>
+  <h2 class="section-title">What it's like to <em>work with me</em></h2>
+  <p class="section-desc">Top 5 VA of the Year, Phyllis Song VA Services. But the reviews that count are the ones from the people who work with me every week.</p>
+  <div class="rev-wrap">
+    <div class="rev-track">
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">We've been working with Earvin for well over a year now, he's a fantastic addition to our team. He brings joy to everybody every day, and he's one of those people who allows us to do more for everyone.</p><div class="rev-auth"><span class="rev-name">Darren</span><span class="rev-role">CEO</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">He's done nothing but add to our company, and all of the staff loves him. We are so thankful for everything he has done, because I know I couldn't do half the things he does.</p><div class="rev-auth"><span class="rev-name">Jayme</span><span class="rev-role">Manager</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">One of the things I'm most thankful for is him staying on top of us for our time cards, that was really stressful before. Whenever I'm panicking in the middle of the night I'll message him, and he's always really nice about it.</p><div class="rev-auth"><span class="rev-name">Whitney</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">I'm super thankful for how prompt and helpful and happy Earvin is to help everybody, all the time. Anytime I've asked him for anything, he's almost on it immediately.</p><div class="rev-auth"><span class="rev-name">Tiffany</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">Every time I have a question or a request or anything, Earvin answers like immediately, he's right on top of it. And he's really good at designing our newsletters too.</p><div class="rev-auth"><span class="rev-name">Tayler</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">Thank you Earvin for always being on time with responses to us and for taking care of all the stuff on your end so that we get to focus on ours.</p><div class="rev-auth"><span class="rev-name">Jay</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">He's always reliable, and I need that kind of dependable help.</p><div class="rev-auth"><span class="rev-name">Amani</span><span class="rev-role">Service Provider</span></div></div>
+      <!-- duplicate set for seamless loop -->
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">We've been working with Earvin for well over a year now, he's a fantastic addition to our team. He brings joy to everybody every day, and he's one of those people who allows us to do more for everyone.</p><div class="rev-auth"><span class="rev-name">Darren</span><span class="rev-role">CEO</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">He's done nothing but add to our company, and all of the staff loves him. We are so thankful for everything he has done, because I know I couldn't do half the things he does.</p><div class="rev-auth"><span class="rev-name">Jayme</span><span class="rev-role">Manager</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">One of the things I'm most thankful for is him staying on top of us for our time cards, that was really stressful before. Whenever I'm panicking in the middle of the night I'll message him, and he's always really nice about it.</p><div class="rev-auth"><span class="rev-name">Whitney</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">I'm super thankful for how prompt and helpful and happy Earvin is to help everybody, all the time. Anytime I've asked him for anything, he's almost on it immediately.</p><div class="rev-auth"><span class="rev-name">Tiffany</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">Every time I have a question or a request or anything, Earvin answers like immediately, he's right on top of it. And he's really good at designing our newsletters too.</p><div class="rev-auth"><span class="rev-name">Tayler</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">Thank you Earvin for always being on time with responses to us and for taking care of all the stuff on your end so that we get to focus on ours.</p><div class="rev-auth"><span class="rev-name">Jay</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">He's always reliable, and I need that kind of dependable help.</p><div class="rev-auth"><span class="rev-name">Amani</span><span class="rev-role">Service Provider</span></div></div>
+    </div>
   </div>
+  <div class="award" style="margin-top:2rem;display:inline-flex;align-items:center;gap:.6rem;background:rgba(199,169,127,.1);border:1px solid rgba(199,169,127,.3);padding:.5rem 1.1rem;border-radius:100px;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)">★ Top 5 VA of the Year · Phyllis Song VA Services</div>
 </section>
 
 <!-- CTA BAND -->
@@ -314,13 +377,47 @@
   </div>
 </section>
 
-<!-- PRICE ANCHOR -->
+<!-- VALUE STACK -->
 <section class="section center" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">Investment</div>
-  <h2 class="section-title">Straight about <em>price</em></h2>
-  <div class="anchor">
-    <div class="amt">From <span data-price="builds.funnel.from"></span></div>
-    <p>Final scope depends on the funnel type and number of pages, a 4-page lead funnel and a 9-page challenge sit at different ends. We lock the exact number on the call. 50% to start, 50% on launch.</p>
+  <div class="section-eyebrow">The Offer</div>
+  <h2 class="section-title">Everything you get,<br/><em>and what it's worth</em></h2>
+  <p class="section-desc">A funnel is not one thing you buy. It's strategy, copy, design, build, and the launch that ties it together. Here is the whole stack, line by line.</p>
+  <div class="vstack">
+    <div class="vstack-card">
+      <div class="vstack-h">What you get</div>
+      <div class="vrow"><div class="vl"><span class="vk">✓</span><span class="vt">Funnel strategy &amp; page mapping<small>The right funnel type and page sequence for your offer, before a pixel is built.</small></span></div><span class="vv">$500</span></div>
+      <div class="vrow"><div class="vl"><span class="vk">✓</span><span class="vt">Direct-response copy, every page<small>The words that do the selling, written for your audience, not dropped-in filler.</small></span></div><span class="vv">$1,200</span></div>
+      <div class="vrow"><div class="vl"><span class="vk">✓</span><span class="vt">Custom multi-page funnel build<small>Every page designed and built on your domain, yours to keep, no lock-in.</small></span></div><span class="vv">$2,000</span></div>
+      <div class="vrow"><div class="vl"><span class="vk">✓</span><span class="vt">Forms, integrations &amp; email wiring<small>Leads land where you need them, with the follow-up email firing automatically.</small></span></div><span class="vv">$400</span></div>
+      <div class="vrow"><div class="vl"><span class="vk">✓</span><span class="vt">Launch &amp; 30-day optimization<small>We go live, then I watch the numbers and tune what's leaking.</small></span></div><span class="vv">$500</span></div>
+
+      <div class="vstack-h second">Bonuses included</div>
+      <div class="vrow bonus"><div class="vl"><span class="vk">★</span><span class="vt">AI-search &amp; SEO on every page<small>Built to be found by Google and answer engines, not just look good.</small></span></div><span class="vv">$400</span></div>
+      <div class="vrow bonus"><div class="vl"><span class="vk">★</span><span class="vt">Full mobile optimization pass<small>Tested and tuned at phone size, where most of your traffic actually is.</small></span></div><span class="vv">$300</span></div>
+      <div class="vrow bonus"><div class="vl"><span class="vk">★</span><span class="vt">Loom walkthrough + clean handoff<small>A recorded tour so you know exactly how to run and edit your funnel.</small></span></div><span class="vv">$200</span></div>
+      <div class="vrow bonus"><div class="vl"><span class="vk">★</span><span class="vt">Two revision rounds per stage<small>Real feedback loops built in, so the result is one you're proud to own.</small></span></div><span class="vv">$300</span></div>
+      <div class="vrow bonus"><div class="vl"><span class="vk">★</span><span class="vt">$57 funnel audit, credited back<small>Start with the audit, and its cost comes straight off your build.</small></span></div><span class="vv">$597</span></div>
+
+      <div class="vtotal"><span class="vl">Total value</span><span class="vv">$6,397</span></div>
+
+      <div class="vprice">
+        <div class="vlabel">Founding-client rate</div>
+        <div><span class="vwas">$2,994</span><span class="vnow">$1,497</span><span class="vsave">50% off</span></div>
+        <p class="vterms">I'm building my portfolio, so the rate is half of what it will be. This is the lowest it will ever be. <strong style="color:#fff;">50% to start, 50% on launch.</strong></p>
+      </div>
+    </div>
+
+    <div class="us-strip">
+      <div class="us-item"><span class="us-ic">⏳</span><span class="us-tx"><strong>The price climbs as my calendar fills.</strong> The founding 50% off is for early clients only.</span></div>
+      <div class="us-item"><span class="us-ic">▲</span><span class="us-tx"><strong>Only 2 build slots at a time.</strong> Each funnel gets my full focus, so spots are limited on purpose.</span></div>
+      <div class="us-item"><span class="us-ic">⚑</span><span class="us-tx"><strong>Your slot is held by the deposit.</strong> Nothing's reserved until the 50% is in, first in, first built.</span></div>
+      <div class="us-item"><span class="us-ic">✦</span><span class="us-tx"><strong>Prefer to start smaller?</strong> The $57 funnel audit is an intro price that goes up later, and it credits toward your build.</span></div>
+    </div>
+
+    <div class="vcta">
+      <a href="/funnels/apply" class="btn-gold">Claim a Founding Slot →</a>
+      <p class="secondary-opt">Not ready to book a call? <a href="/funnel-audit?from=funnels">Start with a $57 funnel audit</a> instead, it credits toward your build.</p>
+    </div>
   </div>
 </section>
 

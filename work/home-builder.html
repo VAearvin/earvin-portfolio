@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Atlas &amp; Oak — Custom Homes &amp; Design-Build</title>
+<meta name="description" content="Atlas & Oak — custom homes, whole-home renovations, and design-build craftsmanship. One team from blueprint to keys. Book a design consultation."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#181613"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --char:#181613; --char-2:#221f1a; --stone:#b08d5b; --stone-d:#967440;
+    --cream:#f4efe7; --sand:#ece4d6; --ink:#2a2520; --slate:#6f655a; --line:#e4dccd; --white:#fff;
+    --r:6px; --shadow:0 24px 60px rgba(24,22,19,0.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:600;line-height:1.1}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--stone);color:#fff;font-weight:600;padding:.95rem 1.9rem;border-radius:var(--r);font-size:.95rem;transition:.2s;border:none;cursor:pointer;letter-spacing:.02em}
+  .btn:hover{background:var(--stone-d);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.32)}
+  .btn-ghost:hover{border-color:var(--stone);color:var(--stone)}
+  .eyebrow{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--stone-d);margin-bottom:1rem}
+
+  .demo-bar{background:#0f0d0b;color:#d8cbb6;font-size:.82rem;text-align:center;padding:.55rem 1rem;font-weight:500}
+  .demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(24,22,19,.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:1.05rem 24px;max-width:1200px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:.6rem;font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem;color:#fff;letter-spacing:.02em}
+  .logo .mark{width:32px;height:32px;border:1.5px solid var(--stone);display:grid;place-items:center;color:var(--stone);font-size:.9rem}
+  .nav-links{display:flex;gap:2rem;align-items:center;font-size:.92rem;font-weight:500;color:#cabfb0}
+  .nav-links a:hover{color:var(--stone)}
+  @media(max-width:880px){.nav-links{display:none}}
+
+  .hero{position:relative;background:var(--char);color:#fff;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;opacity:.42}
+  .hero-bg img{width:100%;height:100%;object-fit:cover}
+  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(24,22,19,.95) 28%,rgba(24,22,19,.45) 100%)}
+  .hero-in{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:6.5rem 24px 7rem}
+  .hero h1{font-size:clamp(2.6rem,5.5vw,4.4rem);letter-spacing:-.01em;color:#fff;max-width:16ch}
+  .hero h1 em{font-style:italic;color:var(--stone)}
+  .hero p.lede{font-size:1.16rem;color:#cdc2b3;margin:1.5rem 0 2.2rem;max-width:34rem}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .trust{display:flex;gap:2.4rem;margin-top:3rem;flex-wrap:wrap}
+  .trust div{font-size:.85rem;color:#a99e8f}
+  .trust strong{display:block;font-family:'Fraunces',serif;font-size:1.9rem;color:var(--stone);font-weight:600}
+
+  .strip{padding:1.7rem 0;background:var(--cream);border-bottom:1px solid var(--line)}
+  .strip-in{display:flex;align-items:center;justify-content:center;gap:2.4rem;flex-wrap:wrap;font-size:.82rem;font-weight:700;letter-spacing:.06em;color:#a8997f}
+  .strip-in span:first-child{color:var(--slate);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:600}
+  .strip-in span{color:#a8997f}
+
+  section{padding:5.5rem 0}
+  .sec-head{max-width:46rem;margin:0 auto 3.2rem;text-align:center}
+  .sec-head h2{font-size:clamp(2rem,3.8vw,2.9rem);letter-spacing:-.01em}
+  .sec-head p{color:var(--slate);margin-top:1rem;font-size:1.05rem}
+
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .svc{position:relative;border-radius:var(--r);overflow:hidden;min-height:300px;display:flex;align-items:flex-end;color:#fff}
+  .svc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.4s}
+  .svc:hover img{transform:scale(1.06)}
+  .svc::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,22,19,.1) 30%,rgba(24,22,19,.88) 100%)}
+  .svc .bd{position:relative;z-index:2;padding:1.7rem}
+  .svc h3{font-size:1.45rem;margin-bottom:.35rem;color:#fff}
+  .svc p{color:#d9cfc2;font-size:.92rem}
+
+  .process{background:var(--cream)}
+  .step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+  .step{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:2.1rem}
+  .step .n{font-family:'Fraunces',serif;font-size:2.4rem;color:var(--stone);line-height:1;margin-bottom:.8rem}
+  .step h3{font-size:1.3rem;margin-bottom:.5rem}
+  .step p{color:var(--slate);font-size:.95rem}
+  @media(max-width:880px){.step-grid,.svc-grid{grid-template-columns:1fr}}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .split img{width:100%;border-radius:var(--r);box-shadow:var(--shadow);aspect-ratio:5/4;object-fit:cover}
+  .split ul{list-style:none;margin-top:1.6rem;display:grid;gap:1rem}
+  .split li{display:flex;gap:.8rem;align-items:flex-start;color:var(--slate)}
+  .split li b{color:var(--ink)}
+  .check{flex:none;width:26px;height:26px;border-radius:6px;background:var(--char);color:var(--stone);display:grid;place-items:center;font-size:.8rem;font-weight:800;margin-top:.15rem}
+  @media(max-width:880px){.split{grid-template-columns:1fr;gap:2rem}.split.rev .img-col{order:-1}}
+
+  .results{background:var(--char);color:#fff}
+  .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+  .res b{display:block;font-family:'Fraunces',serif;font-size:2.8rem;color:var(--stone);line-height:1}
+  .res span{display:block;color:#a99e8f;font-size:.92rem;margin-top:.6rem}
+  @media(max-width:760px){.res-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+
+  .tmint{background:var(--cream)}
+  .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .tm{background:#fff;border-radius:var(--r);padding:1.9rem;border:1px solid var(--line)}
+  .stars{color:var(--stone);margin-bottom:.8rem;letter-spacing:.1em}
+  .tm p{font-size:.97rem;color:var(--ink)}
+  .tm .who{display:flex;align-items:center;gap:.7rem;margin-top:1.2rem}
+  .tm .av{width:44px;height:44px;border-radius:50%;background:var(--char);color:var(--stone);display:grid;place-items:center;font-weight:700;font-family:'Fraunces',serif}
+  .tm .who small{display:block;color:var(--slate)}
+  @media(max-width:880px){.tm-grid{grid-template-columns:1fr}}
+
+  .consult-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .consult-form{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:2.3rem;box-shadow:var(--shadow)}
+  .consult-form label{display:block;font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin:1rem 0 .4rem}
+  .consult-form input,.consult-form textarea,.consult-form select{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:var(--r);font-size:.95rem;font-family:inherit;color:var(--ink);background:#fcfaf6}
+  .consult-form input:focus,.consult-form textarea:focus,.consult-form select:focus{outline:none;border-color:var(--stone)}
+  .consult-form textarea{resize:vertical;min-height:84px}
+  .consult-form .btn{margin-top:1.4rem;width:100%;justify-content:center}
+  .cmsg{margin-top:.9rem;text-align:center;font-size:.9rem;color:var(--stone-d);font-weight:600;min-height:1.2em}
+  @media(max-width:880px){.consult-grid{grid-template-columns:1fr;gap:2.2rem}}
+
+  .cta{position:relative;border-radius:var(--r);overflow:hidden;color:#fff;text-align:center;padding:4.5rem 2rem}
+  .cta-bg{position:absolute;inset:0}
+  .cta-bg img{width:100%;height:100%;object-fit:cover}
+  .cta::after{content:'';position:absolute;inset:0;background:rgba(24,22,19,.78)}
+  .cta-in{position:relative;z-index:2}
+  .cta h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem;color:#fff}
+  .cta p{color:#d9cfc2;max-width:34rem;margin:0 auto 2rem;font-size:1.08rem}
+
+  footer{background:var(--char-2);color:#a99e8f;padding:3.5rem 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+  footer h4{color:#fff;font-family:'Inter';font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
+  footer a{display:block;color:#a99e8f;font-size:.92rem;margin-bottom:.6rem}
+  footer a:hover{color:var(--stone)}
+  .foot-bottom{text-align:center;padding-top:1.8rem;font-size:.82rem;color:#7a6f60}
+  .foot-logo{color:#fff;font-family:'Fraunces',serif;font-size:1.4rem;margin-bottom:.8rem}
+  .disclaimer{max-width:60rem;margin:1.2rem auto 0;text-align:center;font-size:.74rem;color:#6c6253;line-height:1.6}
+  @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr}}
+</style>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<div class="demo-bar">🏠 This is a <strong>demo site</strong> built by Earvin Laureano to showcase web design. &nbsp;<a href="/work">← Back to portfolio</a> &nbsp;·&nbsp; <a href="/pricing">Get a site like this</a></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="#" class="logo"><span class="mark">A&amp;O</span> Atlas &amp; Oak</a>
+    <nav class="nav-links">
+      <a href="#work">What We Build</a>
+      <a href="#process">Process</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#consult" class="btn">Start a Project</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80&auto=format&fit=crop" alt="Modern custom home"/></div>
+  <div class="hero-in">
+    <span class="eyebrow" style="color:var(--stone)">Custom Homes · Design-Build</span>
+    <h1>The home you've drawn in your head, <em>built right.</em></h1>
+    <p class="lede">Atlas &amp; Oak designs and builds custom homes and whole-home renovations with one team, one timeline, and a standard of craft you can feel underfoot.</p>
+    <div class="hero-actions">
+      <a href="#consult" class="btn">Book a Design Consultation →</a>
+      <a href="#work" class="btn btn-ghost">See Our Work</a>
+    </div>
+    <div class="trust">
+      <div><strong>250+</strong> homes delivered</div>
+      <div><strong>22 yrs</strong> building locally</div>
+      <div><strong>On time</strong> &amp; on budget</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-in">
+    <span>Award-winning &amp; recognized by</span>
+    <span>HOUZZ</span><span>NAHB</span><span>DWELL</span><span>BUILDER 100</span><span>ARCHITECTURAL DIGEST</span>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What We Build</span>
+      <h2>From the studs to the soul of the place</h2>
+      <p>Whether it's a ground-up custom build or reimagining the home you already love, the craft is the same.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80&auto=format&fit=crop" alt="Custom home"/><div class="bd"><h3>Custom Homes</h3><p>Ground-up homes designed around how you actually live, built to last generations.</p></div></div>
+      <div class="svc"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80&auto=format&fit=crop" alt="Home renovation"/><div class="bd"><h3>Whole-Home Renovation</h3><p>Reimagine the home you love, structure, flow, and finish, without the move.</p></div></div>
+      <div class="svc"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=700&q=80&auto=format&fit=crop" alt="Kitchen remodel"/><div class="bd"><h3>Kitchens &amp; Baths</h3><p>The rooms you live in most, rebuilt with the materials and detail they deserve.</p></div></div>
+      <div class="svc"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=700&q=80&auto=format&fit=crop" alt="Home addition"/><div class="bd"><h3>Additions</h3><p>More room to grow, seamlessly matched to your home so it never looks added on.</p></div></div>
+      <div class="svc"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&q=80&auto=format&fit=crop" alt="Outdoor living"/><div class="bd"><h3>Outdoor Living</h3><p>Kitchens, pools, and living spaces that make the outside an extension of home.</p></div></div>
+      <div class="svc"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=700&q=80&auto=format&fit=crop" alt="Design-build"/><div class="bd"><h3>Design-Build</h3><p>Architect, designer, and builder under one roof, so nothing gets lost in handoff.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How It Works</span>
+      <h2>One team, blueprint to keys</h2>
+      <p>No finger-pointing between architect and builder. We own the whole thing, so you only have one number to call.</p>
+    </div>
+    <div class="step-grid">
+      <div class="step"><div class="n">01</div><h3>Design &amp; Plan</h3><p>We listen first, then design to your life and your budget, with a fixed scope and a real timeline before a shovel hits the ground.</p></div>
+      <div class="step"><div class="n">02</div><h3>Build &amp; Craft</h3><p>One dedicated crew, weekly updates, and a job site run clean. You always know what's happening and what's next.</p></div>
+      <div class="step"><div class="n">03</div><h3>Walk-through &amp; Keys</h3><p>A detailed final walk-through, a workmanship warranty, and a team that picks up the phone long after move-in.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="split">
+      <div class="img-col"><img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80&auto=format&fit=crop" alt="Builder reviewing plans on site"/></div>
+      <div>
+        <span class="eyebrow">Why Atlas &amp; Oak</span>
+        <h2 style="font-size:2.3rem">Built like it's ours, finished like it's yours</h2>
+        <p style="color:var(--slate);margin-top:1rem">A custom home is the biggest thing most families ever build. We treat that weight the way it deserves, with honesty about cost, craft you can inspect, and a process that doesn't keep you in the dark.</p>
+        <ul>
+          <li><span class="check">✓</span><span><b>Fixed scope, real budget.</b> The number we agree on is the number we build to.</span></li>
+          <li><span class="check">✓</span><span><b>One point of contact.</b> A dedicated project lead from first sketch to final key.</span></li>
+          <li><span class="check">✓</span><span><b>Weekly updates.</b> Photos, progress, and next steps, every single week.</span></li>
+          <li><span class="check">✓</span><span><b>Warranty that means it.</b> We stand behind the work long after the trucks leave.</span></li>
+        </ul>
+        <a href="#consult" class="btn" style="margin-top:1.8rem">Start Your Project →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="results">
+  <div class="wrap">
+    <div class="res-grid">
+      <div class="res"><b>250+</b><span>Homes delivered</span></div>
+      <div class="res"><b>22 yrs</b><span>Building locally</span></div>
+      <div class="res"><b>96%</b><span>On-time completion</span></div>
+      <div class="res"><b>4.9★</b><span>Client rating</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="tmint">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Homeowner Stories</span>
+      <h2>The people who live there</h2>
+    </div>
+    <div class="tm-grid">
+      <div class="tm"><div class="stars">★★★★★</div><p>"They built our forever home and never once made us feel like we were bothering them with questions. On budget, a week early, and better than the renderings."</p><div class="who"><div class="av">TH</div><div>Tom &amp; Hannah<small>Custom build</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"We've renovated before and dreaded doing it again. Atlas &amp; Oak changed our minds completely, organized, clean, and the craftsmanship is unreal."</p><div class="who"><div class="av">MS</div><div>Marisol S.<small>Whole-home reno</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"The weekly updates kept us sane. We always knew where things stood. They treated our house like they were going to live in it."</p><div class="who"><div class="av">DP</div><div>Derek P.<small>Addition &amp; kitchen</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="consult">
+  <div class="wrap">
+    <div class="consult-grid">
+      <div>
+        <span class="eyebrow">Start a Project</span>
+        <h2 style="font-size:2.3rem">Tell us about the home you're picturing</h2>
+        <p style="color:var(--slate);margin-top:1rem">Share a few details and we'll set up a design consultation, no cost and no obligation. We'll talk through your vision, timeline, and a realistic budget range.</p>
+        <ul style="list-style:none;margin-top:1.6rem;display:grid;gap:1rem">
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--slate)"><span class="check">✓</span> Complimentary design consultation</li>
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--slate)"><span class="check">✓</span> Honest budget ranges up front</li>
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--slate)"><span class="check">✓</span> We'll tell you if we're not the right fit</li>
+        </ul>
+      </div>
+      <form class="consult-form" id="consultForm">
+        <label for="cn">Full Name</label>
+        <input type="text" id="cn" placeholder="Your name" required/>
+        <label for="ce">Email</label>
+        <input type="email" id="ce" placeholder="you@email.com" required/>
+        <label for="cp">Project Type</label>
+        <select id="cp"><option>New custom home</option><option>Whole-home renovation</option><option>Kitchen or bath</option><option>Addition</option><option>Outdoor living</option><option>Not sure yet</option></select>
+        <label for="cm">Tell us about your vision</label>
+        <textarea id="cm" placeholder="A few sentences is plenty."></textarea>
+        <button type="submit" class="btn">Request My Consultation →</button>
+        <div class="cmsg" id="cmsg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:5.5rem">
+  <div class="wrap">
+    <div class="cta">
+      <div class="cta-bg"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80&auto=format&fit=crop" alt="Custom home interior"/></div>
+      <div class="cta-in">
+        <h2>Let's build something that lasts</h2>
+        <p>Every great home starts with a conversation. Book your design consultation and let's see what's possible.</p>
+        <a href="#consult" class="btn">Book a Design Consultation →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Atlas &amp; Oak</div>
+        <p style="font-size:.9rem;max-width:19rem">Custom homes, renovations, and design-build craftsmanship. One team, blueprint to keys.</p>
+      </div>
+      <div><h4>Build</h4><a href="#work">Custom Homes</a><a href="#work">Renovations</a><a href="#work">Kitchens &amp; Baths</a><a href="#work">Additions</a></div>
+      <div><h4>Studio</h4><a href="#process">Process</a><a href="#why">Why Us</a><a href="#reviews">Reviews</a><a href="#consult">Start a Project</a></div>
+      <div><h4>Visit</h4><a href="#">410 Mill Works Road</a><a href="#">Mon–Fri · 8–5</a><a href="tel:#">(000) 000-0000</a></div>
+    </div>
+    <div class="foot-bottom">
+      Demo site designed &amp; built by <a href="/" style="color:#fff;text-decoration:underline;display:inline">Earvin Laureano</a> · Not a real business · <a href="/work" style="color:#fff;text-decoration:underline;display:inline">See more work</a>
+      <div class="disclaimer">This is a fictional demonstration website created to showcase web design and does not provide construction services. Projects, stats, and reviews are illustrative only.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('consultForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    document.getElementById('cmsg').textContent='✓ Thanks — in a real build, this would reach the studio and start a project file. (Demo only.)';
+    this.querySelector('button').textContent='Consultation Requested ✓';
+  });
+</script>
+</body>
+</html>

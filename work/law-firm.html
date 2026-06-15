@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sterling &amp; Vale — Trial Attorneys for the Injured</title>
+<meta name="description" content="Sterling & Vale — trial attorneys who fight for the seriously injured. No fee unless we win. Free case review, 24/7."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#0f1d35"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --navy:#0f1d35; --navy-d:#0a1525; --gold:#c0a05c; --gold-d:#a8873f;
+    --cream:#f7f4ee; --line:#e6e1d6; --slate:#55617a; --ink:#16223b; --white:#fff;
+    --r:14px; --shadow:0 22px 60px rgba(15,29,53,0.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Playfair Display',serif;line-height:1.12}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--navy);font-weight:700;padding:1rem 1.9rem;border-radius:8px;font-size:.95rem;transition:.2s;border:none;cursor:pointer;letter-spacing:.01em}
+  .btn:hover{background:var(--gold-d);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.3)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+  .eyebrow{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:1rem}
+
+  .demo-bar{background:var(--navy-d);color:#c9d3e6;font-size:.82rem;text-align:center;padding:.55rem 1rem;font-weight:500}
+  .demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(15,29,53,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:1.05rem 24px;max-width:1180px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:.6rem;font-family:'Playfair Display',serif;font-weight:700;font-size:1.3rem;color:#fff}
+  .logo .mark{width:34px;height:34px;border-radius:7px;border:1.5px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-size:1rem}
+  .nav-links{display:flex;gap:2rem;align-items:center;font-size:.92rem;font-weight:500;color:#c9d3e6}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  @media(max-width:880px){.nav-links{display:none}}
+
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-d) 100%);color:#fff;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:4.5rem 0 5rem}
+  .hero h1{font-size:clamp(2.4rem,5vw,3.8rem);letter-spacing:-.01em;color:#fff}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero p.lede{font-size:1.14rem;color:#b9c4da;margin:1.4rem 0 2rem;max-width:31rem}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .trust{display:flex;gap:2rem;margin-top:2.6rem;flex-wrap:wrap}
+  .trust div{font-size:.85rem;color:#9fadc9}
+  .trust strong{display:block;font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold)}
+  .hero-card{position:relative;border-radius:18px;box-shadow:var(--shadow);overflow:hidden;border:1px solid rgba(255,255,255,.12)}
+  .hero-card img{width:100%;display:block;aspect-ratio:4/3.6;object-fit:cover}
+  .badge-float{position:absolute;background:#fff;color:var(--ink);border-radius:12px;box-shadow:var(--shadow);padding:.85rem 1.05rem;display:flex;align-items:center;gap:.6rem;font-size:.84rem;font-weight:700}
+  .badge-float .dot{width:34px;height:34px;border-radius:9px;background:var(--cream);display:grid;place-items:center;color:var(--gold-d)}
+  .bf-1{bottom:-16px;left:-16px}
+  .bf-2{top:-16px;right:-16px}
+  @media(max-width:880px){.hero-grid{grid-template-columns:1fr;padding:3rem 0}.bf-1,.bf-2{display:none}}
+
+  .strip{padding:1.7rem 0;background:var(--cream);border-bottom:1px solid var(--line)}
+  .strip-in{display:flex;align-items:center;justify-content:center;gap:2.4rem;flex-wrap:wrap;font-size:.82rem;font-weight:700;letter-spacing:.06em;color:#a99f86}
+  .strip-in span:first-child{color:var(--slate);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:600}
+
+  section{padding:5.5rem 0}
+  .sec-head{text-align:center;max-width:44rem;margin:0 auto 3.2rem}
+  .sec-head h2{font-size:clamp(1.9rem,3.5vw,2.7rem);letter-spacing:-.01em}
+  .sec-head p{color:var(--slate);margin-top:1rem;font-size:1.05rem}
+
+  .pa{background:var(--cream)}
+  .pa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+  .pcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:2rem;transition:.2s}
+  .pcard:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:transparent}
+  .pcard .ic{width:48px;height:48px;border-radius:11px;background:var(--navy);color:var(--gold);display:grid;place-items:center;margin-bottom:1.2rem;font-size:1.3rem}
+  .pcard h3{font-size:1.28rem;margin-bottom:.5rem}
+  .pcard p{color:var(--slate);font-size:.95rem}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .split img{width:100%;border-radius:18px;box-shadow:var(--shadow);aspect-ratio:5/4;object-fit:cover}
+  .split ul{list-style:none;margin-top:1.6rem;display:grid;gap:1rem}
+  .split li{display:flex;gap:.8rem;align-items:flex-start;color:var(--slate)}
+  .split li b{color:var(--ink)}
+  .check{flex:none;width:26px;height:26px;border-radius:7px;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-size:.8rem;font-weight:800;margin-top:.15rem}
+  @media(max-width:880px){.split{grid-template-columns:1fr;gap:2rem}.split.rev .img-col{order:-1}}
+
+  .results{background:var(--navy);color:#fff}
+  .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+  .res b{display:block;font-family:'Playfair Display',serif;font-size:2.8rem;color:var(--gold);line-height:1}
+  .res span{display:block;color:#a9b6d1;font-size:.92rem;margin-top:.6rem}
+  @media(max-width:760px){.res-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+
+  .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .tm{background:#fff;border-radius:var(--r);padding:1.9rem;border:1px solid var(--line)}
+  .stars{color:var(--gold);margin-bottom:.8rem;letter-spacing:.1em}
+  .tm p{font-size:.97rem;color:var(--ink)}
+  .tm .who{display:flex;align-items:center;gap:.7rem;margin-top:1.2rem}
+  .tm .av{width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:700;font-family:'Playfair Display',serif}
+  .tm .who small{display:block;color:var(--slate)}
+  @media(max-width:880px){.tm-grid{grid-template-columns:1fr}}
+
+  /* consult */
+  .consult{background:var(--cream)}
+  .consult-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .consult-form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:2.3rem;box-shadow:var(--shadow)}
+  .consult-form label{display:block;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin:1rem 0 .4rem}
+  .consult-form input,.consult-form textarea,.consult-form select{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:9px;font-size:.95rem;font-family:inherit;color:var(--ink);background:#fcfbf8}
+  .consult-form input:focus,.consult-form textarea:focus,.consult-form select:focus{outline:none;border-color:var(--gold)}
+  .consult-form textarea{resize:vertical;min-height:90px}
+  .consult-form .btn{margin-top:1.4rem;width:100%;justify-content:center}
+  .cmsg{margin-top:.9rem;text-align:center;font-size:.9rem;color:var(--gold-d);font-weight:600;min-height:1.2em}
+  @media(max-width:880px){.consult-grid{grid-template-columns:1fr;gap:2.2rem}}
+
+  .cta{background:linear-gradient(135deg,var(--navy),var(--navy-d));color:#fff;text-align:center;border-radius:24px;padding:4rem 2rem}
+  .cta h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:1rem;color:#fff}
+  .cta p{color:#b9c4da;max-width:34rem;margin:0 auto 2rem;font-size:1.08rem}
+
+  footer{background:var(--navy-d);color:#9fadc9;padding:3.5rem 0 2rem;margin-top:0}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+  footer h4{color:#fff;font-family:'Inter';font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
+  footer a{display:block;color:#9fadc9;font-size:.92rem;margin-bottom:.6rem}
+  footer a:hover{color:var(--gold)}
+  .foot-bottom{text-align:center;padding-top:1.8rem;font-size:.82rem;color:#6c7a96}
+  .foot-logo{color:#fff;font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:.8rem}
+  .disclaimer{max-width:60rem;margin:1.2rem auto 0;text-align:center;font-size:.74rem;color:#5d6a85;line-height:1.6}
+  @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr}}
+</style>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<div class="demo-bar">⚖️ This is a <strong>demo site</strong> built by Earvin Laureano to showcase web design. &nbsp;<a href="/work">← Back to portfolio</a> &nbsp;·&nbsp; <a href="/pricing">Get a site like this</a></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="#" class="logo"><span class="mark">S&amp;V</span> Sterling &amp; Vale</a>
+    <nav class="nav-links">
+      <a href="#practice">Practice Areas</a>
+      <a href="#why">Why Us</a>
+      <a href="#results">Results</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#consult" class="btn">Free Case Review</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">Trial Attorneys · Personal Injury</span>
+        <h1>Hurt by someone else's<br/><em>carelessness?</em></h1>
+        <p class="lede">When the insurance company sees a claim, we make them see a trial. Sterling &amp; Vale fights for the seriously injured, and you pay nothing unless we win.</p>
+        <div class="hero-actions">
+          <a href="#consult" class="btn">Get Your Free Case Review →</a>
+          <a href="tel:+10000000000" class="btn btn-ghost">📞 Call 24/7</a>
+        </div>
+        <div class="trust">
+          <div><strong>$500M+</strong> recovered for clients</div>
+          <div><strong>40+ yrs</strong> combined trial experience</div>
+          <div><strong>No fee</strong> unless we win</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80&auto=format&fit=crop" alt="Law office"/>
+        <div class="badge-float bf-1"><span class="dot">⚖️</span> No win, no fee</div>
+        <div class="badge-float bf-2"><span class="dot">★</span> 4.9 · 800+ reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-in">
+    <span>As seen in</span>
+    <span>THE TRIBUNE</span><span>LEGAL 500</span><span>SUPER LAWYERS</span><span>CITY BUSINESS</span><span>AVVO 10.0</span>
+  </div>
+</div>
+
+<section id="practice" class="pa">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Practice Areas</span>
+      <h2>If you were injured, we handle it</h2>
+      <p>Decades of courtroom experience across the cases that change lives. One call, and we take it from here.</p>
+    </div>
+    <div class="pa-grid">
+      <div class="pcard"><div class="ic">🚗</div><h3>Car &amp; Truck Accidents</h3><p>Serious crashes, commercial trucks, rideshare collisions. We rebuild the day it happened and prove who's at fault.</p></div>
+      <div class="pcard"><div class="ic">🏥</div><h3>Medical Malpractice</h3><p>When the care that was supposed to help causes harm, we hold providers and hospitals accountable.</p></div>
+      <div class="pcard"><div class="ic">🏗️</div><h3>Workplace &amp; Construction</h3><p>On-the-job injuries and unsafe sites. We pursue every source of recovery, not just workers' comp.</p></div>
+      <div class="pcard"><div class="ic">🛒</div><h3>Slip &amp; Fall</h3><p>Property owners owe you a safe space. When they cut corners and you get hurt, they answer for it.</p></div>
+      <div class="pcard"><div class="ic">💔</div><h3>Wrongful Death</h3><p>The cases no family should face. We carry the legal weight so you can carry what matters.</p></div>
+      <div class="pcard"><div class="ic">📄</div><h3>Insurance Disputes</h3><p>Lowball offer? Denied claim? We know their playbook, and we make them pay what's fair.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="split">
+      <div class="img-col"><img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&q=80&auto=format&fit=crop" alt="Attorney meeting a client"/></div>
+      <div>
+        <span class="eyebrow">Why Sterling &amp; Vale</span>
+        <h2 style="font-size:2.3rem">We treat your case like it's the only one that matters</h2>
+        <p style="color:var(--slate);margin-top:1rem">Big-firm results without being treated like a file number. You work directly with the attorney trying your case, start to finish.</p>
+        <ul>
+          <li><span class="check">✓</span><span><b>No fee unless we win.</b> We front every cost. If we don't recover, you owe nothing.</span></li>
+          <li><span class="check">✓</span><span><b>We try cases.</b> Insurers settle higher when they know we'll go to a jury, and we will.</span></li>
+          <li><span class="check">✓</span><span><b>Your attorney, on your phone.</b> Direct line to the lawyer, not a call center.</span></li>
+          <li><span class="check">✓</span><span><b>We come to you.</b> Hospital, home, or video. You focus on healing.</span></li>
+        </ul>
+        <a href="#consult" class="btn" style="margin-top:1.8rem">Talk to an Attorney →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="results" class="results">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:2.6rem">
+      <span class="eyebrow" style="color:var(--gold)">Case Results</span>
+      <h2 style="color:#fff">Verdicts &amp; settlements that speak</h2>
+      <p style="color:#a9b6d1">A sample of recent recoveries. Past results do not guarantee a future outcome, but they show how hard we fight.</p>
+    </div>
+    <div class="res-grid">
+      <div class="res"><b>$12.4M</b><span>Trucking collision verdict</span></div>
+      <div class="res"><b>$6.1M</b><span>Surgical malpractice</span></div>
+      <div class="res"><b>$3.8M</b><span>Construction fall</span></div>
+      <div class="res"><b>$2.2M</b><span>Denied insurance claim</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Client Stories</span>
+      <h2>People we've stood beside</h2>
+    </div>
+    <div class="tm-grid">
+      <div class="tm"><div class="stars">★★★★★</div><p>"After my accident the insurer offered almost nothing. Sterling &amp; Vale took over and got me more than ten times their first offer. They handled everything."</p><div class="who"><div class="av">MR</div><div>Marcus R.<small>Truck accident client</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"They were honest from day one, no false promises, just real fight. I never once felt like a case number. I felt protected."</p><div class="who"><div class="av">DT</div><div>Diane T.<small>Malpractice client</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"I was nervous about lawyers. These two changed my mind. Straight answers, constant updates, and a result that let my family breathe again."</p><div class="who"><div class="av">JC</div><div>Javier C.<small>Workplace injury client</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="consult" class="consult">
+  <div class="wrap">
+    <div class="consult-grid">
+      <div>
+        <span class="eyebrow">Free Case Review</span>
+        <h2 style="font-size:2.3rem">Tell us what happened. We'll tell you where you stand.</h2>
+        <p style="color:var(--slate);margin-top:1rem">No cost, no pressure, and completely confidential. Most reviews take 15 minutes, and you'll leave knowing your options.</p>
+        <ul style="list-style:none;margin-top:1.6rem;display:grid;gap:1rem">
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--slate)"><span class="check">✓</span> Available 24/7, including weekends</li>
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--slate)"><span class="check">✓</span> No fee unless we win your case</li>
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--slate)"><span class="check">✓</span> We come to you if you can't travel</li>
+        </ul>
+      </div>
+      <form class="consult-form" id="consultForm">
+        <label for="cn">Full Name</label>
+        <input type="text" id="cn" placeholder="Your name" required/>
+        <label for="cp">Phone</label>
+        <input type="tel" id="cp" placeholder="(000) 000-0000" required/>
+        <label for="ct">Type of Case</label>
+        <select id="ct"><option>Car or truck accident</option><option>Medical malpractice</option><option>Workplace or construction</option><option>Slip and fall</option><option>Wrongful death</option><option>Insurance dispute</option><option>Not sure yet</option></select>
+        <label for="cm">Briefly, what happened?</label>
+        <textarea id="cm" placeholder="A sentence or two is plenty."></textarea>
+        <button type="submit" class="btn">Request My Free Review →</button>
+        <div class="cmsg" id="cmsg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:5.5rem">
+  <div class="wrap">
+    <div class="cta">
+      <h2>You heal. We'll handle the fight.</h2>
+      <p>The call is free, the review is free, and you owe nothing unless we win. The sooner we start, the stronger your case.</p>
+      <a href="#consult" class="btn">Start My Free Case Review →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Sterling &amp; Vale</div>
+        <p style="font-size:.9rem;max-width:19rem">Trial attorneys for the seriously injured. No fee unless we win. Free case review, 24/7.</p>
+      </div>
+      <div><h4>Practice</h4><a href="#practice">Car Accidents</a><a href="#practice">Malpractice</a><a href="#practice">Workplace</a><a href="#practice">Wrongful Death</a></div>
+      <div><h4>Firm</h4><a href="#why">Why Us</a><a href="#results">Results</a><a href="#reviews">Reviews</a><a href="#consult">Free Review</a></div>
+      <div><h4>Contact</h4><a href="#">200 Court Street, Suite 1400</a><a href="#">Open 24/7</a><a href="tel:#">(000) 000-0000</a></div>
+    </div>
+    <div class="foot-bottom">
+      Demo site designed &amp; built by <a href="/" style="color:#fff;text-decoration:underline;display:inline">Earvin Laureano</a> · Not a real law firm · <a href="/work" style="color:#fff;text-decoration:underline;display:inline">See more work</a>
+      <div class="disclaimer">This is a fictional demonstration website created to showcase web design and does not provide legal advice or services. Names, results, and reviews are illustrative only.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('consultForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    document.getElementById('cmsg').textContent='✓ Thanks — in a real build, this would reach the firm instantly. (Demo only.)';
+    this.querySelector('button').textContent='Request Received ✓';
+  });
+</script>
+</body>
+</html>

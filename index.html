@@ -318,10 +318,10 @@
     .stack-name { font-size: 0.92rem; font-weight: 700; color: #fff; margin-bottom: 0.35rem; }
     .stack-note { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
     .stack-foot { font-size: 0.82rem; color: var(--muted); font-style: italic; line-height: 1.7; margin-top: 2.5rem; max-width: 620px; }
-    .dsb-chips { display: flex; flex-wrap: wrap; gap: 0.7rem; }
-    .dsb-chips span { font-size: 0.84rem; font-weight: 600; color: var(--text); background: var(--soft); border: 1px solid rgba(199,169,127,0.28); border-radius: 100px; padding: 0.55rem 1.2rem; }
-    .dsb-scope { max-width: 700px; margin-top: 2.6rem; font-size: 0.9rem; color: var(--muted); line-height: 1.85; }
-    .dsb-scope strong { color: var(--text); font-weight: 600; }
+    .dsb-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 1rem; }
+    .dsb-item { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--r); padding: 1.35rem 1.45rem; }
+    .dsb-item .t { font-size: 0.95rem; font-weight: 700; color: var(--gold); margin-bottom: 0.4rem; }
+    .dsb-item .d { font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
     @media (max-width: 900px) { .stack-pillars { grid-template-columns: 1fr; } }
 
     /* HOW */
@@ -641,11 +641,16 @@
   <div class="section">
     <div class="section-eyebrow reveal">What I Build</div>
     <h2 class="section-title reveal">A Digital<br/><em>Systems Builder</em></h2>
-    <p class="section-desc reveal">Not just websites. Complete digital systems that solve a real business problem, where these pieces work as one instead of living in separate tools and separate heads.</p>
-    <div class="dsb-chips reveal">
-      <span>AI</span><span>Automation</span><span>Web Development</span><span>APIs</span><span>UX</span><span>Marketing</span><span>Business Strategy</span>
+    <p class="section-desc reveal">Not just websites. <strong style="color:#fff;font-weight:700;">Complete digital systems that solve a real business problem</strong>, where these pieces work as one instead of living in separate tools and separate heads.</p>
+    <div class="dsb-grid reveal">
+      <div class="dsb-item"><div class="t">AI</div><div class="d">Smart tools that handle the thinking-heavy work, drafting, sorting, and answering, in seconds.</div></div>
+      <div class="dsb-item"><div class="t">Automation</div><div class="d">The repetitive tasks run themselves, so nothing slips through the cracks.</div></div>
+      <div class="dsb-item"><div class="t">Web Development</div><div class="d">Fast, custom websites and pages, the part your customers actually see and click.</div></div>
+      <div class="dsb-item"><div class="t">Connected Tools (APIs)</div><div class="d">Getting your different apps to talk to each other, so information moves on its own.</div></div>
+      <div class="dsb-item"><div class="t">Ease of Use (UX)</div><div class="d">Making the whole thing simple and pleasant, so visitors never get lost or give up.</div></div>
+      <div class="dsb-item"><div class="t">Marketing</div><div class="d">Getting you found by the right people, and getting them to choose you.</div></div>
+      <div class="dsb-item"><div class="t">Business Strategy</div><div class="d">Tying it all to the goal: more leads, more sales, and less busywork.</div></div>
     </div>
-    <p class="dsb-scope reveal">That is the lane, and I build deep in it. The heavy-infrastructure world, <strong>SaaS platforms, banking and healthcare systems, distributed and multi-tenant architecture, real-time and high-security applications,</strong> is a different craft with its own specialists. When a project genuinely needs that, I will say so and point you to the right hands. Everything else, the systems that actually run and grow your business, is exactly what I do.</p>
   </div>
 </div>
 

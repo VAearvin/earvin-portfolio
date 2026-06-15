@@ -48,7 +48,8 @@ nav#navbar.scrolled { padding: 1rem 5rem; }
 .logo { font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); text-decoration: none; }
 .logo span { color: var(--gold); }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
-.nav-links a { display: inline-flex; align-items: center; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.25s; position: relative; }
+.nav-links > li { display: inline-flex; align-items: center; }
+.nav-links a { display: inline-flex; align-items: center; vertical-align: middle; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.25s; position: relative; }
 .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s; }
 .nav-links a.active { color: var(--gold); }
 .nav-links a:hover { color: var(--gold); }
@@ -198,6 +199,7 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 5rem; display: fle
     transform: translateX(100%); transition: transform 0.35s ease; z-index: 1;
   }
   .nav-links.open { transform: translateX(0); }
+  .nav-links > li { display: block; width: 100%; }
   .nav-links a { font-size: 0.8rem; }
   .nav-dd-menu { position: static; opacity: 1; visibility: visible; transform: none; background: transparent; border: none; box-shadow: none; padding: 0.5rem 0 0 1rem; min-width: 0; }
   .nav-dd .caret { display: none; }

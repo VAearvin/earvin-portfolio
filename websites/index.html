@@ -167,6 +167,51 @@
     .risk-badge span{font-size:.55rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-top:.15rem}
     .risk-body h3{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:.4rem}
     .risk-body p{font-size:.9rem;color:var(--muted);line-height:1.7}
+    /* Reviews treadmill */
+    .rev-wrap{overflow:hidden;position:relative;margin-top:2.8rem}
+    .rev-wrap::before,.rev-wrap::after{content:'';position:absolute;top:0;bottom:0;width:110px;z-index:2;pointer-events:none}
+    .rev-wrap::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+    .rev-wrap::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
+    .rev-track{display:flex;width:max-content;animation:rev-scroll 90s linear infinite}
+    .rev-track:hover{animation-play-state:paused}
+    @keyframes rev-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .rev-card{width:360px;flex-shrink:0;margin-right:1.4rem;background:var(--bg2);border:1px solid var(--border);padding:1.8rem;border-radius:var(--r);text-align:left;display:flex;flex-direction:column}
+    .rev-qm{font-family:Georgia,serif;font-size:2.4rem;color:rgba(199,169,127,.35);line-height:.7;margin-bottom:.3rem}
+    .rev-text{font-size:.86rem;font-style:italic;color:var(--text);line-height:1.75;margin-bottom:1.3rem;flex:1}
+    .rev-auth{border-top:1px solid var(--border);padding-top:1rem}
+    .rev-name{font-size:.88rem;font-weight:700;color:#fff;display:block}
+    .rev-role{font-size:.6rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;display:block}
+    @media (max-width:560px){ .rev-card{width:278px} }
+    /* Value / offer stack */
+    .vstack{max-width:680px;margin:2.6rem auto 0;text-align:left}
+    .vstack-card{background:var(--bg2);border:1px solid rgba(199,169,127,.32);border-radius:var(--r);padding:2.2rem 2.2rem 0;overflow:hidden}
+    .vstack-h{font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 .4rem}
+    .vstack-h.second{margin-top:1.6rem;padding-top:1.4rem;border-top:1px dashed rgba(199,169,127,.25)}
+    .vrow{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;padding:.8rem 0;border-bottom:1px solid var(--border)}
+    .vrow .vl{display:flex;gap:.7rem;align-items:flex-start}
+    .vrow .vk{flex-shrink:0;color:var(--gold);font-weight:800;line-height:1.45}
+    .vrow .vt{font-size:.92rem;color:var(--text);line-height:1.45}
+    .vrow .vt small{display:block;color:var(--muted);font-size:.8rem;margin-top:.15rem}
+    .vrow .vv{flex-shrink:0;font-size:.84rem;color:var(--muted);white-space:nowrap;font-weight:600;line-height:1.45}
+    .vrow.bonus .vk{color:#fff}
+    .vtotal{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 0 1.5rem}
+    .vtotal .vl{font-size:1rem;font-weight:700;color:#fff}
+    .vtotal .vv{font-size:1.25rem;font-weight:800;color:var(--muted)}
+    .vprice{background:rgba(199,169,127,.08);border-top:1px solid rgba(199,169,127,.32);margin:0 -2.2rem;padding:1.9rem 2.2rem;text-align:center}
+    .vprice .vlabel{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+    .vprice .vwas{font-size:1.05rem;color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(255,255,255,.35);margin-right:.7rem}
+    .vprice .vnow{font-size:2.7rem;font-weight:800;color:var(--gold);line-height:1;letter-spacing:-.01em}
+    .vprice .vsave{display:inline-block;margin-left:.6rem;background:var(--gold);color:#0c0c0c;font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .6rem;border-radius:5px;vertical-align:middle}
+    .vprice .vterms{font-size:.82rem;color:var(--muted);margin-top:.8rem;line-height:1.6}
+    /* Urgency + scarcity */
+    .us-strip{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:680px;margin:1.4rem auto 0}
+    @media (max-width:560px){ .us-strip{grid-template-columns:1fr} }
+    .us-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.1rem 1.3rem;display:flex;gap:.8rem;align-items:flex-start;text-align:left}
+    .us-item .us-ic{flex-shrink:0;color:var(--gold);font-weight:800;font-size:1rem;line-height:1.4}
+    .us-item .us-tx{font-size:.84rem;color:var(--muted);line-height:1.55}
+    .us-item .us-tx strong{color:#fff;font-weight:700}
+    .vcta{text-align:center;margin-top:1.9rem}
+    .vcta .secondary-opt{margin-top:1.3rem}
   </style>
 </head>
 <body>
@@ -260,25 +305,55 @@
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- WHAT YOU GET (benefits) -->
 <section class="section center" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">How It Works</div>
-  <h2 class="section-title">Three calls.<br/><em>One launched site.</em></h2>
+  <div class="section-eyebrow">What You Get</div>
+  <h2 class="section-title">A site that<br/><em>earns its keep</em></h2>
+  <p class="section-desc">Not just something pretty to look at. A site that wins trust, gets found, and books clients while you do the work you're great at.</p>
   <div class="outcomes">
-    <div class="outcome"><div class="ic">1</div><h3>Scope call</h3><p>We get clear on your goals, pages, and what success looks like. You'll get a tier recommendation and a clear timeline.</p></div>
-    <div class="outcome"><div class="ic">2</div><h3>Design &amp; build</h3><p>I design and build a custom site for your brand, not a template. You review and approve before anything goes live.</p></div>
-    <div class="outcome"><div class="ic">3</div><h3>Launch &amp; handoff</h3><p>We go live, set up analytics, and walk you through the built-in CMS so you can edit content yourself.</p></div>
+    <div class="outcome"><div class="ic">✓</div><h3>Built to convert, not just look good</h3><p>Every page guides visitors toward one clear action, so a click turns into a booking instead of a bounce.</p></div>
+    <div class="outcome"><div class="ic">✓</div><h3>Found by Google and AI search</h3><p>Built so search engines and tools like ChatGPT can read and recommend you, so new clients find you when they're looking.</p></div>
+    <div class="outcome"><div class="ic">✓</div><h3>Yours to run, no lock-in</h3><p>A built-in CMS lets you edit content yourself, on your own domain. You own everything, no holding your site hostage.</p></div>
   </div>
 </section>
 
-<!-- TESTIMONIAL STRIP -->
+<!-- THE PROCESS (three calls) -->
 <section class="section center" style="border-top:1px solid var(--border);">
-  <div class="quote-strip">
-    <div class="qm">&ldquo;</div>
-    <p>He's done nothing but add to our company. We are so thankful for everything he has done, because I know I couldn't do half the things he does.</p>
-    <div class="who">Jayme · Manager</div>
-    <div class="award">★ Top 5 VA of the Year · Phyllis Song VA Services</div>
+  <div class="section-eyebrow">How It Works</div>
+  <h2 class="section-title">Three calls.<br/><em>One launched site.</em></h2>
+  <p class="section-desc">Simple from your side: three short calls, and I handle everything in between.</p>
+  <div class="outcomes">
+    <div class="outcome"><div class="ic">1</div><h3>Call 1 &middot; Discovery</h3><p>We get clear on your goals, pages, and what success looks like. You leave with a tier recommendation and a clear timeline.</p></div>
+    <div class="outcome"><div class="ic">2</div><h3>Call 2 &middot; Preview &amp; revision</h3><p>I design and build a custom site for your brand, not a template, then walk you through it. You tell me what to sharpen, and I refine until it is right.</p></div>
+    <div class="outcome"><div class="ic">3</div><h3>Call 3 &middot; Launch</h3><p>We go live, set up analytics, and walk through the built-in CMS so you can edit content yourself with confidence.</p></div>
   </div>
+</section>
+
+<!-- REVIEWS TREADMILL -->
+<section class="section center" style="border-top:1px solid var(--border);">
+  <div class="section-eyebrow">Real Words, Real People</div>
+  <h2 class="section-title">What it's like to <em>work with me</em></h2>
+  <p class="section-desc">Top 5 VA of the Year, Phyllis Song VA Services. But the reviews that count are the ones from the people who work with me every week.</p>
+  <div class="rev-wrap">
+    <div class="rev-track">
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">We've been working with Earvin for well over a year now, he's a fantastic addition to our team. He brings joy to everybody every day, and he's one of those people who allows us to do more for everyone.</p><div class="rev-auth"><span class="rev-name">Darren</span><span class="rev-role">CEO</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">He's done nothing but add to our company, and all of the staff loves him. We are so thankful for everything he has done, because I know I couldn't do half the things he does.</p><div class="rev-auth"><span class="rev-name">Jayme</span><span class="rev-role">Manager</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">One of the things I'm most thankful for is him staying on top of us for our time cards, that was really stressful before. Whenever I'm panicking in the middle of the night I'll message him, and he's always really nice about it.</p><div class="rev-auth"><span class="rev-name">Whitney</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">I'm super thankful for how prompt and helpful and happy Earvin is to help everybody, all the time. Anytime I've asked him for anything, he's almost on it immediately.</p><div class="rev-auth"><span class="rev-name">Tiffany</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">Every time I have a question or a request or anything, Earvin answers like immediately, he's right on top of it. And he's really good at designing our newsletters too.</p><div class="rev-auth"><span class="rev-name">Tayler</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">Thank you Earvin for always being on time with responses to us and for taking care of all the stuff on your end so that we get to focus on ours.</p><div class="rev-auth"><span class="rev-name">Jay</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">He's always reliable, and I need that kind of dependable help.</p><div class="rev-auth"><span class="rev-name">Amani</span><span class="rev-role">Service Provider</span></div></div>
+      <!-- duplicate set for seamless loop -->
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">We've been working with Earvin for well over a year now, he's a fantastic addition to our team. He brings joy to everybody every day, and he's one of those people who allows us to do more for everyone.</p><div class="rev-auth"><span class="rev-name">Darren</span><span class="rev-role">CEO</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">He's done nothing but add to our company, and all of the staff loves him. We are so thankful for everything he has done, because I know I couldn't do half the things he does.</p><div class="rev-auth"><span class="rev-name">Jayme</span><span class="rev-role">Manager</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">One of the things I'm most thankful for is him staying on top of us for our time cards, that was really stressful before. Whenever I'm panicking in the middle of the night I'll message him, and he's always really nice about it.</p><div class="rev-auth"><span class="rev-name">Whitney</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">I'm super thankful for how prompt and helpful and happy Earvin is to help everybody, all the time. Anytime I've asked him for anything, he's almost on it immediately.</p><div class="rev-auth"><span class="rev-name">Tiffany</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">Every time I have a question or a request or anything, Earvin answers like immediately, he's right on top of it. And he's really good at designing our newsletters too.</p><div class="rev-auth"><span class="rev-name">Tayler</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">Thank you Earvin for always being on time with responses to us and for taking care of all the stuff on your end so that we get to focus on ours.</p><div class="rev-auth"><span class="rev-name">Jay</span><span class="rev-role">Service Provider</span></div></div>
+      <div class="rev-card"><div class="rev-qm">&ldquo;</div><p class="rev-text">He's always reliable, and I need that kind of dependable help.</p><div class="rev-auth"><span class="rev-name">Amani</span><span class="rev-role">Service Provider</span></div></div>
+    </div>
+  </div>
+  <div class="award" style="margin-top:2rem;display:inline-flex;align-items:center;gap:.6rem;background:rgba(199,169,127,.1);border:1px solid rgba(199,169,127,.3);padding:.5rem 1.1rem;border-radius:100px;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)">★ Top 5 VA of the Year · Phyllis Song VA Services</div>
 </section>
 
 <!-- CTA BAND -->
@@ -313,13 +388,47 @@
   </div>
 </section>
 
-<!-- PRICE ANCHOR -->
+<!-- VALUE STACK -->
 <section class="section center" style="border-top:1px solid var(--border);">
-  <div class="section-eyebrow">Investment</div>
-  <h2 class="section-title">Straight about <em>price</em></h2>
-  <div class="anchor">
-    <div class="amt">From <span data-price="builds.foundation.from"></span></div>
-    <p>Final scope depends on your pages and goals. We lock the exact number on the call, no surprises. 50% to start, 50% on launch.</p>
+  <div class="section-eyebrow">The Offer</div>
+  <h2 class="section-title">Everything you get,<br/><em>and what it's worth</em></h2>
+  <p class="section-desc">A real website is not one thing you buy. It's design, build, copy, search visibility, and the launch that ties it together. Here is the whole stack, line by line.</p>
+  <div class="vstack">
+    <div class="vstack-card">
+      <div class="vstack-h">What you get</div>
+      <div class="vrow"><div class="vl"><span class="vk">✓</span><span class="vt">Custom design for your brand<small>Designed around your business and your goals, not a template everyone else is using.</small></span></div><span class="vv">$1,200</span></div>
+      <div class="vrow"><div class="vl"><span class="vk">✓</span><span class="vt">Multi-page build, fully responsive<small>Every page built clean and fast, looking right on phones, tablets, and desktop.</small></span></div><span class="vv">$1,800</span></div>
+      <div class="vrow"><div class="vl"><span class="vk">✓</span><span class="vt">Copy &amp; content structure<small>Words and layout that guide visitors toward booking, not just filling space.</small></span></div><span class="vv">$800</span></div>
+      <div class="vrow"><div class="vl"><span class="vk">✓</span><span class="vt">SEO &amp; AI-search optimization<small>Built to be found by Google and recommended by tools like ChatGPT and Perplexity.</small></span></div><span class="vv">$600</span></div>
+      <div class="vrow"><div class="vl"><span class="vk">✓</span><span class="vt">Analytics, forms &amp; launch<small>Lead forms wired up, analytics in place, and a clean go-live, all handled.</small></span></div><span class="vv">$400</span></div>
+
+      <div class="vstack-h second">Bonuses included</div>
+      <div class="vrow bonus"><div class="vl"><span class="vk">★</span><span class="vt">Built-in CMS, edit it yourself<small>Update text and images anytime without touching code or paying for every change.</small></span></div><span class="vv">$400</span></div>
+      <div class="vrow bonus"><div class="vl"><span class="vk">★</span><span class="vt">Full mobile optimization pass<small>Tested and tuned at phone size, where most of your visitors actually are.</small></span></div><span class="vv">$300</span></div>
+      <div class="vrow bonus"><div class="vl"><span class="vk">★</span><span class="vt">Loom walkthrough + clean handoff<small>A recorded tour so you know exactly how to run and update your site.</small></span></div><span class="vv">$200</span></div>
+      <div class="vrow bonus"><div class="vl"><span class="vk">★</span><span class="vt">Two revision rounds per stage<small>Real feedback loops built in, so the result is one you're proud to own.</small></span></div><span class="vv">$300</span></div>
+      <div class="vrow bonus"><div class="vl"><span class="vk">★</span><span class="vt">$57 website audit, credited back<small>Start with the audit, and its cost comes straight off your build.</small></span></div><span class="vv">$597</span></div>
+
+      <div class="vtotal"><span class="vl">Total value</span><span class="vv">$6,597</span></div>
+
+      <div class="vprice">
+        <div class="vlabel">Founding-client rate</div>
+        <div><span class="vwas">$3,594</span><span class="vnow">$1,797</span><span class="vsave">50% off</span></div>
+        <p class="vterms">I'm building my portfolio, so the rate is half of what it will be. This is the lowest it will ever be. <strong style="color:#fff;">50% to start, 50% on launch.</strong> Final scope varies by pages and goals, locked on the call.</p>
+      </div>
+    </div>
+
+    <div class="us-strip">
+      <div class="us-item"><span class="us-ic">⏳</span><span class="us-tx"><strong>The price climbs as my calendar fills.</strong> The founding 50% off is for early clients only.</span></div>
+      <div class="us-item"><span class="us-ic">▲</span><span class="us-tx"><strong>Only 2 build slots at a time.</strong> Each site gets my full focus, so spots are limited on purpose.</span></div>
+      <div class="us-item"><span class="us-ic">⚑</span><span class="us-tx"><strong>Your slot is held by the deposit.</strong> Nothing's reserved until the 50% is in, first in, first built.</span></div>
+      <div class="us-item"><span class="us-ic">✦</span><span class="us-tx"><strong>Prefer to start smaller?</strong> The $57 website audit is an intro price that goes up later, and it credits toward your build.</span></div>
+    </div>
+
+    <div class="vcta">
+      <a href="/websites/apply" class="btn-gold">Claim a Founding Slot →</a>
+      <p class="secondary-opt">Not ready to book a call? <a href="/audit?from=websites">Start with a $57 website audit</a> instead, it credits toward your build.</p>
+    </div>
   </div>
 </section>
 

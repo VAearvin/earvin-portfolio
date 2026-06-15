@@ -29,10 +29,10 @@
 var SPREADSHEET_ID = 'PASTE_YOUR_SHEET_ID_HERE';
 var TAB_NAME       = 'Leads';
 var NOTIFY_EMAIL   = 'services.elaureano@gmail.com';   // where YOU get lead alerts (your inbox)
-var REPLY_TO       = 'inquire@earvinlaureano.com';     // what the LEAD sees as reply-to on auto-replies
-// Note: the "From" address is whatever Google account runs this script. To make the From itself
-// show inquire@earvinlaureano.com, add it as a verified "Send mail as" alias in that Gmail account
-// (Settings -> Accounts -> Send mail as), then add  from: REPLY_TO  to the sendEmail options below.
+var REPLY_TO       = 'inquire@earvinlaureano.com';     // sender + reply-to the LEAD sees on auto-replies
+// IMPORTANT: `from: REPLY_TO` below only works if inquire@earvinlaureano.com is a verified
+// "Send mail as" alias in the Gmail account running this script (Settings -> Accounts -> Send mail as).
+// If the alias is NOT set up, GmailApp throws "Invalid argument: from". Set up the alias first.
 
 // Map a lead Source to the file it should email out. Add more as you build more guides.
 var GUIDES = {
@@ -73,7 +73,7 @@ function doPost(e) {
         d.Email,
         guide.subject,
         guideEmailText(d.Name, guide),               // plain-text fallback
-        { htmlBody: guideEmailHtml(d.Name, guide), name: 'Earvin Laureano', replyTo: REPLY_TO }
+        { htmlBody: guideEmailHtml(d.Name, guide), name: 'Earvin Laureano', from: REPLY_TO, replyTo: REPLY_TO }
       );
     }
 
@@ -83,7 +83,7 @@ function doPost(e) {
         d.Email,
         "Got it, I'll be in touch soon",
         confirmText(d.Name),
-        { htmlBody: confirmHtml(d.Name), name: 'Earvin Laureano', replyTo: REPLY_TO }
+        { htmlBody: confirmHtml(d.Name), name: 'Earvin Laureano', from: REPLY_TO, replyTo: REPLY_TO }
       );
     }
 

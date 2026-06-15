@@ -33,6 +33,40 @@
     "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "0", "highPrice": "9997", "offerCount": "8" }
   }
   </script>
+  <style>
+    /* Clean bordered "lanes" so visitors instantly see Websites vs Funnels vs Partnership */
+    .lanes{display:flex;flex-direction:column;gap:1.6rem;max-width:940px;margin:2.8rem auto 0;text-align:left}
+    .lane{background:var(--bg2);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+    .lane.feature{border-color:rgba(199,169,127,.42);box-shadow:0 0 0 1px rgba(199,169,127,.12)}
+    .lane-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem 1.4rem;flex-wrap:wrap;padding:1.5rem 1.9rem;border-bottom:1px solid var(--border);background:rgba(255,255,255,.022)}
+    .lane-title{font-size:1.35rem;font-weight:800;color:#fff;letter-spacing:-.01em}
+    .lane-title span{color:var(--gold)}
+    .lane-sub{font-size:.88rem;color:var(--muted);flex:1;min-width:240px;line-height:1.55}
+    .lane-body{padding:1.6rem 1.9rem;display:flex;flex-direction:column;gap:.95rem}
+    .lane-main{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;padding:1.25rem 1.5rem;border:1px solid rgba(199,169,127,.32);border-radius:12px;background:rgba(199,169,127,.05);text-decoration:none;transition:border-color .2s,background .2s}
+    .lane-main:hover{border-color:var(--gold);background:rgba(199,169,127,.09)}
+    .lane-main .lm-name{font-size:1.04rem;font-weight:700;color:#fff;margin-bottom:.25rem}
+    .lane-main .lm-desc{font-size:.85rem;color:var(--muted);line-height:1.5;max-width:48ch}
+    .lane-main .lm-r{text-align:right;flex-shrink:0}
+    .lane-main .lm-price{font-size:1.2rem;font-weight:800;color:var(--gold);white-space:nowrap}
+    .lane-main .lm-price small{display:block;font-size:.62rem;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:.2rem}
+    .lane-add{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;padding:.95rem 1.5rem;border:1px solid var(--border);border-radius:12px;text-decoration:none;transition:border-color .2s}
+    .lane-add:hover{border-color:rgba(199,169,127,.5)}
+    .lane-add .la-name{font-size:.94rem;font-weight:600;color:var(--text)}
+    .lane-add .la-desc{font-size:.81rem;color:var(--muted);margin-top:.18rem;line-height:1.45;max-width:52ch}
+    .lane-add .la-r{text-align:right;flex-shrink:0;font-size:.95rem;font-weight:700;color:var(--gold);white-space:nowrap}
+    .lane-add .la-r .was{color:var(--muted);text-decoration:line-through;font-weight:500;font-size:.78rem;margin-right:.35rem}
+    .lane-add .la-r small{display:block;font-size:.62rem;font-weight:600;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:.18rem}
+    .lane-arrow{flex-shrink:0;color:var(--gold);font-size:1.1rem;margin-left:.2rem}
+    .guide-cta{max-width:940px;margin:1.6rem auto 0;display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;padding:1.5rem 1.9rem;border:1px dashed rgba(199,169,127,.42);border-radius:16px;background:rgba(199,169,127,.04);text-align:left}
+    .guide-cta .gc-name{font-size:1.02rem;font-weight:700;color:#fff}
+    .guide-cta .gc-desc{font-size:.85rem;color:var(--muted);margin-top:.22rem;max-width:58ch;line-height:1.5}
+    .guide-cta .btn-outline{flex-shrink:0}
+    @media (max-width:620px){
+      .lane-main,.lane-add{flex-direction:column;align-items:flex-start;gap:.5rem}
+      .lane-main .lm-r,.lane-add .la-r{text-align:left}
+    }
+  </style>
 </head>
 <body data-active="hub">
 <div id="nav"></div>
@@ -60,64 +94,98 @@
 
 <section class="section center" id="options">
   <div class="section-eyebrow reveal">Choose Your Path</div>
-  <h2 class="section-title reveal">Where Would You<br/><em>Like to Start?</em></h2>
-  <p class="section-desc reveal">Not sure? <a href="/audit" style="color:var(--gold);text-decoration:underline;">Start with the free audit</a>, it shows you where you stand in 60 seconds.</p>
+  <h2 class="section-title reveal">Three ways to work<br/><em>with me</em></h2>
+  <p class="section-desc reveal">Pick the lane that fits where you are. Each one has its build, a low-cost way to start, and everything you need, nothing you don't.</p>
 
-  <div class="group-label reveal">One-Time Projects</div>
-  <div class="options-grid">
-    <a href="/audit" class="opt-card reveal">
-      <div class="opt-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-      <div class="opt-name">Website Audit</div>
-      <div class="opt-who">"Show me where I stand."</div>
-      <div class="opt-desc">A free 60-second scan, or the full $597 audit &amp; action plan, performance, SEO, AI visibility, conversion, and exactly what to fix.</div>
-      <div class="opt-foot"><span class="opt-price">Free &amp; up</span><span class="opt-arrow">→</span></div>
-    </a>
-    <a href="/new-website" class="opt-card reveal">
-      <div class="opt-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 9h20M7 3v6"/></svg></div>
-      <div class="opt-name">New Website</div>
-      <div class="opt-who">"I'm starting fresh."</div>
-      <div class="opt-desc">A custom, fast, mobile-first site with a built-in CMS, optionally optimized to be found on Google and in AI search from day one.</div>
-      <div class="opt-foot"><span class="opt-price"><span data-price="builds.foundation.from" data-from></span></span><span class="opt-arrow">→</span></div>
-    </a>
-    <a href="/rebrand" class="opt-card reveal">
-      <div class="opt-icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
-      <div class="opt-name">Rebrand</div>
-      <div class="opt-who">"Rebuild my site, better."</div>
-      <div class="opt-desc">A full rebuild of your existing site on a modern stack, faster, cleaner, cheaper to run, and yours to keep with no lock-in.</div>
-      <div class="opt-foot"><span class="opt-price"><span data-price="builds.relaunch.from" data-from></span></span><span class="opt-arrow">→</span></div>
-    </a>
-    <a href="/migration" class="opt-card reveal premium">
-      <div class="opt-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/><path d="M3 4v16"/></svg></div>
-      <div class="opt-name">Web Migration</div>
-      <div class="opt-who">"I rank, and can't lose it."</div>
-      <div class="opt-desc">A careful, monitored rebuild for sites with rankings you can't afford to lose, redirect mapping, staged launch, monitoring, rollback.</div>
-      <div class="opt-foot"><span class="opt-price"><span data-price="builds.managedMigration.from" data-from></span> · custom</span><span class="opt-arrow">→</span></div>
-    </a>
-    <a href="/funnel" class="opt-card reveal">
-      <div class="opt-icon"><svg viewBox="0 0 24 24"><path d="M3 4h18l-7 8v7l-4 2v-9z"/></svg></div>
-      <div class="opt-name">Funnel Building</div>
-      <div class="opt-who">"Turn traffic into leads."</div>
-      <div class="opt-desc">A multi-page conversion funnel, opt-in, thank-you, and lead capture, built to turn visitors into booked leads. AI-search optimized.</div>
-      <div class="opt-foot"><span class="opt-price"><span data-price="funnel.from" data-from></span></span><span class="opt-arrow">→</span></div>
-    </a>
+  <div class="lanes">
+
+    <!-- LANE: WEBSITES -->
+    <div class="lane feature reveal">
+      <div class="lane-head">
+        <div class="lane-title">Website<span>s</span></div>
+        <div class="lane-sub">A custom site that earns its keep, built to convert and to be found on Google and in AI search.</div>
+      </div>
+      <div class="lane-body">
+        <a href="/websites" class="lane-main">
+          <div class="lm-l">
+            <div class="lm-name">A website built to book clients</div>
+            <div class="lm-desc">New build or full rebuild of your current site, fast, mobile-first, with a CMS you control. You own everything.</div>
+          </div>
+          <div class="lm-r"><span class="lm-price"><span data-price="builds.foundation.from" data-from></span><small>Founding 50% off</small></span></div>
+          <span class="lane-arrow">→</span>
+        </a>
+        <a href="/audit?from=websites" class="lane-add">
+          <div class="la-l">
+            <div class="la-name">Website Audit · start here</div>
+            <div class="la-desc">A free 60-second scan, or the full audit &amp; action plan. Credits toward your build.</div>
+          </div>
+          <div class="la-r"><span class="was">$597</span>$57<small>intro price</small></div>
+          <span class="lane-arrow">→</span>
+        </a>
+        <a href="/care" class="lane-add">
+          <div class="la-l">
+            <div class="la-name">Website Maintenance · add-on</div>
+            <div class="la-desc">Hosting, security, updates, and ongoing SEO care. Attaches to any build, keep your site healthy.</div>
+          </div>
+          <div class="la-r"><span data-price="websiteCare.care.monthly" data-from data-mo></span></div>
+          <span class="lane-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- LANE: FUNNELS -->
+    <div class="lane reveal">
+      <div class="lane-head">
+        <div class="lane-title">Funnel<span>s</span></div>
+        <div class="lane-sub">A multi-page funnel that turns clicks into booked leads and sales, strategy, copy, and build in one place.</div>
+      </div>
+      <div class="lane-body">
+        <a href="/funnels" class="lane-main">
+          <div class="lm-l">
+            <div class="lm-name">A funnel that does the selling</div>
+            <div class="lm-desc">Lead, webinar, application, or e-commerce, mapped to your offer and built to convert end to end.</div>
+          </div>
+          <div class="lm-r"><span class="lm-price"><span data-price="funnel.from" data-from></span><small>Founding 50% off</small></span></div>
+          <span class="lane-arrow">→</span>
+        </a>
+        <a href="/funnel-audit?from=funnels" class="lane-add">
+          <div class="la-l">
+            <div class="la-name">Funnel Audit · start here</div>
+            <div class="la-desc">A free quick look, or the full funnel teardown showing exactly where you're leaking sales. Credits toward your build.</div>
+          </div>
+          <div class="la-r"><span class="was">$597</span>$57<small>intro price</small></div>
+          <span class="lane-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- LANE: PARTNERSHIP -->
+    <div class="lane reveal">
+      <div class="lane-head">
+        <div class="lane-title">The Partnership</div>
+        <div class="lane-sub">Want the digital and operations side handled long term, by one right hand? One monthly relationship, never billed by the hour.</div>
+      </div>
+      <div class="lane-body">
+        <a href="/services" class="lane-main">
+          <div class="lm-l">
+            <div class="lm-name">Your right hand, every month</div>
+            <div class="lm-desc">Operations, admin, marketing, design, CRM, and automation, scoped to you and fully owned, so things just get handled.</div>
+          </div>
+          <div class="lm-r"><span class="lm-price"><span data-price="partnership.from" data-from data-mo></span></span></div>
+          <span class="lane-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
   </div>
 
-  <div class="group-label reveal">Ongoing</div>
-  <div class="options-grid">
-    <a href="/partnership" class="opt-card reveal premium">
-      <div class="opt-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <div class="opt-name">The Partnership</div>
-      <div class="opt-who">"Be my right hand."</div>
-      <div class="opt-desc">I run your operations, admin, marketing, design, CRM, automation, as one scoped monthly relationship. Never billed by the hour.</div>
-      <div class="opt-foot"><span class="opt-price"><span data-price="partnership.from" data-from data-mo></span></span><span class="opt-arrow">→</span></div>
-    </a>
-    <a href="/care" class="opt-card reveal">
-      <div class="opt-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <div class="opt-name">Website Maintenance</div>
-      <div class="opt-who">"Keep my site healthy."</div>
-      <div class="opt-desc">Hosting, security, updates, and ongoing SEO &amp; AI-visibility care, attaches to any build. Separate from the operations Partnership.</div>
-      <div class="opt-foot"><span class="opt-price"><span data-price="websiteCare.care.monthly" data-from data-mo></span></span><span class="opt-arrow">→</span></div>
-    </a>
+  <!-- FREE GUIDE -->
+  <div class="guide-cta reveal">
+    <div class="gc-l">
+      <div class="gc-name">Free guide · How to Hire an Executive Partner from the Philippines</div>
+      <div class="gc-desc">Not ready to spend anything? Start here. A free 5-page guide on hiring a partner who thinks like a founder, not just another task-taker.</div>
+    </div>
+    <a href="/guides/hire-executive-partner-philippines/get" class="btn-outline">Get the free guide →</a>
   </div>
 </section>
 

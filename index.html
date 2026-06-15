@@ -892,7 +892,6 @@
   });
 
   // FORM
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyRiyyVAEoAH1uuj3DLfxKgTF4psZ2qKUm7FtuuXNSHwwc70TVUHorHMAx8uj8cRkit/exec';
   const COOLDOWN_MS = 15 * 60 * 1000; // 15 minutes
   const form = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
@@ -917,11 +916,24 @@
     }
 
     submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; formMsg.className = 'form-msg';
-    const data = { name: document.getElementById('name').value, email: document.getElementById('email').value, company: document.getElementById('company').value, service: document.getElementById('service').value, message: document.getElementById('message').value, timestamp: new Date().toLocaleString() };
+    const data = {
+      source: 'contact',
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      company: document.getElementById('company').value,
+      service: document.getElementById('service').value,
+      message: document.getElementById('message').value,
+      company_website: document.getElementById('website').value // honeypot
+    };
     try {
-      await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-      formMsg.textContent = "✓ Message received. I'll be in touch within 24 hours."; formMsg.className = 'form-msg success'; form.reset();
-      localStorage.setItem('lastFormSubmit', Date.now().toString());
+      const res = await fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      const out = await res.json().catch(() => ({}));
+      if (res.ok && out.ok) {
+        formMsg.textContent = "✓ Message received. I'll be in touch within 24 hours."; formMsg.className = 'form-msg success'; form.reset();
+        localStorage.setItem('lastFormSubmit', Date.now().toString());
+      } else {
+        formMsg.textContent = out.error || '✗ Something went wrong. Please email me directly at inquire@earvinlaureano.com'; formMsg.className = 'form-msg error';
+      }
     } catch {
       formMsg.textContent = '✗ Something went wrong. Please email me directly at inquire@earvinlaureano.com'; formMsg.className = 'form-msg error';
     }

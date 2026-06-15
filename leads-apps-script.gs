@@ -44,20 +44,23 @@ function doPost(e) {
   try {
     var d = JSON.parse(e.postData.contents);
 
-    // 1) Log to the Leads tab
-    var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-    var sheet = ss.getSheetByName(TAB_NAME) || ss.insertSheet(TAB_NAME);
-    if (sheet.getLastRow() === 0) {
-      sheet.appendRow(['Timestamp', 'Source', 'Name', 'Email', 'Phone',
-                       'Website', 'Company', 'Service', 'Notes', 'Status']);
-      sheet.getRange(1, 1, 1, 10).setFontWeight('bold');
+    // 1) OPTIONAL backup: also log to a Google Sheet, only if SPREADSHEET_ID is set.
+    //    Your leads already go to Airtable, so you can skip this entirely.
+    if (SPREADSHEET_ID && SPREADSHEET_ID.indexOf('PASTE') === -1) {
+      var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+      var sheet = ss.getSheetByName(TAB_NAME) || ss.insertSheet(TAB_NAME);
+      if (sheet.getLastRow() === 0) {
+        sheet.appendRow(['Timestamp', 'Source', 'Name', 'Email', 'Phone',
+                         'Website', 'Company', 'Service', 'Notes', 'Status']);
+        sheet.getRange(1, 1, 1, 10).setFontWeight('bold');
+      }
+      sheet.appendRow([
+        d.SubmittedAt || new Date().toISOString(),
+        d.Source || '', d.Name || '', d.Email || '', d.Phone || '',
+        d.Website || '', d.Company || '', d.Service || '', d.Notes || '',
+        d.Status || 'new'
+      ]);
     }
-    sheet.appendRow([
-      d.SubmittedAt || new Date().toISOString(),
-      d.Source || '', d.Name || '', d.Email || '', d.Phone || '',
-      d.Website || '', d.Company || '', d.Service || '', d.Notes || '',
-      d.Status || 'new'
-    ]);
 
     // 2) If this is a guide opt-in, email the visitor the download link
     var guide = GUIDES[d.Source];
@@ -181,10 +184,13 @@ function escapeHtml(s) {
   });
 }
 
-// Run once from the editor to grant permissions and confirm the sheet id works.
+// Run this ONCE from the editor. It asks for Gmail permission, then emails you a
+// test message so you know notifications work. Check your inbox after running.
 function testSetup() {
-  var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-  var sheet = ss.getSheetByName(TAB_NAME) || ss.insertSheet(TAB_NAME);
-  Logger.log('Connected to: ' + ss.getName() + ' → tab "' + sheet.getName() + '"');
-  Logger.log('Setup looks good.');
+  GmailApp.sendEmail(
+    NOTIFY_EMAIL,
+    'Test: your lead emails are working',
+    'If you are reading this, your lead notifications are set up correctly. You can delete this.'
+  );
+  Logger.log('Sent a test email to ' + NOTIFY_EMAIL + '. Check that inbox.');
 }

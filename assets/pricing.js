@@ -25,8 +25,8 @@ window.PRICING = {
     pro:    { monthly: 599 }
   },
   terms: {
-    deposit: "50% deposit, 50% on launch",
-    pricingNote: "\"From\" pricing — final scope varies",
+    deposit: "50% booking payment, 50% on launch",
+    pricingNote: "\"From\" pricing, final scope varies",
     firstMonthFree: true,
     buyoutPremiumPct: "30–40%"
   }

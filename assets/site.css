@@ -210,3 +210,8 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 5rem; display: fle
   footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
   .footer-sub { text-align: center; }
 }
+
+/* Phones: hide the secondary "Choose a service" link in the focus nav so logo + Book a Call do not crowd */
+@media (max-width: 600px) {
+  .focus-nav a[href="/work-with-me"] { display: none; }
+}

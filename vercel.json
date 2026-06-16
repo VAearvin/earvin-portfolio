@@ -1,4 +1,11 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/new-website", "destination": "/websites", "permanent": true },
+    { "source": "/rebrand", "destination": "/websites", "permanent": true },
+    { "source": "/migration", "destination": "/websites", "permanent": true },
+    { "source": "/funnel", "destination": "/funnels", "permanent": true },
+    { "source": "/approach", "destination": "/", "permanent": true }
+  ]
 }

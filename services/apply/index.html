@@ -148,15 +148,15 @@
       msg.textContent = '✗ Please wait ' + rem + ' more minute' + (rem !== 1 ? 's' : '') + ' before submitting again.';
       msg.className = 'form-msg error'; return false;
     }
-    btn.disabled = true; btn.textContent = 'Booking…'; msg.className = 'form-msg';
+    var origText = btn.textContent; btn.disabled = true; btn.textContent = 'Booking…'; msg.className = 'form-msg';
     var need = document.getElementById('need').value;
     var budget = document.getElementById('budget').value;
     var timeline = document.getElementById('timeline').value;
     var extra = document.getElementById('message').value;
     var note = 'Budget: ' + budget + ' | Timeline: ' + (timeline || 'n/a') + (extra ? ' | ' + extra : '');
-    // Save the lead (best-effort), then move to the confirmation page no matter what.
+    // Save the lead, and only move to the confirmation page on a confirmed save.
     try {
-      await fetch('/api/lead', {
+      var res = await fetch('/api/lead', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           source: 'book-call-services',
@@ -166,7 +166,14 @@
           service: need, note: note, company_website: ''
         })
       });
-    } catch (err) { /* best-effort, never block the visitor */ }
+      var out = await res.json().catch(function () { return {}; });
+      if (!res.ok || !out.ok) throw new Error((out && out.error) || 'save failed');
+    } catch (err) {
+      msg.textContent = '✗ Something went wrong saving your details. Please email inquire@earvinlaureano.com and I will set up your call directly.';
+      msg.className = 'form-msg error';
+      btn.disabled = false; btn.textContent = origText;
+      return false;
+    }
     localStorage.setItem('lastBookSubmit', Date.now().toString());
     window.location.href = '/services/thank-you';
     return false;

@@ -156,6 +156,14 @@
       setBad('f-email', !emailOk(email));
       if (!name || !phoneOk(phone) || !emailOk(email)) return;
 
+      var tcpa = document.getElementById('tcpa');
+      if (!tcpa.checked) {
+        msg.textContent = 'Please tick the box so I can send you the guide and follow up.';
+        msg.className = 'form-msg error';
+        tcpa.focus();
+        return;
+      }
+
       btn.disabled = true; btn.textContent = 'Sending…';
       try {
         var res = await fetch('/api/lead', {
@@ -164,6 +172,7 @@
           body: JSON.stringify({
             source: 'guide-philippines',
             name: name, phone: phone, email: email,
+            consent: true, consentText: 'TCPA consent to be contacted by call/text about my inquiry',
             company_website: ''
           })
         });

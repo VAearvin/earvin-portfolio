@@ -107,8 +107,8 @@
     });
   });
 
-  // Auto-inject FAQPage JSON-LD from window.FAQS if present
-  if (window.FAQS && window.FAQS.length) {
+  // Auto-inject FAQPage JSON-LD from window.FAQS, unless the page already ships a static one
+  if (window.FAQS && window.FAQS.length && !document.querySelector('script[data-faq-static]')) {
     var data = {
       "@context": "https://schema.org",
       "@type": "FAQPage",

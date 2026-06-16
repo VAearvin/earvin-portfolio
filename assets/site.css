@@ -74,7 +74,7 @@ nav#navbar.scrolled { padding: 1rem 5rem; }
 .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* BUTTONS */
-.btn-gold { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: var(--gold); color: var(--bg); padding: 0.95rem 2rem; text-decoration: none; border-radius: var(--r); transition: all 0.25s; display: inline-block; border: none; cursor: pointer; font-family: inherit; }
+.btn-gold { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: var(--gold); color: var(--bg); padding: 0.95rem 2rem; text-decoration: none; border-radius: var(--r); transition: all 0.25s; display: inline-block; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; }
 .btn-gold:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(199,169,127,0.25); }
 .btn-outline { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); border: 1px solid var(--border); padding: 0.95rem 2rem; text-decoration: none; border-radius: var(--r); transition: all 0.25s; display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; cursor: pointer; font-family: inherit; }
 .btn-outline:hover { border-color: var(--gold); color: var(--gold); }

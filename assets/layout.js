@@ -46,7 +46,7 @@
   var footer =
     '<footer>' +
       '<div class="footer-logo">Earvin <span>Laureano</span></div>' +
-      '<div class="footer-copy">© 2026 Earvin Laureano. All rights reserved. · <a href="/privacy" style="color:var(--gold);text-decoration:none;">Privacy Policy</a> · <a href="/terms" style="color:var(--gold);text-decoration:none;">Terms</a></div>' +
+      '<div class="footer-copy">© 2026 Earvin Laureano. All rights reserved. · <a href="/questions" style="color:var(--gold);text-decoration:none;">Questions</a> · <a href="/privacy" style="color:var(--gold);text-decoration:none;">Privacy Policy</a> · <a href="/terms" style="color:var(--gold);text-decoration:none;">Terms</a></div>' +
       '<div class="footer-sub">Websites · Funnels · Digital Systems<br/><span>Remote Worldwide</span></div>' +
     '</footer>';
 

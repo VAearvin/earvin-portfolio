@@ -167,7 +167,7 @@
     /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(12,12,12,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: padding 0.3s; }
     nav.scrolled { padding: 1rem 5rem; }
-    .logo { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); text-decoration: none; }
+    .logo { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; text-decoration: none; }
     .logo span { color: var(--gold); }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
     .nav-links a { display: inline-flex; align-items: center; vertical-align: middle; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.25s; position: relative; }
@@ -479,10 +479,6 @@
     .support-card, .track-card, .how-card, .exp-card { will-change: transform; transition: all 0.3s ease, transform 0.18s cubic-bezier(.22,1,.36,1); }
     .hero-spotlight { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0; transition: opacity 0.6s ease; background: radial-gradient(480px circle at var(--spot-x, 50%) var(--spot-y, 28%), rgba(199,169,127,0.18), transparent 62%); }
     #hero:hover .hero-spotlight { opacity: 1; }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
-      .fx-shine::after, .hero-spotlight { display: none !important; }
-    }
   </style>
 </head>
 <body>
@@ -989,13 +985,12 @@
   });
 
   // ===== WEBSITE EFFECTS =====
-  const fxReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fxHover = window.matchMedia('(hover: hover)').matches;
 
   // Hero spotlight (gold glow follows the cursor)
   const fxHero = document.getElementById('hero');
   const fxSpot = document.getElementById('heroSpot');
-  if (fxHero && fxSpot && !fxReduce && fxHover) {
+  if (fxHero && fxSpot && fxHover) {
     fxHero.addEventListener('mousemove', (e) => {
       const r = fxHero.getBoundingClientRect();
       fxSpot.style.setProperty('--spot-x', (e.clientX - r.left) + 'px');
@@ -1004,7 +999,7 @@
   }
 
   // Magnetic CTAs (subtle pull toward the cursor)
-  if (!fxReduce && fxHover) {
+  if (fxHover) {
     document.querySelectorAll('.fx-magnetic').forEach((btn) => {
       btn.addEventListener('mousemove', (e) => {
         const r = btn.getBoundingClientRect();
@@ -1017,7 +1012,7 @@
   }
 
   // 3D tilt on feature cards
-  if (!fxReduce && fxHover) {
+  if (fxHover) {
     document.querySelectorAll('.support-card, .track-card, .how-card, .exp-card').forEach((card) => {
       card.addEventListener('mousemove', (e) => {
         const r = card.getBoundingClientRect();

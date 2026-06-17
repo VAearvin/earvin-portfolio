@@ -26,6 +26,7 @@
             '<li><a href="/#how">How It Works</a></li>' +
             '<li><a href="/#experience">Background</a></li>' +
             '<li><a href="/#testimonials">Reviews</a></li>' +
+            '<li><a href="/questions">Common Questions</a></li>' +
           '</ul>' +
         '</li>' +
         '<li class="nav-dd">' +

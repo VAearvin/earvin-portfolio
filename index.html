@@ -470,6 +470,19 @@
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
       .footer-sub { text-align: center; }
     }
+
+    /* ===== WEBSITE EFFECTS — motion-safe, GPU-only (transform/opacity) ===== */
+    .fx-magnetic { will-change: transform; }
+    .fx-shine { position: relative; overflow: hidden; }
+    .fx-shine::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,0.35) 50%, transparent 65%); transform: translateX(-130%); transition: transform 0.7s ease; }
+    .fx-shine:hover::after { transform: translateX(130%); }
+    .support-card, .track-card, .how-card, .exp-card { will-change: transform; transition: all 0.3s ease, transform 0.18s cubic-bezier(.22,1,.36,1); }
+    .hero-spotlight { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0; transition: opacity 0.6s ease; background: radial-gradient(480px circle at var(--spot-x, 50%) var(--spot-y, 28%), rgba(199,169,127,0.18), transparent 62%); }
+    #hero:hover .hero-spotlight { opacity: 1; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      .fx-shine::after, .hero-spotlight { display: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -511,6 +524,7 @@
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-grid-lines"></div>
+  <div class="hero-spotlight" id="heroSpot"></div>
   <div class="hero-content">
     <div class="hero-left">
       <div class="hero-badge"><div class="hero-badge-dot"></div><span>Websites · Funnels · Digital Systems</span></div>
@@ -526,8 +540,8 @@
         <span class="hero-tag">Remote Worldwide</span>
       </div>
       <div class="hero-actions">
-        <a href="#what-you-get" class="btn-gold">See What Gets Built</a>
-        <a href="#contact" class="btn-outline">Start a Conversation</a>
+        <a href="#what-you-get" class="btn-gold fx-magnetic fx-shine">See What Gets Built</a>
+        <a href="#contact" class="btn-outline fx-magnetic">Start a Conversation</a>
       </div>
     </div>
     <div class="hero-right">
@@ -814,7 +828,7 @@
   <div class="cta-content">
     <h2 class="cta-title reveal">Good work does not<br/><span class="gold">need a hard sell.</span></h2>
     <p class="cta-sub reveal">It shows up, does its job, and makes you look good doing it. That is the standard. Every build, every time.</p>
-    <a href="#contact" class="btn-gold reveal">Start a Conversation</a>
+    <a href="#contact" class="btn-gold reveal fx-shine">Start a Conversation</a>
   </div>
 </div>
 
@@ -973,6 +987,47 @@
     }
     submitBtn.disabled = false; submitBtn.textContent = 'Send Message →';
   });
+
+  // ===== WEBSITE EFFECTS =====
+  const fxReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fxHover = window.matchMedia('(hover: hover)').matches;
+
+  // Hero spotlight (gold glow follows the cursor)
+  const fxHero = document.getElementById('hero');
+  const fxSpot = document.getElementById('heroSpot');
+  if (fxHero && fxSpot && !fxReduce && fxHover) {
+    fxHero.addEventListener('mousemove', (e) => {
+      const r = fxHero.getBoundingClientRect();
+      fxSpot.style.setProperty('--spot-x', (e.clientX - r.left) + 'px');
+      fxSpot.style.setProperty('--spot-y', (e.clientY - r.top) + 'px');
+    });
+  }
+
+  // Magnetic CTAs (subtle pull toward the cursor)
+  if (!fxReduce && fxHover) {
+    document.querySelectorAll('.fx-magnetic').forEach((btn) => {
+      btn.addEventListener('mousemove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width / 2) * 0.25;
+        const y = (e.clientY - r.top - r.height / 2) * 0.25;
+        btn.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+      });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    });
+  }
+
+  // 3D tilt on feature cards
+  if (!fxReduce && fxHover) {
+    document.querySelectorAll('.support-card, .track-card, .how-card, .exp-card').forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const rx = ((e.clientY - r.top) / r.height - 0.5) * -6;
+        const ry = ((e.clientX - r.left) / r.width - 0.5) * 6;
+        card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)';
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+  }
 </script>
 </body>
 </html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Solène · A Seasonal Tasting Menu Restaurant</title>
+<meta name="description" content="Solène is an intimate tasting-menu restaurant. A seven-course seasonal degustation with an optional wine pairing. Limited seatings nightly. Reserve your table."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#f6f3ee"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --bone:#f6f3ee; --bone-d:#efeae1; --ink:#1c1b19; --ink-soft:#4a4843;
+    --brass:#b08d57; --brass-d:#937443; --line:#ddd6c9; --white:#fffdf9;
+    --shadow:0 30px 80px rgba(28,27,25,0.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Jost',sans-serif;color:var(--ink);background:var(--bone);line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.1}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+  .narrow{max-width:780px;margin:0 auto;padding:0 32px}
+  .label{display:inline-block;font-size:.7rem;font-weight:400;letter-spacing:.34em;text-transform:uppercase;color:var(--brass-d)}
+  .rule{width:46px;height:1px;background:var(--brass);border:none;margin:1.5rem 0}
+  .rule.center{margin:1.5rem auto}
+  .btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--ink);color:var(--bone);font-family:'Jost',sans-serif;font-weight:400;letter-spacing:.16em;text-transform:uppercase;font-size:.74rem;padding:1.1rem 2.2rem;border:1px solid var(--ink);cursor:pointer;transition:.3s ease}
+  .btn:hover{background:transparent;color:var(--ink)}
+  .btn-line{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+  .btn-line:hover{background:var(--ink);color:var(--bone)}
+  .btn-light{background:transparent;color:var(--bone);border:1px solid rgba(246,243,238,.5)}
+  .btn-light:hover{background:var(--bone);color:var(--ink);border-color:var(--bone)}
+
+  .demo-bar{background:var(--ink);color:#cfc8ba;font-size:.74rem;text-align:center;padding:.6rem 1rem;font-weight:300;letter-spacing:.04em}
+  .demo-bar strong{color:#fff;font-weight:500}
+  .demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(246,243,238,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 32px;max-width:1140px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:.7rem;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.6rem;letter-spacing:.04em}
+  .logo .mark{width:34px;height:34px;border:1px solid var(--brass);border-radius:50%;display:grid;place-items:center;color:var(--brass-d);font-size:.95rem;font-weight:500}
+  .nav-links{display:flex;gap:2.6rem;align-items:center;font-size:.76rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+  .nav-links a:hover{color:var(--brass-d)}
+  .nav-cta .btn{padding:.85rem 1.7rem}
+  @media(max-width:900px){.nav-links{display:none}}
+
+  /* hero */
+  .hero{padding:0;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:4.5rem;align-items:center;padding:5rem 0 5.5rem}
+  .hero h1{font-size:clamp(3rem,6.5vw,5.3rem);letter-spacing:-.01em;margin:.4rem 0 0}
+  .hero h1 em{font-style:italic;color:var(--brass-d)}
+  .hero p.lede{font-size:1.08rem;color:var(--ink-soft);max-width:30rem;font-weight:300;margin-top:1.6rem}
+  .hero-actions{display:flex;gap:1.1rem;flex-wrap:wrap;margin-top:2.4rem}
+  .trust{display:flex;gap:3rem;margin-top:3.2rem;flex-wrap:wrap}
+  .trust div{font-size:.74rem;letter-spacing:.04em;color:var(--ink-soft);font-weight:300}
+  .trust strong{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.1rem;color:var(--ink);line-height:1;margin-bottom:.4rem}
+  .hero-card{position:relative}
+  .hero-card img{width:100%;display:block;aspect-ratio:4/4.7;object-fit:cover;box-shadow:var(--shadow)}
+  .badge-float{position:absolute;background:var(--white);color:var(--ink);box-shadow:var(--shadow);padding:1rem 1.2rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:400}
+  .badge-float strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;text-transform:none;letter-spacing:0;color:var(--brass-d);margin-top:.2rem}
+  .bf-1{bottom:-22px;left:-22px}
+  .bf-2{top:-22px;right:-22px}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:2.8rem;padding:3rem 0 3.5rem}.bf-1,.bf-2{display:none}}
+
+  /* press strip */
+  .strip{padding:2.2rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .strip-in{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
+  .strip-in .strip-label{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-d);font-weight:400}
+  .strip-in span.press{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;letter-spacing:.06em;color:var(--ink-soft)}
+  @media(max-width:700px){.strip-in{gap:1.4rem}.strip-in span.press{font-size:1rem}}
+
+  section{padding:6rem 0}
+  .sec-head{text-align:center;max-width:42rem;margin:0 auto 4rem}
+  .sec-head h2{font-size:clamp(2.2rem,4.5vw,3.4rem);letter-spacing:-.01em;margin-top:1rem}
+  .sec-head p{color:var(--ink-soft);margin-top:1.2rem;font-size:1.05rem;font-weight:300}
+
+  /* menu / degustation accordion */
+  .menu{background:var(--bone-d)}
+  .menu-meta{display:flex;justify-content:center;gap:3.5rem;flex-wrap:wrap;margin-bottom:3rem;text-align:center}
+  .menu-meta .mm{min-width:9rem}
+  .menu-meta .label{display:block;margin-bottom:.6rem}
+  .menu-meta strong{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.9rem;color:var(--ink)}
+  .menu-meta small{display:block;color:var(--ink-soft);font-size:.82rem;font-weight:300;margin-top:.2rem}
+  .courses{max-width:780px;margin:0 auto;border-top:1px solid var(--line)}
+  .course{border-bottom:1px solid var(--line)}
+  .course-head{display:flex;align-items:center;gap:1.6rem;width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:1.8rem .4rem;font-family:inherit;color:inherit;transition:.25s}
+  .course-head:hover{padding-left:1rem}
+  .course-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--brass-d);flex:none;width:3.4rem;letter-spacing:.04em}
+  .course-title{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:500;flex:1;line-height:1.2}
+  .course-sign{flex:none;width:24px;height:24px;position:relative;transition:.3s}
+  .course-sign:before,.course-sign:after{content:"";position:absolute;background:var(--brass-d);top:50%;left:50%;transform:translate(-50%,-50%)}
+  .course-sign:before{width:14px;height:1px}
+  .course-sign:after{width:1px;height:14px;transition:.3s}
+  .course.open .course-sign:after{transform:translate(-50%,-50%) scaleY(0)}
+  .course-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .course-inner{padding:0 .4rem 2rem 5rem}
+  .course-inner p{color:var(--ink-soft);font-weight:300;font-size:1rem;max-width:34rem}
+  .course-pair{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.1rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-d)}
+  .course-pair span{width:6px;height:6px;border-radius:50%;background:var(--brass);flex:none}
+  @media(max-width:600px){.course-inner{padding-left:.4rem}.course-title{font-size:1.4rem}.course-head{gap:1rem}.course-num{width:2.4rem}}
+
+  .menu-foot{text-align:center;margin-top:3.2rem}
+  .menu-foot .addon{display:inline-block;background:var(--white);border:1px solid var(--line);padding:1.4rem 2rem;margin-bottom:1.8rem;font-size:.92rem;color:var(--ink-soft);font-weight:300}
+  .menu-foot .addon b{color:var(--ink);font-weight:500}
+
+  /* chef split */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+  .split img{width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:var(--shadow)}
+  .split h2{font-size:clamp(2rem,3.8vw,3rem);margin-top:1rem}
+  .split p{color:var(--ink-soft);font-weight:300;margin-top:1.4rem}
+  .split .sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;color:var(--ink);margin-top:2rem}
+  .split .sig small{display:block;font-family:'Jost',sans-serif;font-style:normal;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-d);margin-top:.5rem}
+  @media(max-width:900px){.split{grid-template-columns:1fr;gap:2.4rem}.split.rev .img-col{order:-1}}
+
+  /* gallery */
+  .gallery{background:var(--bone-d)}
+  .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:240px;gap:1rem}
+  .gal-grid figure{overflow:hidden;position:relative}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+  .gal-grid figure:hover img{transform:scale(1.05)}
+  .gal-grid .tall{grid-row:span 2}
+  .gal-grid figcaption{position:absolute;left:0;bottom:0;right:0;padding:1.2rem;background:linear-gradient(transparent,rgba(28,27,25,.72));color:var(--bone);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;opacity:0;transition:.3s}
+  .gal-grid figure:hover figcaption{opacity:1}
+  @media(max-width:760px){.gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.gal-grid .tall{grid-row:span 1}}
+
+  /* testimonials */
+  .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem}
+  .tm{text-align:center;padding:0 .6rem}
+  .tm .stars{color:var(--brass);letter-spacing:.3em;font-size:.8rem;margin-bottom:1.4rem}
+  .tm p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;line-height:1.5;color:var(--ink)}
+  .tm .who{margin-top:1.6rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-d)}
+  .tm .who small{display:block;letter-spacing:.04em;text-transform:none;color:var(--ink-soft);font-size:.82rem;margin-top:.3rem;font-weight:300}
+  @media(max-width:820px){.tm-grid{grid-template-columns:1fr;gap:3rem}}
+
+  /* reservation */
+  .reserve{background:var(--ink);color:var(--bone)}
+  .reserve .label{color:var(--brass)}
+  .reserve-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+  .reserve h2{font-size:clamp(2rem,3.8vw,3rem);color:var(--bone);margin-top:1rem}
+  .reserve p{color:#bdb6a7;font-weight:300;margin-top:1.4rem}
+  .reserve ul{list-style:none;margin-top:2rem;display:grid;gap:1rem}
+  .reserve li{display:flex;gap:1rem;align-items:flex-start;color:#cfc8ba;font-weight:300;font-size:.95rem}
+  .reserve li span{color:var(--brass);flex:none}
+  .res-form{background:var(--bone);color:var(--ink);padding:2.6rem}
+  .res-form label{display:block;font-size:.66rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-d);margin:1.2rem 0 .5rem}
+  .res-form input,.res-form select{width:100%;padding:.9rem 1rem;border:1px solid var(--line);background:var(--white);font-size:.95rem;font-family:'Jost',sans-serif;color:var(--ink)}
+  .res-form input:focus,.res-form select:focus{outline:none;border-color:var(--brass)}
+  .res-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .res-form .btn{margin-top:1.8rem;width:100%;justify-content:center}
+  .res-note{font-size:.74rem;color:var(--ink-soft);font-weight:300;margin-top:1rem;text-align:center}
+  .rmsg{margin-top:1rem;text-align:center;font-size:.85rem;color:var(--brass-d);font-weight:400;min-height:1.2em}
+  @media(max-width:900px){.reserve-grid{grid-template-columns:1fr;gap:2.6rem}}
+
+  /* faq */
+  .faq-list{max-width:780px;margin:0 auto;border-top:1px solid var(--line)}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-q{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:1.7rem .2rem;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:500;color:var(--ink);transition:.25s}
+  .faq-q:hover{color:var(--brass-d)}
+  .faq-sign{flex:none;width:20px;height:20px;position:relative}
+  .faq-sign:before,.faq-sign:after{content:"";position:absolute;background:var(--brass-d);top:50%;left:50%;transform:translate(-50%,-50%)}
+  .faq-sign:before{width:12px;height:1px}
+  .faq-sign:after{width:1px;height:12px;transition:.3s}
+  .faq-item.open .faq-sign:after{transform:translate(-50%,-50%) scaleY(0)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .faq-a p{padding:0 .2rem 1.7rem;color:var(--ink-soft);font-weight:300;max-width:42rem}
+
+  /* cta band */
+  .cta-band{text-align:center}
+  .cta-band h2{font-size:clamp(2.4rem,5vw,3.8rem);letter-spacing:-.01em}
+  .cta-band h2 em{font-style:italic;color:var(--brass-d)}
+  .cta-band p{color:var(--ink-soft);font-weight:300;max-width:34rem;margin:1.4rem auto 2.4rem;font-size:1.05rem}
+
+  /* footer */
+  footer{background:var(--bone-d);border-top:1px solid var(--line);padding:4.5rem 0 2.5rem}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:3rem;border-bottom:1px solid var(--line)}
+  .foot-logo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.8rem;letter-spacing:.04em;margin-bottom:1rem}
+  footer p.foot-blurb{font-size:.9rem;color:var(--ink-soft);font-weight:300;max-width:19rem}
+  footer h4{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-d);margin-bottom:1.2rem;font-weight:400}
+  footer .foot-col a,footer .foot-col p{display:block;color:var(--ink-soft);font-size:.9rem;margin-bottom:.6rem;font-weight:300}
+  footer .foot-col a:hover{color:var(--brass-d)}
+  .foot-bottom{text-align:center;padding-top:2rem;font-size:.82rem;color:var(--ink-soft);font-weight:300}
+  .foot-bottom a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+  .disclaimer{max-width:60rem;margin:1.2rem auto 0;text-align:center;font-size:.72rem;color:#8a8478;line-height:1.7;font-weight:300}
+  @media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
+</style>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<div class="demo-bar">This is a <strong>demo site</strong> designed and built by Earvin Laureano. &nbsp;<a href="/work">Back to all work</a> &nbsp;·&nbsp; <a href="/pricing">Get a site like this</a></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="#" class="logo"><span class="mark">S</span> Solène</a>
+    <nav class="nav-links">
+      <a href="#menu">The Menu</a>
+      <a href="#chef">The Chef</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reserve">Reservations</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#reserve" class="btn">Reserve</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="label">Seasonal Tasting Menu</span>
+        <h1>An evening,<br/>told in <em>seven courses</em></h1>
+        <hr class="rule"/>
+        <p class="lede">Solène is a small dining room with one menu and one purpose. Each night we serve a single seasonal degustation, plated by hand and paced with care. Twenty-six seats. One seating.</p>
+        <div class="hero-actions">
+          <a href="#reserve" class="btn">Reserve a Table</a>
+          <a href="#menu" class="btn btn-line">View the Menu</a>
+        </div>
+        <div class="trust">
+          <div><strong>7</strong>courses each evening</div>
+          <div><strong>26</strong>seats per night</div>
+          <div><strong>4.9</strong>guest rating</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=900&q=80&auto=format&fit=crop" alt="A plated tasting-menu dish"/>
+        <div class="badge-float bf-1">Per person<strong>$185</strong></div>
+        <div class="badge-float bf-2">Tonight's seating<strong>7:00 PM</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-in">
+    <span class="strip-label">Noted in</span>
+    <span class="press">The Tasting Review</span>
+    <span class="press">Cellar &amp; Table</span>
+    <span class="press">City Dining Guide</span>
+    <span class="press">The Quiet Fork</span>
+  </div>
+</div>
+
+<section id="menu" class="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">The Degustation</span>
+      <h2>Tonight's seven courses</h2>
+      <p>One menu, written each morning around what the season gives us. Select any course to read the dish and its wine pairing.</p>
+    </div>
+
+    <div class="menu-meta">
+      <div class="mm"><span class="label">Menu</span><strong>$185</strong><small>per person</small></div>
+      <div class="mm"><span class="label">Wine Pairing</span><strong>$95</strong><small>optional, per person</small></div>
+      <div class="mm"><span class="label">Duration</span><strong>2.5 hrs</strong><small>at the table</small></div>
+    </div>
+
+    <div class="courses" id="courses">
+      <div class="course">
+        <button class="course-head" type="button">
+          <span class="course-num">Course 01</span>
+          <span class="course-title">Chilled Cucumber &amp; Sea Herbs</span>
+          <span class="course-sign"></span>
+        </button>
+        <div class="course-body"><div class="course-inner">
+          <p>A cold start. Cucumber pressed two ways with oyster leaf, green almond, and a thread of cold-pressed oil. Light, clean, and meant to wake the palate.</p>
+          <span class="course-pair"><span></span>Paired with a coastal white</span>
+        </div></div>
+      </div>
+      <div class="course">
+        <button class="course-head" type="button">
+          <span class="course-num">Course 02</span>
+          <span class="course-title">Warm Bread &amp; Cultured Butter</span>
+          <span class="course-sign"></span>
+        </button>
+        <div class="course-body"><div class="course-inner">
+          <p>Bread baked through the afternoon and served warm, with butter we churn in house and finish with sea salt. Simple on purpose, and one of the dishes guests remember most.</p>
+          <span class="course-pair"><span></span>Paired with a dry sparkling</span>
+        </div></div>
+      </div>
+      <div class="course">
+        <button class="course-head" type="button">
+          <span class="course-num">Course 03</span>
+          <span class="course-title">Hand-Dived Scallop, Brown Butter</span>
+          <span class="course-sign"></span>
+        </button>
+        <div class="course-body"><div class="course-inner">
+          <p>A single scallop, seared and rested, with toasted hazelnut, brown butter, and a squeeze of lemon. The kind of course that asks for a quiet moment.</p>
+          <span class="course-pair"><span></span>Paired with a white Burgundy style</span>
+        </div></div>
+      </div>
+      <div class="course">
+        <button class="course-head" type="button">
+          <span class="course-num">Course 04</span>
+          <span class="course-title">Slow Egg, Smoked Cream, Chive</span>
+          <span class="course-sign"></span>
+        </button>
+        <div class="course-body"><div class="course-inner">
+          <p>An egg cooked low and slow, set over smoked potato cream and finished with chive oil. Soft, warm, and gently savory.</p>
+          <span class="course-pair"><span></span>Paired with an aged Chardonnay</span>
+        </div></div>
+      </div>
+      <div class="course">
+        <button class="course-head" type="button">
+          <span class="course-num">Course 05</span>
+          <span class="course-title">Line-Caught Fish of the Day</span>
+          <span class="course-sign"></span>
+        </button>
+        <div class="course-body"><div class="course-inner">
+          <p>Whatever the boats bring in that morning, cooked on the bone and served with a light seasonal broth and bitter greens. The fish changes nightly, so ask your server.</p>
+          <span class="course-pair"><span></span>Paired with a mineral white</span>
+        </div></div>
+      </div>
+      <div class="course">
+        <button class="course-head" type="button">
+          <span class="course-num">Course 06</span>
+          <span class="course-title">Aged Beef, Roasted Roots, Jus</span>
+          <span class="course-sign"></span>
+        </button>
+        <div class="course-body"><div class="course-inner">
+          <p>The heart of the menu. Dry-aged beef cooked over coals, roasted root vegetables, and a deep jus reduced through the day. Served just warm and rested.</p>
+          <span class="course-pair"><span></span>Paired with a soft red blend</span>
+        </div></div>
+      </div>
+      <div class="course">
+        <button class="course-head" type="button">
+          <span class="course-num">Course 07</span>
+          <span class="course-title">Honey, Brown Butter, Sea Salt</span>
+          <span class="course-sign"></span>
+        </button>
+        <div class="course-body"><div class="course-inner">
+          <p>To close, a warm honey and brown-butter cake with salted cream and a spoon of local honey. Quiet and just sweet enough.</p>
+          <span class="course-pair"><span></span>Paired with a late-harvest dessert wine</span>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="menu-foot">
+      <div class="addon">Add the <b>wine pairing</b> for $95 per person. Five glasses, chosen to follow the courses. A thoughtful non-alcoholic pairing is offered at the same price.</div>
+      <div><a href="#reserve" class="btn">Reserve Your Table</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="chef" class="chef">
+  <div class="wrap">
+    <div class="split">
+      <div class="img-col"><img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80&auto=format&fit=crop" alt="The chef plating a course"/></div>
+      <div>
+        <span class="label">The Chef</span>
+        <h2>One kitchen, one menu, one quiet room</h2>
+        <hr class="rule"/>
+        <p>Solène began with a small idea. Cook for a few guests each night, with the best of the season, and leave nothing to chance. The dining room seats twenty-six. There is one menu, and the kitchen is open to it.</p>
+        <p>Our chef works the pass each evening and writes the menu the same morning, around what the markets and the coast offer that day. Nothing sits long. Most of what reaches your table was chosen that morning and finished by hand minutes before.</p>
+        <div class="sig">Solène Marchetti<small>Chef and Founder</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">A Look Inside</span>
+      <h2>The room and the plates</h2>
+      <p>A few moments from a recent evening of service.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="tall">
+        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=700&q=80&auto=format&fit=crop" alt="A plated fine-dining course"/>
+        <figcaption>A course, plated</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80&auto=format&fit=crop" alt="The dining room"/>
+        <figcaption>The dining room</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=700&q=80&auto=format&fit=crop" alt="A glass of wine poured at the table"/>
+        <figcaption>The wine pairing</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=700&q=80&auto=format&fit=crop" alt="A detail of a finished dish"/>
+        <figcaption>In the detail</figcaption>
+      </figure>
+      <figure class="tall">
+        <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=700&q=80&auto=format&fit=crop" alt="The chef finishing a plate"/>
+        <figcaption>At the pass</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1592861956120-e524fc739696?w=700&q=80&auto=format&fit=crop" alt="A table set for service"/>
+        <figcaption>Set for the evening</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Guest Words</span>
+      <h2>What the evening leaves behind</h2>
+    </div>
+    <div class="tm-grid">
+      <div class="tm">
+        <div class="stars">★★★★★</div>
+        <p>"We came for a birthday and stayed two and a half hours without once looking at the time. Every course felt considered. The scallop alone was worth the table."</p>
+        <div class="who">Marguerite L.<small>Visited for an anniversary</small></div>
+      </div>
+      <div class="tm">
+        <div class="stars">★★★★★</div>
+        <p>"The room is small and calm, the service is quiet and exact, and the wine pairing was the part I keep talking about. A genuinely special night."</p>
+        <div class="who">Daniel V.<small>Visited with the wine pairing</small></div>
+      </div>
+      <div class="tm">
+        <div class="stars">★★★★★</div>
+        <p>"I do not normally enjoy long menus, but this one moved at the right pace and never felt heavy. We left full but light. We have already booked again."</p>
+        <div class="who">Priya N.<small>First-time guest</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reserve" class="reserve">
+  <div class="wrap">
+    <div class="reserve-grid">
+      <div>
+        <span class="label">Reservations</span>
+        <h2>Reserve your evening</h2>
+        <hr class="rule" style="background:var(--brass)"/>
+        <p>Seatings are limited to twenty-six guests each night, and tables tend to go quickly. Share your preferred date and party size, and we will confirm by email within one day.</p>
+        <ul>
+          <li><span>·</span> One seating nightly, Tuesday through Saturday, at 7:00 PM</li>
+          <li><span>·</span> The full tasting menu is served to the whole table</li>
+          <li><span>·</span> Please tell us of any allergies or dietary needs in advance</li>
+          <li><span>·</span> Tables are held for ten minutes past the seating time</li>
+        </ul>
+      </div>
+      <form class="res-form" id="resForm">
+        <label for="rn">Full Name</label>
+        <input type="text" id="rn" placeholder="Your name" required/>
+        <label for="re">Email</label>
+        <input type="email" id="re" placeholder="you@email.com" required/>
+        <div class="res-row">
+          <div>
+            <label for="rd">Date</label>
+            <input type="date" id="rd" required/>
+          </div>
+          <div>
+            <label for="rt">Time</label>
+            <select id="rt"><option>7:00 PM seating</option></select>
+          </div>
+        </div>
+        <div class="res-row">
+          <div>
+            <label for="rp">Party Size</label>
+            <select id="rp"><option>2 guests</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6 guests</option></select>
+          </div>
+          <div>
+            <label for="rw">Wine Pairing</label>
+            <select id="rw"><option>No pairing</option><option>Add wine pairing</option><option>Add non-alcoholic pairing</option></select>
+          </div>
+        </div>
+        <button type="submit" class="btn">Request Reservation</button>
+        <div class="rmsg" id="rmsg"></div>
+        <div class="res-note">Seatings are limited. This is a request, not a confirmation.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Before You Arrive</span>
+      <h2>A few quiet details</h2>
+    </div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q" type="button">Is there a choice of dishes? <span class="faq-sign"></span></button>
+        <div class="faq-a"><p>The full tasting menu is served to the whole table. We do not offer a separate menu, though we are glad to adjust courses for allergies and dietary needs when you tell us in advance.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">Can you cook for dietary needs? <span class="faq-sign"></span></button>
+        <div class="faq-a"><p>Yes. Please note any allergies, vegetarian, or other needs when you reserve. Because the menu is written each morning, the more notice we have, the better we can plan a thoughtful version for you.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">How long is the evening? <span class="faq-sign"></span></button>
+        <div class="faq-a"><p>Plan for about two and a half hours at the table. The menu is paced gently, with time between courses, and there is one seating each night so the room is never rushed.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">Is there a dress code? <span class="faq-sign"></span></button>
+        <div class="faq-a"><p>There is no strict code. Most guests arrive smart and comfortable. Come as you would for an evening you have looked forward to.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">Do you take large groups? <span class="faq-sign"></span></button>
+        <div class="faq-a"><p>The room seats twenty-six, so tables run up to six guests. For a full buyout or a private evening, please reach out by email and we will see what we can arrange.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">What is the cancellation policy? <span class="faq-sign"></span></button>
+        <div class="faq-a"><p>Because seats are limited, we ask for at least forty-eight hours notice to change or cancel. We hold a card on file at the time of booking and confirm the details with you by email.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" style="padding-bottom:7rem">
+  <div class="narrow">
+    <span class="label">Twenty-Six Seats</span>
+    <h2>Sit with us for <em>one evening</em></h2>
+    <p>One menu, plated by hand, paced with care. Choose your date and we will save you a place at the table.</p>
+    <a href="#reserve" class="btn">Reserve a Table</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Solène</div>
+        <p class="foot-blurb">A small seasonal tasting-menu restaurant. One menu, one seating, twenty-six seats each night.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <p>14 Garnet Lane</p>
+        <p>Old Town Quarter</p>
+        <a href="#reserve">Reservations</a>
+      </div>
+      <div class="foot-col">
+        <h4>Hours</h4>
+        <p>Tuesday to Saturday</p>
+        <p>One seating, 7:00 PM</p>
+        <p>Closed Sunday and Monday</p>
+      </div>
+      <div class="foot-col">
+        <h4>Menu</h4>
+        <a href="#menu">The Degustation</a>
+        <a href="#menu">Wine Pairing</a>
+        <a href="#chef">The Chef</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      Demo site designed and built by <a href="/">Earvin Laureano</a>. Not a real business. <a href="/work">See more work</a>.
+      <div class="disclaimer">This is a fictional demonstration website created to showcase web design. Names, photos, prices, and reviews are illustrative only.</div>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Solène",
+  "description": "A small seasonal tasting-menu restaurant serving a seven-course degustation with an optional wine pairing. One seating nightly, twenty-six seats.",
+  "servesCuisine": "Seasonal tasting menu",
+  "priceRange": "$$$$",
+  "acceptsReservations": "True",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "14 Garnet Lane",
+    "addressLocality": "Old Town Quarter"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "19:00"
+  }],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "212"
+  }
+}
+</script>
+
+<script>
+  // Tasting-menu accordion (single open at a time)
+  (function(){
+    var courses = document.querySelectorAll('#courses .course');
+    courses.forEach(function(c){
+      var head = c.querySelector('.course-head');
+      var body = c.querySelector('.course-body');
+      head.addEventListener('click', function(){
+        var isOpen = c.classList.contains('open');
+        courses.forEach(function(other){
+          other.classList.remove('open');
+          other.querySelector('.course-body').style.maxHeight = null;
+        });
+        if(!isOpen){
+          c.classList.add('open');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+    // Open the first course by default
+    if(courses[0]){
+      courses[0].classList.add('open');
+      var b0 = courses[0].querySelector('.course-body');
+      b0.style.maxHeight = b0.scrollHeight + 'px';
+    }
+  })();
+
+  // FAQ accordion (independent toggles)
+  (function(){
+    var items = document.querySelectorAll('#faqList .faq-item');
+    items.forEach(function(it){
+      var q = it.querySelector('.faq-q');
+      var a = it.querySelector('.faq-a');
+      q.addEventListener('click', function(){
+        var open = it.classList.toggle('open');
+        a.style.maxHeight = open ? (a.scrollHeight + 'px') : null;
+      });
+    });
+  })();
+
+  // Reservation form (demo submit)
+  document.getElementById('resForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('rmsg').textContent = '✓ Request received. In a real build, this would reach the restaurant instantly. (Demo only.)';
+    this.querySelector('button').textContent = 'Request Received ✓';
+  });
+</script>
+</body>
+</html>

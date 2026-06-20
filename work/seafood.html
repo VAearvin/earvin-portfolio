@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tide &amp; Pearl · Coastal Seafood &amp; Raw Bar by the Harbor</title>
+<meta name="description" content="Tide & Pearl is a bright harborside seafood restaurant and raw bar. Daily catch, fresh oysters, ceviche, and grilled plates. Reserve a table by the water."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#2b7a78"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --teal:#2b7a78; --teal-l:#3fa7a0; --teal-d:#1f5b59;
+    --ivory:#fbfaf7; --sand:#e9dcc6; --sand-l:#f3ecdd;
+    --ink:#13283a; --slate:#4f6478; --coral:#e8836b; --coral-d:#d96c52;
+    --line:#e7e2d6; --white:#fff;
+    --r:16px; --shadow:0 20px 55px rgba(19,40,58,0.12); --shadow-sm:0 8px 24px rgba(19,40,58,0.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Work Sans',sans-serif;color:var(--ink);background:var(--ivory);line-height:1.7;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;line-height:1.12;font-weight:600}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal);color:#fff;font-weight:600;padding:1rem 1.9rem;border-radius:40px;font-size:.95rem;transition:.2s;border:none;cursor:pointer;letter-spacing:.01em}
+  .btn:hover{background:var(--teal-d);transform:translateY(-2px)}
+  .btn-coral{background:var(--coral)}
+  .btn-coral:hover{background:var(--coral-d)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+  .eyebrow{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+
+  .demo-bar{background:var(--ink);color:#cfe0e2;font-size:.82rem;text-align:center;padding:.55rem 1rem;font-weight:500}
+  .demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:.95rem 24px;max-width:1180px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:.6rem;font-family:'Fraunces',serif;font-weight:600;font-size:1.35rem;color:var(--ink)}
+  .logo .mark{width:38px;height:38px;border-radius:50%;background:var(--teal);display:grid;place-items:center;color:#fff;font-size:1.1rem}
+  .nav-links{display:flex;gap:2rem;align-items:center;font-size:.92rem;font-weight:500;color:var(--slate)}
+  .nav-links a:hover{color:var(--teal)}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  @media(max-width:880px){.nav-links{display:none}}
+
+  .hero{background:linear-gradient(165deg,var(--sand-l) 0%,var(--ivory) 60%);overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center;padding:4.5rem 0 5rem}
+  .hero h1{font-size:clamp(2.5rem,5.2vw,4rem);letter-spacing:-.01em;color:var(--ink)}
+  .hero h1 em{font-style:italic;color:var(--teal)}
+  .hero p.lede{font-size:1.16rem;color:var(--slate);margin:1.4rem 0 2rem;max-width:32rem}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .trust{display:flex;gap:2.2rem;margin-top:2.8rem;flex-wrap:wrap}
+  .trust div{font-size:.85rem;color:var(--slate)}
+  .trust strong{display:block;font-family:'Fraunces',serif;font-size:1.9rem;color:var(--teal);font-weight:600}
+  .hero-card{position:relative;border-radius:24px;box-shadow:var(--shadow);overflow:hidden;border:6px solid #fff}
+  .hero-card img{width:100%;display:block;aspect-ratio:4/3.7;object-fit:cover}
+  .badge-float{position:absolute;background:#fff;color:var(--ink);border-radius:14px;box-shadow:var(--shadow);padding:.85rem 1.05rem;display:flex;align-items:center;gap:.6rem;font-size:.84rem;font-weight:700}
+  .badge-float .dot{width:36px;height:36px;border-radius:11px;background:var(--sand-l);display:grid;place-items:center;color:var(--teal);font-size:1.1rem}
+  .bf-1{bottom:-18px;left:-18px}
+  .bf-2{top:-18px;right:-18px}
+  @media(max-width:880px){.hero-grid{grid-template-columns:1fr;padding:3rem 0}.bf-1,.bf-2{display:none}}
+
+  .strip{padding:1.7rem 0;background:var(--teal);color:#cdeae7}
+  .strip-in{display:flex;align-items:center;justify-content:center;gap:2.4rem;flex-wrap:wrap;font-size:.82rem;font-weight:700;letter-spacing:.06em}
+  .strip-in span:first-child{color:#bfe3e0;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:600;opacity:.85}
+  .strip-in span{color:#eafaf8}
+
+  section{padding:5.5rem 0}
+  .sec-head{text-align:center;max-width:44rem;margin:0 auto 3.2rem}
+  .sec-head h2{font-size:clamp(2rem,3.6vw,2.8rem);letter-spacing:-.01em}
+  .sec-head p{color:var(--slate);margin-top:1rem;font-size:1.05rem}
+
+  /* board / signature */
+  .board{background:var(--sand-l)}
+  .board-panel{background:#fff;border-radius:24px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line);max-width:880px;margin:0 auto}
+  .board-top{background:var(--ink);color:#fff;padding:1.6rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
+  .board-top h3{font-size:1.5rem;color:#fff}
+  .board-top small{color:#9fc4c2;font-weight:600;letter-spacing:.04em}
+  .board-tabs{display:flex;gap:.5rem;padding:1.2rem 2rem 0;flex-wrap:wrap}
+  .board-tab{background:var(--sand-l);border:1px solid var(--line);color:var(--slate);font-family:inherit;font-weight:600;font-size:.92rem;padding:.7rem 1.3rem;border-radius:40px;cursor:pointer;transition:.18s}
+  .board-tab:hover{border-color:var(--teal-l);color:var(--teal)}
+  .board-tab.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+  .board-body{padding:1.6rem 2rem 2.4rem}
+  .board-list{display:none}
+  .board-list.show{display:block;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .board-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.95rem 0;border-bottom:1px dashed var(--line)}
+  .board-row:last-child{border-bottom:none}
+  .board-row .name{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600}
+  .board-row .desc{display:block;font-family:'Work Sans',sans-serif;font-size:.88rem;color:var(--slate);font-weight:400;margin-top:.1rem}
+  .board-row .price{font-family:'Fraunces',serif;font-weight:600;color:var(--teal);white-space:nowrap;font-size:1.1rem}
+  .board-row .tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral-d);background:#fbe7e1;padding:.12rem .5rem;border-radius:20px;margin-left:.5rem;vertical-align:middle}
+  .board-note{text-align:center;color:var(--slate);font-size:.86rem;margin-top:1.6rem}
+
+  /* menu offer */
+  .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem}
+  .menu-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:2rem;box-shadow:var(--shadow-sm)}
+  .menu-card h3{font-size:1.45rem;display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:2px solid var(--sand)}
+  .menu-card h3 .em{width:40px;height:40px;border-radius:11px;background:var(--sand-l);display:grid;place-items:center;font-size:1.2rem}
+  .mi{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;padding:.65rem 0}
+  .mi b{font-weight:600}
+  .mi small{display:block;color:var(--slate);font-weight:400;font-size:.86rem;margin-top:.05rem}
+  .mi .p{color:var(--teal);font-weight:600;white-space:nowrap}
+  @media(max-width:760px){.menu-grid{grid-template-columns:1fr}}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .split img{width:100%;border-radius:24px;box-shadow:var(--shadow);aspect-ratio:5/4;object-fit:cover}
+  .split ul{list-style:none;margin-top:1.6rem;display:grid;gap:1rem}
+  .split li{display:flex;gap:.8rem;align-items:flex-start;color:var(--slate)}
+  .split li b{color:var(--ink)}
+  .check{flex:none;width:28px;height:28px;border-radius:9px;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:800;margin-top:.15rem}
+  @media(max-width:880px){.split{grid-template-columns:1fr;gap:2rem}.split.rev .img-col{order:-1}}
+
+  .results{background:var(--ink);color:#fff}
+  .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+  .res b{display:block;font-family:'Fraunces',serif;font-size:2.9rem;color:var(--teal-l);line-height:1;font-weight:600}
+  .res span{display:block;color:#9fb6c5;font-size:.92rem;margin-top:.6rem}
+  @media(max-width:760px){.res-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+
+  /* gallery */
+  .gallery{background:var(--sand-l)}
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:1rem}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;border-radius:14px;box-shadow:var(--shadow-sm);transition:.3s}
+  .gal-grid img:hover{transform:scale(1.02)}
+  .gal-grid .tall{grid-row:span 2}
+  .gal-grid .wide{grid-column:span 2}
+  @media(max-width:760px){.gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.gal-grid .wide{grid-column:span 2}.gal-grid .tall{grid-row:span 1}}
+
+  .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .tm{background:#fff;border-radius:var(--r);padding:1.9rem;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+  .stars{color:var(--coral);margin-bottom:.8rem;letter-spacing:.1em}
+  .tm p{font-size:.97rem;color:var(--ink)}
+  .tm .who{display:flex;align-items:center;gap:.7rem;margin-top:1.2rem}
+  .tm .av{width:46px;height:46px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:700;font-family:'Fraunces',serif}
+  .tm .who small{display:block;color:var(--slate)}
+  @media(max-width:880px){.tm-grid{grid-template-columns:1fr}}
+
+  /* reserve */
+  .reserve{background:var(--sand-l)}
+  .reserve-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .reserve-form{background:#fff;border:1px solid var(--line);border-radius:24px;padding:2.3rem;box-shadow:var(--shadow)}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .reserve-form label{display:block;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin:1rem 0 .4rem}
+  .reserve-form input,.reserve-form select{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:10px;font-size:.95rem;font-family:inherit;color:var(--ink);background:var(--ivory)}
+  .reserve-form input:focus,.reserve-form select:focus{outline:none;border-color:var(--teal)}
+  .reserve-form .btn{margin-top:1.5rem;width:100%;justify-content:center}
+  .rmsg{margin-top:.9rem;text-align:center;font-size:.9rem;color:var(--teal);font-weight:600;min-height:1.2em}
+  @media(max-width:880px){.reserve-grid{grid-template-columns:1fr;gap:2.2rem}}
+
+  /* faq */
+  .faq-list{max-width:780px;margin:0 auto;display:grid;gap:1rem}
+  .faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.4rem 1.7rem;box-shadow:var(--shadow-sm)}
+  .faq-item h4{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:600;margin-bottom:.5rem;color:var(--ink)}
+  .faq-item p{color:var(--slate);font-size:.96rem}
+
+  .cta{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;text-align:center;border-radius:28px;padding:4rem 2rem}
+  .cta h2{font-size:clamp(2.1rem,4vw,3rem);margin-bottom:1rem;color:#fff}
+  .cta p{color:#d6f0ee;max-width:34rem;margin:0 auto 2rem;font-size:1.08rem}
+  .cta .btn{background:#fff;color:var(--teal-d)}
+  .cta .btn:hover{background:var(--sand-l)}
+
+  footer{background:var(--ink);color:#9fb6c5;padding:3.5rem 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+  footer h4{color:#fff;font-family:'Work Sans';font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
+  footer a{display:block;color:#9fb6c5;font-size:.92rem;margin-bottom:.6rem}
+  footer a:hover{color:var(--teal-l)}
+  footer p{font-size:.92rem}
+  .foot-bottom{text-align:center;padding-top:1.8rem;font-size:.82rem;color:#7a92a3}
+  .foot-logo{color:#fff;font-family:'Fraunces',serif;font-size:1.5rem;margin-bottom:.8rem;font-weight:600}
+  .disclaimer{max-width:60rem;margin:1.2rem auto 0;text-align:center;font-size:.74rem;color:#6a8294;line-height:1.6}
+  @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr}}
+</style>
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<div class="demo-bar">🐚 This is a <strong>demo site</strong> built by Earvin Laureano to showcase web design. &nbsp;<a href="/work">← Back to all work</a> &nbsp;·&nbsp; <a href="/pricing">Get a site like this</a></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="#" class="logo"><span class="mark">T&amp;P</span> Tide &amp; Pearl</a>
+    <nav class="nav-links">
+      <a href="#board">Today's Catch</a>
+      <a href="#menu">Menu</a>
+      <a href="#story">Our Story</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#reserve" class="btn">Reserve a Table</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Coastal Seafood · Raw &amp; Oyster Bar</span>
+        <h1>Fresh off the boat,<br/><em>onto your table.</em></h1>
+        <p class="lede">Tide &amp; Pearl is a bright, easygoing seafood house right on the harbor. We serve what came in that morning, shucked, grilled, and poured by people who love the water.</p>
+        <div class="hero-actions">
+          <a href="#reserve" class="btn">Reserve a Table →</a>
+          <a href="#board" class="btn btn-ghost">See Today's Catch</a>
+        </div>
+        <div class="trust">
+          <div><strong>4.9 ★</strong> across 1,200+ reviews</div>
+          <div><strong>Daily</strong> dockside deliveries</div>
+          <div><strong>12 yrs</strong> on the harbor</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80&auto=format&fit=crop" alt="Tide and Pearl's dining room, right on the water"/>
+        <div class="badge-float bf-1"><span class="dot">🦪</span> Shucked to order</div>
+        <div class="badge-float bf-2"><span class="dot">★</span> 4.9 · 1,200+ reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-in">
+    <span>Featured in</span>
+    <span>COASTAL DINING</span><span>THE HARBOR REVIEW</span><span>SEABOARD EATS</span><span>BAY CITY WEEKLY</span><span>TASTE OF THE COAST</span>
+  </div>
+</div>
+
+<!-- SIGNATURE: Today's Catch board -->
+<section id="board" class="board">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Today's Catch</span>
+      <h2>What came in this morning</h2>
+      <p>Our board changes with the tide. Tap through to see what the kitchen is working with today.</p>
+    </div>
+    <div class="board-panel">
+      <div class="board-top">
+        <div>
+          <h3>The Fresh Board</h3>
+          <small>Updated Thursday · 9:14 AM</small>
+        </div>
+        <small>Subject to the day's haul</small>
+      </div>
+      <div class="board-tabs">
+        <button class="board-tab active" data-tab="raw">Raw Bar</button>
+        <button class="board-tab" data-tab="grill">From the Grill</button>
+        <button class="board-tab" data-tab="catch">Today's Catch</button>
+      </div>
+      <div class="board-body">
+        <div class="board-list show" id="raw">
+          <div class="board-row"><div><span class="name">Pearl Cove Oysters</span><span class="desc">Briny and crisp, half dozen, with mignonette and lemon</span></div><span class="price">$21</span></div>
+          <div class="board-row"><div><span class="name">Sweetwater Oysters</span><span class="desc">Mild and buttery, half dozen, shucked to order</span></div><span class="price">$19</span></div>
+          <div class="board-row"><div><span class="name">Bay Scallop Crudo</span><span class="desc">Thin sliced raw scallop, olive oil, sea salt, citrus</span><span class="tag">Chef pick</span></div><span class="price">$17</span></div>
+          <div class="board-row"><div><span class="name">Shrimp Cocktail</span><span class="desc">Chilled poached shrimp, house cocktail sauce</span></div><span class="price">$16</span></div>
+          <div class="board-row"><div><span class="name">Tuna Tartare</span><span class="desc">Hand cut tuna, avocado, sesame, crisp wonton</span></div><span class="price">$18</span></div>
+        </div>
+        <div class="board-list" id="grill">
+          <div class="board-row"><div><span class="name">Cedar Grilled Salmon</span><span class="desc">Wild salmon, herb butter, charred lemon</span></div><span class="price">$29</span></div>
+          <div class="board-row"><div><span class="name">Whole Branzino</span><span class="desc">Grilled over the open flame, sea salt, olive oil</span><span class="tag">House favorite</span></div><span class="price">$34</span></div>
+          <div class="board-row"><div><span class="name">Garlic Butter Shrimp</span><span class="desc">Jumbo shrimp, white wine, parsley, grilled bread</span></div><span class="price">$26</span></div>
+          <div class="board-row"><div><span class="name">Grilled Octopus</span><span class="desc">Tender charred octopus, smoked paprika, lemon</span></div><span class="price">$24</span></div>
+          <div class="board-row"><div><span class="name">Swordfish Steak</span><span class="desc">Thick cut, grilled medium, caper brown butter</span></div><span class="price">$31</span></div>
+        </div>
+        <div class="board-list" id="catch">
+          <div class="board-row"><div><span class="name">Today's Whole Fish</span><span class="desc">Ask your server, landed at the dock this morning</span><span class="tag">Limited</span></div><span class="price">Market</span></div>
+          <div class="board-row"><div><span class="name">Catch Ceviche</span><span class="desc">Today's fish, lime, red onion, chili, cilantro</span></div><span class="price">$17</span></div>
+          <div class="board-row"><div><span class="name">Pan Seared Catch</span><span class="desc">The morning's pick, brown butter, seasonal greens</span></div><span class="price">$28</span></div>
+          <div class="board-row"><div><span class="name">Fisherman's Stew</span><span class="desc">Today's shellfish and fish in a bright tomato broth</span></div><span class="price">$27</span></div>
+          <div class="board-row"><div><span class="name">Catch Tacos</span><span class="desc">Three tacos, grilled fish, slaw, lime crema</span></div><span class="price">$19</span></div>
+        </div>
+        <p class="board-note">Prices and items shown are a sample. Our real board changes every day with the morning delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Offer / full menu -->
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The Menu</span>
+      <h2>Raw bar, shareables, and plates from the sea</h2>
+      <p>Bright, simple cooking that lets the catch do the talking. Built for sharing across the table.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <h3><span class="em">🦪</span> Raw Bar</h3>
+        <div class="mi"><div><b>Oysters on the Half Shell</b><small>Half dozen, daily selection, mignonette and lemon</small></div><span class="p">$19</span></div>
+        <div class="mi"><div><b>The Pearl Tower</b><small>Oysters, shrimp, scallop crudo, ceviche, for the table</small></div><span class="p">$58</span></div>
+        <div class="mi"><div><b>Scallop Crudo</b><small>Raw bay scallop, citrus, olive oil, sea salt</small></div><span class="p">$17</span></div>
+        <div class="mi"><div><b>Tuna Tartare</b><small>Hand cut tuna, avocado, sesame, crisp wonton</small></div><span class="p">$18</span></div>
+      </div>
+      <div class="menu-card">
+        <h3><span class="em">🍤</span> Shareable Plates</h3>
+        <div class="mi"><div><b>Steamed Clams</b><small>White wine, garlic, butter, grilled bread</small></div><span class="p">$18</span></div>
+        <div class="mi"><div><b>Crispy Calamari</b><small>Light fry, lemon aioli, pickled chili</small></div><span class="p">$16</span></div>
+        <div class="mi"><div><b>Crab Cakes</b><small>Two cakes, remoulade, shaved fennel salad</small></div><span class="p">$21</span></div>
+        <div class="mi"><div><b>Grilled Octopus</b><small>Charred tender, smoked paprika, lemon</small></div><span class="p">$24</span></div>
+      </div>
+      <div class="menu-card">
+        <h3><span class="em">🐟</span> From the Grill</h3>
+        <div class="mi"><div><b>Cedar Grilled Salmon</b><small>Wild salmon, herb butter, charred lemon</small></div><span class="p">$29</span></div>
+        <div class="mi"><div><b>Whole Branzino</b><small>Grilled over the flame, sea salt, olive oil</small></div><span class="p">$34</span></div>
+        <div class="mi"><div><b>Swordfish Steak</b><small>Thick cut, caper brown butter</small></div><span class="p">$31</span></div>
+        <div class="mi"><div><b>Garlic Butter Shrimp</b><small>Jumbo shrimp, white wine, grilled bread</small></div><span class="p">$26</span></div>
+      </div>
+      <div class="menu-card">
+        <h3><span class="em">🍋</span> Bright &amp; Fresh</h3>
+        <div class="mi"><div><b>Catch Ceviche</b><small>Today's fish, lime, red onion, chili, cilantro</small></div><span class="p">$17</span></div>
+        <div class="mi"><div><b>Lobster Roll</b><small>Warm butter or chilled mayo, split top bun, fries</small></div><span class="p">$27</span></div>
+        <div class="mi"><div><b>Sea &amp; Greens Bowl</b><small>Grilled catch, grains, herbs, lemon dressing</small></div><span class="p">$22</span></div>
+        <div class="mi"><div><b>Fisherman's Stew</b><small>Shellfish and fish in a bright tomato broth</small></div><span class="p">$27</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Story split: tide to table -->
+<section id="story">
+  <div class="wrap">
+    <div class="split">
+      <div class="img-col"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=900&q=80&auto=format&fit=crop" alt="The cold coastal water our catch comes from"/></div>
+      <div>
+        <span class="eyebrow">Tide to Table</span>
+        <h2 style="font-size:2.3rem">From the dock to your plate, often in the same morning</h2>
+        <p style="color:var(--slate);margin-top:1rem">We are fifty steps from the water, and that is the whole idea. The boats pull in, we walk down, and the kitchen builds the day's board around what they bring.</p>
+        <ul>
+          <li><span class="check">✓</span><span><b>Daily dockside deliveries.</b> No long supply chain. What you eat tonight was likely swimming this morning.</span></li>
+          <li><span class="check">✓</span><span><b>We buy the whole catch.</b> Working with local boats means less waste and a better price for fishers.</span></li>
+          <li><span class="check">✓</span><span><b>Shucked and grilled to order.</b> Nothing sits. Oysters are opened when you order them, not before.</span></li>
+          <li><span class="check">✓</span><span><b>Simple, honest cooking.</b> Salt, citrus, fire, and butter. We let the fish be the star.</span></li>
+        </ul>
+        <a href="#reserve" class="btn" style="margin-top:1.8rem">Book Your Table →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="results">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:2.6rem">
+      <span class="eyebrow" style="color:var(--teal-l)">By the Numbers</span>
+      <h2 style="color:#fff">A harbor table people come back for</h2>
+      <p style="color:#9fb6c5">A snapshot of a busy season by the water. Numbers shown are a sample for this demo.</p>
+    </div>
+    <div class="res-grid">
+      <div class="res"><b>1,200+</b><span>Five star reviews</span></div>
+      <div class="res"><b>40k</b><span>Oysters shucked a year</span></div>
+      <div class="res"><b>9</b><span>Local boats we buy from</span></div>
+      <div class="res"><b>12 yrs</b><span>On the same harbor</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" class="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The Place</span>
+      <h2>A bright room by the water</h2>
+      <p>Sun, sea air, and a table full of something good. Here is a taste of an evening at Tide &amp; Pearl.</p>
+    </div>
+    <div class="gal-grid">
+      <img class="tall" src="https://images.unsplash.com/photo-1559742811-822873691df8?w=600&q=80&auto=format&fit=crop" alt="Grilled gulf prawns"/>
+      <img class="wide" src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80&auto=format&fit=crop" alt="Friends sharing a seafood feast"/>
+      <img src="https://images.unsplash.com/photo-1606850780554-b55ea4dd0b70?w=600&q=80&auto=format&fit=crop" alt="Charcoal grilled octopus"/>
+      <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&q=80&auto=format&fit=crop" alt="Catch of the day, seared"/>
+      <img class="wide" src="https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=800&q=80&auto=format&fit=crop" alt="The day's fresh catch on ice"/>
+      <img class="tall" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80&auto=format&fit=crop" alt="Steps from the water"/>
+      <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80&auto=format&fit=crop" alt="Salt air and open sea"/>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Guest Reviews</span>
+      <h2>People keep coming back to the water</h2>
+    </div>
+    <div class="tm-grid">
+      <div class="tm"><div class="stars">★★★★★</div><p>"The oysters were the freshest I have had in years, and you can see the boats right out the window. We watched the sunset and ate the whole branzino. Perfect night."</p><div class="who"><div class="av">LM</div><div>Lena M.<small>Visited for an anniversary</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"That Fresh Board changes every day, so it never feels the same twice. The ceviche was bright and clean. Staff were warm and not stuffy at all."</p><div class="who"><div class="av">TR</div><div>Tomas R.<small>Local regular</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"Bright room, sea breeze, and a lobster roll I am still thinking about. Easy to get a table when you reserve ahead. We will be back next trip."</p><div class="who"><div class="av">AK</div><div>Amara K.<small>Weekend visitor</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Reservation -->
+<section id="reserve" class="reserve">
+  <div class="wrap">
+    <div class="reserve-grid">
+      <div>
+        <span class="eyebrow">Reserve a Table</span>
+        <h2 style="font-size:2.3rem">Grab a spot by the water</h2>
+        <p style="color:var(--slate);margin-top:1rem">Tell us when you are coming and how many. We will hold a harborside table and send a quick confirmation. Walk-ins are always welcome at the bar.</p>
+        <ul style="list-style:none;margin-top:1.6rem;display:grid;gap:1rem">
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--slate)"><span class="check">✓</span> Open Tuesday to Sunday, lunch and dinner</li>
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--slate)"><span class="check">✓</span> Window tables face the harbor</li>
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--slate)"><span class="check">✓</span> Large parties of 8 or more, just call ahead</li>
+        </ul>
+      </div>
+      <form class="reserve-form" id="reserveForm">
+        <div class="form-row">
+          <div>
+            <label for="rdate">Date</label>
+            <input type="date" id="rdate" required/>
+          </div>
+          <div>
+            <label for="rtime">Time</label>
+            <select id="rtime">
+              <option>11:30 AM</option><option>12:00 PM</option><option>12:30 PM</option>
+              <option>5:30 PM</option><option>6:00 PM</option><option>6:30 PM</option>
+              <option>7:00 PM</option><option>7:30 PM</option><option>8:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <label for="rsize">Party Size</label>
+        <select id="rsize">
+          <option>1 guest</option><option>2 guests</option><option>3 guests</option>
+          <option>4 guests</option><option>5 guests</option><option>6 guests</option>
+          <option>7 guests</option><option>8 or more guests</option>
+        </select>
+        <label for="rname">Full Name</label>
+        <input type="text" id="rname" placeholder="Your name" required/>
+        <label for="rphone">Phone</label>
+        <input type="tel" id="rphone" placeholder="(000) 000-0000" required/>
+        <button type="submit" class="btn btn-coral">Request My Table →</button>
+        <div class="rmsg" id="rmsg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Good to Know</span>
+      <h2>Questions before you come in</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><h4>How fresh is the seafood, really?</h4><p>We buy from local boats that dock just steps away, often the same morning we serve it. The Fresh Board is built each day around what comes in, so the catch is about as fresh as a restaurant can offer.</p></div>
+      <div class="faq-item"><h4>Do I need a reservation?</h4><p>Reservations are recommended for dinner and weekends, since window tables fill up fast. The raw bar always keeps seats open for walk-ins if you would rather drop by.</p></div>
+      <div class="faq-item"><h4>Is there anything for people who do not eat seafood?</h4><p>Yes. We keep a few garden plates, a grilled vegetable bowl, and seasonal sides on hand. Just let your server know and we will take care of you.</p></div>
+      <div class="faq-item"><h4>Can you handle allergies and shellfish concerns?</h4><p>Absolutely. Tell us when you book or when you sit down. Our kitchen is happy to guide you to safe choices and adjust plates where we can.</p></div>
+      <div class="faq-item"><h4>Do you take large groups?</h4><p>We love a full table. For parties of eight or more, give us a call so we can set the right space and plan a few platters for sharing.</p></div>
+      <div class="faq-item"><h4>Is there parking near the harbor?</h4><p>There is a public lot a short walk from the door, plus street parking along the waterfront. Most guests find a spot within a few minutes of arriving.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:5.5rem">
+  <div class="wrap">
+    <div class="cta">
+      <h2>The tide is in. Your table is waiting.</h2>
+      <p>Come for the oysters, stay for the sunset. Reserve a harborside table and we will have the board fresh and the bar ready.</p>
+      <a href="#reserve" class="btn">Reserve a Table →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Tide &amp; Pearl</div>
+        <p style="max-width:20rem">A bright coastal seafood house and raw bar on the harbor. Fresh daily catch, shucked oysters, and a table by the water.</p>
+      </div>
+      <div><h4>Hours</h4><p style="margin-bottom:.4rem">Tue to Thu · 11:30a to 9p</p><p style="margin-bottom:.4rem">Fri to Sat · 11:30a to 10p</p><p style="margin-bottom:.4rem">Sun · 11:30a to 8p</p><p>Mon · Closed</p></div>
+      <div><h4>Visit</h4><a href="#">14 Harborfront Way</a><a href="#">Pearl Bay Marina</a><a href="tel:#">(000) 000-0000</a><a href="#reserve">Reserve a Table</a></div>
+      <div><h4>Explore</h4><a href="#board">Today's Catch</a><a href="#menu">Menu</a><a href="#story">Our Story</a><a href="#gallery">Gallery</a><a href="#faq">FAQ</a></div>
+    </div>
+    <div class="foot-bottom">
+      Demo site designed &amp; built by <a href="/" style="color:#fff;text-decoration:underline;display:inline">Earvin Laureano</a>. Not a real business. · <a href="/work" style="color:#fff;text-decoration:underline;display:inline">See more work</a>
+      <div class="disclaimer">This is a fictional demonstration website created to showcase web design. Names, photos, prices, and reviews are illustrative only.</div>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Tide & Pearl",
+  "servesCuisine": ["Seafood", "Raw Bar", "Coastal"],
+  "priceRange": "$$",
+  "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80&auto=format&fit=crop",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "14 Harborfront Way",
+    "addressLocality": "Pearl Bay Marina"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "1200"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "11:30", "closes": "21:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday"], "opens": "11:30", "closes": "22:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:30", "closes": "20:00"}
+  ]
+}
+</script>
+
+<script>
+  // Signature: Fresh Board tabs
+  var tabs = document.querySelectorAll('.board-tab');
+  var lists = document.querySelectorAll('.board-list');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      lists.forEach(function(l){ l.classList.remove('show'); });
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('show');
+    });
+  });
+
+  // Reservation form demo handler
+  document.getElementById('reserveForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('rmsg').textContent = '✓ Thanks, in a real build this would reach the host stand instantly. (Demo only.)';
+    this.querySelector('button').textContent = 'Table Requested ✓';
+  });
+</script>
+</body>
+</html>

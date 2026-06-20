@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Northcrest Wealth, Fee-Only Fiduciary Retirement Planning</title>
+<meta name="description" content="Northcrest Wealth is a fee-only fiduciary firm helping families plan for retirement, manage investments, and keep more of what they earn. Book a calm, no-pressure consultation."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#13322b"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --green:#13322b; --green-d:#0d231e; --navy:#122a3a;
+    --gold:#b8973f; --gold-d:#9c7e30;
+    --cream:#f7f5ef; --line:#e7e2d6; --sage:#5b7268;
+    --ink:#1d2a26; --white:#fff; --soft:#fbfaf6;
+    --r:14px; --shadow:0 22px 60px rgba(19,50,43,0.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Source Serif 4',Georgia,serif;line-height:1.14;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--green-d);font-weight:700;padding:1rem 1.9rem;border-radius:8px;font-size:.95rem;transition:.2s;border:none;cursor:pointer;letter-spacing:.01em}
+  .btn:hover{background:var(--gold-d);color:#fff;transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.32)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);background:transparent}
+  .eyebrow{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:1rem}
+
+  .demo-bar{background:var(--green-d);color:#cfe0d8;font-size:.82rem;text-align:center;padding:.55rem 1rem;font-weight:500}
+  .demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(19,50,43,.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:1.05rem 24px;max-width:1180px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:.65rem;font-family:'Source Serif 4',serif;font-weight:700;font-size:1.28rem;color:#fff}
+  .logo .mark{width:36px;height:36px;border-radius:9px;border:1.5px solid var(--gold);display:grid;place-items:center;color:var(--gold)}
+  .logo .mark svg{width:18px;height:18px}
+  .nav-links{display:flex;gap:2rem;align-items:center;font-size:.92rem;font-weight:500;color:#cfe0d8}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  @media(max-width:880px){.nav-links{display:none}}
+
+  .hero{background:linear-gradient(160deg,var(--green) 0%,var(--green-d) 100%);color:#fff;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:4.5rem 0 5rem}
+  .hero h1{font-size:clamp(2.3rem,5vw,3.7rem);color:#fff}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero p.lede{font-size:1.14rem;color:#bfd2c9;margin:1.4rem 0 2rem;max-width:32rem}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .trust{display:flex;gap:2rem;margin-top:2.6rem;flex-wrap:wrap}
+  .trust div{font-size:.85rem;color:#9cb3a9}
+  .trust strong{display:block;font-family:'Source Serif 4',serif;font-size:1.8rem;color:var(--gold);font-weight:700}
+  .hero-card{position:relative;border-radius:18px;box-shadow:var(--shadow);overflow:hidden;border:1px solid rgba(255,255,255,.12)}
+  .hero-card img{width:100%;display:block;aspect-ratio:4/3.7;object-fit:cover}
+  .badge-float{position:absolute;background:#fff;color:var(--ink);border-radius:12px;box-shadow:var(--shadow);padding:.85rem 1.05rem;display:flex;align-items:center;gap:.6rem;font-size:.84rem;font-weight:700}
+  .badge-float .dot{width:34px;height:34px;border-radius:9px;background:var(--cream);display:grid;place-items:center;color:var(--gold-d)}
+  .bf-1{bottom:-16px;left:-16px}
+  .bf-2{top:-16px;right:-16px}
+  @media(max-width:880px){.hero-grid{grid-template-columns:1fr;padding:3rem 0}.bf-1,.bf-2{display:none}}
+
+  .strip{padding:1.7rem 0;background:var(--cream);border-bottom:1px solid var(--line)}
+  .strip-in{display:flex;align-items:center;justify-content:center;gap:2.4rem;flex-wrap:wrap;font-size:.82rem;font-weight:700;letter-spacing:.06em;color:#a89f86}
+  .strip-in span:first-child{color:var(--sage);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:600}
+
+  section{padding:5.5rem 0}
+  .sec-head{text-align:center;max-width:44rem;margin:0 auto 3.2rem}
+  .sec-head h2{font-size:clamp(1.9rem,3.5vw,2.7rem)}
+  .sec-head p{color:var(--sage);margin-top:1rem;font-size:1.05rem}
+
+  .svc{background:var(--cream)}
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+  .scard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.9rem;transition:.2s}
+  .scard:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:transparent}
+  .scard .ic{width:48px;height:48px;border-radius:11px;background:var(--green);color:var(--gold);display:grid;place-items:center;margin-bottom:1.2rem}
+  .scard .ic svg{width:24px;height:24px}
+  .scard h3{font-size:1.18rem;margin-bottom:.5rem}
+  .scard p{color:var(--sage);font-size:.93rem}
+  @media(max-width:980px){.svc-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
+
+  .fiduciary{background:var(--navy);color:#fff}
+  .fid-in{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+  .fid-in h2{color:#fff;font-size:clamp(1.8rem,3.2vw,2.4rem)}
+  .fid-in p{color:#bcccd6;margin-top:1rem}
+  .fid-pts{list-style:none;display:grid;gap:1rem;margin-top:1.4rem}
+  .fid-pts li{display:flex;gap:.8rem;align-items:flex-start;color:#cdd9e0}
+  .fid-pts b{color:#fff}
+  .fid-check{flex:none;width:26px;height:26px;border-radius:7px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:.8rem;font-weight:800;margin-top:.15rem}
+  @media(max-width:880px){.fid-in{grid-template-columns:1fr;gap:2rem}}
+
+  /* calculator */
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.2rem;align-items:stretch}
+  .calc-panel{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:2.3rem}
+  .calc-panel label{display:flex;justify-content:space-between;align-items:baseline;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--sage);margin:1.3rem 0 .5rem}
+  .calc-panel label:first-of-type{margin-top:0}
+  .calc-panel .val{color:var(--green);font-size:.95rem;font-weight:700;letter-spacing:0;text-transform:none}
+  .calc-panel input[type=number]{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:9px;font-size:1rem;font-family:inherit;color:var(--ink);background:#fff}
+  .calc-panel input[type=number]:focus{outline:none;border-color:var(--gold)}
+  .calc-panel input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:6px;background:var(--line);outline:none;margin-top:.3rem}
+  .calc-panel input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:var(--green);border:3px solid var(--gold);cursor:pointer;transition:.15s}
+  .calc-panel input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.1)}
+  .calc-panel input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--green);border:3px solid var(--gold);cursor:pointer}
+  .rate-row{display:flex;gap:.6rem;margin-top:.4rem}
+  .rate-row button{flex:1;padding:.6rem;border:1px solid var(--line);background:#fff;border-radius:8px;font-family:inherit;font-size:.85rem;font-weight:600;color:var(--sage);cursor:pointer;transition:.15s}
+  .rate-row button.active{background:var(--green);color:#fff;border-color:var(--green)}
+  .calc-result{background:linear-gradient(160deg,var(--green),var(--green-d));color:#fff;border-radius:18px;padding:2.6rem 2.3rem;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow)}
+  .calc-result .cap{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+  .calc-result .big{font-family:'Source Serif 4',serif;font-weight:700;font-size:clamp(2.6rem,6vw,3.8rem);line-height:1;margin:.6rem 0;color:#fff}
+  .calc-result .sub{color:#bfd2c9;font-size:.95rem}
+  .calc-bars{display:flex;align-items:flex-end;gap:.5rem;height:90px;margin:1.8rem 0 1rem}
+  .calc-bars .bar{flex:1;background:rgba(184,151,63,.32);border-radius:5px 5px 0 0;transition:height .4s ease;min-height:4px;position:relative}
+  .calc-bars .bar:last-child{background:var(--gold)}
+  .calc-split{display:flex;gap:1.6rem;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.14)}
+  .calc-split div small{display:block;color:#9cb3a9;font-size:.76rem;letter-spacing:.04em}
+  .calc-split div b{font-family:'Source Serif 4',serif;font-size:1.3rem;color:#fff}
+  .calc-note{font-size:.78rem;color:var(--sage);margin-top:1.3rem;line-height:1.55}
+  @media(max-width:880px){.calc-grid{grid-template-columns:1fr;gap:2rem}}
+
+  /* process timeline */
+  .process{background:var(--cream)}
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;position:relative;margin-top:1rem}
+  .timeline::before{content:"";position:absolute;top:26px;left:7%;right:7%;height:2px;background:var(--line);z-index:0}
+  .step{position:relative;z-index:1;text-align:center}
+  .step .num{width:54px;height:54px;margin:0 auto 1.2rem;border-radius:50%;background:#fff;border:2px solid var(--gold);color:var(--green);display:grid;place-items:center;font-family:'Source Serif 4',serif;font-weight:700;font-size:1.3rem;box-shadow:0 8px 20px rgba(19,50,43,.08)}
+  .step h3{font-size:1.12rem;margin-bottom:.5rem}
+  .step p{color:var(--sage);font-size:.9rem}
+  @media(max-width:760px){.timeline{grid-template-columns:1fr 1fr;gap:2rem}.timeline::before{display:none}}
+  @media(max-width:430px){.timeline{grid-template-columns:1fr}}
+
+  /* split / why */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .split img{width:100%;border-radius:18px;box-shadow:var(--shadow);aspect-ratio:5/4;object-fit:cover}
+  .split ul{list-style:none;margin-top:1.6rem;display:grid;gap:1rem}
+  .split li{display:flex;gap:.8rem;align-items:flex-start;color:var(--sage)}
+  .split li b{color:var(--ink)}
+  .check{flex:none;width:26px;height:26px;border-radius:7px;background:var(--green);color:var(--gold);display:grid;place-items:center;font-size:.8rem;font-weight:800;margin-top:.15rem}
+  @media(max-width:880px){.split{grid-template-columns:1fr;gap:2rem}.split.rev .img-col{order:-1}}
+
+  /* results band */
+  .results{background:var(--green);color:#fff}
+  .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+  .res b{display:block;font-family:'Source Serif 4',serif;font-size:2.8rem;color:var(--gold);line-height:1;font-weight:700}
+  .res span{display:block;color:#9cb3a9;font-size:.92rem;margin-top:.6rem}
+  @media(max-width:760px){.res-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+
+  /* gallery */
+  .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+  .gal-grid figure{border-radius:14px;overflow:hidden;position:relative;box-shadow:0 12px 30px rgba(19,50,43,.1)}
+  .gal-grid img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:4/3;transition:transform .5s ease}
+  .gal-grid figure:hover img{transform:scale(1.05)}
+  .gal-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:1rem;color:#fff;font-size:.85rem;font-weight:600;background:linear-gradient(transparent,rgba(13,35,30,.82))}
+  .gal-tall{grid-row:span 2}
+  .gal-tall img{aspect-ratio:auto;height:100%}
+  @media(max-width:760px){.gal-grid{grid-template-columns:1fr 1fr}.gal-tall{grid-row:auto}}
+
+  /* testimonials */
+  .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .tm{background:var(--soft);border-radius:var(--r);padding:1.9rem;border:1px solid var(--line)}
+  .stars{color:var(--gold);margin-bottom:.8rem;letter-spacing:.1em}
+  .tm p{font-size:.97rem;color:var(--ink)}
+  .tm .who{display:flex;align-items:center;gap:.7rem;margin-top:1.2rem}
+  .tm .av{width:44px;height:44px;border-radius:50%;background:var(--green);color:var(--gold);display:grid;place-items:center;font-weight:700;font-family:'Source Serif 4',serif}
+  .tm .who small{display:block;color:var(--sage)}
+  @media(max-width:880px){.tm-grid{grid-template-columns:1fr}}
+
+  /* faq */
+  .faq{background:var(--cream)}
+  .faq-list{max-width:48rem;margin:0 auto;display:grid;gap:1rem}
+  .faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .faq-q{width:100%;text-align:left;background:none;border:none;padding:1.3rem 1.5rem;font-family:inherit;font-size:1.04rem;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  .faq-q .pl{flex:none;width:24px;height:24px;border-radius:6px;background:var(--cream);color:var(--green);display:grid;place-items:center;font-size:1.2rem;transition:.2s;font-weight:400}
+  .faq-item.open .faq-q .pl{transform:rotate(45deg);background:var(--green);color:var(--gold)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .faq-a p{padding:0 1.5rem 1.4rem;color:var(--sage);font-size:.96rem}
+
+  /* consult */
+  .consult-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .consult-form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:2.3rem;box-shadow:var(--shadow)}
+  .consult-form label{display:block;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sage);margin:1rem 0 .4rem}
+  .consult-form input,.consult-form textarea,.consult-form select{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:9px;font-size:.95rem;font-family:inherit;color:var(--ink);background:var(--soft)}
+  .consult-form input:focus,.consult-form textarea:focus,.consult-form select:focus{outline:none;border-color:var(--gold)}
+  .consult-form textarea{resize:vertical;min-height:90px}
+  .consult-form .btn{margin-top:1.4rem;width:100%;justify-content:center}
+  .cmsg{margin-top:.9rem;text-align:center;font-size:.9rem;color:var(--gold-d);font-weight:600;min-height:1.2em}
+  @media(max-width:880px){.consult-grid{grid-template-columns:1fr;gap:2.2rem}}
+
+  .cta{background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;text-align:center;border-radius:24px;padding:4rem 2rem}
+  .cta h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:1rem;color:#fff}
+  .cta p{color:#bfd2c9;max-width:34rem;margin:0 auto 2rem;font-size:1.08rem}
+
+  footer{background:var(--green-d);color:#9cb3a9;padding:3.5rem 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+  footer h4{color:#fff;font-family:'Inter';font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
+  footer a{display:block;color:#9cb3a9;font-size:.92rem;margin-bottom:.6rem}
+  footer a:hover{color:var(--gold)}
+  .foot-bottom{text-align:center;padding-top:1.8rem;font-size:.82rem;color:#6f857b}
+  .foot-logo{color:#fff;font-family:'Source Serif 4',serif;font-size:1.4rem;margin-bottom:.8rem;font-weight:700}
+  .disclaimer{max-width:60rem;margin:1.2rem auto 0;text-align:center;font-size:.74rem;color:#62786f;line-height:1.6}
+  @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr}}
+</style>
+<script defer src="/assets/analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FinancialService",
+  "name":"Northcrest Wealth",
+  "description":"Fee-only fiduciary wealth management and retirement planning for families and individuals.",
+  "areaServed":"United States",
+  "priceRange":"Fee-only, flat and transparent",
+  "address":{"@type":"PostalAddress","streetAddress":"410 Birch Avenue, Suite 700","addressLocality":"Northcrest","addressRegion":"OR","postalCode":"97000","addressCountry":"US"},
+  "telephone":"(000) 000-0000",
+  "openingHours":"Mo-Fr 09:00-17:00",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"210"}
+}
+</script>
+</head>
+<body>
+
+<div class="demo-bar">🌲 This is a <strong>demo site</strong> built by Earvin Laureano to showcase web design. &nbsp;<a href="/work">← Back to all work</a> &nbsp;·&nbsp; <a href="/pricing">Get a site like this</a></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="#" class="logo"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></span> Northcrest Wealth</a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#process">How We Work</a>
+      <a href="#reviews">Clients</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#consult" class="btn">Book a Consultation</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">Fee-Only · Fiduciary · Independent</span>
+        <h1>Plan for retirement with<br/><em>calm and clarity.</em></h1>
+        <p class="lede">Northcrest Wealth helps families build a plan they understand and trust. We are a fee-only fiduciary, which means our advice is built around your goals, not commissions.</p>
+        <div class="hero-actions">
+          <a href="#consult" class="btn">Book a Free Consultation →</a>
+          <a href="#calculator" class="btn btn-ghost">Try the Calculator</a>
+        </div>
+        <div class="trust">
+          <div><strong>$1.2B</strong> assets under guidance</div>
+          <div><strong>25+ yrs</strong> advising families</div>
+          <div><strong>100%</strong> fee-only, no commissions</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&q=80&auto=format&fit=crop" alt="Advisor reviewing a retirement plan with a client"/>
+        <div class="badge-float bf-1"><span class="dot">🛡️</span> Fiduciary, always</div>
+        <div class="badge-float bf-2"><span class="dot">★</span> 4.9 · 210 client reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-in">
+    <span>Credentials</span>
+    <span>CFP® PROFESSIONALS</span><span>FEE-ONLY MEMBER, NAPFA</span><span>FIDUCIARY STANDARD</span><span>SEC REGISTERED ADVISOR</span><span>CFA® CHARTERHOLDERS</span>
+  </div>
+</div>
+
+<section id="services" class="svc">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Advice for every stage of the plan</h2>
+      <p>One team, one clear plan. We bring your retirement, investments, taxes, and estate together so the pieces work as a whole.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="scard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Retirement Planning</h3>
+        <p>A clear answer to the question that matters most: can I retire, and stay retired? We map your income, spending, and timing.</p>
+      </div>
+      <div class="scard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-8"/><path d="M16 8h4v4"/></svg></div>
+        <h3>Investment Management</h3>
+        <p>Low-cost, diversified portfolios built to your goals and comfort with risk. We rebalance and steady the course through ups and downs.</p>
+      </div>
+      <div class="scard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Tax-Efficient Strategies</h3>
+        <p>Where you hold each dollar matters. We help you draw income in the right order so you keep more of what you have earned.</p>
+      </div>
+      <div class="scard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Estate Planning</h3>
+        <p>We coordinate with your attorney so your wishes are clear and your family is cared for, with less stress and less tax.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fiduciary">
+  <div class="wrap">
+    <div class="fid-in">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">The Fee-Only Difference</span>
+        <h2>You deserve advice that puts you first</h2>
+        <p>Many firms earn commissions when you buy a product. We do not. As a fee-only fiduciary, we are paid only by you, so the advice you get is the advice we would give our own family.</p>
+        <ul class="fid-pts">
+          <li><span class="fid-check">✓</span><span><b>No commissions, ever.</b> We never earn a hidden cut for selling you a product.</span></li>
+          <li><span class="fid-check">✓</span><span><b>Held to the fiduciary standard.</b> We are required to act in your best interest, in writing.</span></li>
+          <li><span class="fid-check">✓</span><span><b>Clear, flat pricing.</b> You always know what you pay and exactly what you get.</span></li>
+          <li><span class="fid-check">✓</span><span><b>Independent and conflict-free.</b> No quotas, no parent company products to push.</span></li>
+        </ul>
+      </div>
+      <div class="hero-card" style="border-color:rgba(255,255,255,.14)">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80&auto=format&fit=crop" alt="Two advisors reviewing financial documents at a table"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calculator">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Plan Snapshot</span>
+      <h2>See how steady saving can grow</h2>
+      <p>Move the numbers below to see an illustrative projection. It is a simple model, not a promise, but it shows the power of time and consistency.</p>
+    </div>
+    <div class="calc-grid">
+      <div class="calc-panel">
+        <label for="savings">Current savings <span class="val" id="savingsVal">$50,000</span></label>
+        <input type="number" id="savings" min="0" step="1000" value="50000"/>
+        <label for="monthly">Monthly contribution <span class="val" id="monthlyVal">$500</span></label>
+        <input type="number" id="monthly" min="0" step="50" value="500"/>
+        <label for="years">Years until retirement <span class="val" id="yearsVal">25 years</span></label>
+        <input type="range" id="years" min="1" max="40" step="1" value="25"/>
+        <label>Assumed yearly growth <span class="val" id="rateVal">6%</span></label>
+        <div class="rate-row" id="rateRow">
+          <button data-rate="0.04">Cautious 4%</button>
+          <button data-rate="0.06" class="active">Balanced 6%</button>
+          <button data-rate="0.08">Growth 8%</button>
+        </div>
+        <p class="calc-note">For illustration only. This is a simple compound-growth estimate using the rate you choose. It is not advice and does not guarantee any result. Real returns vary and can be negative. Inflation, taxes, and fees are not included.</p>
+      </div>
+      <div class="calc-result">
+        <div class="cap">Illustrative balance at retirement</div>
+        <div class="big" id="result">$0</div>
+        <div class="sub" id="resultSub">Projected over 25 years at 6% growth.</div>
+        <div class="calc-bars" id="bars"></div>
+        <div class="calc-split">
+          <div><small>You contribute</small><b id="contrib">$0</b></div>
+          <div><small>Estimated growth</small><b id="growth">$0</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How We Work With You</span>
+      <h2>A simple, four-step path</h2>
+      <p>No jargon and no pressure. Just a steady process that keeps your plan clear and on track, year after year.</p>
+    </div>
+    <div class="timeline">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Discover</h3>
+        <p>We start by listening. We learn your goals, your worries, and what a good retirement looks like for you.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Plan</h3>
+        <p>We build a written plan in plain language, covering income, investments, taxes, and the years ahead.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Implement</h3>
+        <p>We put the plan to work, set up your accounts, and handle the paperwork so you do not have to.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Review</h3>
+        <p>Life changes, so we meet regularly to adjust, rebalance, and keep you confident and on course.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="split rev">
+      <div>
+        <span class="eyebrow">Why Northcrest</span>
+        <h2 style="font-size:2.3rem">A calm partner for the decisions that matter</h2>
+        <p style="color:var(--sage);margin-top:1rem">You will not be passed around or sold to. You work directly with your advisor, and you always know the plan and the reason behind it.</p>
+        <ul>
+          <li><span class="check">✓</span><span><b>One advisor, start to finish.</b> The person who builds your plan is the person you call.</span></li>
+          <li><span class="check">✓</span><span><b>Plain language, always.</b> No confusing terms. If something is unclear, that is on us to fix.</span></li>
+          <li><span class="check">✓</span><span><b>Patient through every market.</b> We plan for the rough years so a bad headline does not change your life.</span></li>
+          <li><span class="check">✓</span><span><b>Your full picture.</b> Retirement, taxes, and estate planning, brought together in one place.</span></li>
+        </ul>
+        <a href="#consult" class="btn" style="margin-top:1.8rem">Talk With an Advisor →</a>
+      </div>
+      <div class="img-col"><img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=900&q=80&auto=format&fit=crop" alt="Advisor smiling with a client during a planning meeting"/></div>
+    </div>
+  </div>
+</section>
+
+<section class="results">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:2.6rem">
+      <span class="eyebrow" style="color:var(--gold)">By the Numbers</span>
+      <h2 style="color:#fff">Built on trust, measured over time</h2>
+      <p style="color:#9cb3a9">A snapshot of the firm today. Figures are illustrative and shown to give a sense of scale.</p>
+    </div>
+    <div class="res-grid">
+      <div class="res"><b>$1.2B</b><span>Assets under guidance</span></div>
+      <div class="res"><b>820+</b><span>Families served</span></div>
+      <div class="res"><b>96%</b><span>Client retention</span></div>
+      <div class="res"><b>25 yrs</b><span>Advising families</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">A Look Inside</span>
+      <h2>Calm spaces and clear conversations</h2>
+      <p>Where the planning happens. Comfortable rooms, honest talk, and a team that treats your goals as its own.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="gal-tall"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80&auto=format&fit=crop" alt="Modern advisory office meeting room"/><figcaption>Our planning room</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80&auto=format&fit=crop" alt="Advisors reviewing charts together"/><figcaption>Reviewing your plan</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80&auto=format&fit=crop" alt="Couple meeting their financial advisor"/><figcaption>A no-pressure conversation</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&q=80&auto=format&fit=crop" alt="Charts and planning documents on a desk"/><figcaption>Clear, written plans</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80&auto=format&fit=crop" alt="Bright modern office reception area"/><figcaption>The Northcrest office</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Client Stories</span>
+      <h2>Families who plan with us</h2>
+    </div>
+    <div class="tm-grid">
+      <div class="tm"><div class="stars">★★★★★</div><p>"For years I worried I had saved enough but never had a clear answer. Northcrest gave me a plan I actually understand. I sleep better now."</p><div class="who"><div class="av">PD</div><div>Patricia D.<small>Retired teacher</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"They never tried to sell me anything. Just steady, honest advice about our taxes and income. It feels good to know no one is earning a commission off us."</p><div class="who"><div class="av">RM</div><div>Robert &amp; Maria M.<small>Planning to retire in 2030</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"When the market dropped I almost panicked. My advisor walked me through the plan and the reason to stay the course. That call alone was worth it."</p><div class="who"><div class="av">JL</div><div>James L.<small>Small business owner</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Answers before you reach out</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">What does fee-only mean? <span class="pl">+</span></button>
+        <div class="faq-a"><p>Fee-only means we are paid only by you, through a clear and agreed fee. We never earn commissions for selling products. This removes a common conflict and keeps our advice focused on your goals.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How much do you charge? <span class="pl">+</span></button>
+        <div class="faq-a"><p>Our pricing is flat and transparent, and we walk you through it before you commit to anything. The exact fee depends on the work involved, and you will always know what you pay and what you get in return.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do I need a lot of money to work with you? <span class="pl">+</span></button>
+        <div class="faq-a"><p>No. We work with families at many stages, from those just getting serious about retirement to those already there. The first conversation is free, so it costs nothing to find out if we are a good fit.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What happens at the first meeting? <span class="pl">+</span></button>
+        <div class="faq-a"><p>We listen. We ask about your goals, your timeline, and your concerns, then explain how we could help. There is no pressure and no obligation to move forward.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will I always work with the same advisor? <span class="pl">+</span></button>
+        <div class="faq-a"><p>Yes. The advisor who builds your plan is the person you call. You will not be passed around a call center or handed off to a new face each year.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can you work with my accountant or attorney? <span class="pl">+</span></button>
+        <div class="faq-a"><p>Absolutely. We coordinate with your existing professionals so your tax and estate plans line up with your investments. If you do not have one, we can help you find a good fit.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="consult">
+  <div class="wrap">
+    <div class="consult-grid">
+      <div>
+        <span class="eyebrow">Book a Consultation</span>
+        <h2 style="font-size:2.3rem">Let's talk about your retirement</h2>
+        <p style="color:var(--sage);margin-top:1rem">The first conversation is free and completely no-pressure. Tell us a little about your goals, and we will reach out to set up a time that works for you.</p>
+        <ul style="list-style:none;margin-top:1.6rem;display:grid;gap:1rem">
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--sage)"><span class="check">✓</span> A free, friendly first conversation</li>
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--sage)"><span class="check">✓</span> No sales pitch and no obligation</li>
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--sage)"><span class="check">✓</span> Clear next steps, whatever you decide</li>
+        </ul>
+      </div>
+      <form class="consult-form" id="consultForm">
+        <label for="cn">Full Name</label>
+        <input type="text" id="cn" placeholder="Your name" required/>
+        <label for="ce">Email</label>
+        <input type="email" id="ce" placeholder="you@email.com" required/>
+        <label for="ch">What would you like help with?</label>
+        <select id="ch"><option>Planning my retirement</option><option>Managing my investments</option><option>Lowering my taxes in retirement</option><option>Estate and legacy planning</option><option>A full financial review</option><option>Not sure yet</option></select>
+        <label for="cm">Anything you'd like us to know?</label>
+        <textarea id="cm" placeholder="A sentence or two is plenty."></textarea>
+        <button type="submit" class="btn">Request My Consultation →</button>
+        <div class="cmsg" id="cmsg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:5.5rem">
+  <div class="wrap">
+    <div class="cta">
+      <h2>A clear plan starts with one calm conversation</h2>
+      <p>No jargon, no pressure, and no commissions. Just honest advice from a fiduciary who works for you.</p>
+      <a href="#consult" class="btn">Book a Free Consultation →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Northcrest Wealth</div>
+        <p style="font-size:.9rem;max-width:20rem">Fee-only fiduciary wealth management and retirement planning. Calm, clear advice that works for you and only you.</p>
+      </div>
+      <div><h4>Services</h4><a href="#services">Retirement Planning</a><a href="#services">Investment Management</a><a href="#services">Tax-Efficient Strategies</a><a href="#services">Estate Planning</a></div>
+      <div><h4>Firm</h4><a href="#process">How We Work</a><a href="#calculator">Plan Calculator</a><a href="#reviews">Client Stories</a><a href="#faq">FAQ</a></div>
+      <div><h4>Visit &amp; Hours</h4><a href="#">410 Birch Avenue, Suite 700</a><a href="#">Northcrest, OR 97000</a><a href="#">Mon to Fri, 9am to 5pm</a><a href="tel:#">(000) 000-0000</a></div>
+    </div>
+    <div class="foot-bottom">
+      Demo site designed &amp; built by <a href="/" style="color:#fff;text-decoration:underline;display:inline">Earvin Laureano</a> · Not a real business · <a href="/work" style="color:#fff;text-decoration:underline;display:inline">See more work</a>
+      <div class="disclaimer">This is a fictional demonstration website created to showcase web design. Names, photos, prices, and reviews are illustrative only. Nothing here is financial advice or an offer of any service. Projections shown are simplified estimates and do not guarantee any result.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Lead form demo handler
+  document.getElementById('consultForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    document.getElementById('cmsg').textContent='✓ Thanks. In a real build, this would reach the team instantly. (Demo only.)';
+    this.querySelector('button').textContent='Request Received ✓';
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.parentElement;
+      var ans=item.querySelector('.faq-a');
+      var open=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight=null;
+      });
+      if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+    });
+  });
+
+  // Retirement growth calculator (illustrative compound growth)
+  var fSavings=document.getElementById('savings');
+  var fMonthly=document.getElementById('monthly');
+  var fYears=document.getElementById('years');
+  var rateRow=document.getElementById('rateRow');
+  var rate=0.06;
+
+  function money(n){
+    return '$'+Math.round(n).toLocaleString('en-US');
+  }
+
+  function buildBars(start,end){
+    var bars=document.getElementById('bars');
+    bars.innerHTML='';
+    var n=7;
+    var max=end||1;
+    for(var i=0;i<n;i++){
+      var t=i/(n-1);
+      // approximate the growth curve for the visual
+      var v=start+(end-start)*(t*t);
+      var bar=document.createElement('div');
+      bar.className='bar';
+      bar.style.height=Math.max(4,(v/max)*100)+'%';
+      bars.appendChild(bar);
+    }
+  }
+
+  function calc(){
+    var P=parseFloat(fSavings.value)||0;
+    var m=parseFloat(fMonthly.value)||0;
+    var yrs=parseInt(fYears.value)||0;
+    var r=rate/12;
+    var months=yrs*12;
+    // future value of current savings
+    var fvLump=P*Math.pow(1+r,months);
+    // future value of monthly contributions
+    var fvSeries= r>0 ? m*((Math.pow(1+r,months)-1)/r) : m*months;
+    var total=fvLump+fvSeries;
+    var contributed=P+m*months;
+    var earned=Math.max(0,total-contributed);
+
+    document.getElementById('savingsVal').textContent=money(P);
+    document.getElementById('monthlyVal').textContent=money(m);
+    document.getElementById('yearsVal').textContent=yrs+' year'+(yrs===1?'':'s');
+    document.getElementById('rateVal').textContent=Math.round(rate*100)+'%';
+    document.getElementById('result').textContent=money(total);
+    document.getElementById('resultSub').textContent='Projected over '+yrs+' year'+(yrs===1?'':'s')+' at '+Math.round(rate*100)+'% growth.';
+    document.getElementById('contrib').textContent=money(contributed);
+    document.getElementById('growth').textContent=money(earned);
+    buildBars(P,total);
+  }
+
+  fSavings.addEventListener('input',calc);
+  fMonthly.addEventListener('input',calc);
+  fYears.addEventListener('input',calc);
+  rateRow.addEventListener('click',function(e){
+    var b=e.target.closest('button');
+    if(!b)return;
+    rate=parseFloat(b.getAttribute('data-rate'));
+    rateRow.querySelectorAll('button').forEach(function(x){x.classList.remove('active');});
+    b.classList.add('active');
+    calc();
+  });
+  calc();
+</script>
+</body>
+</html>

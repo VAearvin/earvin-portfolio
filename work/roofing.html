@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ironvale Roofing &amp; Exteriors, Roofs, Siding &amp; Gutters Done Right</title>
+<meta name="description" content="Ironvale Roofing & Exteriors, licensed and insured roof replacement, repair, siding and gutters. Free inspection, $0 down financing, and a 25-year workmanship warranty."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#23303b"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --slate:#23303b; --slate-d:#1a242c; --graphite:#2f3e4a;
+    --steel:#1f6f8b; --steel-l:#2d8fb0; --orange:#f26a1b; --orange-d:#d8590f;
+    --concrete:#eef1f3; --line:#dde3e7; --muted:#5b6973; --ink:#1b242c; --white:#fff;
+    --r:12px; --shadow:0 22px 60px rgba(35,48,59,0.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.head{font-family:'Oswald',sans-serif;line-height:1.1;text-transform:uppercase;letter-spacing:.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--orange);color:#fff;font-weight:700;padding:1rem 1.9rem;border-radius:8px;font-size:.95rem;transition:.2s;border:none;cursor:pointer;letter-spacing:.02em;font-family:'Inter',sans-serif}
+  .btn:hover{background:var(--orange-d);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+  .btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
+  .eyebrow{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--steel-l);margin-bottom:1rem;font-family:'Inter',sans-serif}
+
+  .demo-bar{background:var(--slate-d);color:#c5d2da;font-size:.82rem;text-align:center;padding:.55rem 1rem;font-weight:500}
+  .demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(35,48,59,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:1rem 24px;max-width:1180px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:.65rem;font-family:'Oswald',sans-serif;font-weight:700;font-size:1.35rem;color:#fff;text-transform:uppercase;letter-spacing:.02em}
+  .logo .mark{width:38px;height:38px;border-radius:8px;background:var(--orange);display:grid;place-items:center;color:#fff;font-size:1.2rem}
+  .nav-links{display:flex;gap:2rem;align-items:center;font-size:.92rem;font-weight:600;color:#c5d2da}
+  .nav-links a:hover{color:var(--orange)}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .nav-phone{color:#fff;font-weight:700;font-size:.95rem;display:flex;align-items:center;gap:.4rem}
+  @media(max-width:920px){.nav-links{display:none}.nav-phone{display:none}}
+
+  .hero{background:linear-gradient(160deg,var(--slate) 0%,var(--slate-d) 100%);color:#fff;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:4.5rem 0 5rem}
+  .hero h1{font-size:clamp(2.5rem,5.2vw,4rem);color:#fff;letter-spacing:0}
+  .hero h1 span{color:var(--orange)}
+  .hero p.lede{font-size:1.14rem;color:#bcc8d1;margin:1.4rem 0 2rem;max-width:32rem}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .trust{display:flex;gap:2.2rem;margin-top:2.6rem;flex-wrap:wrap}
+  .trust div{font-size:.85rem;color:#9aa9b4}
+  .trust strong{display:block;font-family:'Oswald',sans-serif;font-size:1.9rem;color:var(--orange);line-height:1}
+  .hero-card{position:relative;border-radius:18px;box-shadow:var(--shadow);overflow:hidden;border:1px solid rgba(255,255,255,.12)}
+  .hero-card img{width:100%;display:block;aspect-ratio:4/3.6;object-fit:cover}
+  .badge-float{position:absolute;background:#fff;color:var(--ink);border-radius:12px;box-shadow:var(--shadow);padding:.85rem 1.05rem;display:flex;align-items:center;gap:.6rem;font-size:.84rem;font-weight:700}
+  .badge-float .dot{width:34px;height:34px;border-radius:9px;background:var(--concrete);display:grid;place-items:center;color:var(--steel)}
+  .bf-1{bottom:-16px;left:-16px}
+  .bf-2{top:-16px;right:-16px}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;padding:3rem 0}.bf-1,.bf-2{display:none}}
+
+  .strip{padding:1.7rem 0;background:var(--concrete);border-bottom:1px solid var(--line)}
+  .strip-in{display:flex;align-items:center;justify-content:center;gap:2.4rem;flex-wrap:wrap;font-size:.82rem;font-weight:700;letter-spacing:.06em;color:#8794a0;font-family:'Oswald',sans-serif}
+  .strip-in span:first-child{color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:600;font-family:'Inter',sans-serif}
+
+  section{padding:5.5rem 0}
+  .sec-head{text-align:center;max-width:46rem;margin:0 auto 3.2rem}
+  .sec-head h2{font-size:clamp(2rem,3.6vw,2.9rem)}
+  .sec-head p{color:var(--muted);margin-top:1rem;font-size:1.05rem}
+
+  .svc{background:var(--concrete)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+  .scard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:2rem;transition:.2s}
+  .scard:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:transparent}
+  .scard .ic{width:50px;height:50px;border-radius:11px;background:var(--slate);color:var(--orange);display:grid;place-items:center;margin-bottom:1.2rem;font-size:1.4rem}
+  .scard h3{font-size:1.3rem;margin-bottom:.5rem}
+  .scard p{color:var(--muted);font-size:.95rem}
+
+  .finance-row{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-top:1.3rem}
+  .fcard{background:var(--slate);color:#fff;border-radius:var(--r);padding:2rem;display:flex;gap:1.2rem;align-items:flex-start}
+  .fcard .ic{flex:none;width:50px;height:50px;border-radius:11px;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:1.4rem}
+  .fcard h3{font-size:1.3rem;margin-bottom:.4rem;color:#fff}
+  .fcard p{color:#bcc8d1;font-size:.95rem}
+  @media(max-width:760px){.finance-row{grid-template-columns:1fr}}
+
+  /* signature: before/after compare */
+  .compare-sec{background:#fff}
+  .compare{position:relative;max-width:880px;margin:0 auto;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);user-select:none;touch-action:none;aspect-ratio:16/10}
+  .compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+  .compare .after-wrap{position:absolute;inset:0;overflow:hidden;width:50%}
+  .compare .after-wrap img{width:auto;height:100%;max-width:none}
+  .cmp-tag{position:absolute;top:14px;background:rgba(27,36,44,.82);color:#fff;font-family:'Oswald',sans-serif;font-size:.78rem;letter-spacing:.1em;padding:.35rem .8rem;border-radius:6px;text-transform:uppercase;pointer-events:none}
+  .cmp-before{right:14px}
+  .cmp-after{left:14px}
+  .cmp-handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:#fff;transform:translateX(-50%);cursor:ew-resize;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+  .cmp-knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:var(--orange);border:3px solid #fff;display:grid;place-items:center;color:#fff;font-size:1.1rem;box-shadow:0 6px 18px rgba(0,0,0,.3);cursor:ew-resize}
+  .compare-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:1.4rem}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .split img{width:100%;border-radius:18px;box-shadow:var(--shadow);aspect-ratio:5/4;object-fit:cover}
+  .split ul{list-style:none;margin-top:1.6rem;display:grid;gap:1rem}
+  .split li{display:flex;gap:.8rem;align-items:flex-start;color:var(--muted)}
+  .split li b{color:var(--ink)}
+  .check{flex:none;width:26px;height:26px;border-radius:7px;background:var(--steel);color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:800;margin-top:.15rem}
+  @media(max-width:920px){.split{grid-template-columns:1fr;gap:2rem}.split.rev .img-col{order:-1}}
+
+  /* trust badges */
+  .badges{background:var(--concrete)}
+  .badge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+  .bcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.8rem;text-align:center}
+  .bcard .ic{width:54px;height:54px;border-radius:50%;background:var(--slate);color:var(--orange);display:grid;place-items:center;margin:0 auto 1rem;font-size:1.5rem}
+  .bcard h3{font-size:1.05rem;margin-bottom:.35rem}
+  .bcard p{color:var(--muted);font-size:.88rem}
+  @media(max-width:760px){.badge-grid{grid-template-columns:1fr 1fr}}
+
+  .results{background:var(--slate);color:#fff}
+  .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+  .res b{display:block;font-family:'Oswald',sans-serif;font-size:2.9rem;color:var(--orange);line-height:1}
+  .res span{display:block;color:#9aa9b4;font-size:.92rem;margin-top:.6rem}
+  @media(max-width:760px){.res-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+
+  /* gallery */
+  .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .gal-grid img{width:100%;border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;transition:.25s}
+  .gal-grid img:hover{transform:scale(1.02);box-shadow:var(--shadow)}
+  .gal-grid .tall{grid-row:span 2;aspect-ratio:auto;height:100%}
+  @media(max-width:760px){.gal-grid{grid-template-columns:1fr 1fr}.gal-grid .tall{grid-row:auto}}
+
+  .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .tm{background:#fff;border-radius:var(--r);padding:1.9rem;border:1px solid var(--line)}
+  .stars{color:var(--orange);margin-bottom:.8rem;letter-spacing:.1em}
+  .tm p{font-size:.97rem;color:var(--ink)}
+  .tm .who{display:flex;align-items:center;gap:.7rem;margin-top:1.2rem}
+  .tm .av{width:44px;height:44px;border-radius:50%;background:var(--steel);color:#fff;display:grid;place-items:center;font-weight:700;font-family:'Oswald',sans-serif}
+  .tm .who small{display:block;color:var(--muted)}
+  @media(max-width:920px){.tm-grid{grid-template-columns:1fr}}
+
+  /* estimate form */
+  .estimate{background:var(--concrete)}
+  .est-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .est-form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:2.3rem;box-shadow:var(--shadow)}
+  .est-form label{display:block;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:1rem 0 .4rem}
+  .est-form input,.est-form textarea,.est-form select{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:9px;font-size:.95rem;font-family:inherit;color:var(--ink);background:#f9fafb}
+  .est-form input:focus,.est-form textarea:focus,.est-form select:focus{outline:none;border-color:var(--steel)}
+  .est-form textarea{resize:vertical;min-height:80px}
+  .est-form .btn{margin-top:1.4rem;width:100%;justify-content:center}
+  .emsg{margin-top:.9rem;text-align:center;font-size:.9rem;color:var(--steel);font-weight:600;min-height:1.2em}
+  @media(max-width:920px){.est-grid{grid-template-columns:1fr;gap:2.2rem}}
+
+  /* faq */
+  .faq-list{max-width:46rem;margin:0 auto;display:grid;gap:.9rem}
+  .faq{border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden}
+  .faq summary{list-style:none;cursor:pointer;padding:1.3rem 1.5rem;font-weight:700;font-size:1.05rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .pm{flex:none;width:26px;height:26px;border-radius:6px;background:var(--concrete);color:var(--steel);display:grid;place-items:center;font-weight:800;transition:.2s}
+  .faq[open] summary .pm{background:var(--orange);color:#fff;transform:rotate(45deg)}
+  .faq .ans{padding:0 1.5rem 1.4rem;color:var(--muted);font-size:.96rem}
+
+  .cta{background:linear-gradient(135deg,var(--steel),var(--slate));color:#fff;text-align:center;border-radius:24px;padding:4rem 2rem}
+  .cta h2{font-size:clamp(2.1rem,4vw,3rem);margin-bottom:1rem;color:#fff}
+  .cta p{color:#cfe0e8;max-width:36rem;margin:0 auto 2rem;font-size:1.08rem}
+
+  footer{background:var(--slate-d);color:#9aa9b4;padding:3.5rem 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+  footer h4{color:#fff;font-family:'Oswald',sans-serif;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
+  footer a{display:block;color:#9aa9b4;font-size:.92rem;margin-bottom:.6rem}
+  footer a:hover{color:var(--orange)}
+  .foot-bottom{text-align:center;padding-top:1.8rem;font-size:.82rem;color:#6c7a86}
+  .foot-logo{color:#fff;font-family:'Oswald',sans-serif;font-size:1.5rem;margin-bottom:.8rem;text-transform:uppercase}
+  .disclaimer{max-width:60rem;margin:1.2rem auto 0;text-align:center;font-size:.74rem;color:#5d6a76;line-height:1.6}
+  @media(max-width:920px){.foot-grid{grid-template-columns:1fr 1fr}}
+</style>
+<script defer src="/assets/analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"RoofingContractor",
+  "name":"Ironvale Roofing & Exteriors",
+  "description":"Licensed and insured residential roofing, siding, and gutter contractor offering roof replacement, repair, storm and insurance claim help, $0 down financing, and a 25-year workmanship warranty.",
+  "telephone":"(000) 000-0000",
+  "priceRange":"$$",
+  "areaServed":"Greater metro area",
+  "address":{"@type":"PostalAddress","streetAddress":"1820 Forge Avenue","addressLocality":"Riverton","addressRegion":"State","postalCode":"00000"},
+  "openingHours":"Mo-Sa 07:00-19:00",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"612"}
+}
+</script>
+</head>
+<body>
+
+<div class="demo-bar">🏠 This is a <strong>demo site</strong> built by Earvin Laureano to showcase web design. &nbsp;<a href="/work">← Back to all work</a> &nbsp;·&nbsp; <a href="/pricing">Get a site like this</a></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="#" class="logo"><span class="mark">IV</span> Ironvale</a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#compare">Before &amp; After</a>
+      <a href="#why">Why Ironvale</a>
+      <a href="#gallery">Projects</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+10000000000" class="nav-phone">📞 (000) 000-0000</a>
+      <a href="#estimate" class="btn">Free Estimate</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--orange)">Roofing · Siding · Gutters</span>
+        <h1>A roof built to <span>outlast the next storm</span></h1>
+        <p class="lede">Ironvale replaces and repairs roofs the right way, with licensed crews, premium materials, and a 25-year workmanship warranty. Free inspection, honest pricing, and $0 down financing.</p>
+        <div class="hero-actions">
+          <a href="#estimate" class="btn">Get My Free Estimate →</a>
+          <a href="tel:+10000000000" class="btn btn-ghost">📞 Call Now</a>
+        </div>
+        <div class="trust">
+          <div><strong>2,400+</strong> roofs installed</div>
+          <div><strong>25-yr</strong> workmanship warranty</div>
+          <div><strong>$0 down</strong> financing available</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=900&q=80&auto=format&fit=crop" alt="Roofers installing a new residential roof"/>
+        <div class="badge-float bf-1"><span class="dot">🛡️</span> Licensed &amp; insured</div>
+        <div class="badge-float bf-2"><span class="dot">★</span> 4.9 · 600+ reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-in">
+    <span>Certified &amp; trusted by</span>
+    <span>GAF MASTER ELITE</span><span>OWENS CORNING</span><span>BBB A+</span><span>HOMEADVISOR</span><span>ANGI CERTIFIED</span>
+  </div>
+</div>
+
+<section id="services" class="svc">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our Services</span>
+      <h2>Everything that protects your home</h2>
+      <p>From a full roof replacement to a small repair after a storm, one local crew handles the whole exterior. No subcontractor guesswork.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="scard"><div class="ic">🏠</div><h3>Roof Replacement</h3><p>A complete tear-off and new install with premium shingles, fresh underlayment, and proper ventilation built to last decades.</p></div>
+      <div class="scard"><div class="ic">🔧</div><h3>Roof Repair</h3><p>Leaks, missing shingles, flashing, and storm damage fixed fast. We find the real source, not just the wet spot.</p></div>
+      <div class="scard"><div class="ic">🧱</div><h3>Siding</h3><p>Durable vinyl, fiber cement, and metal siding that seals out water and gives the whole house a clean, finished look.</p></div>
+      <div class="scard"><div class="ic">🌧️</div><h3>Gutters</h3><p>Seamless gutters and guards that move water away from your foundation and stop clogs before they start.</p></div>
+      <div class="scard"><div class="ic">⛈️</div><h3>Storm &amp; Insurance Claims</h3><p>Hail or wind damage? We document everything and walk you through the insurance claim from inspection to final payout.</p></div>
+      <div class="scard"><div class="ic">🪟</div><h3>Skylights &amp; Vents</h3><p>Proper flashing and sealing around skylights, vents, and chimneys, so the weak points of your roof stay watertight.</p></div>
+    </div>
+
+    <div class="finance-row">
+      <div class="fcard"><div class="ic">💳</div><div><h3>$0 Down Financing</h3><p>Spread the cost over fixed monthly plans that fit your budget. Quick approvals, clear terms, and no surprise fees.</p></div></div>
+      <div class="fcard"><div class="ic">📜</div><div><h3>25-Year Workmanship Warranty</h3><p>Backed in writing. If the install fails, we make it right. Manufacturer material warranties cover the rest.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="compare" class="compare-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">See The Difference</span>
+      <h2>Drag to see a real roof replacement</h2>
+      <p>Grab the handle and slide it left or right to compare the old roof with the finished Ironvale install.</p>
+    </div>
+    <div class="compare" id="compare">
+      <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=900&q=80&auto=format&fit=crop" alt="Old worn roof before replacement"/>
+      <div class="after-wrap" id="afterWrap">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80&auto=format&fit=crop" alt="New finished roof after replacement"/>
+      </div>
+      <span class="cmp-tag cmp-after">After</span>
+      <span class="cmp-tag cmp-before">Before</span>
+      <div class="cmp-handle" id="cmpHandle"><div class="cmp-knob">⟺</div></div>
+    </div>
+    <p class="compare-note">Same home, one weekend. New shingles, new underlayment, and proper ventilation.</p>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="split">
+      <div class="img-col"><img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=900&q=80&auto=format&fit=crop" alt="Ironvale roofing crew on a job site"/></div>
+      <div>
+        <span class="eyebrow">Why Ironvale</span>
+        <h2 style="font-size:2.4rem">We show up, we do it right, we stand behind it</h2>
+        <p style="color:var(--muted);margin-top:1rem">A roof is one of the biggest purchases your home will ever need. You deserve a crew that treats it that way, from the first inspection to the final cleanup.</p>
+        <ul>
+          <li><span class="check">✓</span><span><b>Licensed and fully insured.</b> Every crew member is covered, so a job on your roof never becomes your liability.</span></li>
+          <li><span class="check">✓</span><span><b>Manufacturer certified.</b> Our certifications unlock stronger material warranties most contractors cannot offer.</span></li>
+          <li><span class="check">✓</span><span><b>Honest, written estimates.</b> One clear price with no pressure and no surprise add-ons mid-project.</span></li>
+          <li><span class="check">✓</span><span><b>Clean job sites.</b> We protect your yard, run a magnet for stray nails, and leave the place spotless.</span></li>
+        </ul>
+        <a href="#estimate" class="btn" style="margin-top:1.8rem">Book My Free Inspection →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trust" class="badges">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Built On Trust</span>
+      <h2>Credentials you can verify</h2>
+      <p>The badges that matter, not just slogans. Ask for our license number and certificate of insurance any time.</p>
+    </div>
+    <div class="badge-grid">
+      <div class="bcard"><div class="ic">🛡️</div><h3>Licensed &amp; Insured</h3><p>Full liability and workers coverage on every job, every day.</p></div>
+      <div class="bcard"><div class="ic">🏅</div><h3>Manufacturer Certified</h3><p>Factory-trained installers approved by leading shingle brands.</p></div>
+      <div class="bcard"><div class="ic">📜</div><h3>25-Year Warranty</h3><p>Our workmanship is guaranteed in writing for 25 years.</p></div>
+      <div class="bcard"><div class="ic">💳</div><h3>Flexible Financing</h3><p>$0 down options with simple monthly plans and fast approval.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="results" class="results">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:2.6rem">
+      <span class="eyebrow" style="color:var(--orange)">By The Numbers</span>
+      <h2 style="color:#fff">Roofs done, neighbors happy</h2>
+      <p style="color:#9aa9b4">A snapshot of our work across the region. Figures are illustrative for this demo.</p>
+    </div>
+    <div class="res-grid">
+      <div class="res"><b>2,400+</b><span>Roofs installed</span></div>
+      <div class="res"><b>4.9★</b><span>Average review rating</span></div>
+      <div class="res"><b>25 yr</b><span>Workmanship warranty</span></div>
+      <div class="res"><b>1-3 days</b><span>Typical install time</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Recent Projects</span>
+      <h2>Work we are proud to put our name on</h2>
+      <p>A look at roofs, siding, and gutter projects finished by our local crews.</p>
+    </div>
+    <div class="gal-grid">
+      <img class="tall" src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=700&q=80&auto=format&fit=crop" alt="New roof installation in progress"/>
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80&auto=format&fit=crop" alt="Finished suburban home with new roof"/>
+      <img src="https://images.unsplash.com/photo-1597047084897-51e81819a499?w=600&q=80&auto=format&fit=crop" alt="Roofer nailing down shingles"/>
+      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80&auto=format&fit=crop" alt="Two-story home exterior with clean siding"/>
+      <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80&auto=format&fit=crop" alt="Modern home with finished roof and siding"/>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="svc">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Homeowner Reviews</span>
+      <h2>What neighbors say about us</h2>
+    </div>
+    <div class="tm-grid">
+      <div class="tm"><div class="stars">★★★★★</div><p>"Hail wrecked our roof and Ironvale handled the whole insurance claim for us. The crew was done in two days and the yard was cleaner than when they started."</p><div class="who"><div class="av">RM</div><div>Rachel M.<small>Roof replacement</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"Got three quotes. Ironvale was the only one that climbed up, showed me photos, and explained exactly what was wrong. Fair price, no pressure, great work."</p><div class="who"><div class="av">DT</div><div>Derek T.<small>Roof repair and gutters</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"New siding and a new roof, financed with no money down. The monthly payment was easy and the house looks brand new. I have already told two neighbors."</p><div class="who"><div class="av">PA</div><div>Priya A.<small>Siding and roof</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="estimate" class="estimate">
+  <div class="wrap">
+    <div class="est-grid">
+      <div>
+        <span class="eyebrow">Instant Estimate Request</span>
+        <h2 style="font-size:2.4rem">Find out what your project will cost</h2>
+        <p style="color:var(--muted);margin-top:1rem">Tell us a few details and we will set up a free, no-pressure inspection. You get an honest written estimate, usually within 24 hours.</p>
+        <ul style="list-style:none;margin-top:1.6rem;display:grid;gap:1rem">
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--muted)"><span class="check">✓</span> Free roof inspection and written quote</li>
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--muted)"><span class="check">✓</span> $0 down financing options explained up front</li>
+          <li style="display:flex;gap:.8rem;align-items:center;color:var(--muted)"><span class="check">✓</span> Help filing storm and insurance claims</li>
+        </ul>
+      </div>
+      <form class="est-form" id="estForm">
+        <label for="en">Full Name</label>
+        <input type="text" id="en" placeholder="Your name" required/>
+        <label for="ep">Phone</label>
+        <input type="tel" id="ep" placeholder="(000) 000-0000" required/>
+        <label for="ea">Property Address</label>
+        <input type="text" id="ea" placeholder="Street, city" required/>
+        <label for="er">Roof Type</label>
+        <select id="er"><option>Asphalt shingle</option><option>Metal</option><option>Tile</option><option>Flat or low slope</option><option>Not sure</option></select>
+        <label for="em">What do you need?</label>
+        <textarea id="em" placeholder="Replacement, repair, siding, gutters, storm damage..."></textarea>
+        <button type="submit" class="btn">Request My Free Estimate →</button>
+        <div class="emsg" id="emsg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Good to know before you start</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq"><summary>How long does a roof replacement take? <span class="pm">+</span></summary><div class="ans">Most homes are finished in one to three days, depending on size, pitch, and weather. We give you a clear timeline before any work begins and keep you updated each day.</div></details>
+      <details class="faq"><summary>Do you really offer $0 down financing? <span class="pm">+</span></summary><div class="ans">Yes. Many homeowners qualify for plans with no money down and fixed monthly payments. We walk you through the options and the exact terms during your free estimate, with no obligation.</div></details>
+      <details class="faq"><summary>Can you help with my insurance claim? <span class="pm">+</span></summary><div class="ans">Absolutely. For storm and hail damage we document everything, meet your adjuster on site when needed, and guide you from the first inspection through the final payout.</div></details>
+      <details class="faq"><summary>Are you licensed and insured? <span class="pm">+</span></summary><div class="ans">We are fully licensed and carry both liability and workers coverage. You can ask for our license number and certificate of insurance at any time, and we are happy to share them.</div></details>
+      <details class="faq"><summary>What does the warranty cover? <span class="pm">+</span></summary><div class="ans">Your install comes with a 25-year workmanship warranty in writing. If our labor ever causes an issue, we fix it. Your shingles and materials are also covered by the manufacturer warranty.</div></details>
+      <details class="faq"><summary>Is the estimate really free? <span class="pm">+</span></summary><div class="ans">Yes. The inspection and written estimate cost nothing and come with no pressure. You only move forward if the price and plan feel right to you.</div></details>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:5.5rem">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Ready for a roof you can stop worrying about?</h2>
+      <p>Book your free inspection today. Honest pricing, real warranties, and a crew that cleans up after itself. The first step costs nothing.</p>
+      <a href="#estimate" class="btn">Get My Free Estimate →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Ironvale</div>
+        <p style="font-size:.9rem;max-width:20rem">Licensed and insured roofing, siding, and gutter contractor. Free inspections, $0 down financing, and a 25-year workmanship warranty.</p>
+      </div>
+      <div><h4>Services</h4><a href="#services">Roof Replacement</a><a href="#services">Roof Repair</a><a href="#services">Siding</a><a href="#services">Gutters</a><a href="#services">Storm Claims</a></div>
+      <div><h4>Company</h4><a href="#why">Why Ironvale</a><a href="#gallery">Projects</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a></div>
+      <div><h4>Contact</h4><a href="#">1820 Forge Avenue, Riverton</a><a href="#">Mon to Sat, 7am to 7pm</a><a href="tel:+10000000000">(000) 000-0000</a><a href="#estimate">Free Estimate</a></div>
+    </div>
+    <div class="foot-bottom">
+      Demo site designed &amp; built by <a href="/" style="color:#fff;text-decoration:underline;display:inline">Earvin Laureano</a>. Not a real business. <a href="/work" style="color:#fff;text-decoration:underline;display:inline">See more work</a>
+      <div class="disclaimer">This is a fictional demonstration website created to showcase web design. Names, photos, prices, and reviews are illustrative only.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Estimate form demo handler
+  document.getElementById('estForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    document.getElementById('emsg').textContent='✓ Thanks, in a real build this would reach Ironvale instantly. (Demo only.)';
+    this.querySelector('button').textContent='Estimate Requested ✓';
+  });
+
+  // Before/after drag-to-compare slider
+  (function(){
+    var box=document.getElementById('compare');
+    var afterWrap=document.getElementById('afterWrap');
+    var handle=document.getElementById('cmpHandle');
+    var dragging=false;
+
+    function setPos(clientX){
+      var rect=box.getBoundingClientRect();
+      var x=clientX-rect.left;
+      var pct=Math.max(0,Math.min(1,x/rect.width));
+      var p=(pct*100).toFixed(2);
+      afterWrap.style.width=p+'%';
+      handle.style.left=p+'%';
+    }
+    function start(e){dragging=true;e.preventDefault();}
+    function move(e){
+      if(!dragging)return;
+      var cx=e.touches?e.touches[0].clientX:e.clientX;
+      setPos(cx);
+    }
+    function end(){dragging=false;}
+
+    handle.addEventListener('mousedown',start);
+    handle.addEventListener('touchstart',start,{passive:false});
+    box.addEventListener('mousedown',function(e){start(e);setPos(e.clientX);});
+    box.addEventListener('touchstart',function(e){var cx=e.touches[0].clientX;start(e);setPos(cx);},{passive:false});
+    window.addEventListener('mousemove',move);
+    window.addEventListener('touchmove',move,{passive:false});
+    window.addEventListener('mouseup',end);
+    window.addEventListener('touchend',end);
+  })();
+</script>
+</body>
+</html>

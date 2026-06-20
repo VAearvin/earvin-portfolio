@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Altora Private Aviation, On-Demand Private Jet Charter &amp; Membership</title>
+<meta name="description" content="Altora Private Aviation arranges on-demand private jet charter and membership. Request a charter in minutes, fly on your schedule, with a dedicated team available 24/7."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#0b1320"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#0b1320; --bg-d:#0e1726; --bg-dd:#080e18;
+    --platinum:#c7ccd4; --silver:#aeb6c2; --steel:#3b5a82; --steel-l:#5a7aa6;
+    --gold:#cbb486; --gold-d:#b59b6a;
+    --light:#f5f6f8; --line-d:rgba(255,255,255,.10); --line-l:#e4e7ec;
+    --ink:#111722; --slate:#5b6577; --white:#fff;
+    --r:14px; --shadow:0 26px 70px rgba(7,13,24,0.45); --shadow-l:0 22px 60px rgba(11,19,32,0.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.head{font-family:'Sora',sans-serif;line-height:1.14;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#1a202c;font-weight:700;padding:1rem 1.9rem;border-radius:9px;font-size:.95rem;transition:.2s;border:none;cursor:pointer;letter-spacing:.01em}
+  .btn:hover{background:var(--gold-d);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.28)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+  .eyebrow{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-d);margin-bottom:1rem}
+
+  .demo-bar{background:var(--bg-dd);color:#b8c2d4;font-size:.82rem;text-align:center;padding:.55rem 1rem;font-weight:500}
+  .demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(11,19,32,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-d)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:1.05rem 24px;max-width:1180px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:.65rem;font-family:'Sora',sans-serif;font-weight:700;font-size:1.28rem;color:#fff;letter-spacing:.01em}
+  .logo .mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(150deg,var(--steel),var(--bg-d));border:1px solid rgba(203,180,134,.5);display:grid;place-items:center;color:var(--gold)}
+  .logo .mark svg{width:20px;height:20px}
+  .nav-links{display:flex;gap:2rem;align-items:center;font-size:.92rem;font-weight:500;color:#c2cad8}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  @media(max-width:920px){.nav-links{display:none}}
+
+  .hero{background:linear-gradient(160deg,var(--bg) 0%,var(--bg-dd) 100%);color:#fff;overflow:hidden;position:relative}
+  .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(900px 420px at 80% -10%,rgba(59,90,130,.32),transparent 60%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:4.5rem 0 5rem;position:relative}
+  .hero h1{font-size:clamp(2.4rem,5vw,3.7rem);color:#fff}
+  .hero h1 em{font-style:normal;color:var(--gold)}
+  .hero p.lede{font-size:1.14rem;color:#b6c0d2;margin:1.4rem 0 2rem;max-width:32rem}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .trust{display:flex;gap:2.2rem;margin-top:2.6rem;flex-wrap:wrap}
+  .trust div{font-size:.85rem;color:#93a0b8}
+  .trust strong{display:block;font-family:'Sora',sans-serif;font-size:1.8rem;color:var(--gold);font-weight:700}
+  .hero-card{position:relative;border-radius:18px;box-shadow:var(--shadow);overflow:hidden;border:1px solid rgba(255,255,255,.12)}
+  .hero-card img{width:100%;display:block;aspect-ratio:4/3.7;object-fit:cover}
+  .badge-float{position:absolute;background:rgba(14,23,38,.92);color:#fff;border:1px solid var(--line-d);border-radius:12px;box-shadow:var(--shadow);padding:.85rem 1.05rem;display:flex;align-items:center;gap:.6rem;font-size:.84rem;font-weight:700;backdrop-filter:blur(6px)}
+  .badge-float .dot{width:34px;height:34px;border-radius:9px;background:rgba(59,90,130,.35);display:grid;place-items:center;color:var(--gold)}
+  .bf-1{bottom:-16px;left:-16px}
+  .bf-2{top:-16px;right:-16px}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;padding:3rem 0}.bf-1,.bf-2{display:none}}
+
+  /* quote widget */
+  .quote{background:var(--bg-d);padding:0 0 4.5rem;color:#fff;position:relative}
+  .quote .wrap{position:relative}
+  .qcard{background:linear-gradient(155deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line-d);border-radius:18px;padding:1.9rem;box-shadow:var(--shadow);margin-top:-3.2rem;backdrop-filter:blur(8px)}
+  .qcard h3{font-size:1.25rem;color:#fff}
+  .qcard .sub{color:#93a0b8;font-size:.92rem;margin-top:.35rem}
+  .qform{display:grid;grid-template-columns:1fr 1fr .8fr 1fr auto;gap:1rem;align-items:end;margin-top:1.4rem}
+  .qfield label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8b98b0;margin-bottom:.45rem}
+  .qfield input,.qfield select{width:100%;padding:.85rem 1rem;border:1px solid var(--line-d);border-radius:9px;font-size:.95rem;font-family:inherit;color:#fff;background:rgba(8,14,24,.6)}
+  .qfield input::placeholder{color:#6f7c94}
+  .qfield input:focus,.qfield select:focus{outline:none;border-color:var(--gold)}
+  .qfield select option{color:#111722}
+  .qbtn{height:100%}
+  .qbtn .btn{width:100%;justify-content:center;padding:.92rem 1.4rem}
+  .qresult{margin-top:1.5rem;border-top:1px solid var(--line-d);padding-top:1.5rem;display:none}
+  .qresult.show{display:block;animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .qresult-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:1.2rem}
+  .qbox{background:rgba(8,14,24,.5);border:1px solid var(--line-d);border-radius:12px;padding:1.2rem 1.3rem}
+  .qbox small{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#8b98b0;margin-bottom:.4rem}
+  .qbox b{font-family:'Sora',sans-serif;font-size:1.5rem;color:var(--gold);font-weight:700;line-height:1.2}
+  .qbox span.line{display:block;color:#c2cad8;font-size:.95rem;margin-top:.2rem}
+  .qnote{font-size:.78rem;color:#7a8aa3;margin-top:1rem}
+  @media(max-width:920px){.qform{grid-template-columns:1fr 1fr}.qbtn{grid-column:1/-1}.qresult-grid{grid-template-columns:1fr}}
+
+  .strip{padding:1.7rem 0;background:var(--light);border-bottom:1px solid var(--line-l)}
+  .strip-in{display:flex;align-items:center;justify-content:center;gap:2.4rem;flex-wrap:wrap;font-size:.82rem;font-weight:700;letter-spacing:.06em;color:#8a93a3}
+  .strip-in span:first-child{color:var(--slate);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:600}
+
+  section{padding:5.5rem 0}
+  .sec-head{text-align:center;max-width:46rem;margin:0 auto 3.2rem}
+  .sec-head h2{font-size:clamp(1.9rem,3.5vw,2.7rem)}
+  .sec-head p{color:var(--slate);margin-top:1rem;font-size:1.05rem}
+
+  /* fleet */
+  .fleet{background:var(--light)}
+  .fleet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+  .fcard{background:#fff;border:1px solid var(--line-l);border-radius:var(--r);overflow:hidden;transition:.2s}
+  .fcard:hover{box-shadow:var(--shadow-l);transform:translateY(-4px);border-color:transparent}
+  .fcard .fimg{height:140px;background:var(--bg);overflow:hidden}
+  .fcard .fimg img{width:100%;height:100%;object-fit:cover;display:block}
+  .fcard .fbody{padding:1.5rem}
+  .fcard h3{font-size:1.18rem;margin-bottom:.2rem}
+  .fcard .fclass{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--steel)}
+  .fcard ul{list-style:none;margin-top:1rem;display:grid;gap:.5rem}
+  .fcard li{display:flex;justify-content:space-between;font-size:.9rem;color:var(--slate);border-bottom:1px dashed var(--line-l);padding-bottom:.5rem}
+  .fcard li b{color:var(--ink);font-weight:600}
+  .fcard li:last-child{border-bottom:none}
+  @media(max-width:980px){.fleet-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.fleet-grid{grid-template-columns:1fr}}
+
+  /* membership */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+  .tier{background:#fff;border:1px solid var(--line-l);border-radius:var(--r);padding:2rem;position:relative}
+  .tier.feat{background:var(--bg);color:#fff;border-color:transparent;box-shadow:var(--shadow)}
+  .tier.feat .tname,.tier.feat h3{color:#fff}
+  .tier .tname{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--steel)}
+  .tier h3{font-size:1.9rem;margin:.6rem 0 .2rem;font-family:'Sora',sans-serif}
+  .tier .price-sub{color:var(--slate);font-size:.92rem}
+  .tier.feat .price-sub{color:#9fadc5}
+  .tier ul{list-style:none;margin-top:1.4rem;display:grid;gap:.85rem}
+  .tier li{display:flex;gap:.65rem;align-items:flex-start;font-size:.93rem;color:var(--slate)}
+  .tier.feat li{color:#c8d1e0}
+  .tier li .ck{flex:none;width:22px;height:22px;border-radius:6px;background:rgba(59,90,130,.14);color:var(--steel);display:grid;place-items:center;font-size:.72rem;font-weight:800;margin-top:.1rem}
+  .tier.feat li .ck{background:rgba(203,180,134,.2);color:var(--gold)}
+  .tier .btn{margin-top:1.6rem;width:100%;justify-content:center}
+  .tier .tag{position:absolute;top:1.3rem;right:1.3rem;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a202c;background:var(--gold);padding:.3rem .65rem;border-radius:99px}
+  @media(max-width:880px){.tiers{grid-template-columns:1fr}}
+
+  /* why split */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .split img{width:100%;border-radius:18px;box-shadow:var(--shadow-l);aspect-ratio:5/4;object-fit:cover}
+  .split ul{list-style:none;margin-top:1.6rem;display:grid;gap:1rem}
+  .split li{display:flex;gap:.8rem;align-items:flex-start;color:var(--slate)}
+  .split li b{color:var(--ink)}
+  .check{flex:none;width:26px;height:26px;border-radius:7px;background:var(--bg);color:var(--gold);display:grid;place-items:center;font-size:.8rem;font-weight:800;margin-top:.15rem}
+  @media(max-width:880px){.split{grid-template-columns:1fr;gap:2rem}.split.rev .img-col{order:-1}}
+
+  /* results band */
+  .results{background:var(--bg);color:#fff;position:relative;overflow:hidden}
+  .results:before{content:"";position:absolute;inset:0;background:radial-gradient(800px 400px at 20% 120%,rgba(59,90,130,.28),transparent 60%)}
+  .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;position:relative}
+  .res b{display:block;font-family:'Sora',sans-serif;font-size:2.8rem;color:var(--gold);line-height:1;font-weight:700}
+  .res span{display:block;color:#9fadc5;font-size:.92rem;margin-top:.6rem}
+  @media(max-width:760px){.res-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+
+  /* gallery */
+  .gallery{background:var(--light)}
+  .gal-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:200px 200px;gap:1rem}
+  .gal-grid figure{overflow:hidden;border-radius:var(--r);position:relative}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+  .gal-grid figure:hover img{transform:scale(1.06)}
+  .gal-grid .g1{grid-row:1/3}
+  .gal-grid figcaption{position:absolute;left:0;bottom:0;right:0;padding:.9rem 1rem;color:#fff;font-size:.85rem;font-weight:600;background:linear-gradient(transparent,rgba(8,14,24,.78))}
+  @media(max-width:760px){.gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px}.gal-grid .g1{grid-row:1/2;grid-column:1/3}}
+
+  /* testimonials */
+  .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .tm{background:#fff;border-radius:var(--r);padding:1.9rem;border:1px solid var(--line-l)}
+  .stars{color:var(--gold);margin-bottom:.8rem;letter-spacing:.1em}
+  .tm p{font-size:.97rem;color:var(--ink)}
+  .tm .who{display:flex;align-items:center;gap:.7rem;margin-top:1.2rem}
+  .tm .av{width:44px;height:44px;border-radius:50%;background:var(--bg);color:var(--gold);display:grid;place-items:center;font-weight:700;font-family:'Sora',sans-serif}
+  .tm .who small{display:block;color:var(--slate)}
+  @media(max-width:880px){.tm-grid{grid-template-columns:1fr}}
+
+  /* faq */
+  .faq{background:#fff}
+  .faq-list{max-width:48rem;margin:0 auto;display:grid;gap:.9rem}
+  .qa{border:1px solid var(--line-l);border-radius:12px;overflow:hidden;background:#fff;transition:.2s}
+  .qa[open]{box-shadow:var(--shadow-l);border-color:transparent}
+  .qa summary{cursor:pointer;list-style:none;padding:1.25rem 1.4rem;font-family:'Sora',sans-serif;font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  .qa summary::-webkit-details-marker{display:none}
+  .qa summary .pm{flex:none;width:26px;height:26px;border-radius:7px;background:var(--bg);color:var(--gold);display:grid;place-items:center;font-size:1.1rem;transition:.2s}
+  .qa[open] summary .pm{transform:rotate(45deg)}
+  .qa .ans{padding:0 1.4rem 1.3rem;color:var(--slate);font-size:.96rem}
+
+  /* contact */
+  .contact{background:var(--bg-d);color:#fff}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .contact-form{background:linear-gradient(155deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line-d);border-radius:18px;padding:2.3rem;box-shadow:var(--shadow)}
+  .contact-form label{display:block;font-size:.74rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#8b98b0;margin:1rem 0 .4rem}
+  .contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:.85rem 1rem;border:1px solid var(--line-d);border-radius:9px;font-size:.95rem;font-family:inherit;color:#fff;background:rgba(8,14,24,.6)}
+  .contact-form input::placeholder,.contact-form textarea::placeholder{color:#6f7c94}
+  .contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{outline:none;border-color:var(--gold)}
+  .contact-form select option{color:#111722}
+  .contact-form textarea{resize:vertical;min-height:90px}
+  .contact-form .btn{margin-top:1.4rem;width:100%;justify-content:center}
+  .cmsg{margin-top:.9rem;text-align:center;font-size:.9rem;color:var(--gold);font-weight:600;min-height:1.2em}
+  .contact h2{color:#fff}
+  @media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:2.2rem}}
+
+  .cta{background:linear-gradient(135deg,var(--bg),var(--bg-dd));color:#fff;text-align:center;border-radius:24px;padding:4rem 2rem;position:relative;overflow:hidden}
+  .cta:before{content:"";position:absolute;inset:0;background:radial-gradient(700px 300px at 50% -20%,rgba(59,90,130,.3),transparent 60%)}
+  .cta h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:1rem;color:#fff;position:relative}
+  .cta p{color:#b6c0d2;max-width:36rem;margin:0 auto 2rem;font-size:1.08rem;position:relative}
+  .cta .btn{position:relative}
+
+  footer{background:var(--bg-dd);color:#93a0b8;padding:3.5rem 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid var(--line-d)}
+  footer h4{color:#fff;font-family:'Inter';font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
+  footer a{display:block;color:#93a0b8;font-size:.92rem;margin-bottom:.6rem}
+  footer a:hover{color:var(--gold)}
+  footer .col p{font-size:.9rem;max-width:19rem}
+  .foot-bottom{text-align:center;padding-top:1.8rem;font-size:.82rem;color:#67738a}
+  .foot-bottom a{display:inline}
+  .foot-logo{color:#fff;font-family:'Sora',sans-serif;font-size:1.35rem;margin-bottom:.8rem;font-weight:700}
+  .disclaimer{max-width:62rem;margin:1.2rem auto 0;text-align:center;font-size:.74rem;color:#586580;line-height:1.6}
+  @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr}}
+</style>
+<script defer src="/assets/analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Altora Private Aviation",
+  "description":"On-demand private jet charter and membership. Request a charter in minutes, fly on your schedule, with a dedicated team available 24/7.",
+  "url":"https://example.com/",
+  "telephone":"+1-000-000-0000",
+  "areaServed":"Worldwide",
+  "openingHours":"Mo-Su 00:00-24:00",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"610"}
+}
+</script>
+</head>
+<body>
+
+<div class="demo-bar">✈️ This is a <strong>demo site</strong> built by Earvin Laureano to showcase web design. &nbsp;<a href="/work">← Back to all work</a> &nbsp;·&nbsp; <a href="/pricing">Get a site like this</a></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="#" class="logo">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5C13 2.67 12.33 2 11.5 2S10 2.67 10 3.5V9l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.5L13 18v-4.5L21 16z"/></svg></span>
+      Altora
+    </a>
+    <nav class="nav-links">
+      <a href="#quote">Request a Charter</a>
+      <a href="#fleet">Fleet</a>
+      <a href="#membership">Membership</a>
+      <a href="#why">Why Altora</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn">Request a Quote</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">On-Demand Private Jet Charter</span>
+        <h1>Your schedule.<br/><em>Your aircraft.</em></h1>
+        <p class="lede">Altora arranges private jet charter and membership for travelers who value time. Tell us where and when, and a dedicated team handles the rest, day or night.</p>
+        <div class="hero-actions">
+          <a href="#quote" class="btn">Request a Charter →</a>
+          <a href="#fleet" class="btn btn-ghost">View the Fleet</a>
+        </div>
+        <div class="trust">
+          <div><strong>4,000+</strong> charters arranged</div>
+          <div><strong>24/7</strong> flight team</div>
+          <div><strong>4.9★</strong> client rating</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=900&q=80&auto=format&fit=crop" alt="Private jet on the tarmac at dusk"/>
+        <div class="badge-float bf-1"><span class="dot">✓</span> Wheels up in as little as 4 hours</div>
+        <div class="badge-float bf-2"><span class="dot">★</span> 4.9 · 600+ reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE INTERACTIVE: Request a charter quote widget -->
+<section id="quote" class="quote">
+  <div class="wrap">
+    <div class="qcard">
+      <h3>Request a charter</h3>
+      <p class="sub">Enter your trip and get an illustrative estimate with a recommended aircraft in seconds.</p>
+      <form class="qform" id="quoteForm">
+        <div class="qfield">
+          <label for="qfrom">From</label>
+          <input type="text" id="qfrom" placeholder="City or airport" value="New York" required/>
+        </div>
+        <div class="qfield">
+          <label for="qto">To</label>
+          <input type="text" id="qto" placeholder="City or airport" value="Miami" required/>
+        </div>
+        <div class="qfield">
+          <label for="qpax">Passengers</label>
+          <select id="qpax">
+            <option value="2">1 - 2</option>
+            <option value="4" selected>3 - 4</option>
+            <option value="7">5 - 7</option>
+            <option value="9">8 - 9</option>
+            <option value="14">10 - 14</option>
+          </select>
+        </div>
+        <div class="qfield">
+          <label for="qdate">Date</label>
+          <input type="date" id="qdate"/>
+        </div>
+        <div class="qbtn">
+          <button type="submit" class="btn">Estimate →</button>
+        </div>
+      </form>
+      <div class="qresult" id="qresult">
+        <div class="qresult-grid">
+          <div class="qbox">
+            <small>Estimated price range</small>
+            <b id="qprice">$00,000 to $00,000</b>
+            <span class="line" id="qroute">Route placeholder</span>
+          </div>
+          <div class="qbox">
+            <small>Recommended aircraft</small>
+            <b id="qcraft">Aircraft</b>
+            <span class="line" id="qcraftsub">Class</span>
+          </div>
+          <div class="qbox">
+            <small>Estimated flight time</small>
+            <b id="qtime">0h 00m</b>
+            <span class="line">Direct, weather permitting</span>
+          </div>
+        </div>
+        <p class="qnote">This is an illustrative estimate only. A live quote depends on aircraft availability, routing, airport fees, and dates. Request a quote below and a flight advisor will confirm pricing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-in">
+    <span>Trusted &amp; recognized by</span>
+    <span>ARGUS PLATINUM</span><span>WYVERN WINGMAN</span><span>IS-BAO STAGE 3</span><span>SKYLINE AWARDS</span><span>JET REPORT 2025</span>
+  </div>
+</div>
+
+<section id="fleet" class="fleet">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The Fleet</span>
+      <h2>The right aircraft for every trip</h2>
+      <p>From a quick hop to a transatlantic crossing, Altora matches your trip to a vetted aircraft. Here are the four classes we charter most.</p>
+    </div>
+    <div class="fleet-grid">
+      <div class="fcard">
+        <div class="fimg"><img src="https://images.unsplash.com/photo-1559268950-2d7ceb2efa3a?w=600&q=80&auto=format&fit=crop" alt="Light jet"/></div>
+        <div class="fbody">
+          <div class="fclass">Light Jet</div>
+          <h3>Quick &amp; nimble</h3>
+          <ul>
+            <li>Seats <b>up to 6</b></li>
+            <li>Range <b>~1,500 mi</b></li>
+            <li>Ideal for <b>short hops</b></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fcard">
+        <div class="fimg"><img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=600&q=80&auto=format&fit=crop" alt="Midsize jet"/></div>
+        <div class="fbody">
+          <div class="fclass">Midsize Jet</div>
+          <h3>Comfort &amp; reach</h3>
+          <ul>
+            <li>Seats <b>up to 8</b></li>
+            <li>Range <b>~2,400 mi</b></li>
+            <li>Ideal for <b>coast to coast</b></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fcard">
+        <div class="fimg"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80&auto=format&fit=crop" alt="Super-midsize jet"/></div>
+        <div class="fbody">
+          <div class="fclass">Super-Midsize</div>
+          <h3>Stand-up cabin</h3>
+          <ul>
+            <li>Seats <b>up to 9</b></li>
+            <li>Range <b>~3,400 mi</b></li>
+            <li>Ideal for <b>longer routes</b></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fcard">
+        <div class="fimg"><img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=600&q=80&auto=format&fit=crop" alt="Heavy long-range jet"/></div>
+        <div class="fbody">
+          <div class="fclass">Heavy / Long-Range</div>
+          <h3>Cross the ocean</h3>
+          <ul>
+            <li>Seats <b>up to 14</b></li>
+            <li>Range <b>~6,000 mi</b></li>
+            <li>Ideal for <b>intercontinental</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="membership">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Membership &amp; Jet Cards</span>
+      <h2>Fly more, plan less</h2>
+      <p>Prefer to skip the quote every time? Choose a membership and lock in capped hourly rates with priority access. All figures shown are illustrative.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tname">Pay As You Fly</div>
+        <h3>On-Demand</h3>
+        <div class="price-sub">No deposit, quote per trip</div>
+        <ul>
+          <li><span class="ck">✓</span> Charter any class, trip by trip</li>
+          <li><span class="ck">✓</span> Transparent all-in quotes</li>
+          <li><span class="ck">✓</span> Dedicated flight advisor</li>
+          <li><span class="ck">✓</span> 24/7 booking support</li>
+        </ul>
+        <a href="#quote" class="btn btn-ghost" style="border-color:var(--line-l);color:var(--steel)">Request a Charter</a>
+      </div>
+      <div class="tier feat">
+        <span class="tag">Most popular</span>
+        <div class="tname">Jet Card</div>
+        <h3>$150,000</h3>
+        <div class="price-sub">Prepaid flight hours, capped rates</div>
+        <ul>
+          <li><span class="ck">✓</span> Fixed hourly rate, locked for the year</li>
+          <li><span class="ck">✓</span> Guaranteed availability with 24h notice</li>
+          <li><span class="ck">✓</span> One invoice, no surprises</li>
+          <li><span class="ck">✓</span> Complimentary cabin catering</li>
+          <li><span class="ck">✓</span> Priority upgrades when available</li>
+        </ul>
+        <a href="#contact" class="btn">Talk to an Advisor →</a>
+      </div>
+      <div class="tier">
+        <div class="tname">Private Membership</div>
+        <h3>Invitation</h3>
+        <div class="price-sub">For the most frequent flyers</div>
+        <ul>
+          <li><span class="ck">✓</span> Everything in Jet Card</li>
+          <li><span class="ck">✓</span> Same-day departures, short notice</li>
+          <li><span class="ck">✓</span> Personal aviation concierge</li>
+          <li><span class="ck">✓</span> Fixed pricing across all classes</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" style="border-color:var(--line-l);color:var(--steel)">Request an Invitation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="split">
+      <div class="img-col"><img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?w=800&q=80&auto=format&fit=crop" alt="An Altora jet ready on the ramp"/></div>
+      <div>
+        <span class="eyebrow">Why Altora</span>
+        <h2 style="font-size:2.3rem">Safety first, service always</h2>
+        <p style="color:var(--slate);margin-top:1rem">Every aircraft we charter is operator-vetted and held to the top third-party safety ratings. Behind every trip is a real team that answers when you call.</p>
+        <ul>
+          <li><span class="check">✓</span><span><b>Top safety ratings.</b> We charter operators audited to ARGUS Platinum and Wyvern Wingman standards.</span></li>
+          <li><span class="check">✓</span><span><b>One dedicated team.</b> The same advisor plans your trip, start to finish. No call center.</span></li>
+          <li><span class="check">✓</span><span><b>Available 24/7.</b> Day, night, weekend, or holiday, someone is on the line.</span></li>
+          <li><span class="check">✓</span><span><b>All-in pricing.</b> Your quote includes the costs that matter, so there are no surprises at the gate.</span></li>
+        </ul>
+        <a href="#contact" class="btn" style="margin-top:1.8rem">Speak With a Flight Advisor →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="numbers" class="results">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:2.6rem">
+      <span class="eyebrow" style="color:var(--gold)">By the Numbers</span>
+      <h2 style="color:#fff">A team built around your trip</h2>
+      <p style="color:#9fadc5">An illustrative snapshot of how Altora operates. Figures are samples for this demo.</p>
+    </div>
+    <div class="res-grid">
+      <div class="res"><b>4,000+</b><span>Charters arranged</span></div>
+      <div class="res"><b>3,000+</b><span>Airports reachable</span></div>
+      <div class="res"><b>4 hrs</b><span>Typical lead time</span></div>
+      <div class="res"><b>99%</b><span>On-time departures</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">A Closer Look</span>
+      <h2>What flying with Altora feels like</h2>
+      <p>From the tarmac to the cabin, the experience is calm, private, and entirely yours.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="g1">
+        <img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=900&q=80&auto=format&fit=crop" alt="Private jet exterior in the sky"/>
+        <figcaption>Vetted aircraft, ready when you are</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=600&q=80&auto=format&fit=crop" alt="An Altora jet on the tarmac at dusk"/>
+        <figcaption>Dusk departures, tarmac-side</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1606768666853-403c90a981ad?w=600&q=80&auto=format&fit=crop" alt="At altitude above the clouds"/>
+        <figcaption>At altitude, above the weather</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1559268950-2d7ceb2efa3a?w=600&q=80&auto=format&fit=crop" alt="Private terminal and tarmac"/>
+        <figcaption>Skip the crowds at the private terminal</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80&auto=format&fit=crop" alt="The view from above"/>
+        <figcaption>Wheels up, on your schedule</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Client Stories</span>
+      <h2>Travelers who fly with us again</h2>
+    </div>
+    <div class="tm-grid">
+      <div class="tm"><div class="stars">★★★★★</div><p>"I called at 9pm needing to be three states away by morning. Altora had a jet arranged within the hour. The whole thing felt effortless."</p><div class="who"><div class="av">DM</div><div>Daniel M.<small>Jet Card member</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"Our team flies often and the same advisor knows exactly how we like to travel. The quotes are clear and there are never hidden costs."</p><div class="who"><div class="av">PR</div><div>Priya R.<small>Corporate client</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"We booked a family trip across the country and it was the calmest travel day we have ever had. The cabin was beautiful and the crew was kind."</p><div class="who"><div class="av">SL</div><div>Sofia L.<small>On-demand client</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Good to Know</span>
+      <h2>Questions, answered</h2>
+    </div>
+    <div class="faq-list">
+      <details class="qa" open>
+        <summary>How far in advance do I need to book? <span class="pm">+</span></summary>
+        <div class="ans">For most domestic trips, we can arrange an aircraft with as little as four hours of notice. Longer or international routes are easier with a day or more, but our team will always tell you what is realistic for your trip.</div>
+      </details>
+      <details class="qa">
+        <summary>How is the price calculated? <span class="pm">+</span></summary>
+        <div class="ans">Your quote depends on the aircraft, the distance, the dates, and airport fees. We give you one all-in number before you confirm, so the price you see is the price you pay.</div>
+      </details>
+      <details class="qa">
+        <summary>Are the aircraft safe and well maintained? <span class="pm">+</span></summary>
+        <div class="ans">We only charter operators that meet leading third-party safety standards, including ARGUS Platinum and Wyvern Wingman. Every trip is matched to a vetted aircraft and a qualified crew.</div>
+      </details>
+      <details class="qa">
+        <summary>What is the difference between on-demand and a Jet Card? <span class="pm">+</span></summary>
+        <div class="ans">On-demand means you request a quote each trip with no commitment. A Jet Card lets you prepay flight hours at a fixed, capped rate with guaranteed availability, which suits travelers who fly often.</div>
+      </details>
+      <details class="qa">
+        <summary>Can you handle catering and ground transport? <span class="pm">+</span></summary>
+        <div class="ans">Yes. Your advisor can arrange cabin catering, ground transport, and special requests as part of the trip. Just let us know what you need when you book.</div>
+      </details>
+      <details class="qa">
+        <summary>Do you fly internationally? <span class="pm">+</span></summary>
+        <div class="ans">We do. Our heavy and long-range aircraft cover transatlantic and other long routes, and our team handles the customs and permit details so you can simply travel.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow">Request a Quote</span>
+        <h2 style="font-size:2.3rem">Tell us about your trip</h2>
+        <p style="color:#b6c0d2;margin-top:1rem">Share a few details and a flight advisor will reach out with a confirmed quote and aircraft options. No pressure, no obligation.</p>
+        <ul style="list-style:none;margin-top:1.6rem;display:grid;gap:1rem">
+          <li style="display:flex;gap:.8rem;align-items:center;color:#b6c0d2"><span class="check">✓</span> A real advisor, available 24/7</li>
+          <li style="display:flex;gap:.8rem;align-items:center;color:#b6c0d2"><span class="check">✓</span> All-in pricing, no hidden fees</li>
+          <li style="display:flex;gap:.8rem;align-items:center;color:#b6c0d2"><span class="check">✓</span> Aircraft matched to your trip</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <label for="cn">Full Name</label>
+        <input type="text" id="cn" placeholder="Your name" required/>
+        <label for="ce">Email</label>
+        <input type="email" id="ce" placeholder="you@email.com" required/>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <div>
+            <label for="cfrom">From</label>
+            <input type="text" id="cfrom" placeholder="Departure city"/>
+          </div>
+          <div>
+            <label for="cto">To</label>
+            <input type="text" id="cto" placeholder="Destination city"/>
+          </div>
+        </div>
+        <label for="ctype">Trip Type</label>
+        <select id="ctype"><option>One way</option><option>Round trip</option><option>Multi-leg</option><option>Membership or Jet Card</option><option>Not sure yet</option></select>
+        <label for="cmsg2">Anything we should know?</label>
+        <textarea id="cmsg2" placeholder="Dates, passenger count, special requests."></textarea>
+        <button type="submit" class="btn">Request My Quote →</button>
+        <div class="cmsg" id="cmsg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:5.5rem">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Wheels up, on your time</h2>
+      <p>Skip the lines and fly on your own schedule. Request a charter now and a flight advisor will take it from there.</p>
+      <a href="#quote" class="btn">Request a Charter →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="col">
+        <div class="foot-logo">Altora Private Aviation</div>
+        <p>On-demand private jet charter and membership. Fly on your schedule, with a dedicated team available around the clock.</p>
+      </div>
+      <div><h4>Fly</h4><a href="#quote">Request a Charter</a><a href="#fleet">The Fleet</a><a href="#membership">Membership</a><a href="#contact">Request a Quote</a></div>
+      <div><h4>Company</h4><a href="#why">Why Altora</a><a href="#numbers">By the Numbers</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a></div>
+      <div><h4>Contact</h4><a href="#">One Skyline Plaza, Suite 900</a><a href="#">Available 24/7</a><a href="tel:#">(000) 000-0000</a></div>
+    </div>
+    <div class="foot-bottom">
+      Demo site designed &amp; built by <a href="/" style="color:#fff;text-decoration:underline">Earvin Laureano</a> · Not a real business · <a href="/work" style="color:#fff;text-decoration:underline">See more work</a>
+      <div class="disclaimer">This is a fictional demonstration website created to showcase web design. Names, photos, prices, and reviews are illustrative only.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Signature element: illustrative charter estimate
+  (function(){
+    var form = document.getElementById('quoteForm');
+    var result = document.getElementById('qresult');
+    // sensible default date: 7 days out
+    var d = new Date(); d.setDate(d.getDate()+7);
+    document.getElementById('qdate').value = d.toISOString().slice(0,10);
+
+    function craftFor(pax){
+      if(pax<=2) return {name:'Light Jet', cls:'Up to 6 seats · ~1,500 mi', base:2600};
+      if(pax<=4) return {name:'Midsize Jet', cls:'Up to 8 seats · ~2,400 mi', base:3400};
+      if(pax<=7) return {name:'Super-Midsize', cls:'Up to 9 seats · ~3,400 mi', base:4500};
+      if(pax<=9) return {name:'Heavy Jet', cls:'Up to 12 seats · ~4,500 mi', base:6200};
+      return {name:'Long-Range Jet', cls:'Up to 14 seats · ~6,000 mi', base:8200};
+    }
+    function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var pax = parseInt(document.getElementById('qpax').value,10) || 2;
+      var from = (document.getElementById('qfrom').value || 'Your city').trim();
+      var to = (document.getElementById('qto').value || 'Destination').trim();
+      var craft = craftFor(pax);
+
+      // illustrative: assume ~2.4h block time, price = hourly base x hours, range +/- 18%
+      var hours = 2.4;
+      var mid = craft.base * hours;
+      var low = mid * 0.82, high = mid * 1.18;
+
+      document.getElementById('qprice').textContent = money(low) + ' to ' + money(high);
+      document.getElementById('qroute').textContent = from + ' to ' + to + ', one way';
+      document.getElementById('qcraft').textContent = craft.name;
+      document.getElementById('qcraftsub').textContent = craft.cls;
+      var h = Math.floor(hours), m = Math.round((hours-h)*60);
+      document.getElementById('qtime').textContent = h + 'h ' + (m<10?'0':'') + m + 'm';
+
+      result.classList.add('show');
+      form.querySelector('button').textContent = 'Update Estimate →';
+    });
+  })();
+
+  // Contact form demo submit
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('cmsg').textContent = '✓ Thanks. In a real build, this would reach a flight advisor instantly. (Demo only.)';
+    this.querySelector('button').textContent = 'Quote Requested ✓';
+  });
+</script>
+</body>
+</html>

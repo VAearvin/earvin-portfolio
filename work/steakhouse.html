@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ember &amp; Bone · Dry-Aged Steakhouse</title>
+<meta name="description" content="Ember & Bone is a dry-aged steakhouse. Steaks aged 45 days over open fire, a deep whiskey list, and a dark, warm room. Reserve a table tonight."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#121110"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --char:#121110; --char-d:#0c0b0a; --char-2:#1a1614; --panel:#211c19;
+    --ember:#e2632a; --ember-l:#f08a3c; --brass:#c8a24a; --oxblood:#5e1f1f;
+    --cream:#f3ede2; --muted:#b6a892; --line:rgba(243,237,226,.10);
+    --r:14px; --shadow:0 28px 70px rgba(0,0,0,.55);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--cream);background:var(--char);line-height:1.7;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.display{font-family:'Oswald',sans-serif;line-height:1.05;text-transform:uppercase;letter-spacing:.02em;font-weight:600}
+  .serif{font-family:'Cormorant Garamond',serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--ember);color:#1a0f08;font-weight:700;padding:1rem 1.9rem;border-radius:8px;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;transition:.2s;border:none;cursor:pointer;font-family:'Oswald',sans-serif}
+  .btn:hover{background:var(--ember-l);transform:translateY(-2px);box-shadow:0 14px 36px rgba(226,99,42,.35)}
+  .btn-ghost{background:transparent;color:var(--cream);border:1.5px solid rgba(243,237,226,.26)}
+  .btn-ghost:hover{border-color:var(--brass);color:var(--brass);box-shadow:none}
+  .eyebrow{display:inline-block;font-family:'Oswald',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--brass);margin-bottom:1rem}
+
+  .demo-bar{background:var(--char-d);color:var(--muted);font-size:.82rem;text-align:center;padding:.55rem 1rem;font-weight:500;border-bottom:1px solid var(--line)}
+  .demo-bar strong{color:var(--ember-l)}
+  .demo-bar a{color:var(--cream);text-decoration:underline;text-underline-offset:2px;font-weight:600}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(18,17,16,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:1.05rem 24px;max-width:1180px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:.7rem;font-family:'Oswald',sans-serif;font-weight:600;font-size:1.32rem;color:var(--cream);text-transform:uppercase;letter-spacing:.06em}
+  .logo .mark{width:38px;height:38px;border-radius:9px;background:linear-gradient(160deg,var(--ember),var(--oxblood));display:grid;place-items:center;color:var(--cream);font-size:1.1rem;box-shadow:0 0 22px rgba(226,99,42,.45)}
+  .nav-links{display:flex;gap:2rem;align-items:center;font-family:'Oswald',sans-serif;font-size:.92rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  .nav-links a:hover{color:var(--brass)}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  @media(max-width:880px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;background:var(--char-d)}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(60% 55% at 22% 38%,rgba(226,99,42,.30),transparent 60%),
+    radial-gradient(50% 50% at 85% 70%,rgba(94,31,31,.45),transparent 65%),
+    radial-gradient(40% 40% at 60% 10%,rgba(200,162,74,.14),transparent 60%);
+    pointer-events:none}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:5rem 0 5.5rem}
+  .hero h1{font-size:clamp(2.7rem,6vw,4.6rem);color:var(--cream);letter-spacing:.01em}
+  .hero h1 em{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;text-transform:none;color:var(--ember-l);letter-spacing:0}
+  .hero p.lede{font-size:1.16rem;color:var(--muted);margin:1.5rem 0 2rem;max-width:32rem}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .trust{display:flex;gap:2.4rem;margin-top:2.8rem;flex-wrap:wrap}
+  .trust div{font-size:.84rem;color:var(--muted)}
+  .trust strong{display:block;font-family:'Oswald',sans-serif;font-size:1.9rem;color:var(--brass);font-weight:600;line-height:1}
+  .hero-card{position:relative;border-radius:18px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+  .hero-card img{width:100%;display:block;aspect-ratio:4/4.2;object-fit:cover}
+  .hero-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(12,11,10,.55))}
+  .badge-float{position:absolute;z-index:2;background:var(--panel);color:var(--cream);border-radius:12px;box-shadow:var(--shadow);padding:.85rem 1.05rem;display:flex;align-items:center;gap:.6rem;font-size:.84rem;font-weight:700;border:1px solid var(--line)}
+  .badge-float .dot{width:34px;height:34px;border-radius:9px;background:linear-gradient(160deg,var(--ember),var(--oxblood));display:grid;place-items:center;color:var(--cream)}
+  .bf-1{bottom:-16px;left:-16px}
+  .bf-2{top:-16px;right:-16px}
+  @media(max-width:880px){.hero-grid{grid-template-columns:1fr;padding:3rem 0}.bf-1,.bf-2{display:none}}
+
+  .strip{padding:1.7rem 0;background:var(--char-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .strip-in{display:flex;align-items:center;justify-content:center;gap:2.4rem;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-size:.84rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .strip-in span:first-child{color:var(--brass);font-size:.72rem;letter-spacing:.2em}
+
+  section{padding:5.5rem 0}
+  .sec-head{text-align:center;max-width:46rem;margin:0 auto 3.2rem}
+  .sec-head h2{font-size:clamp(2rem,4vw,3rem)}
+  .sec-head p{color:var(--muted);margin-top:1rem;font-size:1.06rem}
+
+  /* cuts guide (signature) */
+  .cuts{background:var(--char-2)}
+  .cuts-row{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:2.2rem}
+  .cut-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem 1rem;text-align:center;cursor:pointer;transition:.2s;position:relative}
+  .cut-card:hover{transform:translateY(-4px);border-color:rgba(226,99,42,.5)}
+  .cut-card .ci{width:46px;height:46px;border-radius:50%;margin:0 auto .8rem;display:grid;place-items:center;background:var(--char);font-size:1.3rem;border:1px solid var(--line)}
+  .cut-card h3{font-size:1.02rem;color:var(--cream)}
+  .cut-card small{display:block;color:var(--muted);font-size:.78rem;margin-top:.25rem;font-family:'Inter',sans-serif;text-transform:none;letter-spacing:0}
+  .cut-card.active{background:linear-gradient(160deg,rgba(226,99,42,.18),rgba(94,31,31,.22));border-color:var(--ember);box-shadow:0 0 0 1px var(--ember),0 18px 40px rgba(226,99,42,.18)}
+  .cut-card.active .ci{border-color:var(--ember);color:var(--ember-l)}
+  .cut-detail{display:grid;grid-template-columns:1.1fr .9fr;gap:2.6rem;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:2.4rem;box-shadow:var(--shadow)}
+  .cut-detail img{width:100%;border-radius:14px;aspect-ratio:5/4;object-fit:cover;border:1px solid var(--line)}
+  .cd-name{font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--cream)}
+  .cd-desc{color:var(--muted);margin:.9rem 0 1.5rem;font-size:1.04rem}
+  .cd-meta{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.6rem;margin-top:1.4rem}
+  .cd-meta div{border-left:2px solid var(--ember);padding-left:.9rem}
+  .cd-meta span{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);font-family:'Oswald',sans-serif}
+  .cd-meta b{font-size:1.05rem;color:var(--cream);font-weight:600}
+  @media(max-width:880px){.cuts-row{grid-template-columns:repeat(2,1fr)}.cut-detail{grid-template-columns:1fr;gap:1.8rem}.cd-img-col{order:-1}}
+
+  /* menu */
+  .menu-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:2.6rem}
+  .menu-block{background:var(--char-2);border:1px solid var(--line);border-radius:var(--r);padding:2rem 2.2rem}
+  .menu-block h3{font-size:1.45rem;color:var(--cream);margin-bottom:.4rem}
+  .menu-block .blurb{color:var(--muted);font-size:.92rem;margin-bottom:1.4rem}
+  .m-item{display:flex;justify-content:space-between;gap:1rem;padding:.85rem 0;border-bottom:1px dashed var(--line)}
+  .m-item:last-child{border-bottom:none}
+  .m-item .mn{font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:600;color:var(--cream)}
+  .m-item .md{font-size:.86rem;color:var(--muted)}
+  .m-item .mp{font-family:'Oswald',sans-serif;font-weight:600;color:var(--brass);white-space:nowrap;font-size:1.05rem}
+  .pairing{margin-top:1.6rem;background:linear-gradient(160deg,rgba(94,31,31,.4),rgba(18,17,16,.2));border:1px solid var(--line);border-radius:var(--r);padding:1.6rem 1.8rem}
+  .pairing h4{font-family:'Oswald',sans-serif;color:var(--brass);letter-spacing:.1em;font-size:.92rem;text-transform:uppercase;margin-bottom:.5rem}
+  .pairing p{color:var(--muted);font-size:.95rem}
+  @media(max-width:880px){.menu-grid{grid-template-columns:1fr;gap:1.6rem}}
+
+  /* split (aging) */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+  .split img{width:100%;border-radius:18px;box-shadow:var(--shadow);aspect-ratio:5/5;object-fit:cover;border:1px solid var(--line)}
+  .split ul{list-style:none;margin-top:1.6rem;display:grid;gap:1rem}
+  .split li{display:flex;gap:.85rem;align-items:flex-start;color:var(--muted)}
+  .split li b{color:var(--cream)}
+  .check{flex:none;width:28px;height:28px;border-radius:8px;background:linear-gradient(160deg,var(--ember),var(--oxblood));color:var(--cream);display:grid;place-items:center;font-size:.8rem;font-weight:800;margin-top:.2rem}
+  @media(max-width:880px){.split{grid-template-columns:1fr;gap:2rem}.split .img-col{order:-1}}
+
+  /* stats band */
+  .results{background:linear-gradient(160deg,var(--char-d),var(--char-2));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+  .res b{display:block;font-family:'Oswald',sans-serif;font-size:2.9rem;color:var(--ember-l);line-height:1;font-weight:600}
+  .res span{display:block;color:var(--muted);font-size:.92rem;margin-top:.6rem}
+  @media(max-width:760px){.res-grid{grid-template-columns:1fr 1fr;gap:2.2rem}}
+
+  /* gallery */
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:1rem}
+  .gal-grid a{position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--line)}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;transition:.4s;display:block}
+  .gal-grid a:hover img{transform:scale(1.06)}
+  .gal-grid a::after{content:attr(data-label);position:absolute;left:0;right:0;bottom:0;padding:.7rem .9rem;font-family:'Oswald',sans-serif;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);background:linear-gradient(transparent,rgba(12,11,10,.85))}
+  .g-wide{grid-column:span 2}.g-tall{grid-row:span 2}
+  @media(max-width:880px){.gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:160px}.g-wide{grid-column:span 2}.g-tall{grid-row:span 1}}
+
+  /* testimonials */
+  .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .tm{background:var(--char-2);border-radius:var(--r);padding:1.9rem;border:1px solid var(--line)}
+  .stars{color:var(--brass);margin-bottom:.8rem;letter-spacing:.1em}
+  .tm p{font-family:'Cormorant Garamond',serif;font-size:1.18rem;color:var(--cream);line-height:1.5}
+  .tm .who{display:flex;align-items:center;gap:.7rem;margin-top:1.3rem}
+  .tm .av{width:46px;height:46px;border-radius:50%;background:linear-gradient(160deg,var(--ember),var(--oxblood));color:var(--cream);display:grid;place-items:center;font-weight:600;font-family:'Oswald',sans-serif}
+  .tm .who b{color:var(--cream);font-weight:600}
+  .tm .who small{display:block;color:var(--muted)}
+  @media(max-width:880px){.tm-grid{grid-template-columns:1fr}}
+
+  /* reservation */
+  .reserve{background:var(--char-2)}
+  .reserve-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+  .reserve-form{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:2.3rem;box-shadow:var(--shadow)}
+  .reserve-form label{display:block;font-family:'Oswald',sans-serif;font-size:.74rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:1rem 0 .4rem}
+  .reserve-form input,.reserve-form textarea,.reserve-form select{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:9px;font-size:.95rem;font-family:inherit;color:var(--cream);background:var(--char)}
+  .reserve-form input:focus,.reserve-form textarea:focus,.reserve-form select:focus{outline:none;border-color:var(--ember)}
+  .reserve-form textarea{resize:vertical;min-height:80px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .reserve-form .btn{margin-top:1.5rem;width:100%;justify-content:center}
+  .cmsg{margin-top:.9rem;text-align:center;font-size:.9rem;color:var(--ember-l);font-weight:600;min-height:1.2em}
+  .hours{list-style:none;margin-top:1.6rem;display:grid;gap:.55rem}
+  .hours li{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding-bottom:.55rem;color:var(--muted);font-size:.95rem}
+  .hours li b{color:var(--cream);font-weight:600}
+  @media(max-width:880px){.reserve-grid{grid-template-columns:1fr;gap:2.4rem}}
+
+  /* faq */
+  .faq-list{max-width:50rem;margin:0 auto;display:grid;gap:1rem}
+  .faq{background:var(--char-2);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  .faq button{width:100%;text-align:left;background:none;border:none;color:var(--cream);font-family:'Oswald',sans-serif;font-size:1.06rem;font-weight:500;letter-spacing:.02em;padding:1.3rem 1.6rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;text-transform:none}
+  .faq button .pm{color:var(--ember);font-size:1.4rem;flex:none;transition:.2s}
+  .faq.open button .pm{transform:rotate(45deg)}
+  .faq .ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .faq .ans p{padding:0 1.6rem 1.4rem;color:var(--muted);font-size:.98rem}
+
+  .cta{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--oxblood),var(--char-d));color:var(--cream);text-align:center;border-radius:24px;padding:4.2rem 2rem;border:1px solid var(--line)}
+  .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 80% at 50% 0%,rgba(226,99,42,.3),transparent 60%);pointer-events:none}
+  .cta h2{position:relative;font-size:clamp(2.1rem,4.5vw,3.2rem);margin-bottom:1rem;color:var(--cream)}
+  .cta p{position:relative;color:var(--muted);max-width:36rem;margin:0 auto 2rem;font-size:1.08rem}
+
+  footer{background:var(--char-d);color:var(--muted);padding:3.5rem 0 2rem;border-top:1px solid var(--line)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid var(--line)}
+  footer h4{color:var(--cream);font-family:'Oswald',sans-serif;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
+  footer a{display:block;color:var(--muted);font-size:.92rem;margin-bottom:.6rem}
+  footer a:hover{color:var(--brass)}
+  .foot-bottom{text-align:center;padding-top:1.8rem;font-size:.84rem;color:var(--muted)}
+  .foot-logo{color:var(--cream);font-family:'Oswald',sans-serif;font-size:1.5rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.8rem}
+  .foot-bottom a{display:inline;color:var(--cream);text-decoration:underline}
+  .disclaimer{max-width:60rem;margin:1.2rem auto 0;text-align:center;font-size:.76rem;color:#7a6f5f;line-height:1.6}
+  @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr}}
+</style>
+<script defer src="/assets/analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Restaurant",
+  "name":"Ember & Bone",
+  "servesCuisine":"Steakhouse",
+  "priceRange":"$$$$",
+  "image":"https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1200&q=80&auto=format&fit=crop",
+  "telephone":"(000) 000-0000",
+  "address":{"@type":"PostalAddress","streetAddress":"14 Foundry Lane","addressLocality":"Riverside Ward","addressRegion":"State","postalCode":"00000","addressCountry":"US"},
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"17:00","closes":"22:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"17:00","closes":"23:30"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"16:00","closes":"21:00"}
+  ],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"612"}
+}
+</script>
+</head>
+<body>
+
+<div class="demo-bar">🔥 This is a <strong>demo site</strong> built by Earvin Laureano to showcase web design. &nbsp;<a href="/work">← Back to all work</a> &nbsp;·&nbsp; <a href="/pricing">Get a site like this</a></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="#" class="logo"><span class="mark">E&amp;B</span> Ember &amp; Bone</a>
+    <nav class="nav-links">
+      <a href="#cuts">The Cuts</a>
+      <a href="#menu">Menu</a>
+      <a href="#aging">Dry-Aging</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reserve">Reserve</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#reserve" class="btn">Book a Table</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Dry-Aged Steakhouse · Open Fire</span>
+        <h1>Aged 45 days.<br/><em>Cooked over fire.</em></h1>
+        <p class="lede">Ember &amp; Bone is a dark, warm room built around one thing done right. We dry-age our beef in house, sear it over live coals, and pour the whiskey to match. Come hungry.</p>
+        <div class="hero-actions">
+          <a href="#reserve" class="btn">Reserve a Table →</a>
+          <a href="#menu" class="btn btn-ghost">View the Menu</a>
+        </div>
+        <div class="trust">
+          <div><strong>45-day</strong> in-house dry-aging</div>
+          <div><strong>4.9 ★</strong> from 600+ guests</div>
+          <div><strong>120+</strong> whiskeys poured</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=900&q=80&auto=format&fit=crop" alt="Seared steak on a dark plate"/>
+        <div class="badge-float bf-1"><span class="dot">🔥</span> Live-fire grill</div>
+        <div class="badge-float bf-2"><span class="dot">★</span> 4.9 · 600+ reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-in">
+    <span>As featured in</span>
+    <span>THE TABLE GUIDE</span><span>CITY DINING AWARDS</span><span>FIRE &amp; SMOKE QUARTERLY</span><span>BEST OF THE WARD</span><span>WHISKEY JOURNAL</span>
+  </div>
+</div>
+
+<section id="cuts" class="cuts">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Signature Guide</span>
+      <h2>Know your cuts</h2>
+      <p>Not sure what to order? Tap a cut below and we will walk you through the flavor, the marbling, and how we cook it.</p>
+    </div>
+    <div class="cuts-row" id="cutsRow">
+      <div class="cut-card active" data-cut="ribeye"><div class="ci">🥩</div><h3>Ribeye</h3><small>Rich &amp; buttery</small></div>
+      <div class="cut-card" data-cut="filet"><div class="ci">🍖</div><h3>Filet Mignon</h3><small>Lean &amp; tender</small></div>
+      <div class="cut-card" data-cut="strip"><div class="ci">🔪</div><h3>NY Strip</h3><small>Firm &amp; beefy</small></div>
+      <div class="cut-card" data-cut="tomahawk"><div class="ci">🪓</div><h3>Tomahawk</h3><small>Big &amp; shareable</small></div>
+      <div class="cut-card" data-cut="porterhouse"><div class="ci">🍴</div><h3>Porterhouse</h3><small>Two cuts in one</small></div>
+    </div>
+    <div class="cut-detail">
+      <div>
+        <div class="display cd-name" id="cdName">Ribeye</div>
+        <p class="cd-desc" id="cdDesc">The crowd favorite. Heavy marbling melts as it cooks, so every bite is rich and juicy. If you love big, beefy flavor with a buttery finish, start here.</p>
+        <div class="cd-meta">
+          <div><span>Marbling</span><b id="cdMarble">High, well streaked</b></div>
+          <div><span>Best doneness</span><b id="cdDone">Medium rare</b></div>
+          <div><span>Cut size</span><b id="cdSize">16 oz, bone-in</b></div>
+          <div><span>Price</span><b id="cdPrice">$58</b></div>
+        </div>
+      </div>
+      <div class="cd-img-col">
+        <img id="cdImg" src="https://images.unsplash.com/photo-1558030006-450675393462?w=700&q=80&auto=format&fit=crop" alt="Ribeye steak"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The Menu</span>
+      <h2>Steaks, sides, and sauces</h2>
+      <p>Every steak is dry-aged in house and finished over open fire. Prices are by weight. Sides are made to share.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-block">
+        <h3>Dry-Aged Steaks</h3>
+        <p class="blurb">Sold by weight and finished with sea salt, fire, and a brush of bone marrow butter.</p>
+        <div class="m-item"><div><div class="mn">Filet Mignon</div><div class="md">8 oz, the leanest and most tender cut</div></div><div class="mp">$52</div></div>
+        <div class="m-item"><div><div class="mn">New York Strip</div><div class="md">14 oz, firm bite and deep beef flavor</div></div><div class="mp">$54</div></div>
+        <div class="m-item"><div><div class="mn">Bone-In Ribeye</div><div class="md">16 oz, rich marbling, our most ordered</div></div><div class="mp">$58</div></div>
+        <div class="m-item"><div><div class="mn">Porterhouse</div><div class="md">24 oz, strip and filet on one bone, for two</div></div><div class="mp">$86</div></div>
+        <div class="m-item"><div><div class="mn">Tomahawk</div><div class="md">36 oz, long bone, carved at the table</div></div><div class="mp">$120</div></div>
+      </div>
+      <div>
+        <div class="menu-block">
+          <h3>Sides &amp; Sauces</h3>
+          <p class="blurb">Built to round out the plate.</p>
+          <div class="m-item"><div><div class="mn">Bone Marrow &amp; Toast</div></div><div class="mp">$16</div></div>
+          <div class="m-item"><div><div class="mn">Charred Broccolini</div></div><div class="mp">$12</div></div>
+          <div class="m-item"><div><div class="mn">Truffle Mash</div></div><div class="mp">$14</div></div>
+          <div class="m-item"><div><div class="mn">Ember Onions</div></div><div class="mp">$11</div></div>
+          <div class="m-item"><div><div class="mn">Peppercorn / Oxblood Red Wine Sauce</div></div><div class="mp">$5</div></div>
+        </div>
+        <div class="pairing">
+          <h4>The Pour</h4>
+          <p>Ask your server to pair your cut. A fatty ribeye loves a smoky single malt, while a lean filet sits beautifully next to a bold Cabernet. Over 120 whiskeys and 80 wines by the bottle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="aging">
+  <div class="wrap">
+    <div class="split">
+      <div class="img-col"><img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&q=80&auto=format&fit=crop" alt="Dry-aging room with hanging beef"/></div>
+      <div>
+        <span class="eyebrow">The 45-Day Process</span>
+        <h2 style="font-size:2.4rem">Time does most of the work</h2>
+        <p style="color:var(--muted);margin-top:1rem">We bring in whole cuts and age them ourselves in a glass-walled room you can see from the bar. Forty-five days of cold, still air concentrates the flavor and tenderizes the meat. Nothing is rushed.</p>
+        <ul>
+          <li><span class="check">✓</span><span><b>Whole cuts, aged in house.</b> No shortcuts and no shipped-in shortcuts. We do it here.</span></li>
+          <li><span class="check">✓</span><span><b>45 days at the bone.</b> The crust we trim away is what makes the inside taste like this.</span></li>
+          <li><span class="check">✓</span><span><b>Finished over live coals.</b> Real fire for a clean char and a smoky edge you can taste.</span></li>
+          <li><span class="check">✓</span><span><b>Rested, then carved.</b> Every steak rests before it reaches you, so the juice stays in the meat.</span></li>
+        </ul>
+        <a href="#reserve" class="btn" style="margin-top:1.8rem">Taste It Tonight →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="results">
+  <div class="wrap">
+    <div class="res-grid">
+      <div class="res"><b>45</b><span>Days of dry-aging</span></div>
+      <div class="res"><b>120+</b><span>Whiskeys on the shelf</span></div>
+      <div class="res"><b>4.9★</b><span>Average guest rating</span></div>
+      <div class="res"><b>12</b><span>Years over the fire</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Inside the Room</span>
+      <h2>Fire, smoke, and a low light</h2>
+      <p>A look at the grill, the plates, the aging room, and the bar.</p>
+    </div>
+    <div class="gal-grid">
+      <a class="g-wide g-tall" data-label="Over the coals" href="#gallery"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=900&q=80&auto=format&fit=crop" alt="Steak grilling over open fire"/></a>
+      <a data-label="The plate" href="#gallery"><img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=600&q=80&auto=format&fit=crop" alt="Plated steak dinner"/></a>
+      <a data-label="The bar" href="#gallery"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80&auto=format&fit=crop" alt="Whiskey pour at the bar"/></a>
+      <a data-label="The aging room" href="#gallery"><img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=600&q=80&auto=format&fit=crop" alt="Dry-aged beef on the bone"/></a>
+      <a data-label="The dining room" href="#gallery"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80&auto=format&fit=crop" alt="Dark moody restaurant interior"/></a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--char-2);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Guest Stories</span>
+      <h2>What the room says</h2>
+    </div>
+    <div class="tm-grid">
+      <div class="tm"><div class="stars">★★★★★</div><p>"The ribeye was the best I have had in years. You could taste the age on it. We sat near the fire and just slowed right down."</p><div class="who"><div class="av">DM</div><div><b>Daniel M.</b><small>Anniversary dinner</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"Booked it for a work dinner and looked like a hero. The whiskey pairing was spot on and the room feels special without being stuffy."</p><div class="who"><div class="av">PR</div><div><b>Priya R.</b><small>Business dinner</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"We shared the tomahawk and they carved it right at the table. My partner has not stopped talking about it. We are already going back."</p><div class="who"><div class="av">JC</div><div><b>Jordan C.</b><small>Date night</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="reserve" class="reserve">
+  <div class="wrap">
+    <div class="reserve-grid">
+      <div>
+        <span class="eyebrow">Reservations</span>
+        <h2 style="font-size:2.4rem">Hold your table by the fire</h2>
+        <p style="color:var(--muted);margin-top:1rem">We take a limited number of tables each night so the kitchen can do every steak justice. Book ahead, especially for Friday and Saturday.</p>
+        <ul class="hours">
+          <li><span>Tuesday to Thursday</span><b>5:00 PM to 10:00 PM</b></li>
+          <li><span>Friday &amp; Saturday</span><b>5:00 PM to 11:30 PM</b></li>
+          <li><span>Sunday</span><b>4:00 PM to 9:00 PM</b></li>
+          <li><span>Monday</span><b>Closed</b></li>
+        </ul>
+        <p style="color:var(--muted);margin-top:1.4rem;font-size:.92rem">14 Foundry Lane, Riverside Ward · (000) 000-0000</p>
+      </div>
+      <form class="reserve-form" id="reserveForm">
+        <label for="rn">Full Name</label>
+        <input type="text" id="rn" placeholder="Your name" required/>
+        <div class="form-row">
+          <div><label for="rd">Date</label><input type="date" id="rd" required/></div>
+          <div><label for="rt">Time</label><input type="time" id="rt" value="19:00" required/></div>
+        </div>
+        <div class="form-row">
+          <div><label for="rg">Guests</label><select id="rg"><option>2 guests</option><option>1 guest</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6+ guests</option></select></div>
+          <div><label for="rp">Phone</label><input type="tel" id="rp" placeholder="(000) 000-0000" required/></div>
+        </div>
+        <label for="rm">Notes (optional)</label>
+        <textarea id="rm" placeholder="Booth by the fire, allergies, celebrating something?"></textarea>
+        <button type="submit" class="btn">Request My Table →</button>
+        <div class="cmsg" id="rmsg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--char-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Good to Know</span>
+      <h2>Questions, answered</h2>
+    </div>
+    <div class="faq-list" id="faqList">
+      <div class="faq"><button>Do I need a reservation? <span class="pm">+</span></button><div class="ans"><p>We hold a few walk-in seats at the bar, but tables fill fast. For dinner with a group, or on a Friday and Saturday, we strongly suggest booking ahead through the form above.</p></div></div>
+      <div class="faq"><button>What does dry-aged actually taste like? <span class="pm">+</span></button><div class="ans"><p>Richer and nuttier than a fresh steak, with a deeper beef flavor and a more tender bite. The 45 days of aging concentrate everything. If it is your first time, the ribeye is the easiest way to see the difference.</p></div></div>
+      <div class="faq"><button>Is there anything for non-steak guests? <span class="pm">+</span></button><div class="ans"><p>Yes. Alongside the steaks we serve fish and a roasted vegetable plate, plus the full set of sides. Let us know about allergies in your reservation notes and the kitchen will take care of you.</p></div></div>
+      <div class="faq"><button>Can you host a larger group or private dinner? <span class="pm">+</span></button><div class="ans"><p>We can seat groups up to twelve in the main room and host private dinners in the back. Add a note when you book and our team will reach out to plan the menu and the pours.</p></div></div>
+      <div class="faq"><button>Is there a dress code? <span class="pm">+</span></button><div class="ans"><p>No strict code. The room is dark and warm, and most guests land somewhere around smart casual. Come comfortable. The food is the dressed-up part.</p></div></div>
+      <div class="faq"><button>Where do I park? <span class="pm">+</span></button><div class="ans"><p>There is a lot directly behind the building on Foundry Lane, plus valet on Friday and Saturday evenings. Street parking opens up after 6:00 PM.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:5.5rem">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Your table is getting warm</h2>
+      <p>Forty-five days of aging, real fire, and a whiskey for every cut. Book a table and let us do the rest.</p>
+      <a href="#reserve" class="btn">Reserve a Table →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Ember &amp; Bone</div>
+        <p style="font-size:.92rem;max-width:20rem">A dry-aged steakhouse built around open fire, deep flavor, and a good pour. Dark room, warm welcome.</p>
+      </div>
+      <div><h4>Eat</h4><a href="#cuts">The Cuts</a><a href="#menu">Menu</a><a href="#aging">Dry-Aging</a><a href="#gallery">Gallery</a></div>
+      <div><h4>Visit</h4><a href="#reserve">Reserve</a><a href="#reserve">Hours</a><a href="#">14 Foundry Lane</a><a href="tel:#">(000) 000-0000</a></div>
+      <div><h4>Hours</h4><a href="#reserve">Tue to Thu · 5 to 10 PM</a><a href="#reserve">Fri &amp; Sat · 5 to 11:30 PM</a><a href="#reserve">Sun · 4 to 9 PM</a><a href="#reserve">Mon · Closed</a></div>
+    </div>
+    <div class="foot-bottom">
+      Demo site designed and built by <a href="/">Earvin Laureano</a>. Not a real business. <a href="/work">See more work</a>.
+      <div class="disclaimer">This is a fictional demonstration website created to showcase web design. Names, photos, prices, and reviews are illustrative only.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Signature: Know your cuts
+  var CUTS = {
+    ribeye:{name:"Ribeye",desc:"The crowd favorite. Heavy marbling melts as it cooks, so every bite is rich and juicy. If you love big, beefy flavor with a buttery finish, start here.",marble:"High, well streaked",done:"Medium rare",size:"16 oz, bone-in",price:"$58",img:"https://images.unsplash.com/photo-1558030006-450675393462?w=700&q=80&auto=format&fit=crop"},
+    filet:{name:"Filet Mignon",desc:"The most tender cut on the menu. Lean and soft with a mild, clean flavor. A great pick if you want the texture of butter without the heavy fat.",marble:"Low, very fine",done:"Medium rare",size:"8 oz, center cut",price:"$52",img:"https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=700&q=80&auto=format&fit=crop"},
+    strip:{name:"New York Strip",desc:"Firm, beefy, and full of character. A satisfying chew with a good fat cap on the edge. The steak lover's steak when you want flavor over softness.",marble:"Moderate, edge cap",done:"Medium rare",size:"14 oz",price:"$54",img:"https://images.unsplash.com/photo-1600891964092-4316c288032e?w=700&q=80&auto=format&fit=crop"},
+    tomahawk:{name:"Tomahawk",desc:"A showpiece. A thick ribeye left on the long bone and carved at your table. Built to share and made for a celebration.",marble:"High, dramatic",done:"Medium rare",size:"36 oz, long bone",price:"$120",img:"https://images.unsplash.com/photo-1544025162-d76694265947?w=700&q=80&auto=format&fit=crop"},
+    porterhouse:{name:"Porterhouse",desc:"Two steaks on one bone. A tender filet on one side and a beefy strip on the other, so you get the best of both. Plenty for two.",marble:"Mixed, two cuts",done:"Medium rare",size:"24 oz, for two",price:"$86",img:"https://images.unsplash.com/photo-1432139509613-5c4255815697?w=700&q=80&auto=format&fit=crop"}
+  };
+  var row = document.getElementById('cutsRow');
+  row.addEventListener('click', function(e){
+    var card = e.target.closest('.cut-card');
+    if(!card) return;
+    row.querySelectorAll('.cut-card').forEach(function(c){c.classList.remove('active')});
+    card.classList.add('active');
+    var d = CUTS[card.dataset.cut];
+    document.getElementById('cdName').textContent = d.name;
+    document.getElementById('cdDesc').textContent = d.desc;
+    document.getElementById('cdMarble').textContent = d.marble;
+    document.getElementById('cdDone').textContent = d.done;
+    document.getElementById('cdSize').textContent = d.size;
+    document.getElementById('cdPrice').textContent = d.price;
+    var img = document.getElementById('cdImg');
+    img.src = d.img; img.alt = d.name + " steak";
+  });
+
+  // FAQ accordion
+  document.getElementById('faqList').addEventListener('click', function(e){
+    var btn = e.target.closest('.faq button');
+    if(!btn) return;
+    var item = btn.parentElement;
+    var ans = item.querySelector('.ans');
+    var open = item.classList.toggle('open');
+    ans.style.maxHeight = open ? ans.scrollHeight + 'px' : 0;
+  });
+
+  // Reservation submit (demo)
+  document.getElementById('reserveForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('rmsg').textContent = '✓ Thanks. In a real build, this would reach the host stand right away. (Demo only.)';
+    this.querySelector('button').textContent = 'Request Received ✓';
+  });
+</script>
+</body>
+</html>

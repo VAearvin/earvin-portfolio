@@ -329,6 +329,22 @@
     .how-bg { position: absolute; inset: 0; will-change: transform; background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1800&q=80'); background-size: cover; background-position: center; filter: brightness(0.07); }
     .how-content { position: relative; z-index: 2; }
     .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+
+    /* SELECTED WORK */
+    .work-preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .wp-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; will-change: transform; transition: all 0.3s ease, transform 0.18s cubic-bezier(.22,1,.36,1); }
+    .wp-card:hover { border-color: rgba(199,169,127,0.4); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    .wp-thumb { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
+    .wp-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .wp-card:hover .wp-thumb img { transform: scale(1.05); }
+    .wp-badge { position: absolute; top: 0.8rem; left: 0.8rem; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: rgba(12,12,12,0.72); border: 1px solid rgba(255,255,255,0.15); padding: 0.3rem 0.65rem; border-radius: 100px; }
+    .wp-badge .dot { color: #4ade80; }
+    .wp-body { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; flex: 1; }
+    .wp-kind { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
+    .wp-name { font-family: 'Inter', sans-serif; font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+    .wp-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; flex: 1; }
+    .wp-link { font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .work-preview-cta { margin-top: 2.5rem; }
     .how-card { background: rgba(17,17,17,0.88); border: 1px solid var(--border); padding: 2.5rem 2rem; border-radius: var(--r); backdrop-filter: blur(10px); transition: all 0.3s; }
     .how-card:hover { border-color: rgba(199,169,127,0.25); transform: translateY(-4px); }
     .how-num { font-family: 'Inter', sans-serif; font-size: 4rem; font-weight: 800; color: rgba(199,169,127,0.12); line-height: 1; margin-bottom: 1.5rem; transition: color 0.3s; }
@@ -462,7 +478,7 @@
       .hero-right { order: -1; }
       .photo-frame { width: 220px; height: 280px; }
       .section { padding: 4rem 1.5rem; }
-      .support-grid, .services-grid, .how-grid { grid-template-columns: 1fr; }
+      .support-grid, .services-grid, .how-grid, .work-preview-grid { grid-template-columns: 1fr; }
       .testimonial-card { width: 300px; }
       .exp-grid, .contact-grid, .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .form-row { grid-template-columns: 1fr; }
@@ -510,7 +526,7 @@
         <li><a href="/services">Partnership</a></li>
       </ul>
     </li>
-    <li><a href="/work">Portfolio</a></li>
+    <li><a href="/work">Work</a></li>
     <li><a href="/#contact">Contact</a></li>
     <li><a href="/#contact" class="nav-cta">Start a Conversation</a></li>
   </ul>
@@ -543,7 +559,7 @@
     </div>
     <div class="hero-right">
       <div class="photo-frame">
-        <img src="earvin.jpeg" alt="Earvin Laureano, freelance builder of websites, funnels, and digital systems"/>
+        <img src="earvin-portrait.jpg" alt="Earvin Laureano, freelance builder of websites, funnels, and digital systems" style="object-position: center 22%;"/>
       </div>
       <div class="hero-stats">
         <div class="hero-stat"><span class="hero-stat-num">9+</span><span class="hero-stat-label">Years Experience</span></div>
@@ -735,6 +751,32 @@
         <div class="how-card reveal reveal-delay-2"><div class="how-num">02</div><div class="how-title">I build it and own it</div><div class="how-desc">Once it is scoped, I handle it. You get regular updates and a finished result, not a pile of questions you should not have to answer.</div></div>
         <div class="how-card reveal reveal-delay-3"><div class="how-num">03</div><div class="how-title">You get something that works, on time</div><div class="how-desc">Polished, tested, and delivered when promised, ready to start bringing in leads.</div></div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- SELECTED WORK -->
+<div id="selected-work">
+  <div class="section">
+    <div class="section-eyebrow reveal">Selected Work</div>
+    <h2 class="section-title reveal">Real sites you can<br/><em>click through</em></h2>
+    <p class="section-desc reveal">A few live demo builds. Each one is its own brand, made to turn visitors into booked clients. Open any of them and look around.</p>
+    <div class="work-preview-grid">
+      <a href="/work/law-firm" class="wp-card reveal reveal-delay-1">
+        <div class="wp-thumb"><span class="wp-badge"><span class="dot">●</span> Live demo</span><img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80&auto=format&fit=crop" alt="Sterling and Vale law firm website demo"/></div>
+        <div class="wp-body"><div class="wp-kind">Law firm · Website</div><div class="wp-name">Sterling &amp; Vale</div><p class="wp-desc">A trial-attorney firm built to convert injury leads, with case results and a free-review form.</p><span class="wp-link">Open demo →</span></div>
+      </a>
+      <a href="/work/med-spa" class="wp-card reveal reveal-delay-2">
+        <div class="wp-thumb"><span class="wp-badge"><span class="dot">●</span> Live demo</span><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80&auto=format&fit=crop" alt="Lumiere Aesthetics med spa website demo"/></div>
+        <div class="wp-body"><div class="wp-kind">Med spa · Website</div><div class="wp-name">Lumière Aesthetics</div><p class="wp-desc">A luxe aesthetics clinic, with treatment pricing, membership tiers, and a consultation booking form.</p><span class="wp-link">Open demo →</span></div>
+      </a>
+      <a href="/work/home-builder" class="wp-card reveal reveal-delay-3">
+        <div class="wp-thumb"><span class="wp-badge"><span class="dot">●</span> Live demo</span><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&auto=format&fit=crop" alt="Atlas and Oak custom home builder website demo"/></div>
+        <div class="wp-body"><div class="wp-kind">Home builder · Website</div><div class="wp-name">Atlas &amp; Oak</div><p class="wp-desc">A design-build firm, photo-led and architectural, with project stats and a design-consultation form.</p><span class="wp-link">Open demo →</span></div>
+      </a>
+    </div>
+    <div class="work-preview-cta reveal">
+      <a href="/work" class="btn-outline">See all work →</a>
     </div>
   </div>
 </div>
@@ -1014,7 +1056,7 @@
 
   // 3D tilt on feature cards
   if (fxHover) {
-    document.querySelectorAll('.support-card, .track-card, .how-card, .exp-card').forEach((card) => {
+    document.querySelectorAll('.support-card, .track-card, .how-card, .exp-card, .wp-card').forEach((card) => {
       card.addEventListener('mousemove', (e) => {
         const r = card.getBoundingClientRect();
         const rx = ((e.clientY - r.top) / r.height - 0.5) * -6;

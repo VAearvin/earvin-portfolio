@@ -117,30 +117,45 @@
   @media(max-width:880px){.price-grid{grid-template-columns:1fr}}
 
   .finder{background:#fff}
-  .finder-card{background:linear-gradient(160deg,var(--blush) 0%,var(--sand) 100%);border:1px solid var(--line);border-radius:24px;padding:2.6rem;box-shadow:var(--shadow)}
-  .concern-label{font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:1rem;text-align:center}
-  .concern-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.9rem}
-  .concern{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:1.2rem .9rem;text-align:center;cursor:pointer;transition:.18s;font-family:inherit;color:var(--ink);font-size:.92rem;font-weight:600;line-height:1.3}
-  .concern .emo{display:block;font-size:1.7rem;margin-bottom:.55rem}
-  .concern:hover{border-color:var(--bronze);transform:translateY(-3px);box-shadow:var(--shadow)}
-  .concern.active{background:linear-gradient(160deg,var(--bronze),var(--bronze-d));color:#fff;border-color:transparent;box-shadow:var(--shadow)}
-  .finder-result{margin-top:1.8rem;background:#fff;border:1px solid var(--line);border-radius:18px;padding:2rem;display:grid;grid-template-columns:1fr auto;gap:1.6rem;align-items:center}
-  .finder-result .rtag{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze-d);display:block;margin-bottom:.35rem}
-  .finder-result h3{font-size:1.9rem;margin-bottom:.5rem}
+  .finder-card{position:relative;background:linear-gradient(165deg,#fbf4f0 0%,var(--blush) 42%,var(--sand) 100%);border:1px solid var(--line);border-radius:26px;padding:2.8rem;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 30px 70px -28px rgba(58,44,44,.22)}
+  .concern-label{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-d);margin-bottom:1.25rem;text-align:center}
+  .concern-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.85rem}
+  .concern{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:.7rem;background:linear-gradient(180deg,#fff,#fdf8f5);border:1px solid var(--line);border-radius:16px;padding:1.3rem .8rem;text-align:center;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease;font-family:inherit;color:var(--ink);font-size:.88rem;font-weight:600;line-height:1.3;box-shadow:0 1px 2px rgba(58,44,44,.04)}
+  .concern .ico{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:linear-gradient(180deg,#fbeee7,#f4e1d6);color:var(--bronze);transition:background .2s ease,color .2s ease,box-shadow .2s ease}
+  .concern .ico svg{width:24px;height:24px;display:block}
+  .concern:hover{border-color:var(--rose);transform:translateY(-4px);box-shadow:0 18px 34px -16px rgba(58,44,44,.28)}
+  .concern:hover .ico{background:linear-gradient(180deg,#f6e2d8,#eed1c3);color:var(--bronze-d)}
+  .concern:focus-visible{outline:none;border-color:var(--bronze);box-shadow:0 0 0 3px rgba(176,128,84,.28)}
+  .concern.active{background:linear-gradient(165deg,var(--bronze),var(--bronze-d));color:#fff;border-color:transparent;transform:translateY(-3px);box-shadow:0 16px 32px -12px rgba(149,106,68,.55),0 0 0 4px rgba(176,128,84,.16)}
+  .concern.active .ico{background:rgba(255,255,255,.16);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.25) inset}
+
+  .finder-result{margin-top:1.9rem;position:relative;background:linear-gradient(180deg,#fff,#fffaf7);border:1px solid var(--line);border-radius:20px;padding:2.1rem 2.2rem;display:grid;grid-template-columns:1fr auto;gap:1.8rem;align-items:center;box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 20px 44px -26px rgba(58,44,44,.2);overflow:hidden}
+  .finder-result::before{content:"";position:absolute;left:0;top:1.6rem;bottom:1.6rem;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--rose),var(--bronze))}
+  .finder-main{transition:opacity .22s ease,transform .22s ease;padding-left:.6rem}
+  .finder-side{transition:opacity .22s ease,transform .22s ease}
+  .finder-result.swap .finder-main,.finder-result.swap .finder-side{opacity:0;transform:translateY(6px)}
+  .finder-result .rtag{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-d);display:block;margin-bottom:.5rem}
+  .finder-result h3{font-size:2.05rem;margin-bottom:.55rem;letter-spacing:-.01em}
   .finder-result p{color:var(--slate);font-size:.97rem;max-width:34rem}
-  .finder-side{text-align:right;flex:none}
-  .finder-side .from{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--ink);font-weight:700;line-height:1}
-  .finder-side .from small{display:block;font-family:'Inter',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:.3rem}
-  .finder-side .btn{margin-top:1rem;white-space:nowrap}
-  .finder-note{margin-top:1.3rem;text-align:center;font-size:.78rem;color:var(--slate);font-style:italic}
+  .finder-side{text-align:right;flex:none;display:flex;flex-direction:column;align-items:flex-end;padding-left:1.8rem;border-left:1px solid var(--line)}
+  .finder-side .from{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--ink);font-weight:700;line-height:1}
+  .finder-side .from small{display:block;font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:.45rem}
+  .finder-side .btn{margin-top:1.2rem;white-space:nowrap}
+  .finder-side .btn svg{width:17px;height:17px}
+  .finder-note{margin:1.5rem auto 0;max-width:42rem;text-align:center;font-size:.76rem;line-height:1.55;color:var(--slate);font-style:italic;letter-spacing:.01em}
   @media(max-width:880px){
-    .finder-card{padding:1.7rem}
-    .concern-grid{grid-template-columns:1fr 1fr}
-    .finder-result{grid-template-columns:1fr;text-align:center}
+    .finder-card{padding:1.8rem}
+    .concern-grid{grid-template-columns:1fr 1fr 1fr;gap:.7rem}
+    .concern{padding:1.1rem .6rem;font-size:.82rem}
+    .concern .ico{width:42px;height:42px}
+    .finder-result{grid-template-columns:1fr;text-align:center;gap:1.4rem;padding:1.8rem 1.5rem}
+    .finder-result::before{display:none}
+    .finder-main{padding-left:0}
     .finder-result p{margin:0 auto}
-    .finder-side{text-align:center}
+    .finder-side{text-align:center;align-items:center;padding-left:0;border-left:none;border-top:1px solid var(--line);padding-top:1.4rem;width:100%}
     .finder-side .btn{width:100%;justify-content:center}
   }
+  @media(max-width:480px){.concern-grid{grid-template-columns:1fr 1fr}}
 
   .consult{background:var(--blush)}
   .consult-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
@@ -172,7 +187,7 @@
 </head>
 <body>
 
-<div class="demo-bar">✨ This is a <strong>demo site</strong> built by Earvin Laureano to showcase web design. &nbsp;<a href="/work">← Back to portfolio</a> &nbsp;·&nbsp; <a href="/pricing">Get a site like this</a></div>
+<div class="demo-bar">This is a <strong>demo site</strong> built by Earvin Laureano to showcase web design. &nbsp;<a href="/work">← Back to portfolio</a> &nbsp;·&nbsp; <a href="/pricing">Get a site like this</a></div>
 
 <header class="nav">
   <div class="nav-in">
@@ -209,8 +224,8 @@
       </div>
       <div class="hero-card">
         <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80&auto=format&fit=crop" alt="Calm med spa treatment room"/>
-        <div class="badge-float bf-1"><span class="dot">✨</span> Natural results</div>
-        <div class="badge-float bf-2"><span class="dot">🩺</span> Medical-grade</div>
+        <div class="badge-float bf-1"><span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9l-4.7 1.3L12 15l-1.8-4.7L5.5 9l4.7-1.3L12 3Z"/><path d="M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8Z"/></svg></span> Natural results</div>
+        <div class="badge-float bf-2"><span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v5a4 4 0 0 0 8 0V3"/><path d="M6 3H4.5M14 3h1.5"/><path d="M10 16v1.5a3.5 3.5 0 0 0 7 0V15"/><circle cx="18.5" cy="13" r="1.8"/></svg></span> Medical-grade</div>
       </div>
     </div>
   </div>
@@ -329,11 +344,26 @@
     <div class="finder-card">
       <div class="concern-label">What would you like to work on?</div>
       <div class="concern-grid" id="concernGrid">
-        <button type="button" class="concern" data-key="wrinkles"><span class="emo">🙂</span>Fine lines &amp; wrinkles</button>
-        <button type="button" class="concern" data-key="volume"><span class="emo">💧</span>Lost volume</button>
-        <button type="button" class="concern" data-key="texture"><span class="emo">✨</span>Skin texture &amp; tone</button>
-        <button type="button" class="concern" data-key="hair"><span class="emo">🪶</span>Unwanted hair</button>
-        <button type="button" class="concern" data-key="dull"><span class="emo">🌿</span>Tired, dull skin</button>
+        <button type="button" class="concern" data-key="wrinkles">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8c2.5-2 4.5 2 7 0s4.5-2 7 0"/><path d="M3 13c2.5-2 4.5 2 7 0s4.5-2 7 0"/><path d="M3 18c2.5-2 4.5 2 7 0s4.5-2 7 0"/></svg></span>
+          Fine lines &amp; wrinkles
+        </button>
+        <button type="button" class="concern" data-key="volume">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c0 4-5 6.5-5 11a5 5 0 0 0 10 0c0-4.5-5-7-5-11Z"/><path d="M14.5 13.5a2.5 2.5 0 0 1-2.5 2.5"/></svg></span>
+          Lost volume
+        </button>
+        <button type="button" class="concern" data-key="texture">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.6 9 19 10.6 13.6 12.2 12 17.7 10.4 12.2 5 10.6 10.4 9 12 3.5Z"/><path d="M18.5 16.5l.6 2 2 .6-2 .6-.6 2-.6-2-2-.6 2-.6.6-2Z"/></svg></span>
+          Skin texture &amp; tone
+        </button>
+        <button type="button" class="concern" data-key="hair">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3 5 12l-2 6 6-2 9-9"/><path d="m14 3 4 4"/><path d="M19.5 12.5h.01M21 16h.01M16.5 19h.01"/></svg></span>
+          Unwanted hair
+        </button>
+        <button type="button" class="concern" data-key="dull">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8"/></svg></span>
+          Tired, dull skin
+        </button>
       </div>
       <div class="finder-result" id="finderResult">
         <div class="finder-main">
@@ -343,7 +373,7 @@
         </div>
         <div class="finder-side">
           <div class="from"><small>Illustrative, from</small><span id="rPrice">$11 / unit</span></div>
-          <a href="#consult" class="btn">Book a free consultation →</a>
+          <a href="#consult" class="btn">Book a free consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
         </div>
       </div>
       <p class="finder-note">Illustrative only. Your treatment, suitability, and pricing are personalized with a provider at your consultation. This is a general guide, not medical advice or a guaranteed price.</p>
@@ -424,19 +454,31 @@
       dull:{tag:'For tired, dull skin',name:'Signature Facials',desc:'Medical-grade facials and hydrafacials that leave skin glowing, clear, and camera-ready.',price:'$145'}
     };
     var grid=document.getElementById('concernGrid');
+    var result=document.getElementById('finderResult');
     var rTag=document.getElementById('rTag'),rName=document.getElementById('rName'),
         rDesc=document.getElementById('rDesc'),rPrice=document.getElementById('rPrice');
     var buttons=grid.querySelectorAll('.concern');
+    function applyTreatment(t){
+      rTag.textContent=t.tag;
+      rName.textContent=t.name;
+      rDesc.textContent=t.desc;
+      rPrice.textContent=t.price;
+    }
     buttons.forEach(function(btn){
       btn.addEventListener('click',function(){
         var t=treatments[btn.getAttribute('data-key')];
         if(!t)return;
         buttons.forEach(function(b){b.classList.remove('active')});
         btn.classList.add('active');
-        rTag.textContent=t.tag;
-        rName.textContent=t.name;
-        rDesc.textContent=t.desc;
-        rPrice.textContent=t.price;
+        if(result){
+          result.classList.add('swap');
+          window.setTimeout(function(){
+            applyTreatment(t);
+            result.classList.remove('swap');
+          },180);
+        }else{
+          applyTreatment(t);
+        }
       });
     });
     if(buttons[0])buttons[0].classList.add('active');

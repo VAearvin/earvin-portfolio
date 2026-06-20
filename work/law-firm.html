@@ -104,28 +104,46 @@
   .checker-intro p{color:var(--slate);margin-top:1rem}
   .checker-intro ul{list-style:none;margin-top:1.6rem;display:grid;gap:1rem}
   .checker-intro li{display:flex;gap:.8rem;align-items:flex-start;color:var(--slate)}
-  .checker-panel{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:2.3rem;box-shadow:var(--shadow)}
-  .ck-progress{font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:.6rem}
-  .ck-q{font-family:'Playfair Display',serif;font-size:1.4rem;line-height:1.2;color:var(--ink);margin-bottom:1.5rem}
-  .ck-opts{display:grid;gap:.85rem}
-  .ck-opt{display:flex;align-items:center;gap:.8rem;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:1rem 1.15rem;font-family:inherit;font-size:1rem;font-weight:600;color:var(--ink);cursor:pointer;transition:.18s}
-  .ck-opt:hover{border-color:var(--gold);transform:translateY(-1px)}
-  .ck-opt .mk{flex:none;width:26px;height:26px;border-radius:7px;border:1.5px solid var(--line);display:grid;place-items:center;font-size:.85rem;font-weight:800;color:var(--slate);transition:.18s}
+  .checker-intro li .check svg{display:block}
+  .checker-panel{position:relative;background:linear-gradient(180deg,#fffdf9 0%,var(--cream) 100%);border:1px solid var(--line);border-radius:20px;padding:2.4rem;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 30px 70px -28px rgba(15,29,53,.32),0 8px 22px -16px rgba(15,29,53,.22)}
+  .checker-panel::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold) 40%,var(--gold) 60%,transparent);border-radius:20px 20px 0 0;opacity:.55}
+  /* progress */
+  .ck-progress-row{margin-bottom:1.4rem}
+  .ck-progress{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:.6rem}
+  .ck-track{height:4px;border-radius:99px;background:rgba(15,29,53,.09);overflow:hidden}
+  .ck-fill{display:block;height:100%;width:25%;border-radius:99px;background:linear-gradient(90deg,var(--gold-d),var(--gold));box-shadow:0 0 0 1px rgba(168,135,63,.18);transition:width .4s cubic-bezier(.22,.61,.36,1)}
+  .ck-q{font-family:'Playfair Display',serif;font-size:1.5rem;line-height:1.22;color:var(--ink);margin-bottom:1.5rem;transition:opacity .2s ease,transform .2s ease}
+  .ck-q.ck-swap{opacity:0;transform:translateY(6px)}
+  .ck-opts{display:grid;gap:.8rem;transition:opacity .2s ease,transform .2s ease}
+  .ck-opts.ck-swap{opacity:0;transform:translateY(6px)}
+  .ck-opt{display:flex;align-items:center;gap:.85rem;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:1.05rem 1.2rem;font-family:inherit;font-size:1rem;font-weight:600;color:var(--ink);cursor:pointer;box-shadow:0 1px 2px rgba(15,29,53,.04);transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease,background .2s ease}
+  .ck-opt:hover{border-color:var(--gold);background:#fffdf8;transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(15,29,53,.32)}
+  .ck-opt:active{transform:translateY(0)}
+  .ck-opt .mk{flex:none;width:28px;height:28px;border-radius:8px;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--slate);background:var(--cream);transition:.2s}
+  .ck-opt .mk svg{display:block}
   .ck-opt:hover .mk{background:var(--navy);border-color:var(--navy);color:var(--gold)}
-  .ck-back{margin-top:1.4rem;background:none;border:none;color:var(--slate);font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;padding:0}
+  .ck-opt .arr{flex:none;margin-left:auto;color:var(--line);transition:.2s}
+  .ck-opt .arr svg{display:block}
+  .ck-opt:hover .arr{color:var(--gold-d);transform:translateX(3px)}
+  .ck-back{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.5rem;background:none;border:none;color:var(--slate);font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;padding:0;transition:color .2s ease}
+  .ck-back svg{transition:transform .2s ease}
   .ck-back:hover{color:var(--gold-d)}
+  .ck-back:hover svg{transform:translateX(-3px)}
   .ck-back[hidden]{display:none}
   .ck-result{display:none}
-  .ck-result.show{display:block;animation:ckfade .35s ease}
-  @keyframes ckfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .ck-result .badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:var(--gold);font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .8rem;border-radius:6px;margin-bottom:1.1rem}
-  .ck-result h3{font-family:'Playfair Display',serif;font-size:1.55rem;line-height:1.2;color:var(--ink);margin-bottom:.7rem}
+  .ck-result.show{display:block;animation:ckfade .45s cubic-bezier(.22,.61,.36,1)}
+  @keyframes ckfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .ck-badge{display:inline-flex;align-items:center;gap:.45rem;background:var(--navy);color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.45rem .85rem .45rem .7rem;border-radius:99px;margin-bottom:1.15rem;box-shadow:0 6px 16px -10px rgba(15,29,53,.7)}
+  .ck-badge svg{display:block;flex:none}
+  .ck-result h3{font-family:'Playfair Display',serif;font-size:1.62rem;line-height:1.22;color:var(--ink);margin-bottom:.7rem}
   .ck-result p.rmsg{color:var(--slate);font-size:1rem}
-  .ck-result .btn{margin-top:1.5rem;width:100%;justify-content:center}
-  .ck-restart{margin-top:1rem;background:none;border:none;color:var(--slate);font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;text-align:center;width:100%}
+  .ck-result .btn.ck-cta{margin-top:1.6rem;width:100%;justify-content:center;box-shadow:0 14px 30px -12px rgba(168,135,63,.6)}
+  .ck-result .btn.ck-cta svg{transition:transform .2s ease}
+  .ck-result .btn.ck-cta:hover svg{transform:translateX(3px)}
+  .ck-restart{margin-top:1rem;background:none;border:none;color:var(--slate);font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;text-align:center;width:100%;transition:color .2s ease}
   .ck-restart:hover{color:var(--gold-d)}
-  .ck-note{margin-top:1.5rem;font-size:.74rem;color:var(--slate);line-height:1.6;border-top:1px solid var(--line);padding-top:1.1rem}
-  @media(max-width:880px){.checker-grid{grid-template-columns:1fr;gap:2.2rem}.checker-intro h2{font-size:2rem}}
+  .ck-note{margin-top:1.6rem;font-size:.76rem;font-style:italic;color:#6a7488;line-height:1.65;border-top:1px solid var(--line);padding-top:1.15rem}
+  @media(max-width:880px){.checker-grid{grid-template-columns:1fr;gap:2.2rem}.checker-intro h2{font-size:2rem}.checker-panel{padding:1.8rem}}
 
   /* consult */
   .consult{background:var(--cream)}
@@ -284,25 +302,37 @@
         <h2>Do I have a case?</h2>
         <p>Answer a few quick questions and get a clear sense of where you stand. No name, no phone, no commitment. Just a simple guide to help you decide your next step.</p>
         <ul>
-          <li><span class="check">✓</span><span>Takes about 2 minutes</span></li>
-          <li><span class="check">✓</span><span>Nothing to fill in, just tap your answers</span></li>
-          <li><span class="check">✓</span><span>Your answers stay on this page</span></li>
+          <li><span class="check"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12.5 9.5 18 20 6"/></svg></span><span>Takes about 2 minutes</span></li>
+          <li><span class="check"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12.5 9.5 18 20 6"/></svg></span><span>Nothing to fill in, just tap your answers</span></li>
+          <li><span class="check"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12.5 9.5 18 20 6"/></svg></span><span>Your answers stay on this page</span></li>
         </ul>
       </div>
 
       <div class="checker-panel">
         <div id="ckQuiz">
-          <div class="ck-progress" id="ckProgress">Question 1 of 4</div>
+          <div class="ck-progress-row">
+            <div class="ck-progress" id="ckProgress">Question 1 of 4</div>
+            <div class="ck-track" aria-hidden="true"><span class="ck-fill" id="ckProgressFill"></span></div>
+          </div>
           <div class="ck-q" id="ckQuestion">Were you injured within the last 2 years?</div>
           <div class="ck-opts" id="ckOpts"></div>
-          <button type="button" class="ck-back" id="ckBack" hidden>← Back</button>
+          <button type="button" class="ck-back" id="ckBack" hidden>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="11 18 5 12 11 6"/></svg>
+            <span>Back</span>
+          </button>
         </div>
 
         <div class="ck-result" id="ckResult">
-          <span class="badge" id="ckBadge">⚖️ Your result</span>
+          <span class="ck-badge">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M7 7l-3 6a3 3 0 0 0 6 0z"/><path d="M17 7l-3 6a3 3 0 0 0 6 0z"/></svg>
+            <span id="ckBadge">Your result</span>
+          </span>
           <h3 id="ckResultTitle"></h3>
           <p class="rmsg" id="ckResultMsg"></p>
-          <a href="#consult" class="btn">Get My Free Case Review →</a>
+          <a href="#consult" class="btn ck-cta">
+            <span>Get My Free Case Review</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+          </a>
           <button type="button" class="ck-restart" id="ckRestart">Start over</button>
         </div>
 
@@ -395,53 +425,67 @@
     var quiz=document.getElementById('ckQuiz');
     var result=document.getElementById('ckResult');
     var progressEl=document.getElementById('ckProgress');
+    var progressFill=document.getElementById('ckProgressFill');
     var questionEl=document.getElementById('ckQuestion');
     var optsEl=document.getElementById('ckOpts');
     var backBtn=document.getElementById('ckBack');
 
+    var SVG_CHECK='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12.5 9.5 18 20 6"/></svg>';
+    var SVG_QUERY='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.2 9a2.8 2.8 0 1 1 4 2.5c-.9.5-1.7 1-1.7 2.2"/><line x1="11.5" y1="17.4" x2="11.5" y2="17.4"/></svg>';
+    var SVG_CHEV='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>';
+
     function render(){
       var cur=questions[step];
       progressEl.textContent='Question '+(step+1)+' of '+questions.length;
+      if(progressFill){ progressFill.style.width=Math.round((step+1)/questions.length*100)+'%'; }
       questionEl.textContent=cur.q;
       optsEl.innerHTML='';
       cur.opts.forEach(function(o){
         var b=document.createElement('button');
         b.type='button';
         b.className='ck-opt';
-        b.innerHTML='<span class="mk">'+(o.good?'✓':'?')+'</span><span>'+o.t+'</span>';
+        b.innerHTML='<span class="mk">'+(o.good?SVG_CHECK:SVG_QUERY)+'</span><span>'+o.t+'</span><span class="arr">'+SVG_CHEV+'</span>';
         b.addEventListener('click',function(){ choose(o.good); });
         optsEl.appendChild(b);
       });
       backBtn.hidden = step===0;
+      questionEl.classList.remove('ck-swap');
+      optsEl.classList.remove('ck-swap');
+    }
+
+    function swapTo(fn){
+      questionEl.classList.add('ck-swap');
+      optsEl.classList.add('ck-swap');
+      setTimeout(fn,200);
     }
 
     function choose(good){
       answers[step]=good;
       if(step < questions.length-1){
         step++;
-        render();
+        swapTo(render);
       } else {
         finish();
       }
     }
 
     backBtn.addEventListener('click',function(){
-      if(step>0){ step--; render(); }
+      if(step>0){ step--; swapTo(render); }
     });
 
     function finish(){
       var goodCount=answers.filter(function(a){return a;}).length;
       var title, msg, badge;
       if(goodCount===questions.length){
-        badge='⚖️ Looks promising';
+        badge='Looks promising';
         title='Based on your answers, you may have a strong claim.';
         msg='The best next step is a free, no-pressure case review. An attorney can look at the details and tell you exactly where you stand.';
       } else if(goodCount>=2){
-        badge='⚖️ You may have options';
+        badge='You may have options';
         title='You might still have a case worth pursuing.';
         msg='A few answers point one way and others point another. That is normal. A free review is the only way to know for sure, and it costs you nothing.';
       } else {
-        badge='⚖️ Worth a closer look';
+        badge='Worth a closer look';
         title='It is hard to tell from these answers alone.';
         msg='Some cases that look unclear at first still have options. A short, free review with an attorney is the surest way to find out.';
       }

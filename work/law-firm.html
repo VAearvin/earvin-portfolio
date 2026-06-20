@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Sterling &amp; Vale — Trial Attorneys for the Injured</title>
-<meta name="description" content="Sterling & Vale — trial attorneys who fight for the seriously injured. No fee unless we win. Free case review, 24/7."/>
+<title>Sterling &amp; Vale, Trial Attorneys for the Injured</title>
+<meta name="description" content="Sterling & Vale, trial attorneys who fight for the seriously injured. No fee unless we win. Free case review, 24/7."/>
 <meta name="robots" content="noindex"/>
 <meta name="theme-color" content="#0f1d35"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -97,6 +97,36 @@
   .tm .who small{display:block;color:var(--slate)}
   @media(max-width:880px){.tm-grid{grid-template-columns:1fr}}
 
+  /* case checker */
+  .checker{background:#fff}
+  .checker-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+  .checker-intro h2{font-size:2.3rem}
+  .checker-intro p{color:var(--slate);margin-top:1rem}
+  .checker-intro ul{list-style:none;margin-top:1.6rem;display:grid;gap:1rem}
+  .checker-intro li{display:flex;gap:.8rem;align-items:flex-start;color:var(--slate)}
+  .checker-panel{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:2.3rem;box-shadow:var(--shadow)}
+  .ck-progress{font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:.6rem}
+  .ck-q{font-family:'Playfair Display',serif;font-size:1.4rem;line-height:1.2;color:var(--ink);margin-bottom:1.5rem}
+  .ck-opts{display:grid;gap:.85rem}
+  .ck-opt{display:flex;align-items:center;gap:.8rem;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:1rem 1.15rem;font-family:inherit;font-size:1rem;font-weight:600;color:var(--ink);cursor:pointer;transition:.18s}
+  .ck-opt:hover{border-color:var(--gold);transform:translateY(-1px)}
+  .ck-opt .mk{flex:none;width:26px;height:26px;border-radius:7px;border:1.5px solid var(--line);display:grid;place-items:center;font-size:.85rem;font-weight:800;color:var(--slate);transition:.18s}
+  .ck-opt:hover .mk{background:var(--navy);border-color:var(--navy);color:var(--gold)}
+  .ck-back{margin-top:1.4rem;background:none;border:none;color:var(--slate);font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;padding:0}
+  .ck-back:hover{color:var(--gold-d)}
+  .ck-back[hidden]{display:none}
+  .ck-result{display:none}
+  .ck-result.show{display:block;animation:ckfade .35s ease}
+  @keyframes ckfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .ck-result .badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:var(--gold);font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .8rem;border-radius:6px;margin-bottom:1.1rem}
+  .ck-result h3{font-family:'Playfair Display',serif;font-size:1.55rem;line-height:1.2;color:var(--ink);margin-bottom:.7rem}
+  .ck-result p.rmsg{color:var(--slate);font-size:1rem}
+  .ck-result .btn{margin-top:1.5rem;width:100%;justify-content:center}
+  .ck-restart{margin-top:1rem;background:none;border:none;color:var(--slate);font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;text-align:center;width:100%}
+  .ck-restart:hover{color:var(--gold-d)}
+  .ck-note{margin-top:1.5rem;font-size:.74rem;color:var(--slate);line-height:1.6;border-top:1px solid var(--line);padding-top:1.1rem}
+  @media(max-width:880px){.checker-grid{grid-template-columns:1fr;gap:2.2rem}.checker-intro h2{font-size:2rem}}
+
   /* consult */
   .consult{background:var(--cream)}
   .consult-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
@@ -136,6 +166,7 @@
       <a href="#practice">Practice Areas</a>
       <a href="#why">Why Us</a>
       <a href="#results">Results</a>
+      <a href="#case-check">Do I Have a Case?</a>
       <a href="#reviews">Reviews</a>
     </nav>
     <div class="nav-cta">
@@ -245,6 +276,44 @@
   </div>
 </section>
 
+<section id="case-check" class="checker">
+  <div class="wrap">
+    <div class="checker-grid">
+      <div class="checker-intro">
+        <span class="eyebrow">2-Minute Check</span>
+        <h2>Do I have a case?</h2>
+        <p>Answer a few quick questions and get a clear sense of where you stand. No name, no phone, no commitment. Just a simple guide to help you decide your next step.</p>
+        <ul>
+          <li><span class="check">✓</span><span>Takes about 2 minutes</span></li>
+          <li><span class="check">✓</span><span>Nothing to fill in, just tap your answers</span></li>
+          <li><span class="check">✓</span><span>Your answers stay on this page</span></li>
+        </ul>
+      </div>
+
+      <div class="checker-panel">
+        <div id="ckQuiz">
+          <div class="ck-progress" id="ckProgress">Question 1 of 4</div>
+          <div class="ck-q" id="ckQuestion">Were you injured within the last 2 years?</div>
+          <div class="ck-opts" id="ckOpts"></div>
+          <button type="button" class="ck-back" id="ckBack" hidden>← Back</button>
+        </div>
+
+        <div class="ck-result" id="ckResult">
+          <span class="badge" id="ckBadge">⚖️ Your result</span>
+          <h3 id="ckResultTitle"></h3>
+          <p class="rmsg" id="ckResultMsg"></p>
+          <a href="#consult" class="btn">Get My Free Case Review →</a>
+          <button type="button" class="ck-restart" id="ckRestart">Start over</button>
+        </div>
+
+        <div class="ck-note">
+          This is a general guide, not legal advice. Every case is different, and the only way to know for sure is a free case review with an attorney. Results shown here are illustrative only.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="consult" class="consult">
   <div class="wrap">
     <div class="consult-grid">
@@ -305,9 +374,93 @@
 <script>
   document.getElementById('consultForm').addEventListener('submit',function(e){
     e.preventDefault();
-    document.getElementById('cmsg').textContent='✓ Thanks — in a real build, this would reach the firm instantly. (Demo only.)';
+    document.getElementById('cmsg').textContent='✓ Thanks. In a real build, this would reach the firm instantly. (Demo only.)';
     this.querySelector('button').textContent='Request Received ✓';
   });
+
+  (function(){
+    // Each question: the answer that points TOWARD a likely claim is "good:true".
+    var questions=[
+      {q:'Were you injured within the last 2 years?',
+       opts:[{t:'Yes',good:true},{t:'No, or I\'m not sure',good:false}]},
+      {q:'Was someone else mostly at fault?',
+       opts:[{t:'Yes',good:true},{t:'Not sure',good:false},{t:'No, it was mostly me',good:false}]},
+      {q:'Did you see a doctor or go to a hospital?',
+       opts:[{t:'Yes',good:true},{t:'Not yet',good:false}]},
+      {q:'Have you already settled or signed anything about this injury?',
+       opts:[{t:'No',good:true},{t:'Yes, or I\'m not sure',good:false}]}
+    ];
+
+    var step=0, answers=[];
+    var quiz=document.getElementById('ckQuiz');
+    var result=document.getElementById('ckResult');
+    var progressEl=document.getElementById('ckProgress');
+    var questionEl=document.getElementById('ckQuestion');
+    var optsEl=document.getElementById('ckOpts');
+    var backBtn=document.getElementById('ckBack');
+
+    function render(){
+      var cur=questions[step];
+      progressEl.textContent='Question '+(step+1)+' of '+questions.length;
+      questionEl.textContent=cur.q;
+      optsEl.innerHTML='';
+      cur.opts.forEach(function(o){
+        var b=document.createElement('button');
+        b.type='button';
+        b.className='ck-opt';
+        b.innerHTML='<span class="mk">'+(o.good?'✓':'?')+'</span><span>'+o.t+'</span>';
+        b.addEventListener('click',function(){ choose(o.good); });
+        optsEl.appendChild(b);
+      });
+      backBtn.hidden = step===0;
+    }
+
+    function choose(good){
+      answers[step]=good;
+      if(step < questions.length-1){
+        step++;
+        render();
+      } else {
+        finish();
+      }
+    }
+
+    backBtn.addEventListener('click',function(){
+      if(step>0){ step--; render(); }
+    });
+
+    function finish(){
+      var goodCount=answers.filter(function(a){return a;}).length;
+      var title, msg, badge;
+      if(goodCount===questions.length){
+        badge='⚖️ Looks promising';
+        title='Based on your answers, you may have a strong claim.';
+        msg='The best next step is a free, no-pressure case review. An attorney can look at the details and tell you exactly where you stand.';
+      } else if(goodCount>=2){
+        badge='⚖️ You may have options';
+        title='You might still have a case worth pursuing.';
+        msg='A few answers point one way and others point another. That is normal. A free review is the only way to know for sure, and it costs you nothing.';
+      } else {
+        badge='⚖️ Worth a closer look';
+        title='It is hard to tell from these answers alone.';
+        msg='Some cases that look unclear at first still have options. A short, free review with an attorney is the surest way to find out.';
+      }
+      document.getElementById('ckBadge').textContent=badge;
+      document.getElementById('ckResultTitle').textContent=title;
+      document.getElementById('ckResultMsg').textContent=msg;
+      quiz.style.display='none';
+      result.classList.add('show');
+    }
+
+    document.getElementById('ckRestart').addEventListener('click',function(){
+      step=0; answers=[];
+      result.classList.remove('show');
+      quiz.style.display='';
+      render();
+    });
+
+    render();
+  })();
 </script>
 </body>
 </html>

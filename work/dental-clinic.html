@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Northgate Dental Studio — Modern Family & Cosmetic Dentistry</title>
-<meta name="description" content="Northgate Dental Studio — gentle, modern dentistry for the whole family. Same-week appointments, transparent pricing, and a calm, spa-like experience."/>
+<title>Northgate Dental Studio, Modern Family & Cosmetic Dentistry</title>
+<meta name="description" content="Northgate Dental Studio, gentle, modern dentistry for the whole family. Same-week appointments, transparent pricing, and a calm, spa-like experience."/>
 <meta name="robots" content="noindex"/>
 <meta name="theme-color" content="#0d9488"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -117,6 +117,39 @@
   .price.feat ul li:before{color:#6ee7b7}
   @media(max-width:860px){.price-grid{grid-template-columns:1fr}}
 
+  /* savings calculator */
+  .calc{background:var(--mist)}
+  .calc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2.6rem;align-items:stretch}
+  .calc-panel{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:2rem}
+  .calc-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+  .calc-row:last-child{border-bottom:none}
+  .calc-row .lbl b{display:block;font-size:1.02rem;color:var(--ink)}
+  .calc-row .lbl small{color:var(--slate);font-size:.85rem}
+  .stepper{display:flex;align-items:center;gap:.4rem;flex:none}
+  .stepper button{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:#fff;color:var(--teal);font-size:1.2rem;font-weight:700;cursor:pointer;display:grid;place-items:center;transition:.2s;line-height:1}
+  .stepper button:hover:not(:disabled){background:var(--mist);border-color:var(--teal)}
+  .stepper button:disabled{opacity:.35;cursor:not-allowed}
+  .stepper .val{font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem;min-width:1.8rem;text-align:center}
+  .toggle{display:flex;gap:.5rem;flex:none}
+  .toggle button{padding:.55rem 1.1rem;border-radius:100px;border:1.5px solid var(--line);background:#fff;color:var(--slate);font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif}
+  .toggle button.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+  .toggle button:hover:not(.on){background:var(--mist)}
+  .calc-result{background:linear-gradient(160deg,var(--teal),var(--teal-d));color:#fff;border-radius:var(--r);padding:2.2rem;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+  .calc-result .rtag{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d1fae5;margin-bottom:1.3rem}
+  .calc-line{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0;font-size:1rem}
+  .calc-line span{color:#d1fae5}
+  .calc-line b{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;color:#fff}
+  .calc-divide{height:1px;background:rgba(255,255,255,.18);margin:.6rem 0}
+  .save-box{background:rgba(255,255,255,.12);border-radius:14px;padding:1.3rem;text-align:center;margin:1.3rem 0 1rem}
+  .save-box small{display:block;color:#d1fae5;font-size:.85rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .save-box .big{font-family:'Fraunces',serif;font-size:2.8rem;font-weight:600;line-height:1.1;margin-top:.3rem}
+  .save-box p{font-size:.92rem;color:#eafaf6;margin-top:.5rem;opacity:.95}
+  .calc-result .btn{background:#fff;color:var(--teal-d);width:100%;justify-content:center;margin-top:auto}
+  .calc-result .btn:hover{background:var(--mist)}
+  .calc-note{font-size:.82rem;color:var(--slate);margin-top:1.4rem;display:flex;gap:.5rem;align-items:flex-start}
+  .calc-note span{flex:none}
+  @media(max-width:860px){.calc-grid{grid-template-columns:1fr}}
+
   /* cta */
   .cta{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;text-align:center;border-radius:28px;padding:4rem 2rem;margin:0 auto}
   .cta h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:1rem}
@@ -147,6 +180,7 @@
       <a href="#services">Services</a>
       <a href="#why">Why Us</a>
       <a href="#pricing">Pricing</a>
+      <a href="#savings">Savings</a>
       <a href="#reviews">Reviews</a>
     </nav>
     <div class="nav-cta">
@@ -161,7 +195,7 @@
       <div>
         <span class="eyebrow">Family &amp; Cosmetic Dentistry</span>
         <h1>Dentistry that feels<br/><em>calm, not clinical.</em></h1>
-        <p class="lede">Gentle, modern care for the whole family — with same-week appointments, honest pricing, and a team that actually remembers your name.</p>
+        <p class="lede">Gentle, modern care for the whole family, with same-week appointments, honest pricing, and a team that actually remembers your name.</p>
         <div class="hero-actions">
           <a href="/work/dental-booking" class="btn">Book Your First Visit →</a>
           <a href="tel:+10000000000" class="btn btn-ghost">📞 (000) 000-0000</a>
@@ -193,13 +227,13 @@
     <div class="sec-head">
       <span class="eyebrow">What We Do</span>
       <h2>Everything your smile needs, under one roof</h2>
-      <p>From routine cleanings to full smile makeovers — comfortable, modern, and tailored to you.</p>
+      <p>From routine cleanings to full smile makeovers, comfortable, modern, and tailored to you.</p>
     </div>
     <div class="svc-grid">
       <div class="svc"><div class="ic"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80&auto=format&fit=crop" alt="General dentistry"/></div><h3>General Dentistry</h3><p>Checkups, cleanings, fillings, and preventive care that keeps small issues from becoming big ones.</p></div>
       <div class="svc"><div class="ic"><img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&q=80&auto=format&fit=crop" alt="Cosmetic and whitening"/></div><h3>Cosmetic &amp; Whitening</h3><p>Veneers, bonding, and professional whitening that brighten your smile in a single visit.</p></div>
       <div class="svc"><div class="ic"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80&auto=format&fit=crop" alt="Implants and crowns"/></div><h3>Implants &amp; Crowns</h3><p>Natural-looking, permanent replacements that restore your bite and your confidence.</p></div>
-      <div class="svc"><div class="ic"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80&auto=format&fit=crop" alt="Kids dentistry"/></div><h3>Kids' Dentistry</h3><p>Gentle, friendly visits that help your little ones build healthy habits — and zero fear.</p></div>
+      <div class="svc"><div class="ic"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80&auto=format&fit=crop" alt="Kids dentistry"/></div><h3>Kids' Dentistry</h3><p>Gentle, friendly visits that help your little ones build healthy habits, and zero fear.</p></div>
       <div class="svc"><div class="ic"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80&auto=format&fit=crop" alt="Invisible aligners"/></div><h3>Invisible Aligners</h3><p>Straighten your teeth discreetly with clear aligners, custom-fit and monitored every step.</p></div>
       <div class="svc"><div class="ic"><img src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?w=600&q=80&auto=format&fit=crop" alt="Emergency dental care"/></div><h3>Emergency Care</h3><p>Sudden pain or a broken tooth? We keep same-day slots open so you're never left waiting.</p></div>
     </div>
@@ -213,7 +247,7 @@
       <div>
         <span class="eyebrow">Why Northgate</span>
         <h2 style="font-size:2.2rem">Care that's gentle, honest, and on your schedule</h2>
-        <p style="color:var(--slate);margin-top:1rem">We built Northgate around the things people dread about the dentist — and fixed every one of them.</p>
+        <p style="color:var(--slate);margin-top:1rem">We built Northgate around the things people dread about the dentist, and fixed every one of them.</p>
         <ul>
           <li><span class="check">✓</span><span><b>No surprise bills.</b> You see the price before we start. Always.</span></li>
           <li><span class="check">✓</span><span><b>Same-week appointments.</b> Real availability, not a three-week wait.</span></li>
@@ -234,7 +268,7 @@
     </div>
     <div class="tm-grid">
       <div class="tm"><div class="stars">★★★★★</div><p>"I've never said this about a dentist before, but I actually look forward to my visits. The whole team is so warm and the office is beautiful."</p><div class="who"><div class="av">SM</div><div>Sarah M.<small>Patient since 2021</small></div></div></div>
-      <div class="tm"><div class="stars">★★★★★</div><p>"They quoted me the exact price upfront — no games. My kids aren't scared anymore either. Genuinely the best dental experience we've had."</p><div class="who"><div class="av">DR</div><div>David R.<small>Family of four</small></div></div></div>
+      <div class="tm"><div class="stars">★★★★★</div><p>"They quoted me the exact price upfront, no games. My kids aren't scared anymore either. Genuinely the best dental experience we've had."</p><div class="who"><div class="av">DR</div><div>David R.<small>Family of four</small></div></div></div>
       <div class="tm"><div class="stars">★★★★★</div><p>"Chipped my tooth on a Friday and they saw me that afternoon. Painless, fast, and friendly. Can't recommend Northgate enough."</p><div class="who"><div class="av">AL</div><div>Amara L.<small>Emergency patient</small></div></div></div>
     </div>
   </div>
@@ -245,7 +279,7 @@
     <div class="sec-head">
       <span class="eyebrow">Simple Pricing</span>
       <h2>Honest prices, no surprises</h2>
-      <p>Membership plans that make great dental care affordable — with or without insurance.</p>
+      <p>Membership plans that make great dental care affordable, with or without insurance.</p>
     </div>
     <div class="price-grid">
       <div class="price">
@@ -273,6 +307,67 @@
   </div>
 </section>
 
+<section id="savings" class="calc">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Membership Savings</span>
+      <h2>See what a membership could save you</h2>
+      <p>Tell us what you expect in a year. We will compare paying as you go with the flat-rate Northgate membership, live.</p>
+    </div>
+    <div class="calc-grid">
+      <div class="calc-panel">
+        <div class="calc-row">
+          <div class="lbl"><b>Cleanings</b><small>About $120 each</small></div>
+          <div class="stepper" data-key="cleanings">
+            <button type="button" data-dir="-1" aria-label="Fewer cleanings">−</button>
+            <span class="val" id="val-cleanings">2</span>
+            <button type="button" data-dir="1" aria-label="More cleanings">+</button>
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="lbl"><b>Exams</b><small>About $75 each</small></div>
+          <div class="stepper" data-key="exams">
+            <button type="button" data-dir="-1" aria-label="Fewer exams">−</button>
+            <span class="val" id="val-exams">2</span>
+            <button type="button" data-dir="1" aria-label="More exams">+</button>
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="lbl"><b>X-rays</b><small>About $90 for the year</small></div>
+          <div class="toggle" data-key="xrays">
+            <button type="button" data-val="1" class="on">Yes</button>
+            <button type="button" data-val="0">No</button>
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="lbl"><b>Whitening treatment</b><small>About $450</small></div>
+          <div class="toggle" data-key="whitening">
+            <button type="button" data-val="1">Yes</button>
+            <button type="button" data-val="0" class="on">No</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-result">
+        <div class="rtag">Your estimate</div>
+        <div class="calc-line"><span>Pay as you go</span><b id="r-payg">$390 / yr</b></div>
+        <div class="calc-divide"></div>
+        <div class="calc-line"><span>With Northgate membership</span><b id="r-member">$349 / yr</b></div>
+        <div class="save-box">
+          <small id="r-save-label">You save</small>
+          <div class="big" id="r-save">$41</div>
+          <p id="r-msg">Membership covers your routine care plus a discount on extras.</p>
+        </div>
+        <a href="#book" class="btn">Become a Member →</a>
+        <div class="calc-note">
+          <span>ℹ️</span>
+          <p>Illustrative estimate only. Real prices depend on your needs and plan. Ask us for exact pricing, this is a general guide and not a quote.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="book">
   <div class="wrap">
     <div class="cta">
@@ -292,13 +387,103 @@
       </div>
       <div><h4>Services</h4><a href="#services">General Dentistry</a><a href="#services">Cosmetic</a><a href="#services">Implants</a><a href="#services">Aligners</a></div>
       <div><h4>Clinic</h4><a href="#why">Why Northgate</a><a href="#reviews">Reviews</a><a href="#pricing">Pricing</a><a href="#book">Book Now</a></div>
-      <div><h4>Visit</h4><a href="#">123 Northgate Ave</a><a href="#">Mon–Sat · 8–6</a><a href="tel:#">(000) 000-0000</a></div>
+      <div><h4>Visit</h4><a href="#">123 Northgate Ave</a><a href="#">Mon to Sat · 8 to 6</a><a href="tel:#">(000) 000-0000</a></div>
     </div>
     <div class="foot-bottom">
       Demo site designed &amp; built by <a href="/" style="color:#fff;text-decoration:underline;display:inline">Earvin Laureano</a> · Not a real business · <a href="/work" style="color:#fff;text-decoration:underline;display:inline">See more work</a>
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var PRICE = { cleaning:120, exam:75, xrays:90, whitening:450 };
+  var MEMBER_FEE = 349;        // flat yearly membership, illustrative
+  var EXTRA_DISCOUNT = 0.25;   // member discount on items beyond routine care
+  var ROUTINE = { cleanings:2, exams:2, xrays:1 }; // what the membership covers
+
+  var state = { cleanings:2, exams:2, xrays:1, whitening:0 };
+  var MAX = { cleanings:4, exams:4 };
+
+  function money(n){ return '$' + Math.round(n).toLocaleString(); }
+
+  function compute(){
+    // Pay as you go: full price for everything chosen
+    var payg = state.cleanings*PRICE.cleaning
+             + state.exams*PRICE.exam
+             + state.xrays*PRICE.xrays
+             + state.whitening*PRICE.whitening;
+
+    // Membership: flat fee covers routine care up to the included amounts,
+    // anything beyond that plus whitening gets the member discount.
+    var extraCleanings = Math.max(0, state.cleanings - ROUTINE.cleanings);
+    var extraExams = Math.max(0, state.exams - ROUTINE.exams);
+    var extras = extraCleanings*PRICE.cleaning
+               + extraExams*PRICE.exam
+               + state.whitening*PRICE.whitening;
+    var member = MEMBER_FEE + extras*(1 - EXTRA_DISCOUNT);
+
+    return { payg:payg, member:member, save:payg - member };
+  }
+
+  function render(){
+    document.getElementById('val-cleanings').textContent = state.cleanings;
+    document.getElementById('val-exams').textContent = state.exams;
+
+    var r = compute();
+    document.getElementById('r-payg').textContent = money(r.payg) + ' / yr';
+    document.getElementById('r-member').textContent = money(r.member) + ' / yr';
+
+    var label = document.getElementById('r-save-label');
+    var big = document.getElementById('r-save');
+    var msg = document.getElementById('r-msg');
+
+    if(r.save > 0){
+      label.textContent = 'You save';
+      big.textContent = money(r.save);
+      msg.textContent = 'Membership covers your routine care plus a discount on extras.';
+    } else {
+      label.textContent = 'Heads up';
+      big.textContent = money(0);
+      msg.textContent = 'For this much care, paying as you go may cost about the same or less. We are happy to walk you through the best fit, no pressure.';
+    }
+
+    // disable steppers at their limits
+    document.querySelectorAll('.stepper').forEach(function(s){
+      var key = s.getAttribute('data-key');
+      s.querySelector('[data-dir="-1"]').disabled = state[key] <= 0;
+      s.querySelector('[data-dir="1"]').disabled = state[key] >= MAX[key];
+    });
+  }
+
+  document.querySelectorAll('.stepper').forEach(function(s){
+    var key = s.getAttribute('data-key');
+    s.querySelectorAll('button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var dir = parseInt(btn.getAttribute('data-dir'), 10);
+        var next = state[key] + dir;
+        if(next < 0 || next > MAX[key]) return;
+        state[key] = next;
+        render();
+      });
+    });
+  });
+
+  document.querySelectorAll('.toggle').forEach(function(t){
+    var key = t.getAttribute('data-key');
+    t.querySelectorAll('button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        state[key] = parseInt(btn.getAttribute('data-val'), 10);
+        t.querySelectorAll('button').forEach(function(b){ b.classList.remove('on'); });
+        btn.classList.add('on');
+        render();
+      });
+    });
+  });
+
+  render();
+})();
+</script>
 
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Atlas &amp; Oak — Custom Homes &amp; Design-Build</title>
-<meta name="description" content="Atlas & Oak — custom homes, whole-home renovations, and design-build craftsmanship. One team from blueprint to keys. Book a design consultation."/>
+<title>Atlas &amp; Oak · Custom Homes &amp; Design-Build</title>
+<meta name="description" content="Atlas & Oak, custom homes, whole-home renovations, and design-build craftsmanship. One team from blueprint to keys. Book a design consultation."/>
 <meta name="robots" content="noindex"/>
 <meta name="theme-color" content="#181613"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -102,6 +102,38 @@
   .tm .av{width:44px;height:44px;border-radius:50%;background:var(--char);color:var(--stone);display:grid;place-items:center;font-weight:700;font-family:'Fraunces',serif}
   .tm .who small{display:block;color:var(--slate)}
   @media(max-width:880px){.tm-grid{grid-template-columns:1fr}}
+
+  .estimate{background:var(--char);color:#fff}
+  .est-shell{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:stretch}
+  .est-panel{background:var(--char-2);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:2.3rem}
+  .est-panel .eyebrow{color:var(--stone)}
+  .est-panel h3{color:#fff;font-size:1.4rem;margin-bottom:1.6rem}
+  .est-label{display:block;font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#a99e8f;margin:1.6rem 0 .7rem}
+  .est-label:first-of-type{margin-top:0}
+  .est-sqft{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.4rem}
+  .est-sqft b{font-family:'Fraunces',serif;font-size:2.2rem;color:var(--stone);line-height:1}
+  .est-sqft span{color:#a99e8f;font-size:.92rem}
+  input[type=range].est-range{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:6px;background:#3a352d;outline:none;cursor:pointer}
+  input[type=range].est-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:var(--stone);border:3px solid var(--char-2);box-shadow:0 2px 8px rgba(0,0,0,.4);cursor:pointer}
+  input[type=range].est-range::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--stone);border:3px solid var(--char-2);cursor:pointer}
+  .est-ticks{display:flex;justify-content:space-between;font-size:.74rem;color:#7a6f60;margin-top:.6rem}
+  .est-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+  .est-tier{background:#1c1915;border:1.5px solid rgba(255,255,255,.1);border-radius:var(--r);padding:1rem .8rem;text-align:center;cursor:pointer;transition:.2s}
+  .est-tier:hover{border-color:var(--stone)}
+  .est-tier.active{border-color:var(--stone);background:#241f18}
+  .est-tier b{display:block;font-family:'Fraunces',serif;font-size:1.05rem;color:#fff;margin-bottom:.2rem}
+  .est-tier small{display:block;color:#a99e8f;font-size:.78rem}
+  .est-result{background:var(--char-2);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:2.3rem;display:flex;flex-direction:column}
+  .est-result .eyebrow{color:var(--stone)}
+  .est-result .rlabel{color:#a99e8f;font-size:.95rem;margin-bottom:.4rem}
+  .est-total{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--stone);line-height:1.12;margin-bottom:.4rem}
+  .est-perft{color:#a99e8f;font-size:.92rem;margin-bottom:1.6rem}
+  .est-note{background:#1c1915;border:1px solid rgba(176,141,91,.28);border-radius:var(--r);padding:1rem 1.1rem;font-size:.86rem;color:#cabfb0;line-height:1.55;margin-bottom:1.6rem}
+  .est-note b{color:var(--stone)}
+  .est-result .btn{justify-content:center;margin-top:auto}
+  .est-fine{font-size:.74rem;color:#7a6f60;margin-top:1rem;text-align:center;line-height:1.55}
+  @media(max-width:880px){.est-shell{grid-template-columns:1fr;gap:1.4rem}}
+  @media(max-width:420px){.est-tiers{grid-template-columns:1fr}}
 
   .consult-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
   .consult-form{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:2.3rem;box-shadow:var(--shadow)}
@@ -255,6 +287,43 @@
   </div>
 </section>
 
+<section id="estimate" class="estimate">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" style="color:var(--stone)">Plan Your Budget</span>
+      <h2 style="color:#fff">Estimate your build</h2>
+      <p style="color:#a99e8f">Drag the size and pick a finish tier to see a rough budget range. It's a starting point for the conversation, not a quote.</p>
+    </div>
+    <div class="est-shell">
+      <div class="est-panel">
+        <h3>Shape your project</h3>
+
+        <span class="est-label">Home size</span>
+        <div class="est-sqft"><b id="estSqftLabel">3,000</b><span>sq ft</span></div>
+        <input type="range" class="est-range" id="estSqft" min="1500" max="6000" step="100" value="3000" aria-label="Home size in square feet"/>
+        <div class="est-ticks"><span>1,500 sq ft</span><span>6,000 sq ft</span></div>
+
+        <span class="est-label">Finish tier</span>
+        <div class="est-tiers" id="estTiers">
+          <button type="button" class="est-tier active" data-tier="signature"><b>Signature</b><small>$250 to $325 / sq ft</small></button>
+          <button type="button" class="est-tier" data-tier="premium"><b>Premium</b><small>$325 to $425 / sq ft</small></button>
+          <button type="button" class="est-tier" data-tier="bespoke"><b>Bespoke</b><small>$425 to $600 / sq ft</small></button>
+        </div>
+      </div>
+
+      <div class="est-result">
+        <span class="eyebrow">Your Estimate</span>
+        <div class="rlabel">Estimated build budget</div>
+        <div class="est-total" id="estTotal">$750,000 to $975,000</div>
+        <div class="est-perft" id="estPerFt">Signature finish · $250 to $325 per sq ft</div>
+        <div class="est-note"><b>This is an illustrative estimate to start the conversation, not a quote.</b> Your real number depends on your site, design, and selections. We'll work out an honest budget together at your consultation.</div>
+        <a href="#consult" class="btn">Start your design consultation →</a>
+        <p class="est-fine">Illustrative only. Figures are sample ranges for a general guide and are not financial advice or a guaranteed price.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="consult">
   <div class="wrap">
     <div class="consult-grid">
@@ -306,7 +375,7 @@
       </div>
       <div><h4>Build</h4><a href="#work">Custom Homes</a><a href="#work">Renovations</a><a href="#work">Kitchens &amp; Baths</a><a href="#work">Additions</a></div>
       <div><h4>Studio</h4><a href="#process">Process</a><a href="#why">Why Us</a><a href="#reviews">Reviews</a><a href="#consult">Start a Project</a></div>
-      <div><h4>Visit</h4><a href="#">410 Mill Works Road</a><a href="#">Mon–Fri · 8–5</a><a href="tel:#">(000) 000-0000</a></div>
+      <div><h4>Visit</h4><a href="#">410 Mill Works Road</a><a href="#">Mon to Fri · 8 to 5</a><a href="tel:#">(000) 000-0000</a></div>
     </div>
     <div class="foot-bottom">
       Demo site designed &amp; built by <a href="/" style="color:#fff;text-decoration:underline;display:inline">Earvin Laureano</a> · Not a real business · <a href="/work" style="color:#fff;text-decoration:underline;display:inline">See more work</a>
@@ -318,9 +387,41 @@
 <script>
   document.getElementById('consultForm').addEventListener('submit',function(e){
     e.preventDefault();
-    document.getElementById('cmsg').textContent='✓ Thanks — in a real build, this would reach the studio and start a project file. (Demo only.)';
+    document.getElementById('cmsg').textContent='✓ Thanks, in a real build, this would reach the studio and start a project file. (Demo only.)';
     this.querySelector('button').textContent='Consultation Requested ✓';
   });
+
+  (function(){
+    var tiers={
+      signature:{name:'Signature',low:250,high:325},
+      premium:{name:'Premium',low:325,high:425},
+      bespoke:{name:'Bespoke',low:425,high:600}
+    };
+    var current='signature';
+    var sqftInput=document.getElementById('estSqft');
+    var sqftLabel=document.getElementById('estSqftLabel');
+    var totalEl=document.getElementById('estTotal');
+    var perFtEl=document.getElementById('estPerFt');
+    var tierBtns=document.querySelectorAll('#estTiers .est-tier');
+    function fmt(n){return n.toLocaleString('en-US');}
+    function update(){
+      var sqft=parseInt(sqftInput.value,10);
+      var t=tiers[current];
+      sqftLabel.textContent=fmt(sqft);
+      totalEl.textContent='$'+fmt(sqft*t.low)+' to $'+fmt(sqft*t.high);
+      perFtEl.textContent=t.name+' finish · $'+t.low+' to $'+t.high+' per sq ft';
+    }
+    sqftInput.addEventListener('input',update);
+    tierBtns.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        tierBtns.forEach(function(b){b.classList.remove('active');});
+        btn.classList.add('active');
+        current=btn.getAttribute('data-tier');
+        update();
+      });
+    });
+    update();
+  })();
 </script>
 </body>
 </html>

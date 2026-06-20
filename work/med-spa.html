@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Lumière Aesthetics — Med Spa &amp; Skin Studio</title>
-<meta name="description" content="Lumière Aesthetics — injectables, facials, laser, and medical-grade skincare. Look like yourself, refreshed. Book a complimentary consultation."/>
+<title>Lumière Aesthetics, Med Spa &amp; Skin Studio</title>
+<meta name="description" content="Lumière Aesthetics, injectables, facials, laser, and medical-grade skincare. Look like yourself, refreshed. Book a complimentary consultation."/>
 <meta name="robots" content="noindex"/>
 <meta name="theme-color" content="#3a2c2c"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -116,6 +116,32 @@
   .price.feat ul li:before{color:#fff}
   @media(max-width:880px){.price-grid{grid-template-columns:1fr}}
 
+  .finder{background:#fff}
+  .finder-card{background:linear-gradient(160deg,var(--blush) 0%,var(--sand) 100%);border:1px solid var(--line);border-radius:24px;padding:2.6rem;box-shadow:var(--shadow)}
+  .concern-label{font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:1rem;text-align:center}
+  .concern-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.9rem}
+  .concern{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:1.2rem .9rem;text-align:center;cursor:pointer;transition:.18s;font-family:inherit;color:var(--ink);font-size:.92rem;font-weight:600;line-height:1.3}
+  .concern .emo{display:block;font-size:1.7rem;margin-bottom:.55rem}
+  .concern:hover{border-color:var(--bronze);transform:translateY(-3px);box-shadow:var(--shadow)}
+  .concern.active{background:linear-gradient(160deg,var(--bronze),var(--bronze-d));color:#fff;border-color:transparent;box-shadow:var(--shadow)}
+  .finder-result{margin-top:1.8rem;background:#fff;border:1px solid var(--line);border-radius:18px;padding:2rem;display:grid;grid-template-columns:1fr auto;gap:1.6rem;align-items:center}
+  .finder-result .rtag{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze-d);display:block;margin-bottom:.35rem}
+  .finder-result h3{font-size:1.9rem;margin-bottom:.5rem}
+  .finder-result p{color:var(--slate);font-size:.97rem;max-width:34rem}
+  .finder-side{text-align:right;flex:none}
+  .finder-side .from{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--ink);font-weight:700;line-height:1}
+  .finder-side .from small{display:block;font-family:'Inter',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:.3rem}
+  .finder-side .btn{margin-top:1rem;white-space:nowrap}
+  .finder-note{margin-top:1.3rem;text-align:center;font-size:.78rem;color:var(--slate);font-style:italic}
+  @media(max-width:880px){
+    .finder-card{padding:1.7rem}
+    .concern-grid{grid-template-columns:1fr 1fr}
+    .finder-result{grid-template-columns:1fr;text-align:center}
+    .finder-result p{margin:0 auto}
+    .finder-side{text-align:center}
+    .finder-side .btn{width:100%;justify-content:center}
+  }
+
   .consult{background:var(--blush)}
   .consult-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
   .consult-form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:2.3rem;box-shadow:var(--shadow)}
@@ -153,6 +179,7 @@
     <a href="#" class="logo"><span class="mark">L</span> Lumière Aesthetics</a>
     <nav class="nav-links">
       <a href="#services">Treatments</a>
+      <a href="#finder">Find Your Treatment</a>
       <a href="#why">Why Lumière</a>
       <a href="#pricing">Membership</a>
       <a href="#reviews">Reviews</a>
@@ -292,6 +319,38 @@
   </div>
 </section>
 
+<section id="finder" class="finder">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Find Your Treatment</span>
+      <h2>Tell us what's on your mind</h2>
+      <p>Pick the concern that sounds most like you and we'll suggest a starting point. Your real plan is built with you at your consultation.</p>
+    </div>
+    <div class="finder-card">
+      <div class="concern-label">What would you like to work on?</div>
+      <div class="concern-grid" id="concernGrid">
+        <button type="button" class="concern" data-key="wrinkles"><span class="emo">🙂</span>Fine lines &amp; wrinkles</button>
+        <button type="button" class="concern" data-key="volume"><span class="emo">💧</span>Lost volume</button>
+        <button type="button" class="concern" data-key="texture"><span class="emo">✨</span>Skin texture &amp; tone</button>
+        <button type="button" class="concern" data-key="hair"><span class="emo">🪶</span>Unwanted hair</button>
+        <button type="button" class="concern" data-key="dull"><span class="emo">🌿</span>Tired, dull skin</button>
+      </div>
+      <div class="finder-result" id="finderResult">
+        <div class="finder-main">
+          <span class="rtag" id="rTag">A good place to start</span>
+          <h3 id="rName">Wrinkle Relaxers</h3>
+          <p id="rDesc">Softens forehead lines and crow's feet while keeping your expressions yours. Subtle, never frozen.</p>
+        </div>
+        <div class="finder-side">
+          <div class="from"><small>Illustrative, from</small><span id="rPrice">$11 / unit</span></div>
+          <a href="#consult" class="btn">Book a free consultation →</a>
+        </div>
+      </div>
+      <p class="finder-note">Illustrative only. Your treatment, suitability, and pricing are personalized with a provider at your consultation. This is a general guide, not medical advice or a guaranteed price.</p>
+    </div>
+  </div>
+</section>
+
 <section id="consult" class="consult">
   <div class="wrap">
     <div class="consult-grid">
@@ -340,7 +399,7 @@
       </div>
       <div><h4>Treatments</h4><a href="#services">Wrinkle Relaxers</a><a href="#services">Fillers</a><a href="#services">Facials</a><a href="#services">Laser</a></div>
       <div><h4>Studio</h4><a href="#why">Why Lumière</a><a href="#pricing">Membership</a><a href="#reviews">Reviews</a><a href="#consult">Book</a></div>
-      <div><h4>Visit</h4><a href="#">88 Magnolia Lane</a><a href="#">Tue–Sat · 9–7</a><a href="tel:#">(000) 000-0000</a></div>
+      <div><h4>Visit</h4><a href="#">88 Magnolia Lane</a><a href="#">Tue to Sat · 9 to 7</a><a href="tel:#">(000) 000-0000</a></div>
     </div>
     <div class="foot-bottom">
       Demo site designed &amp; built by <a href="/" style="color:#fff;text-decoration:underline;display:inline">Earvin Laureano</a> · Not a real business · <a href="/work" style="color:#fff;text-decoration:underline;display:inline">See more work</a>
@@ -352,9 +411,36 @@
 <script>
   document.getElementById('consultForm').addEventListener('submit',function(e){
     e.preventDefault();
-    document.getElementById('cmsg').textContent='✓ Thanks — in a real build, this would book straight into the studio calendar. (Demo only.)';
+    document.getElementById('cmsg').textContent='✓ Thanks, in a real build, this would book straight into the studio calendar. (Demo only.)';
     this.querySelector('button').textContent='Consultation Requested ✓';
   });
+
+  (function(){
+    var treatments={
+      wrinkles:{tag:'For fine lines & wrinkles',name:'Wrinkle Relaxers',desc:"Softens forehead lines and crow's feet while keeping your expressions yours. Subtle, never frozen.",price:'$11 / unit'},
+      volume:{tag:'For lost volume',name:'Dermal Fillers',desc:'Restores volume to lips, cheeks, and under-eyes for a rested, lifted look that still moves naturally.',price:'$650 / syringe'},
+      texture:{tag:'For skin texture & tone',name:'Microneedling & PRP',desc:'Stimulates collagen for firmer, fresher skin and smooths the look of texture, pores, and fine lines.',price:'$375'},
+      hair:{tag:'For unwanted hair',name:'Laser & Resurfacing',desc:'Gentle, proven laser treatments to reduce unwanted hair and leave skin feeling smooth and even.',price:'$290'},
+      dull:{tag:'For tired, dull skin',name:'Signature Facials',desc:'Medical-grade facials and hydrafacials that leave skin glowing, clear, and camera-ready.',price:'$145'}
+    };
+    var grid=document.getElementById('concernGrid');
+    var rTag=document.getElementById('rTag'),rName=document.getElementById('rName'),
+        rDesc=document.getElementById('rDesc'),rPrice=document.getElementById('rPrice');
+    var buttons=grid.querySelectorAll('.concern');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var t=treatments[btn.getAttribute('data-key')];
+        if(!t)return;
+        buttons.forEach(function(b){b.classList.remove('active')});
+        btn.classList.add('active');
+        rTag.textContent=t.tag;
+        rName.textContent=t.name;
+        rDesc.textContent=t.desc;
+        rPrice.textContent=t.price;
+      });
+    });
+    if(buttons[0])buttons[0].classList.add('active');
+  })();
 </script>
 </body>
 </html>

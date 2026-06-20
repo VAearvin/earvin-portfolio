@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Book Your Visit — Northgate Dental Studio</title>
-<meta name="description" content="Book your first visit at Northgate Dental Studio — new patients get a free exam & consultation."/>
+<title>Book Your Visit - Northgate Dental Studio</title>
+<meta name="description" content="Book your first visit at Northgate Dental Studio - new patients get a free exam & consultation."/>
 <meta name="robots" content="noindex"/>
 <meta name="theme-color" content="#0d9488"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -23,7 +23,7 @@
   .stage{display:grid;grid-template-columns:1.05fr .95fr;min-height:calc(100vh - 42px)}
   @media(max-width:900px){.stage{grid-template-columns:1fr}}
 
-  /* LEFT — visual */
+  /* LEFT - visual */
   .visual{position:relative;padding:3rem;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden}
   .visual img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
   .visual:after{content:"";position:absolute;inset:0;background:linear-gradient(155deg,rgba(13,148,136,.86),rgba(15,39,36,.92));z-index:1}
@@ -40,7 +40,7 @@
   .vstats strong{display:block;font-family:'Fraunces',serif;font-size:1.7rem}
   .vstats span{font-size:.84rem;opacity:.9}
 
-  /* RIGHT — form */
+  /* RIGHT - form */
   .panel{background:var(--white);padding:3rem;display:flex;align-items:center;justify-content:center}
   .form-wrap{width:100%;max-width:30rem}
   .eyebrow{color:var(--teal);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
@@ -72,16 +72,16 @@
 </head>
 <body>
 
-<div class="demo-bar">🎨 This is a <strong>demo booking page</strong> — a sample of work by Earvin Laureano. &nbsp;<a href="/work">← Portfolio</a> &nbsp;·&nbsp; <a href="/work/dental-clinic">Back to the demo site</a></div>
+<div class="demo-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="1em" height="1em" style="vertical-align:-0.15em;margin-right:.35em" aria-hidden="true"><path d="M12 5.5c-2-2-4.5-2.5-6-1.5-2 1.4-2 4.5-1.3 7 .5 1.8.4 3 .2 4.6-.2 1.7.3 3.4 1.6 3.4 1.2 0 1.5-1.3 1.7-2.7.2-1.3.6-2.3 1.8-2.3s1.6 1 1.8 2.3c.2 1.4.5 2.7 1.7 2.7 1.3 0 1.8-1.7 1.6-3.4-.2-1.6-.3-2.8.2-4.6.7-2.5.7-5.6-1.3-7-1.5-1-4-.5-6 1.5Z"/></svg> This is a <strong>demo booking page</strong> - a sample of work by Earvin Laureano. &nbsp;<a href="/work">← Portfolio</a> &nbsp;·&nbsp; <a href="/work/dental-clinic">Back to the demo site</a></div>
 
 <div class="stage">
   <!-- LEFT VISUAL -->
   <div class="visual">
     <img class="bg" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1000&q=80&auto=format&fit=crop" alt="Modern dental studio"/>
-    <div class="vlogo"><span class="m">✦</span> Northgate Dental</div>
+    <div class="vlogo"><span class="m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="1.05em" height="1.05em" aria-hidden="true"><path d="M12 3c.6 3.4 2.6 5.4 6 6-3.4.6-5.4 2.6-6 6-.6-3.4-2.6-5.4-6-6 3.4-.6 5.4-2.6 6-6Z"/></svg></span> Northgate Dental</div>
     <div class="vmid">
       <h1>Your first visit is <em>free.</em></h1>
-      <p>New patients get a complimentary exam &amp; consultation — no pressure, no surprise bills. Just a clear look at your smile.</p>
+      <p>New patients get a complimentary exam &amp; consultation - no pressure, no surprise bills. Just a clear look at your smile.</p>
       <ul class="vlist">
         <li><span class="c">✓</span> Same-week appointments</li>
         <li><span class="c">✓</span> Gentle, anxiety-friendly care</li>
@@ -101,8 +101,8 @@
       <a href="/work/dental-clinic" class="backlink">← Back to site</a>
 
       <div class="sample-note">
-        <span>💡</span>
-        <span><b>Heads up:</b> this is a <b>sample booking page</b> built by Earvin Laureano to demonstrate a real appointment funnel. Submitting won't book anything — it just shows how the flow works.</span>
+        <span style="flex:none;display:inline-flex;line-height:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="1.15em" height="1.15em" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.5.4.8 1 .9 1.6l.1.6h5.2l.1-.6c.1-.6.4-1.2.9-1.6A6 6 0 0 0 12 3Z"/></svg></span>
+        <span><b>Heads up:</b> this is a <b>sample booking page</b> built by Earvin Laureano to demonstrate a real appointment funnel. Submitting won't book anything - it just shows how the flow works.</span>
       </div>
 
       <form id="bookForm" onsubmit="return book(event)">
@@ -133,13 +133,13 @@
           <div><label for="dt">Preferred date</label><input id="dt" type="date" required/></div>
         </div>
         <button class="btn" type="submit">Request My Appointment →</button>
-        <p class="fine">🔒 Your info is private and never shared.</p>
+        <p class="fine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="1em" height="1em" style="vertical-align:-0.15em;margin-right:.2em" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Your info is private and never shared.</p>
       </form>
 
       <div id="done">
         <div class="ic">✓</div>
         <h2 id="doneName">You're booked!</h2>
-        <p>We've got your request — here's what you sent. (In a real build, this would hit the clinic's calendar and text you a confirmation.)</p>
+        <p>We've got your request - here's what you sent. (In a real build, this would hit the clinic's calendar and text you a confirmation.)</p>
         <div class="recap" id="recap"></div>
         <button class="btn" onclick="reset()">← Send another</button>
       </div>
@@ -157,7 +157,7 @@ function book(e){
     Phone: document.getElementById('ph').value.trim(),
     Email: document.getElementById('em').value.trim(),
     Reason: document.getElementById('svc').value,
-    Date: document.getElementById('dt').value || '—'
+    Date: document.getElementById('dt').value || '-'
   };
   document.getElementById('bookForm').style.display='none';
   document.getElementById('doneName').textContent="You're booked, "+fn+"!";

@@ -39,7 +39,7 @@
         '</li>' +
         '<li><a href="/work"' + isActive('work') + '>Work</a></li>' +
         '<li><a href="/#contact">Contact</a></li>' +
-        '<li><a href="/#contact" class="nav-cta">Start a Conversation</a></li>' +
+        '<li><a href="/#contact" class="nav-cta">Book a Call</a></li>' +
       '</ul>' +
     '</nav>';
 

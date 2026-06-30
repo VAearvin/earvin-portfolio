@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Funnel Pricing · Earvin Laureano</title>
+  <meta name="description" content="Custom conversion funnel pricing: strategy, direct-response copy, design, and end-to-end build, from $1,497. Lead, sales, VSL, challenge, and more. You own everything."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.earvinlaureano.com/pricing/funnels"/>
+  <meta name="theme-color" content="#0c0c0c"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Funnel Pricing · Earvin Laureano"/>
+  <meta property="og:description" content="Custom conversion funnels that do the selling, from strategy to deployment. From $1,497."/>
+  <meta property="og:url" content="https://www.earvinlaureano.com/pricing/funnels"/>
+  <meta property="og:image" content="https://www.earvinlaureano.com/og-card.png"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="apple-touch-icon" href="/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/assets/site.css?v=3"/>
+  <link rel="stylesheet" href="/assets/pricing-page.css"/>
+  <script defer src="/assets/analytics.js"></script>
+</head>
+<body data-active="pricing">
+<div id="nav"></div>
+
+<div class="back-bar"><a href="/pricing" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back to pricing</a></div>
+
+<!-- FUNNELS -->
+<section class="price-sec first" id="funnels">
+  <div class="ps-head">
+    <span class="ps-eyebrow">Funnels</span>
+    <h2>Funnels that <em>do the selling.</em></h2>
+    <p class="ps-desc">Custom-built lead, sales, webinar, and e-commerce funnels: strategy, copy, design, and deployment in one place. Every page built on a proven conversion framework.</p>
+  </div>
+  <div style="max-width:560px;margin:0 auto">
+    <div class="tcard premium">
+      <span class="pop">10 Funnel Types</span>
+      <div class="tc-name">Custom Conversion Funnel</div>
+      <div class="tc-for">"Build me a funnel that actually converts."</div>
+      <div class="tc-price">From <span data-price="funnel.from"></span></div>
+      <div class="tc-note">2–4 week turnaround · 50% booking payment, 50% on launch</div>
+      <ul>
+        <li>Funnel-type strategy + page sequence (10 types: Lead, Sales, VSL, Challenge, etc.)</li>
+        <li>Direct-response copy (AIDA framework)</li>
+        <li>Custom design, your brand, not a template</li>
+        <li>Built &amp; deployed end-to-end (every page)</li>
+        <li>Forms wired to Sheets / CRM</li>
+        <li>Email follow-up sequence (3–5 emails)</li>
+        <li>Mobile-first, edge-hosted, fast</li>
+      </ul>
+      <a href="/funnels" class="tc-link">See funnel details →</a>
+    </div>
+  </div>
+  <p style="text-align:center;color:var(--muted);font-size:.88rem;margin-top:1.4rem;max-width:46rem;margin-left:auto;margin-right:auto;line-height:1.65">
+    Pricing scales with funnel complexity: a 4-page Lead funnel and a 9-page Challenge sit at very different ends. We'll lock the exact scope on your call.
+  </p>
+</section>
+
+<!-- CTA -->
+<section class="cta-end">
+  <h2 class="reveal">Got an offer that<br/><em>deserves to convert?</em></h2>
+  <p class="reveal">Tell me about your offer and audience, and I'll map the right funnel type and scope. The audit credits toward your build.</p>
+  <a href="/#contact" class="btn-gold reveal">Book a Call</a>
+  <p style="margin-top:1.4rem"><a href="/pricing" class="back-link">← Back to all pricing</a></p>
+</section>
+
+<div id="footer"></div>
+
+<script src="/assets/pricing.js"></script>
+<script>
+  (function () {
+    document.querySelectorAll('[data-price]').forEach(function (el) {
+      var path = el.getAttribute('data-price').split('.');
+      var v = window.PRICING; for (var i = 0; i < path.length; i++) { v = v && v[path[i]]; }
+      if (typeof v === 'number') el.textContent = window.money(v);
+    });
+  })();
+</script>
+<script src="/assets/layout.js"></script>
+</body>
+</html>

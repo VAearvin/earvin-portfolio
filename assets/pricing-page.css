@@ -1,0 +1,88 @@
+/* ============================================================
+   Earvin Laureano — shared styles for the Pricing chooser
+   (/pricing) and the per-category pricing pages
+   (/pricing/websites, /funnels, /partnership, /audit).
+   Loaded on top of site.css.
+   ============================================================ */
+
+/* Back bar (category pages) */
+.back-bar{max-width:1200px;margin:0 auto;padding:1.7rem 5rem 0}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;color:var(--muted);font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:color .2s}
+.back-link:hover{color:var(--gold)}
+.back-link svg{width:15px;height:15px}
+@media (max-width:768px){ .back-bar{padding:1.2rem 1.4rem 0} }
+
+/* Section + tier grid */
+.price-sec{padding:5rem 5rem;max-width:1200px;margin:0 auto;border-top:1px solid var(--border)}
+.price-sec.first{border-top:none;padding-top:2.6rem}
+@media (max-width:768px){ .price-sec{padding:3.4rem 1.4rem} .price-sec.first{padding-top:1.6rem} }
+.price-sec .ps-head{text-align:center;max-width:44rem;margin:0 auto 2.6rem}
+.price-sec .ps-eyebrow{font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:inline-block}
+.price-sec h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:var(--text);letter-spacing:-.01em;margin-bottom:.7rem}
+.price-sec h2 em{font-style:italic;color:var(--gold);font-weight:700}
+.price-sec .ps-desc{color:var(--muted);font-size:1rem;line-height:1.7}
+
+/* Tier card */
+.tiers{display:grid;gap:1.2rem}
+.tiers.two{grid-template-columns:repeat(2,1fr)}
+.tiers.three{grid-template-columns:repeat(3,1fr)}
+.tiers.five{grid-template-columns:repeat(5,1fr);gap:.9rem}
+@media (max-width:1100px){ .tiers.five{grid-template-columns:repeat(2,1fr);gap:1.2rem} .tiers.three{grid-template-columns:1fr} }
+@media (max-width:760px){ .tiers.two,.tiers.three,.tiers.five{grid-template-columns:1fr} }
+.tcard{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem 1.6rem;display:flex;flex-direction:column;position:relative}
+.tcard.premium{border-color:rgba(199,169,127,.5)}
+.tcard.premium .pop{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--bg);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .8rem;border-radius:100px;white-space:nowrap}
+.tcard .tc-name{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.18rem}
+.tcard .tc-for{font-size:.78rem;color:var(--muted);font-style:italic;margin-bottom:.9rem;line-height:1.45}
+.tcard .tc-price{font-size:1.6rem;font-weight:800;color:var(--gold);margin-bottom:.2rem;line-height:1.1}
+.tcard .tc-price small{font-size:.74rem;color:var(--muted);font-weight:500;letter-spacing:.06em;margin-left:.25rem}
+.tcard .tc-was{color:var(--muted);text-decoration:line-through;font-size:.86rem;font-weight:500;margin-right:.4rem}
+.tcard .tc-note{font-size:.74rem;color:var(--muted);margin-bottom:1rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.tcard ul{list-style:none;display:grid;gap:.55rem;flex:1;margin-bottom:1.1rem}
+.tcard li{color:var(--muted);font-size:.86rem;line-height:1.5;display:flex;gap:.5rem}
+.tcard li:before{content:"✓";color:var(--gold);font-weight:800;flex:none}
+.tcard .tc-link{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-top:1px solid var(--border);padding-top:.85rem;margin-top:auto}
+.tcard .tc-link:hover{color:var(--gold2)}
+
+/* Audit row (Free vs Full side-by-side) */
+.audit-row{display:grid;grid-template-columns:1fr 1.4fr;gap:1.2rem}
+@media (max-width:880px){ .audit-row{grid-template-columns:1fr} }
+
+/* Free vs Full mini grid (6 categories) */
+.ff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.1rem}
+@media (max-width:760px){ .ff-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:480px){ .ff-grid{grid-template-columns:1fr} }
+.ff-cat{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem}
+.ff-cat h4{font-size:.84rem;color:var(--text);margin-bottom:.45rem;font-weight:600}
+.ff-cat .ffrow{font-size:.74rem;color:var(--muted);line-height:1.45;margin-bottom:.25rem;display:flex;gap:.4rem}
+.ff-cat .y{color:var(--green);font-weight:800;flex:none}
+.ff-cat .n{color:#5a5750;font-weight:800;flex:none}
+.ff-cat .s{color:var(--gold);font-weight:800;flex:none}
+
+/* Terms / fine print */
+.terms-row{max-width:880px;margin:2.2rem auto 0;background:rgba(199,169,127,.05);border:1px dashed rgba(199,169,127,.32);border-radius:12px;padding:1.4rem 1.7rem;text-align:left}
+.terms-row b{color:var(--text)}
+.terms-row p{color:var(--muted);font-size:.86rem;line-height:1.65;margin-bottom:.4rem}
+.terms-row p:last-child{margin-bottom:0}
+
+/* Chooser ("what are you here for?") */
+.chooser-wrap{max-width:1040px;margin:0 auto;padding:3rem 5rem 0}
+@media (max-width:768px){ .chooser-wrap{padding:2.4rem 1.4rem 0} }
+.chooser{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media (max-width:900px){ .chooser{grid-template-columns:1fr 1fr} }
+@media (max-width:520px){ .chooser{grid-template-columns:1fr} }
+.choice{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.6rem 1.5rem;text-align:left;cursor:pointer;transition:transform .2s,border-color .2s,background .2s;display:flex;flex-direction:column;gap:.4rem;font-family:inherit;min-height:180px;text-decoration:none}
+.choice:hover{border-color:rgba(199,169,127,.5);transform:translateY(-3px)}
+.choice .ic{width:40px;height:40px;border-radius:11px;background:rgba(199,169,127,.13);color:var(--gold);display:grid;place-items:center;margin-bottom:.3rem}
+.choice .ic svg{width:21px;height:21px}
+.choice .ch-name{font-size:1.12rem;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.choice .ch-price{font-size:.92rem;font-weight:800;color:var(--gold)}
+.choice .ch-desc{font-size:.82rem;color:var(--muted);line-height:1.5;flex:1}
+.choice .ch-cta{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.55;transition:opacity .2s}
+.choice:hover .ch-cta{opacity:1}
+.pick-hint{text-align:center;color:var(--muted);font-size:.92rem;margin:2.6rem auto 0;max-width:34rem;line-height:1.6}
+.pick-hint a{color:var(--gold);text-decoration:none}
+
+/* Cap note (urgency) */
+.pricing-cap{max-width:760px;margin:0 auto 2rem;font-size:.86rem;color:var(--muted);text-align:center;line-height:1.65;padding:.95rem 1.3rem;background:rgba(199,169,127,.04);border:1px solid rgba(199,169,127,.18);border-radius:10px}
+.pricing-cap b{color:var(--gold)}

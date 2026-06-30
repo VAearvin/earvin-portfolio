@@ -10,7 +10,7 @@
   var active = document.body.getAttribute('data-active') || '';
   var isActive = function (key) { return active === key ? ' class="active"' : ''; };
 
-  var workWithMeActive = ['hub','wwm','new-website','rebrand','migration','funnel','partnership','care','websites','funnels','services'].indexOf(active) >= 0 ? ' class="active"' : '';
+  var workWithMeActive = ['wwm','new-website','rebrand','migration','funnel','partnership','care','websites','funnels','services'].indexOf(active) >= 0 ? ' class="active"' : '';
   var aboutActive = ['about'].indexOf(active) >= 0 ? ' class="active"' : '';
 
   var nav =
@@ -37,6 +37,7 @@
             '<li><a href="/services">Partnership</a></li>' +
           '</ul>' +
         '</li>' +
+        '<li><a href="/pricing"' + isActive('pricing') + '>Pricing</a></li>' +
         '<li><a href="/work"' + isActive('work') + '>Work</a></li>' +
         '<li><a href="/#contact">Contact</a></li>' +
         '<li><a href="/#contact" class="nav-cta">Book a Call</a></li>' +

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Partnership Pricing · Earvin Laureano</title>
+  <meta name="description" content="The Partnership: an ongoing operations partner on one scoped monthly retainer, never hourly. From $1,997/mo, with a heavier Dedicated tier from $3,497/mo."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.earvinlaureano.com/pricing/partnership"/>
+  <meta name="theme-color" content="#0c0c0c"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Partnership Pricing · Earvin Laureano"/>
+  <meta property="og:description" content="Your right hand, every month. One scoped monthly retainer, never billed by the hour."/>
+  <meta property="og:url" content="https://www.earvinlaureano.com/pricing/partnership"/>
+  <meta property="og:image" content="https://www.earvinlaureano.com/og-card.png"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="apple-touch-icon" href="/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/assets/site.css?v=3"/>
+  <link rel="stylesheet" href="/assets/pricing-page.css"/>
+  <script defer src="/assets/analytics.js"></script>
+</head>
+<body data-active="pricing">
+<div id="nav"></div>
+
+<div class="back-bar"><a href="/pricing" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back to pricing</a></div>
+
+<!-- PARTNERSHIP -->
+<section class="price-sec first" id="partnership">
+  <div class="ps-head">
+    <span class="ps-eyebrow">The Partnership</span>
+    <h2>Your right hand,<br/><em>every month.</em></h2>
+    <p class="ps-desc">An ongoing partner who runs your day-to-day operations. One scoped monthly retainer. Never billed by the hour.</p>
+  </div>
+  <div class="tiers two">
+    <div class="tcard premium">
+      <span class="pop">Flagship</span>
+      <div class="tc-name">The Partnership</div>
+      <div class="tc-for">"Be my right hand and keep things running."</div>
+      <div class="tc-price">From <span data-price="partnership.from"></span><small>/mo</small></div>
+      <div class="tc-note">Scoped to you · retainer, never hourly</div>
+      <ul>
+        <li>Executive &amp; admin support</li>
+        <li>Marketing &amp; content</li>
+        <li>Design &amp; creative</li>
+        <li>CRM &amp; pipeline</li>
+        <li>AI &amp; automation</li>
+        <li>Proactive comms, no hand-holding, no follow-up needed</li>
+      </ul>
+      <a href="/services" class="tc-link">See partnership details →</a>
+    </div>
+    <div class="tcard">
+      <div class="tc-name">Dedicated (Heavier)</div>
+      <div class="tc-for">"I need more hands on it."</div>
+      <div class="tc-price">From <span data-price="partnership.dedicatedFrom"></span><small>/mo</small></div>
+      <div class="tc-note">Larger scope · quoted on a call</div>
+      <ul>
+        <li>Everything in the Partnership</li>
+        <li>Larger weekly bandwidth</li>
+        <li>Multiple ongoing workstreams</li>
+        <li>Priority response &amp; faster turnarounds</li>
+        <li>Custom-quoted to your specific scope</li>
+      </ul>
+      <a href="/services" class="tc-link">Talk through scope →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-end">
+  <h2 class="reveal">Ready to stop<br/><em>running it all alone?</em></h2>
+  <p class="reveal">Tell me what's on your plate and I'll scope a partnership that fits. One monthly retainer, never hourly.</p>
+  <a href="/#contact" class="btn-gold reveal">Book a Call</a>
+  <p style="margin-top:1.4rem"><a href="/pricing" class="back-link">← Back to all pricing</a></p>
+</section>
+
+<div id="footer"></div>
+
+<script src="/assets/pricing.js"></script>
+<script>
+  (function () {
+    document.querySelectorAll('[data-price]').forEach(function (el) {
+      var path = el.getAttribute('data-price').split('.');
+      var v = window.PRICING; for (var i = 0; i < path.length; i++) { v = v && v[path[i]]; }
+      if (typeof v === 'number') el.textContent = window.money(v);
+    });
+  })();
+</script>
+<script src="/assets/layout.js"></script>
+</body>
+</html>

@@ -68,7 +68,7 @@ const server = http.createServer(function (req, res) {
 server.listen(PORT, function () {
   console.log('Dev server → http://localhost:' + PORT);
   console.log('  Home   : http://localhost:' + PORT + '/index.html');
-  console.log('  Pricing: http://localhost:' + PORT + '/pricing.html');
+  console.log('  Pricing: http://localhost:' + PORT + '/pricing/');
   console.log('  Audit  : http://localhost:' + PORT + '/audit.html');
   const keys = ['PAGESPEED_API_KEY', 'SHEETS_WEBHOOK_URL'];
   console.log('Env configured:', keys.filter(function (k) { return process.env[k]; }).join(', ') || '(none — checks that need keys will say "couldn\'t check")');

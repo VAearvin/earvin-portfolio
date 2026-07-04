@@ -1,5 +1,5 @@
 /* ============================================================
-   Earvin Laureano — shared styles for the Pricing chooser
+   Earvin Laureano – shared styles for the Pricing chooser
    (/pricing) and the per-category pricing pages
    (/pricing/websites, /funnels, /partnership, /audit).
    Loaded on top of site.css.
@@ -48,16 +48,33 @@
 .audit-row{display:grid;grid-template-columns:1fr 1.4fr;gap:1.2rem}
 @media (max-width:880px){ .audit-row{grid-template-columns:1fr} }
 
-/* Free vs Full mini grid (6 categories) */
-.ff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.1rem}
-@media (max-width:760px){ .ff-grid{grid-template-columns:1fr 1fr} }
-@media (max-width:480px){ .ff-grid{grid-template-columns:1fr} }
-.ff-cat{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem}
-.ff-cat h4{font-size:.84rem;color:var(--text);margin-bottom:.45rem;font-weight:600}
-.ff-cat .ffrow{font-size:.74rem;color:var(--muted);line-height:1.45;margin-bottom:.25rem;display:flex;gap:.4rem}
-.ff-cat .y{color:var(--green);font-weight:800;flex:none}
-.ff-cat .n{color:#5a5750;font-weight:800;flex:none}
-.ff-cat .s{color:var(--gold);font-weight:800;flex:none}
+/* Collapsible free-vs-paid comparison matrix (audit page) */
+.cmp{max-width:720px;margin:2.2rem auto 0;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.cmp>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.6rem;padding:1.05rem 1.4rem;font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);transition:background .2s;user-select:none}
+.cmp>summary::-webkit-details-marker{display:none}
+.cmp>summary::marker{content:""}
+.cmp>summary:hover{background:rgba(199,169,127,.06)}
+.cmp .cmp-chev{width:16px;height:16px;flex:none;transition:transform .25s}
+.cmp[open] .cmp-chev{transform:rotate(180deg)}
+.cmp-scroll{overflow-x:auto;border-top:1px solid var(--border)}
+.cmp-table{min-width:300px}
+.cmp-row{display:grid;grid-template-columns:minmax(0,1.7fr) 1fr 1fr;align-items:center;border-bottom:1px solid var(--border)}
+.cmp-row:last-child{border-bottom:none}
+.cmp-row.cmp-group{grid-template-columns:1fr;background:rgba(199,169,127,.04)}
+.cmp-gname{padding:.55rem .5rem .55rem 1.3rem;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.cmp-feat{padding:.7rem .5rem .7rem 1.3rem;font-size:.84rem;color:var(--muted);line-height:1.4}
+.cmp-col{padding:.7rem .5rem;text-align:center;font-size:.9rem}
+.cmp-col-pro{background:rgba(199,169,127,.05)}
+.cmp-row.cmp-head .cmp-feat{color:var(--text);font-weight:700;text-transform:uppercase;font-size:.64rem;letter-spacing:.14em}
+.cmp-head .cmp-col{display:flex;flex-direction:column;gap:.05rem;padding-top:.9rem;padding-bottom:.9rem}
+.cmp-head .cmp-col b{color:var(--text);font-size:.8rem;font-weight:700}
+.cmp-head .cmp-col span{color:var(--gold);font-size:.86rem;font-weight:800}
+.cmp-col .y{color:var(--green);font-weight:800}
+.cmp-col .n{color:#5a5750;font-weight:800}
+@media (max-width:560px){
+  .cmp-feat{padding-left:1rem;font-size:.8rem}
+  .cmp>summary{font-size:.68rem;letter-spacing:.1em}
+}
 
 /* Terms / fine print */
 .terms-row{max-width:880px;margin:2.2rem auto 0;background:rgba(199,169,127,.05);border:1px dashed rgba(199,169,127,.32);border-radius:12px;padding:1.4rem 1.7rem;text-align:left}

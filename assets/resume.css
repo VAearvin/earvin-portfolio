@@ -98,10 +98,11 @@ body{ --text:#ffffff; }
 .rz-cbody{padding:.7rem .9rem .85rem}
 .rz-cbody .rz-cname{font-size:.86rem;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:.18rem}
 .rz-cbody .rz-cmeta{font-size:.72rem;color:var(--muted);line-height:1.4}
-.rz-view{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.8rem;font-size:.74rem;font-weight:700;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(199,169,127,.4);
-  border-radius:100px;padding:.7rem 1.3rem;transition:background .2s}
-.rz-view:hover{background:rgba(199,169,127,.08)}
+.rz-view{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.8rem;font-size:.72rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(199,169,127,.4);
+  border-radius:100px;padding:.6rem 1.15rem;transition:background .2s,border-color .2s;white-space:nowrap}
+.rz-view:hover{background:rgba(199,169,127,.08);border-color:rgba(199,169,127,.7)}
+.rz-view svg{width:15px;height:15px;flex:none}
 
 /* Masked client list */
 .rz-masked{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:.4rem}
@@ -133,7 +134,7 @@ body{ --text:#ffffff; }
 .rz-refs{font-size:.78rem;color:#7d786f;margin-top:1.4rem;letter-spacing:.02em}
 
 /* ---- Footer ---- */
-.rz-foot{border-top:1px solid var(--border);text-align:center;padding:1.8rem;color:#6f6a61;font-size:.74rem}
+.rz-foot{display:block;border-top:1px solid var(--border);text-align:center;padding:1.8rem;color:#6f6a61;font-size:.74rem;line-height:1.6}
 .rz-foot a{color:var(--muted);text-decoration:none}
 
 /* ============================================================

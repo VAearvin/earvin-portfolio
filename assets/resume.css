@@ -104,6 +104,19 @@ body{
 .rz-job li{font-size:.88rem;color:var(--muted);line-height:1.6;display:flex;gap:.65rem}
 .rz-job li:before{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold);margin-top:.6rem;flex:none;opacity:.8}
 
+/* ---- Recognition / video proof ---- */
+.rz-vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2)}
+@media (max-width:680px){ .rz-vids{grid-template-columns:1fr} }
+.rz-vid{display:flex;align-items:center;gap:1rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;padding:1.15rem 1.3rem;text-decoration:none;transition:border-color .2s,transform .2s}
+.rz-vid:hover{border-color:rgba(199,169,127,.5);transform:translateY(-2px)}
+.rz-play{flex:none;width:38px;height:38px;border-radius:50%;background:rgba(199,169,127,.14);color:var(--gold);
+  display:grid;place-items:center}
+.rz-play svg{width:17px;height:17px;margin-left:2px}
+.rz-vtext{display:flex;flex-direction:column;gap:.2rem;min-width:0}
+.rz-vtitle{font-size:.92rem;font-weight:700;color:var(--gold2);line-height:1.3}
+.rz-vmeta{font-size:.8rem;color:var(--muted);line-height:1.5}
+
 /* ---- Portfolio ---- */
 .rz-pf-lead{font-size:.92rem;color:var(--muted);line-height:1.7;margin-bottom:var(--s4)}
 .rz-pf-cat{font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text);

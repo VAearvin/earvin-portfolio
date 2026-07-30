@@ -62,9 +62,9 @@ body{
 .rz-meta{display:flex;flex-wrap:wrap;gap:.55rem 1.4rem;margin:var(--s3) 0}
 .rz-meta span{display:inline-flex;align-items:center;gap:.45rem;font-size:.8rem;color:var(--muted);white-space:nowrap}
 .rz-meta svg{width:14px;height:14px;color:var(--gold);flex:none}
-/* Even 2-up grid so a 4th chip never orphans on its own row */
-.rz-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;max-width:34rem}
-@media (max-width:480px){ .rz-links{grid-template-columns:1fr} }
+/* Three chips sized to their content sit on one row; they wrap evenly below that */
+.rz-links{display:flex;flex-wrap:wrap;gap:.6rem}
+@media (max-width:480px){ .rz-links{display:grid;grid-template-columns:1fr} }
 .rz-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.76rem;font-weight:600;color:var(--text);
   text-decoration:none;border:1px solid var(--line);border-radius:100px;padding:.55rem 1rem;
   transition:border-color .2s,color .2s,background .2s;min-width:0}

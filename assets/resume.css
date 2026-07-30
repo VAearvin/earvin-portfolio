@@ -130,10 +130,10 @@ body{
 .rz-card{display:flex;flex-direction:column;border-radius:12px;overflow:hidden;text-decoration:none;
   transition:transform .2s,border-color .2s}
 .rz-card:hover{transform:translateY(-3px);border-color:rgba(199,169,127,.5)}
-.rz-thumb{aspect-ratio:16/10;background-size:cover;background-position:top center;
-  background-image:linear-gradient(135deg,rgba(199,169,127,.16),rgba(199,169,127,.03));
-  border-bottom:1px solid var(--line)}
-.rz-card.fn .rz-thumb{background-image:linear-gradient(135deg,rgba(74,222,128,.14),rgba(199,169,127,.04))}
+.rz-thumb{position:relative;aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--line);
+  background:linear-gradient(135deg,rgba(199,169,127,.16),rgba(199,169,127,.03))}
+.rz-card.fn .rz-thumb{background:linear-gradient(135deg,rgba(74,222,128,.14),rgba(199,169,127,.04))}
+.rz-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 .rz-cbody{padding:.8rem .95rem 1rem}
 .rz-cbody .rz-cname{font-size:.85rem;font-weight:700;line-height:1.25;margin-bottom:.22rem}
 .rz-cbody .rz-cmeta{font-size:.72rem;color:var(--muted);line-height:1.45}
@@ -204,7 +204,11 @@ body{
   .rz-sec{padding:1.1rem 0;border-top:1px solid #ddd;break-inside:avoid}
   .rz-hero{padding:0 0 1rem}
   .rz-card,.rz-skill,.rz-job,.rz-mrow,.rz-lang{border-color:#ddd;background:#fff;break-inside:avoid}
-  .rz-thumb{background:#f3f0ea !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  /* keep the screenshots in the PDF: force colour printing, never overwrite the image */
+  .rz-thumb{background:#f3f0ea}
+  .rz-thumb,.rz-thumb img{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .rz-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}
+  .rz-card{break-inside:avoid}
   .rz-head,.rz-eyebrow,.rz-pf-cat,.rz-skill h3,.rz-mtag,.rz-when{color:#8a6d3b !important}
   a{color:#111;text-decoration:none}
   .rz{max-width:100%;padding:0 .4in}

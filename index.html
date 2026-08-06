@@ -501,8 +501,6 @@
     .fx-shine::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,0.35) 50%, transparent 65%); transform: translateX(-130%); transition: transform 0.7s ease; }
     .fx-shine:hover::after { transform: translateX(130%); }
     .support-card, .track-card, .how-card, .exp-card { will-change: transform; transition: all 0.3s ease, transform 0.18s cubic-bezier(.22,1,.36,1); }
-    .hero-spotlight { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0; transition: opacity 0.6s ease; background: radial-gradient(480px circle at var(--spot-x, 50%) var(--spot-y, 28%), rgba(199,169,127,0.18), transparent 62%); }
-    #hero:hover .hero-spotlight { opacity: 1; }
   </style>
 </head>
 <body>
@@ -546,7 +544,6 @@
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-grid-lines"></div>
-  <div class="hero-spotlight" id="heroSpot"></div>
   <div class="hero-content">
     <div class="hero-left">
       <div class="hero-badge"><div class="hero-badge-dot"></div><span>Websites · Funnels · Digital Systems</span></div>
@@ -1070,17 +1067,6 @@
 
   // ===== WEBSITE EFFECTS =====
   const fxHover = window.matchMedia('(hover: hover)').matches;
-
-  // Hero spotlight (gold glow follows the cursor)
-  const fxHero = document.getElementById('hero');
-  const fxSpot = document.getElementById('heroSpot');
-  if (fxHero && fxSpot && fxHover) {
-    fxHero.addEventListener('mousemove', (e) => {
-      const r = fxHero.getBoundingClientRect();
-      fxSpot.style.setProperty('--spot-x', (e.clientX - r.left) + 'px');
-      fxSpot.style.setProperty('--spot-y', (e.clientY - r.top) + 'px');
-    });
-  }
 
   // Magnetic CTAs (subtle pull toward the cursor)
   if (fxHover) {

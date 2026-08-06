@@ -226,7 +226,3 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 5rem; display: fle
 
 /* 3D tilt on feature cards (snappy transform, keep reveal fade + hover shadow) */
 .demo-card, .rev-card, .ch-card, .tier-card, .wcard, .wfeature { will-change: transform; transition: all 0.3s ease, transform 0.18s cubic-bezier(.22,1,.36,1); }
-
-/* Gold spotlight following the cursor across the hero */
-.fx-spotlight { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0; transition: opacity 0.6s ease; background: radial-gradient(480px circle at var(--spot-x, 50%) var(--spot-y, 28%), rgba(199,169,127,0.16), transparent 62%); }
-.cat-hero:hover .fx-spotlight, .chooser-hero:hover .fx-spotlight { opacity: 1; }

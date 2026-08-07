@@ -292,7 +292,7 @@ function buildTopFlags(checks) {
 
 function buildEmailHtml(lead) {
   var c = lead.checks;
-  var row = function (label, val) { return '<tr><td style="padding:6px 12px;color:#8d887f">' + label + '</td><td style="padding:6px 12px;color:#111;font-weight:600">' + val + '</td></tr>'; };
+  var row = function (label, val) { return '<tr><td style="padding:6px 12px;color:#8C9599">' + label + '</td><td style="padding:6px 12px;color:#111;font-weight:600">' + val + '</td></tr>'; };
   var flags = (lead.topFlags || []).map(function (f) { return '<li style="margin:4px 0">' + esc(f) + '</li>'; }).join('') || '<li>No major red flags in the quick scan.</li>';
   var ai = c.aiReadiness && c.aiReadiness.status === 'ok'
     ? '<p style="color:#555"><strong>AI search readiness:</strong> ' +
@@ -331,8 +331,8 @@ function buildEmailHtml(lead) {
     ai +
     means +
     gapEmail +
-    '<div style="margin-top:22px;padding:20px;border:1px solid #C7A97F;border-radius:6px;background:#fdfbf7">' +
-      '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#a88a62;font-weight:700;margin-bottom:6px">That was the quick scan</div>' +
+    '<div style="margin-top:22px;padding:20px;border:1px solid #5FC9DC;border-radius:6px;background:#fdfbf7">' +
+      '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#3D9FB2;font-weight:700;margin-bottom:6px">That was the quick scan</div>' +
       '<strong style="color:#111;font-size:16px">Want the full picture — and exactly what to fix?</strong>' +
       '<p style="color:#555;margin:6px 0 12px">The free scan shows you what’s wrong. The full audit hands you the plan to fix it:</p>' +
       '<ul style="color:#333;padding-left:18px;margin:0 0 14px;line-height:1.7">' +
@@ -343,7 +343,7 @@ function buildEmailHtml(lead) {
         '<li><strong>A 30-minute walkthrough call</strong> to talk through your priorities.</li>' +
       '</ul>' +
       '<p style="color:#111;margin:0 0 12px"><strong>Full Website Audit &amp; Action Plan: <span style="text-decoration:line-through;color:#999;font-weight:600">$597</span> $57</strong> · intro price, credited toward any build.</p>' +
-      '<a href="https://www.earvinlaureano.com/pricing/audit" style="background:#C7A97F;color:#0c0c0c;padding:10px 18px;border-radius:4px;text-decoration:none;font-weight:700">Book my full audit</a>' +
+      '<a href="https://www.earvinlaureano.com/pricing/audit" style="background:#5FC9DC;color:#0c0c0c;padding:10px 18px;border-radius:4px;text-decoration:none;font-weight:700">Book my full audit</a>' +
     '</div>' +
     '<p style="color:#999;font-size:12px;margin-top:18px">Automated snapshot from earvinlaureano.com · Reply to this email to reach Earvin directly.</p>' +
     '</div>';

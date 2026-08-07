@@ -36,7 +36,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg:#0c0c0c; --bg2:#111111; --bg3:#181818; --border:rgba(255,255,255,0.06);
-      --gold:#C7A97F; --gold2:#E8D4B0; --text:#E8D4B0; --muted:#8d887f; --r:4px;
+      --gold:#5FC9DC; --gold2:#A8E4EF; --text:#E4EAEC; --muted:#8C9599; --r:4px;
       --green:#4ade80; --amber:#e0b96a; --red:#f87171;
     }
     html { scroll-behavior: smooth; }
@@ -51,7 +51,7 @@
     @media (max-width: 760px) { nav { padding: 1.1rem 1.5rem; } .nav-links { display: none; } }
 
     .btn-gold { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: var(--gold); color: var(--bg); padding: 0.95rem 2rem; text-decoration: none; border-radius: var(--r); transition: all 0.25s; display: inline-block; border: none; cursor: pointer; font-family: inherit; }
-    .btn-gold:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(199,169,127,0.25); }
+    .btn-gold:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(95,201,220,0.25); }
     .btn-gold:disabled { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none; }
     .btn-outline { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); border: 1px solid var(--border); padding: 0.95rem 2rem; text-decoration: none; border-radius: var(--r); transition: all 0.25s; display: inline-block; background: transparent; cursor: pointer; font-family: inherit; }
     .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
@@ -64,7 +64,7 @@
     .lede { font-size: 1rem; color: var(--muted); line-height: 1.85; max-width: 620px; margin-bottom: 2.5rem; }
 
     /* TRIPWIRE */
-    .tripwire { background: linear-gradient(180deg, rgba(199,169,127,0.1), rgba(199,169,127,0.03)); border: 1px solid rgba(199,169,127,0.35); border-radius: var(--r); padding: 2rem 2.2rem; margin: 0 0 3rem; position: relative; }
+    .tripwire { background: linear-gradient(180deg, rgba(95,201,220,0.1), rgba(95,201,220,0.03)); border: 1px solid rgba(95,201,220,0.35); border-radius: var(--r); padding: 2rem 2.2rem; margin: 0 0 3rem; position: relative; }
     .tripwire-tag { position: absolute; top: -10px; left: 1.6rem; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bg); background: var(--gold); padding: 0.35rem 0.9rem; border-radius: 100px; }
     .tripwire-row { display: flex; align-items: center; gap: 1.6rem; margin-bottom: 1.4rem; flex-wrap: wrap; }
     .tripwire-price { display: flex; align-items: baseline; gap: 0.85rem; flex-shrink: 0; }
@@ -87,7 +87,7 @@
     .field label { display: block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
     .field input { width: 100%; background: var(--bg3); border: 1px solid var(--border); color: var(--text); font-family: inherit; font-size: 0.95rem; font-weight: 300; padding: 0.95rem 1rem; outline: none; border-radius: var(--r); transition: border-color 0.25s, box-shadow 0.25s; }
     .field textarea { width: 100%; background: var(--bg3); border: 1px solid var(--border); color: var(--text); font-family: inherit; font-size: 0.92rem; font-weight: 300; padding: 0.9rem 1rem; outline: none; border-radius: var(--r); resize: vertical; min-height: 90px; }
-    .field input:focus, .field textarea:focus { border-color: rgba(199,169,127,0.45); box-shadow: 0 0 0 3px rgba(199,169,127,0.07); }
+    .field input:focus, .field textarea:focus { border-color: rgba(95,201,220,0.45); box-shadow: 0 0 0 3px rgba(95,201,220,0.07); }
     .field .err { color: var(--red); font-size: 0.72rem; margin-top: 0.4rem; display: none; }
     .field.invalid .err { display: block; }
     .field.invalid input { border-color: rgba(248,113,113,0.5); }

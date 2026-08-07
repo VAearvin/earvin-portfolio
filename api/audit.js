@@ -292,7 +292,7 @@ function buildTopFlags(checks) {
 
 function buildEmailHtml(lead) {
   var c = lead.checks;
-  var row = function (label, val) { return '<tr><td style="padding:6px 12px;color:#93A3BC">' + label + '</td><td style="padding:6px 12px;color:#1E2E4A;font-weight:600">' + val + '</td></tr>'; };
+  var row = function (label, val) { return '<tr><td style="padding:6px 12px;color:#8C9599">' + label + '</td><td style="padding:6px 12px;color:#111111;font-weight:600">' + val + '</td></tr>'; };
   var flags = (lead.topFlags || []).map(function (f) { return '<li style="margin:4px 0">' + esc(f) + '</li>'; }).join('') || '<li>No major red flags in the quick scan.</li>';
   var ai = c.aiReadiness && c.aiReadiness.status === 'ok'
     ? '<p style="color:#555"><strong>AI search readiness:</strong> ' +
@@ -307,7 +307,7 @@ function buildEmailHtml(lead) {
   var means = '<div style="margin-top:18px;padding-top:14px;border-top:1px solid #eee">' +
     '<p style="color:#333"><strong>What this means:</strong> ' + verdictE + '</p>' +
     '<p style="color:#777;font-size:13px;line-height:1.6">But here’s what a score can’t tell you: this scan checks speed, search basics, and how readable your site is to Google and AI — not how it looks, whether visitors trust it, or whether it turns them into customers. A site can pass every check and still lose bookings to one that simply feels more credible. That’s what the full audit looks at.</p></div>';
-  var gapEmail = '<div style="margin-top:18px"><p style="color:#1E2E4A"><strong>What this quick scan couldn’t check</strong></p>' +
+  var gapEmail = '<div style="margin-top:18px"><p style="color:#111111"><strong>What this quick scan couldn’t check</strong></p>' +
     '<p style="color:#777;font-size:13px;margin:4px 0 8px">The free scan only sees the technical surface. The full audit also covers:</p>' +
     '<ul style="color:#555;font-size:13px;line-height:1.7;padding-left:18px;margin:0">' +
     '<li>Whether your site looks trustworthy &amp; professional</li>' +
@@ -319,7 +319,7 @@ function buildEmailHtml(lead) {
     '</ul></div>';
   return '' +
     '<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px">' +
-    '<h2 style="color:#1E2E4A">Your website audit snapshot</h2>' +
+    '<h2 style="color:#111111">Your website audit snapshot</h2>' +
     '<p style="color:#555">Here’s what I found for <strong>' + esc(lead.url) + '</strong>:</p>' +
     '<table style="border-collapse:collapse;width:100%;background:#faf7f1;border-radius:6px">' +
       row('Performance · Mobile', fmt(c.performance.mobile)) +
@@ -327,13 +327,13 @@ function buildEmailHtml(lead) {
       row('SEO basics', fmt(c.seo.score)) +
       row('Technical health', fmt(c.technical.score)) +
     '</table>' +
-    '<h3 style="color:#1E2E4A;margin-top:18px">Top things to look at</h3><ul style="color:#333">' + flags + '</ul>' +
+    '<h3 style="color:#111111;margin-top:18px">Top things to look at</h3><ul style="color:#333">' + flags + '</ul>' +
     ai +
     means +
     gapEmail +
-    '<div style="margin-top:22px;padding:20px;border:1px solid #D2ED26;border-radius:6px;background:#fdfbf7">' +
-      '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#9BB01C;font-weight:700;margin-bottom:6px">That was the quick scan</div>' +
-      '<strong style="color:#1E2E4A;font-size:16px">Want the full picture — and exactly what to fix?</strong>' +
+    '<div style="margin-top:22px;padding:20px;border:1px solid #5FC9DC;border-radius:6px;background:#fdfbf7">' +
+      '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#3D9FB2;font-weight:700;margin-bottom:6px">That was the quick scan</div>' +
+      '<strong style="color:#111111;font-size:16px">Want the full picture — and exactly what to fix?</strong>' +
       '<p style="color:#555;margin:6px 0 12px">The free scan shows you what’s wrong. The full audit hands you the plan to fix it:</p>' +
       '<ul style="color:#333;padding-left:18px;margin:0 0 14px;line-height:1.7">' +
         '<li><strong>Find out if AI is recommending you — or your competitor.</strong></li>' +
@@ -342,8 +342,8 @@ function buildEmailHtml(lead) {
         '<li><strong>What to fix first</strong> — a prioritized plan, ranked by impact.</li>' +
         '<li><strong>A 30-minute walkthrough call</strong> to talk through your priorities.</li>' +
       '</ul>' +
-      '<p style="color:#1E2E4A;margin:0 0 12px"><strong>Full Website Audit &amp; Action Plan: <span style="text-decoration:line-through;color:#999;font-weight:600">$597</span> $57</strong> · intro price, credited toward any build.</p>' +
-      '<a href="https://www.earvinlaureano.com/pricing/audit" style="background:#D2ED26;color:#16233A;padding:10px 18px;border-radius:4px;text-decoration:none;font-weight:700">Book my full audit</a>' +
+      '<p style="color:#111111;margin:0 0 12px"><strong>Full Website Audit &amp; Action Plan: <span style="text-decoration:line-through;color:#999;font-weight:600">$597</span> $57</strong> · intro price, credited toward any build.</p>' +
+      '<a href="https://www.earvinlaureano.com/pricing/audit" style="background:#5FC9DC;color:#0c0c0c;padding:10px 18px;border-radius:4px;text-decoration:none;font-weight:700">Book my full audit</a>' +
     '</div>' +
     '<p style="color:#999;font-size:12px;margin-top:18px">Automated snapshot from earvinlaureano.com · Reply to this email to reach Earvin directly.</p>' +
     '</div>';

@@ -18,7 +18,7 @@
   --text:   #E9ECE2;
   --muted:  #94978B;
   --soft:   rgba(198,238,58,0.08);
-  --action: #EA47A0;
+  --action: #BE4B78;
   --r:      4px;
   --green:  #4ade80;
   --amber:  #e0b96a;
@@ -57,7 +57,7 @@ nav#navbar.scrolled { padding: 1rem 5rem; }
 .nav-links a:hover::after { transform: scaleX(1); }
 .nav-cta { font-size: 0.72rem !important; font-weight: 600 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #ffffff !important; background: var(--action) !important; padding: 0.65rem 1.5rem !important; text-decoration: none; transition: all 0.25s !important; border-radius: var(--r) !important; }
 .nav-cta::after { display: none !important; }
-.nav-cta:hover { background: #FF6AB8 !important; transform: translateY(-1px) !important; box-shadow: 0 4px 20px rgba(234,71,160,0.3) !important; }
+.nav-cta:hover { background: #A83C66 !important; transform: translateY(-1px) !important; box-shadow: 0 4px 20px rgba(190,75,120,0.3) !important; }
 .nav-dd { position: relative; }
 .nav-dd > a { display: inline-flex; align-items: center; gap: 0.4rem; }
 .nav-dd .caret { display: inline-block; width: 6px; height: 6px; border-right: 1px solid var(--muted); border-bottom: 1px solid var(--muted); transform: rotate(45deg); transition: border-color 0.25s, transform 0.25s; }
@@ -76,7 +76,7 @@ nav#navbar.scrolled { padding: 1rem 5rem; }
 
 /* BUTTONS */
 .btn-gold { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: var(--action); color: #ffffff; padding: 0.95rem 2rem; text-decoration: none; border-radius: var(--r); transition: all 0.25s; display: inline-block; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; }
-.btn-gold:hover { background: #FF6AB8; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(234,71,160,0.25); }
+.btn-gold:hover { background: #A83C66; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(190,75,120,0.25); }
 .btn-outline { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); border: 1px solid var(--border); padding: 0.95rem 2rem; text-decoration: none; border-radius: var(--r); transition: all 0.25s; display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; cursor: pointer; font-family: inherit; }
 .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 
